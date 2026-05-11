@@ -1,2 +1,2 @@
 # netvliesoperatie.info
-NEtvliesoperatie informatie
+Netvliesoperatie informatie
