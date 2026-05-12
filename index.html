@@ -843,7 +843,6 @@ html[data-theme="dark"] .brand__logo.brand__logo--dark { display: block; }
   font-style: italic;
   font-size: 13px;
   line-height: 1.55;
-  color: var(--paper);
   opacity: 0.7;
 }
 
@@ -1490,6 +1489,285 @@ form input:focus, form textarea:focus {
   vertical-align: baseline;
 }
 .pub-list li em { color: var(--ink); }
+
+/* ============== Pub-lead "wetenschapskatern" treatment ============== */
+/* Donker frame met exact dezelfde afmetingen als de lead-figures op andere
+   pagina's: shell-width, aspect-ratio 16:9. Ipv full-bleed-section een
+   gekaderd frame dat past in de paginalayout. */
+
+.pub-lead {
+  background: transparent;
+  margin: 0;
+  padding-top: clamp(2rem, 4vw, 3rem) !important;
+  padding-bottom: 0 !important;
+}
+
+.pub-lead__frame {
+  background: linear-gradient(135deg, #2a2a28 0%, #161614 100%);
+  color: var(--paper);
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  min-height: 560px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Vier gouden hoekstreepjes — exact dezelfde behandeling als bij .figure__media */
+.pub-lead__frame::before,
+.pub-lead__frame::after {
+  content: '';
+  position: absolute;
+  inset: 14px;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.pub-lead__frame::before {
+  background:
+    linear-gradient(var(--gold), var(--gold)) 0 0 / 28px 1.5px no-repeat,
+    linear-gradient(var(--gold), var(--gold)) 0 0 / 1.5px 28px no-repeat,
+    linear-gradient(var(--gold), var(--gold)) 100% 100% / 28px 1.5px no-repeat,
+    linear-gradient(var(--gold), var(--gold)) 100% 100% / 1.5px 28px no-repeat;
+}
+
+.pub-lead__frame::after {
+  background:
+    linear-gradient(var(--gold), var(--gold)) 100% 0 / 28px 1.5px no-repeat,
+    linear-gradient(var(--gold), var(--gold)) 100% 0 / 1.5px 28px no-repeat,
+    linear-gradient(var(--gold), var(--gold)) 0 100% / 28px 1.5px no-repeat,
+    linear-gradient(var(--gold), var(--gold)) 0 100% / 1.5px 28px no-repeat;
+}
+
+.pub-lead .pub-carousel {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: clamp(1.8rem, 3vw, 2.6rem) clamp(1.6rem, 3vw, 2.4rem);
+}
+
+.pub-lead .pub-carousel__header {
+  border-bottom-color: rgba(200, 160, 69, 0.35);
+  padding-bottom: 1.3rem;
+  align-items: flex-end;
+  flex-shrink: 0;
+}
+
+.pub-lead .pub-carousel__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.3em 0.55em;
+  font-family: var(--serif);
+  color: var(--paper);
+  margin: 0;
+  line-height: 1;
+  letter-spacing: 0;
+  text-transform: none;
+  max-width: none;
+}
+
+.pub-lead .pub-carousel__num {
+  font-family: var(--serif);
+  font-size: clamp(2.6rem, 5vw, 4rem);
+  font-weight: 350;
+  font-variation-settings: "opsz" 144;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  color: var(--paper);
+  font-style: normal;
+}
+
+.pub-lead .pub-carousel__num-suffix {
+  font-size: 1em;
+  font-weight: 400;
+  margin-left: 0.04em;
+  color: var(--gold-soft);
+  vertical-align: super;
+  line-height: 0;
+}
+
+.pub-lead .pub-carousel__noun + .pub-carousel__num {
+  margin-left: 1.4em;
+}
+
+
+.pub-lead .pub-carousel__noun {
+  font-family: var(--serif);
+  font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+  font-style: italic;
+  font-weight: 400;
+  color: rgba(240, 237, 232, 0.85);
+  line-height: 1.2;
+}
+
+
+
+
+
+
+/* Track vult de resterende hoogte. Cards stretchen mee. */
+.pub-lead .pub-carousel__track {
+  flex: 1 1 auto;
+  align-items: stretch;
+  padding: 0;
+}
+
+/* Knoppen op donker */
+.pub-lead .pub-carousel__btn {
+  background: transparent;
+  color: var(--paper);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.pub-lead .pub-carousel__btn:hover:not(:disabled) {
+  background: var(--gold-soft);
+  color: var(--paper-deep);
+  border-color: var(--gold-soft);
+}
+
+.pub-lead .pub-carousel__btn:disabled { opacity: 0.2; }
+
+/* Cards op donker — groter formaat, vullen volledige hoogte */
+.pub-lead .pub-card {
+  flex: 0 0 clamp(280px, 26vw, 340px);
+  background: transparent;
+  color: var(--paper);
+  border-left-color: rgba(200, 160, 69, 0.22);
+  border-bottom: none;
+  padding: 1.8rem 1.6rem 1.6rem;
+  height: auto;
+}
+
+.pub-lead .pub-card:first-child { border-left: none; padding-left: 0; }
+
+.pub-lead .pub-card__year {
+  color: var(--gold-soft);
+  font-weight: 600;
+  font-size: 11.5px;
+}
+
+.pub-lead .pub-card__type {
+  color: rgba(240, 237, 232, 0.5);
+}
+
+.pub-lead .pub-card__title {
+  color: var(--paper);
+  font-weight: 400;
+  font-size: 1.12rem;
+  line-height: 1.28;
+}
+
+.pub-lead .pub-card__authors {
+  color: rgba(240, 237, 232, 0.72);
+}
+
+.pub-lead .pub-card__journal {
+  color: rgba(240, 237, 232, 0.5);
+}
+
+.pub-lead .pub-card__link {
+  color: var(--paper);
+  border-bottom-color: var(--gold-soft);
+}
+
+.pub-lead .pub-card__link:hover {
+  color: var(--gold-soft);
+  border-bottom-color: var(--paper);
+}
+
+@media (max-width: 720px) {
+  .pub-lead__frame {
+    aspect-ratio: auto;
+    min-height: 0;
+  }
+  .pub-lead .pub-carousel { padding: 1.6rem 1.2rem; }
+  .pub-lead .pub-card { flex-basis: 78vw; max-width: 320px; }
+}
+
+/* Donkere katern-treatment voor publicaties op de Onderzoek-pagina.
+   Werkt als visueel hero-element op die pagina, ipv de 16:9 lead-figure
+   die andere pagina's hebben. Dark in zowel light- als dark-mode. */
+
+
+
+.pub-lead .shell {
+  padding-top: clamp(3rem, 5vw, 4.5rem);
+  padding-bottom: clamp(3rem, 5vw, 4.5rem);
+}
+
+/* Header: meta-regel veel groter, italic serif. Geen kleine all-caps meer. */
+.pub-lead .pub-carousel__header {
+  border-bottom-color: rgba(200, 160, 69, 0.35);
+  padding-bottom: 1.6rem;
+  align-items: flex-end;
+}
+
+
+
+
+
+/* Carousel-knoppen op donker */
+.pub-lead .pub-carousel__btn {
+  background: transparent;
+  color: var(--paper);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.pub-lead .pub-carousel__btn:hover:not(:disabled) {
+  background: var(--gold-soft);
+  color: var(--paper-deep);
+  border-color: var(--gold-soft);
+}
+
+.pub-lead .pub-carousel__btn:disabled {
+  opacity: 0.2;
+}
+
+/* Cards op donker */
+.pub-lead .pub-card {
+  background: transparent;
+  color: var(--paper);
+  border-left-color: rgba(200, 160, 69, 0.22);
+  border-bottom-color: rgba(200, 160, 69, 0.22);
+}
+
+.pub-lead .pub-card:first-child { border-left: none; }
+
+.pub-lead .pub-card__year {
+  color: var(--gold-soft);
+  font-weight: 600;
+}
+
+.pub-lead .pub-card__type {
+  color: rgba(240, 237, 232, 0.5);
+}
+
+.pub-lead .pub-card__title {
+  color: var(--paper);
+  font-weight: 400;
+}
+
+.pub-lead .pub-card__authors {
+  color: rgba(240, 237, 232, 0.72);
+}
+
+.pub-lead .pub-card__journal {
+  color: rgba(240, 237, 232, 0.5);
+}
+
+.pub-lead .pub-card__link {
+  color: var(--paper);
+  border-bottom-color: var(--gold-soft);
+}
+
+.pub-lead .pub-card__link:hover {
+  color: var(--gold-soft);
+  border-bottom-color: var(--paper);
+}
+
 
 
 /* ========== PUBLICATIES-CARROUSEL ========== */
@@ -2195,7 +2473,7 @@ form input:focus, form textarea:focus {
           <div class="references-block">
         <p class="references__label">Referenties</p>
         <ol class="references">
-          <li>Govers BM, Keijser S, El Kandoussi M, van Overdam KA, Klevering BJ, Crama N. The effect of patient symptom awareness on the visual outcome in retinal detachment. <em>Acta Ophthalmol</em>. 2024;102(5):506–512. <a href="https://pubmed.ncbi.nlm.nih.gov/38009800/" target="_blank" rel="noopener">PMID:38009800</a></li>
+          <li>Govers BM, Keijser S, El Kandoussi M, van Overdam KA, Klevering BJ, Crama N. The effect of patient symptom awareness on the visual outcome in retinal detachment. <em>Acta Ophthalmol</em>. 2024;102(5):506–512. <a href="https://onlinelibrary.wiley.com/doi/epdf/10.1111/aos.15815" target="_blank" rel="noopener">PMID:38009800</a></li>
           <li>Govers BM, van Huet RAC, Roosing S, Keijser S, Los LI, den Hollander AI, Klevering BJ. The genetics and disease mechanisms of rhegmatogenous retinal detachment. <em>Prog Retin Eye Res</em>. 2023;97:101158. <a href="https://doi.org/10.1016/j.preteyeres.2022.101158" target="_blank" rel="noopener">doi:10.1016/j.preteyeres.2022.101158</a></li>
           <li>Verhoekx JSN, van Overdam KA, Gishti O, van Leeuwen R, Crama N. Acute onset of floaters, even without flashes, is an urgent ophthalmic warning sign. <em>Ned Tijdschr Geneeskd</em>. 2021;165:D5850. <a href="https://www.ntvg.nl/artikelen/acute-toename-van-mouches-volantes-ook-zonder-lichtflitsen-een-oogheelkundige" target="_blank" rel="noopener">ntvg.nl</a></li>
           <li>Gishti O, van den Nieuwenhof R, Verhoekx J, van Overdam K. Symptoms related to posterior vitreous detachment and the risk of developing retinal tears: a systematic review. <em>Acta Ophthalmol</em>. 2019;97(4):347–352. <a href="https://doi.org/10.1111/aos.14012" target="_blank" rel="noopener">doi:10.1111/aos.14012</a></li>
@@ -2409,7 +2687,7 @@ form input:focus, form textarea:focus {
         <ol class="references">
           <li>Chen MX, Motekalem Y, Martins Melo I, et al. Long-term redetachment rates of pneumatic retinopexy versus pars plana vitrectomy in retinal detachment. <em>Ophthalmol Retina</em>. 2024;8(12):1184–1190. <a href="https://doi.org/10.1016/j.oret.2024.08.011" target="_blank" rel="noopener">doi:10.1016/j.oret.2024.08.011</a></li>
           <li>Govers BM, Keijser S, El Kandoussi M, van Overdam KA, Klevering BJ, Crama N. The effect of patient symptom awareness on the visual outcome in retinal detachment. <em>Acta Ophthalmol</em>. 2024;102(5):506–512. <a href="https://pubmed.ncbi.nlm.nih.gov/38009800/" target="_blank" rel="noopener">PMID:38009800</a></li>
-          <li>van Overdam KA, van Etten PG, Accou GPBM, Wubbels RJ, van Meurs JC, Verhoekx JSN. Prevalence of vitreoschisis-induced vitreous cortex remnants over the peripheral retinal surface in eyes undergoing vitrectomy for primary rhegmatogenous retinal detachment. <em>Acta Ophthalmol</em>. 2024;102(1):99–106. <a href="https://pubmed.ncbi.nlm.nih.gov/37133363/" target="_blank" rel="noopener">PMID:37133363</a></li>
+          <li>van Overdam KA, van Etten PG, Accou GPBM, Wubbels RJ, van Meurs JC, Verhoekx JSN. Prevalence of vitreoschisis-induced vitreous cortex remnants over the peripheral retinal surface in eyes undergoing vitrectomy for primary rhegmatogenous retinal detachment. <em>Acta Ophthalmol</em>. 2024;102(1):99–106. <a href="https://onlinelibrary.wiley.com/doi/epdf/10.1111/aos.15687" target="_blank" rel="noopener">PMID:37133363</a></li>
           <li>Govers BM, van Huet RAC, Roosing S, Keijser S, Los LI, den Hollander AI, Klevering BJ. The genetics and disease mechanisms of rhegmatogenous retinal detachment. <em>Prog Retin Eye Res</em>. 2023;97:101158. <a href="https://doi.org/10.1016/j.preteyeres.2022.101158" target="_blank" rel="noopener">doi:10.1016/j.preteyeres.2022.101158</a></li>
           <li>Hillier RJ, Felfeli T, Berger AR, et al. The Pneumatic Retinopexy versus Vitrectomy for the Management of Primary Rhegmatogenous Retinal Detachment Outcomes Randomized Trial (PIVOT). <em>Ophthalmology</em>. 2019;126(4):531–539. <a href="https://doi.org/10.1016/j.ophtha.2018.11.014" target="_blank" rel="noopener">doi:10.1016/j.ophtha.2018.11.014</a></li>
           <li>Nagasaki H, Ideta H, Mochizuki K, et al. Proliferative vitreoretinopathy after retinal detachment surgery: a clinical review. <em>Surv Ophthalmol</em>. 2014;59(5):485–502. <a href="https://doi.org/10.1016/j.survophthal.2014.02.001" target="_blank" rel="noopener">doi:10.1016/j.survophthal.2014.02.001</a></li>
@@ -4206,26 +4484,12 @@ form input:focus, form textarea:focus {
     </div>
   </div>
 
-  <section class="section">
-    <div class="shell article-wrap body-lg">
-
-      <h2>Onderzoekslijnen</h2>
-
-      <h3>Vitreale cortexresten en PVR</h3>
-      <p>De centrale onderzoekslijn van het proefschrift (Erasmus Universiteit Rotterdam, 2024). Bij een vitrectomie is volledige verwijdering van het glasvocht essentieel om proliferatieve vitreoretinopathie (PVR) te voorkomen &mdash; de belangrijkste oorzaak van een tweede operatie na een netvliesloslating. Het onderzoek toonde aan dat in 30 tot 40% van de vitrectomieën voor netvliesloslating een microscopisch dunne glasvochtmembraanlaag (vitreale cortexresten, VCR) achterblijft op het netvliesoppervlak. Met behulp van de kleurstof triamcinolon kunnen die resten zichtbaar worden gemaakt en zorgvuldig verwijderd &mdash; dat verlaagt het PVR-risico significant: van >10% naar 5&ndash;10%.</p>
-
-      <h3>Retinale hemangioblastomen bij Von Hippel&ndash;Lindau (VHL)</h3>
-      <p>Bij VHL-patiënten ontstaan op het netvlies bloedvatwoekeringen die kunnen lekken en littekenweefsel vormen. Vroeger werd alleen geopereerd bij hele uitgebreide afwijkingen, omdat de operatie zelf risico's met zich meebracht. Door verbeterde technieken &mdash; onder meer het zorgvuldig verwijderen van glasvocht en cortexresten en het gebruik van intra-oculaire diathermie &mdash; wordt vroeg opereren een steeds re&euml;lere optie.</p>
-
-      <h3>Innovatie in operatie-instrumenten</h3>
-      <p>Twee instrumenten zijn vanuit Netvlieschirurg BV ontwikkeld en gepatenteerd. Beide ontstonden uit een directe klinische behoefte: een gangbaar bipolair instrument dat onvoldoende controle gaf over bloedingen tijdens hemangioblastoma-chirurgie, en het gebrek aan een efficiënte techniek voor het verwijderen van vitreale cortexresten. Hieronder beschreven onder <em>Patenten</em>.</p>
-
-      <h2>Publicaties</h2>
-      <p>Een chronologisch overzicht van peer-reviewed publicaties, met links naar PubMed, PMC of het uitgevende tijdschrift waar beschikbaar.</p>
-
+  <section class="section pub-lead">
+    <div class="shell">
+      <div class="pub-lead__frame">
       <div class="pub-carousel" data-pub-carousel>
         <div class="pub-carousel__header">
-          <p class="pub-carousel__meta"><span data-pub-count>39</span> publicaties &middot; 880+ citaties</p>
+          <p class="pub-carousel__meta"><span class="pub-carousel__num">40<span class="pub-carousel__num-suffix">+</span></span> <span class="pub-carousel__noun">publicaties</span> <span class="pub-carousel__num">880<span class="pub-carousel__num-suffix">+</span></span> <span class="pub-carousel__noun">citaties</span></p>
           <div class="pub-carousel__controls">
             <button type="button" class="pub-carousel__btn" data-pub-prev aria-label="Vorige publicaties">&larr;</button>
             <button type="button" class="pub-carousel__btn" data-pub-next aria-label="Volgende publicaties">&rarr;</button>
@@ -4235,10 +4499,38 @@ form input:focus, form textarea:focus {
 
           <article class="pub-card">
             <div class="pub-card__year">2026</div>
-            <div class="pub-card__type">In voorbereiding</div>
+            <div class="pub-card__type">Klinische trial &middot; NEJM</div>
+            <h3 class="pub-card__title">Subretinal Photovoltaic Implant to Restore Vision in Geographic Atrophy Due to AMD</h3>
+            <p class="pub-card__authors">Holz FG, Le Mer Y, Muqit MMK, &hellip; van Overdam KA, &hellip; Sahel JA</p>
+            <p class="pub-card__journal">N Engl J Med &middot; 394(3):232&ndash;242</p>
+            <a class="pub-card__link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7618305/" target="_blank" rel="noopener">Open access &nearr;</a>
+          </article>
+
+          <article class="pub-card">
+            <div class="pub-card__year">2026</div>
+            <div class="pub-card__type">Onderzoeksartikel</div>
             <h3 class="pub-card__title">Whole-Genome Landscape of Retinal Hemangioblastomas</h3>
-            <p class="pub-card__authors">Bals K, &hellip; van Overdam KA</p>
-            <p class="pub-card__journal">Manuscript in voorbereiding</p>
+            <p class="pub-card__authors">Bals K, Hajjaj A, van Overdam KA, Veckeneer M, &hellip; Kili&ccedil; E, Brosens E (Rotterdam Ocular Melanoma Study Group)</p>
+            <p class="pub-card__journal">Trans Vis Sci Tech &middot; 15(1):5</p>
+            <a class="pub-card__link" href="https://tvst.arvojournals.org/article.aspx?doi=10.1167/tvst.15.1.5" target="_blank" rel="noopener">Open access &nearr;</a>
+          </article>
+
+          <article class="pub-card">
+            <div class="pub-card__year">2025</div>
+            <div class="pub-card__type">Consensus-richtlijn</div>
+            <h3 class="pub-card__title">Consensus on the Treatment of Severe Ocular Trauma and Silicone Oil&ndash;Dependent Eyes Using Foldable Capsular Vitreous Body</h3>
+            <p class="pub-card__authors">Yan H, &hellip; van Overdam KA, &hellip; (internationale consensus-werkgroep)</p>
+            <p class="pub-card__journal">J Evid Based Med</p>
+            <a class="pub-card__link" href="https://onlinelibrary.wiley.com/doi/epdf/10.1111/jebm.70041" target="_blank" rel="noopener">Open access  &nearr;</a>
+          </article>
+
+          <article class="pub-card">
+            <div class="pub-card__year">2025</div>
+            <div class="pub-card__type">Casus-rapportage</div>
+            <h3 class="pub-card__title">Retinal capillary hemangioblastoma: management tactics of patients based on a clinical case</h3>
+            <p class="pub-card__authors">Malinouskaya II, van Overdam KA, Imshanetskaya TA, Dudich ON, Karalkova NK</p>
+            <p class="pub-card__journal">Vestnik VGMU &middot; 24(3):76</p>
+            <a class="pub-card__link" href="https://doi.org/10.22263/2312-4156.2025.3.76" target="_blank" rel="noopener">Open access &nearr;</a>
           </article>
 
           <article class="pub-card">
@@ -4247,7 +4539,7 @@ form input:focus, form textarea:focus {
             <h3 class="pub-card__title">Vitreoschisis-induced vitreous cortex remnants in proliferative vitreoretinopathy: A comprehensive review from basic research to clinical practice</h3>
             <p class="pub-card__authors">van Overdam KA, Veckeneer M, Kili&ccedil; E, van Etten PG, Sebag J, van Meurs JC</p>
             <p class="pub-card__journal">Acta Ophthalmol &middot; 102(8):859&ndash;880</p>
-            <a class="pub-card__link" href="https://pubmed.ncbi.nlm.nih.gov/39262083/" target="_blank" rel="noopener">PubMed &nearr;</a>
+            <a class="pub-card__link" href="https://onlinelibrary.wiley.com/doi/epdf/10.1111/aos.16755" target="_blank" rel="noopener">Open access  &nearr;</a>
           </article>
 
           <article class="pub-card">
@@ -4256,7 +4548,7 @@ form input:focus, form textarea:focus {
             <h3 class="pub-card__title">Early surgical treatment of retinal haemangioblastomas: 10-year follow-up</h3>
             <p class="pub-card__authors">van Overdam KA, Veckeneer M, Hajjaj A, Kilic E, Verhoekx JSN</p>
             <p class="pub-card__journal">Acta Ophthalmol &middot; 102(7):836&ndash;842</p>
-            <a class="pub-card__link" href="https://pubmed.ncbi.nlm.nih.gov/38797890/" target="_blank" rel="noopener">PubMed &nearr;</a>
+            <a class="pub-card__link" href="https://onlinelibrary.wiley.com/doi/epdf/10.1111/aos.16724" target="_blank" rel="noopener">Open access  &nearr;</a>
           </article>
 
           <article class="pub-card">
@@ -4283,7 +4575,7 @@ form input:focus, form textarea:focus {
             <h3 class="pub-card__title">Real-World Safety and Effectiveness of Voretigene Neparvovec: Results up to 2 Years from the Prospective, Registry-Based PERCEIVE Study</h3>
             <p class="pub-card__authors">Fischer MD, Simonelli F, Sahni J, &hellip;, PERCEIVE Study Group</p>
             <p class="pub-card__journal">Biomolecules &middot; 14(1):122</p>
-            <a class="pub-card__link" href="https://pubmed.ncbi.nlm.nih.gov/38254722/" target="_blank" rel="noopener">PubMed &nearr;</a>
+            <a class="pub-card__link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10813228/" target="_blank" rel="noopener">Open access &nearr;</a>
           </article>
 
           <article class="pub-card">
@@ -4292,7 +4584,7 @@ form input:focus, form textarea:focus {
             <h3 class="pub-card__title">Novel Surgical Treatment of an Intraretinal Juxtapapillary Hemangioblastoma Using Intraocular Diathermy Forceps</h3>
             <p class="pub-card__authors">van Overdam KA, Hajjaj A, Smid LM, Kili&ccedil; E, de Jong JH</p>
             <p class="pub-card__journal">Case Rep Ophthalmol &middot; 14(1):546&ndash;554</p>
-            <a class="pub-card__link" href="https://pubmed.ncbi.nlm.nih.gov/37901641/" target="_blank" rel="noopener">PubMed &nearr;</a>
+            <a class="pub-card__link" href="https://doi.org/10.1159/000530687" target="_blank" rel="noopener">Open access &nearr;</a>
           </article>
 
           <article class="pub-card">
@@ -4301,7 +4593,7 @@ form input:focus, form textarea:focus {
             <h3 class="pub-card__title">Re: Schaub et al.: Intravitreal 5-fluorouracil and heparin to prevent proliferative vitreoretinopathy</h3>
             <p class="pub-card__authors">van Overdam KA, Sebag J</p>
             <p class="pub-card__journal">Ophthalmology &middot; 130(6):e21</p>
-            <a class="pub-card__link" href="https://pubmed.ncbi.nlm.nih.gov/37210149/" target="_blank" rel="noopener">PubMed &nearr;</a>
+            <a class="pub-card__link" href="https://www.aaojournal.org/action/showPdf?pii=S0161-6420%2823%2900133-1" target="_blank" rel="noopener">Open access  &nearr;</a>
           </article>
 
           <article class="pub-card">
@@ -4319,7 +4611,7 @@ form input:focus, form textarea:focus {
             <h3 class="pub-card__title">Novel insights into the pathophysiology of proliferative vitreoretinopathy: The role of vitreoschisis-induced vitreous cortex remnants</h3>
             <p class="pub-card__authors">van Overdam KA, van den Bosch TPP, van Etten PG, Uppal GS, Veckeneer M, Verdijk RM</p>
             <p class="pub-card__journal">Acta Ophthalmol &middot; 100(8):e1749&ndash;e1759</p>
-            <a class="pub-card__link" href="https://pubmed.ncbi.nlm.nih.gov/35673878/" target="_blank" rel="noopener">PubMed &nearr;</a>
+            <a class="pub-card__link" href="https://onlinelibrary.wiley.com/doi/epdf/10.1111/aos.15197" target="_blank" rel="noopener">Open access  &nearr;</a>
           </article>
 
           <article class="pub-card">
@@ -4328,7 +4620,7 @@ form input:focus, form textarea:focus {
             <h3 class="pub-card__title">Pseudophakic vitrectomy or phacovitrectomy for idiopathic epiretinal membranes and the risk of postoperative macular oedema</h3>
             <p class="pub-card__authors">van Etten PG, van Overdam KA, Manning S, Faridpooya K, Wubbels RJ, van Meurs JC, Verhoekx JSN</p>
             <p class="pub-card__journal">Acta Ophthalmol &middot; 100(6):e1352&ndash;e1353</p>
-            <a class="pub-card__link" href="https://pubmed.ncbi.nlm.nih.gov/34913273/" target="_blank" rel="noopener">PubMed &nearr;</a>
+            <a class="pub-card__link" href="https://onlinelibrary.wiley.com/doi/epdf/10.1111/aos.15083" target="_blank" rel="noopener">Open access  &nearr;</a>
           </article>
 
           <article class="pub-card">
@@ -4346,7 +4638,7 @@ form input:focus, form textarea:focus {
             <h3 class="pub-card__title">Efficacy and safety of current treatment options for peripheral retinal haemangioblastomas: a systematic review</h3>
             <p class="pub-card__authors">Hajjaj A, van Overdam KA, Gishti O, Ramdas WD, Kili&ccedil; E</p>
             <p class="pub-card__journal">Acta Ophthalmol &middot; 100(1):e38&ndash;e46</p>
-            <a class="pub-card__link" href="https://pubmed.ncbi.nlm.nih.gov/33834636/" target="_blank" rel="noopener">PubMed &nearr;</a>
+            <a class="pub-card__link" href="https://onlinelibrary.wiley.com/doi/epdf/10.1111/aos.14865" target="_blank" rel="noopener">Open access  &nearr;</a>
           </article>
 
           <article class="pub-card">
@@ -4355,7 +4647,7 @@ form input:focus, form textarea:focus {
             <h3 class="pub-card__title">The role of vitreous cortex remnants in proliferative vitreoretinopathy formation demonstrated by histopathology: A case report</h3>
             <p class="pub-card__authors">van Overdam KA, Busch EM, Verdijk RM, Pennekamp CWA</p>
             <p class="pub-card__journal">Am J Ophthalmol Case Rep &middot; 24:101219</p>
-            <a class="pub-card__link" href="https://pubmed.ncbi.nlm.nih.gov/34646961/" target="_blank" rel="noopener">PubMed &nearr;</a>
+            <a class="pub-card__link" href="https://www.sciencedirect.com/science/article/pii/S2451993620301225" target="_blank" rel="noopener">Open access  &nearr;</a>
           </article>
 
           <article class="pub-card">
@@ -4364,7 +4656,7 @@ form input:focus, form textarea:focus {
             <h3 class="pub-card__title">Surgery for Combined Hamartoma of the Retina and Retinal Pigment Epithelium</h3>
             <p class="pub-card__authors">van der Sommen CM, van Romunde SHM, van Overdam K</p>
             <p class="pub-card__journal">Case Rep Ophthalmol &middot; 12(3):778&ndash;783</p>
-            <a class="pub-card__link" href="https://pubmed.ncbi.nlm.nih.gov/34720977/" target="_blank" rel="noopener">PubMed &nearr;</a>
+            <a class="pub-card__link" href="https://doi.org/10.1159/000518013" target="_blank" rel="noopener">Open access &nearr;</a>
           </article>
 
           <article class="pub-card">
@@ -4409,7 +4701,7 @@ form input:focus, form textarea:focus {
             <h3 class="pub-card__title">Vitreoschisis-induced vitreous cortex remnants: missing link in proliferative vitreoretinopathy</h3>
             <p class="pub-card__authors">van Overdam K</p>
             <p class="pub-card__journal">Acta Ophthalmol &middot; 98(2):e261&ndash;e262</p>
-            <a class="pub-card__link" href="https://pubmed.ncbi.nlm.nih.gov/31429189/" target="_blank" rel="noopener">PubMed &nearr;</a>
+            <a class="pub-card__link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7078895/" target="_blank" rel="noopener">Open access &nearr;</a>
           </article>
 
           <article class="pub-card">
@@ -4436,7 +4728,7 @@ form input:focus, form textarea:focus {
             <h3 class="pub-card__title">Vitreous Wiping, a new technique for removal of vitreous cortex remnants during vitrectomy</h3>
             <p class="pub-card__authors">van Overdam KA, van Etten PG, van Meurs JC, Manning SS</p>
             <p class="pub-card__journal">Acta Ophthalmol &middot; 97(5):e747&ndash;e752</p>
-            <a class="pub-card__link" href="https://pubmed.ncbi.nlm.nih.gov/30536726/" target="_blank" rel="noopener">PubMed &nearr;</a>
+            <a class="pub-card__link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6766987/" target="_blank" rel="noopener">Open access &nearr;</a>
           </article>
 
           <article class="pub-card">
@@ -4472,7 +4764,7 @@ form input:focus, form textarea:focus {
             <h3 class="pub-card__title">Intra-ocular diathermy forceps</h3>
             <p class="pub-card__authors">van Overdam KA, Kilic E, Verdijk RM, Manning S</p>
             <p class="pub-card__journal">Acta Ophthalmol &middot; 96(4):420&ndash;422</p>
-            <a class="pub-card__link" href="https://pubmed.ncbi.nlm.nih.gov/29197159/" target="_blank" rel="noopener">PubMed &nearr;</a>
+            <a class="pub-card__link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6099483/" target="_blank" rel="noopener">Open access &nearr;</a>
           </article>
 
           <article class="pub-card">
@@ -4585,7 +4877,25 @@ form input:focus, form textarea:focus {
 
         
         </div>
-      </div>
+      </div></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell article-wrap body-lg">
+
+      <h2>Onderzoekslijnen</h2>
+
+      <h3>Vitreale cortexresten en PVR</h3>
+      <p>De centrale onderzoekslijn van het proefschrift (Erasmus Universiteit Rotterdam, 2024). Bij een vitrectomie is volledige verwijdering van het glasvocht essentieel om proliferatieve vitreoretinopathie (PVR) te voorkomen &mdash; de belangrijkste oorzaak van een tweede operatie na een netvliesloslating. Het onderzoek toonde aan dat in 30 tot 40% van de vitrectomieën voor netvliesloslating een microscopisch dunne glasvochtmembraanlaag (vitreale cortexresten, VCR) achterblijft op het netvliesoppervlak. Met behulp van de kleurstof triamcinolon kunnen die resten zichtbaar worden gemaakt en zorgvuldig verwijderd &mdash; dat verlaagt het PVR-risico significant: van >10% naar 5&ndash;10%.</p>
+
+      <h3>Retinale hemangioblastomen bij Von Hippel&ndash;Lindau (VHL)</h3>
+      <p>Bij VHL-patiënten ontstaan op het netvlies bloedvatwoekeringen die kunnen lekken en littekenweefsel vormen. Vroeger werd alleen geopereerd bij hele uitgebreide afwijkingen, omdat de operatie zelf risico's met zich meebracht. Door verbeterde technieken &mdash; onder meer het zorgvuldig verwijderen van glasvocht en cortexresten en het gebruik van intra-oculaire diathermie &mdash; wordt vroeg opereren een steeds re&euml;lere optie.</p>
+
+      <h3>Innovatie in operatie-instrumenten</h3>
+      <p>Twee instrumenten zijn vanuit Netvlieschirurg BV ontwikkeld en gepatenteerd. Beide ontstonden uit een directe klinische behoefte: een gangbaar bipolair instrument dat onvoldoende controle gaf over bloedingen tijdens hemangioblastoma-chirurgie, en het gebrek aan een efficiënte techniek voor het verwijderen van vitreale cortexresten. Hieronder beschreven onder <em>Patenten</em>.</p>
+
+
 
       <p style="font-family: var(--sans); font-size: 0.85rem; color: var(--gray-500); margin-top: 0.6rem;">Voor de volledige lijst zie het <a href="https://output.eyehospital.nl/en/persons/koen-van-overdam" target="_blank" rel="noopener">Pure-profiel van het Oogziekenhuis</a> of <a href="https://pubmed.ncbi.nlm.nih.gov/?term=van+Overdam+KA" target="_blank" rel="noopener">PubMed</a>.</p>
 
@@ -5172,8 +5482,8 @@ form input:focus, form textarea:focus {
         <div class="footer__locations">
           <h4>Locaties</h4>
           <ul>
-            <li><strong style="color: var(--paper);">Erasmus MC</strong><br>Dr. Molewaterplein 40<br>Rotterdam<br><a href="tel:+31107040135">(010) 704 01 35</a></li>
-            <li><strong style="color: var(--paper);">Retina OC</strong><br>Pascalstraat 21<br>Ede<br><a href="tel:+31881111990">(088) 111 19 90</a></li>
+            <li><strong>Erasmus MC</strong><br>Dr. Molewaterplein 40<br>Rotterdam<br><a href="tel:+31107040135">(010) 704 01 35</a></li>
+            <li><strong>Retina OC</strong><br>Pascalstraat 21<br>Ede<br><a href="tel:+31881111990">(088) 111 19 90</a></li>
           </ul>
         </div>
       </div>
