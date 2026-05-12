@@ -825,6 +825,18 @@ html[data-theme="dark"] .brand__logo.brand__logo--dark { display: block; }
 }
 @media (max-width: 600px) { .footer__bottom { flex-direction: column; gap: 0.5rem; } }
 
+.footer__disclaimer {
+  border-top: 1px solid rgba(255,255,255,0.12);
+  padding: 1.4rem 0;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--paper);
+  opacity: 0.7;
+  max-width: 56rem;
+}
+
 .footer__logo {
   height: 70px;
   width: auto;
@@ -1649,6 +1661,29 @@ form input:focus, form textarea:focus {
   .treatment-summary__grid { grid-template-columns: 1fr; gap: 1.3rem; }
 }
 
+
+/* ========== LOPENDE-TEKST LINKS: ITALIC, GEEN ONDERSTREPING ========== */
+.article-wrap p a:not(.arrow-link),
+.article-wrap ul li a:not(.arrow-link),
+.article-lead a:not(.arrow-link),
+.treatment-summary__col p a,
+.treatment-summary__col a {
+  font-style: italic;
+  text-decoration: none;
+}
+.article-wrap p a:not(.arrow-link):hover,
+.article-wrap ul li a:not(.arrow-link):hover,
+.article-lead a:not(.arrow-link):hover,
+.treatment-summary__col p a:hover,
+.treatment-summary__col a:hover {
+  color: var(--gold);
+}
+/* Hogere specificity: refs blijven onderstreept, niet italic */
+.article-wrap .references-block a {
+  font-style: normal;
+  text-decoration: underline;
+}
+
 /* ========== LITERATUURREFERENTIES ========== */
 .ref-num {
   font-family: var(--sans);
@@ -1777,7 +1812,7 @@ form input:focus, form textarea:focus {
 <body>
 
 <div class="proto-banner">
-  <strong>PROTOTYPE</strong> · werkende ontwerp-blauwdruk voor Netvliesoperatie.Info — alle teksten en pagina's klaar voor implementatie in Wix
+  <strong>CONCEPT</strong> · Website nog in aanbouw — teksten zijn nog niet volledig geverifieerd
 </div>
 
 <nav class="nav" id="nav">
@@ -1831,7 +1866,7 @@ form input:focus, form textarea:focus {
           </div>
         </div>
         <aside class="hero__aside">
-          <p class="lede">Heldere, eerlijke informatie over netvliesaandoeningen, glasvocht- en netvlieschirurgie — voor patiënten die zich willen oriënteren en voor verwijzers die op zoek zijn naar achtergrond.</p>
+          <p class="lede">Heldere informatie over netvliesaandoeningen en glasvocht- en netvlieschirurgie — voor mijn patiënten die zich willen oriënteren, voor verwijzers die achtergrond zoeken, en voor iedereen die meer wil weten.</p>
         </aside>
       </div>
     </div>
@@ -2084,9 +2119,9 @@ form input:focus, form textarea:focus {
         </figcaption>
       </figure>
 
-      <p class="article-lead">Het netvlies vormt de lichtgevoelige laag aan de binnenzijde van de oogbol; in het centrum ligt de gele vlek (macula) waarmee we scherp zien. De ruimte ervoor is gevuld met glasvocht &mdash; een heldere, gelachtige substantie. Bij een <em>achterste glasvochtloslating</em> (AGVL, in het Engels <em>posterior vitreous detachment</em> of PVD) maakt het glasvocht zich los van het netvlies. Op zichzelf is dat een normaal verouderingsverschijnsel, maar in een klein deel van de gevallen ontstaat tijdens dit proces een scheurtje of loslating van het netvlies.</p>
+      <p class="article-lead">Het netvlies vormt de lichtgevoelige laag aan de binnenzijde van de oogbol; in het centrum ligt de gele vlek (macula) waarmee we scherp zien. De ruimte ervoor is gevuld met glasvocht &mdash; een heldere, gelachtige substantie. Bij een achterste glasvochtloslating (AGVL, in het Engels posterior vitreous detachment of PVD) maakt het glasvocht zich los van het netvlies. Op zichzelf is dat een normaal verouderingsverschijnsel, maar in een klein deel van de gevallen ontstaat tijdens dit proces een scheurtje of loslating van het netvlies.</p>
 
-      <p>Met het ouder worden wordt het glasvocht plaatselijk vloeibaarder en krimpt het tegelijkertijd. In de meeste gevallen trekt het zich geleidelijk los van het netvlies, met hooguit wat lichtflitsen of nieuwe zwevende vlekjes als gevolg. Aan de randen van het oog &mdash; de zogeheten <em>glasvochtbasis</em> &mdash; blijft het glasvocht altijd vastzitten. Juist daar concentreert de trekkracht zich, en kan bij ongeveer &eacute;&eacute;n op de zes pati&euml;nten een <a href="#aandoeningen/netvliesscheurtje" data-link>netvliesscheurtje</a> ontstaan op het moment dat het glasvocht zich terugtrekt.</p>
+      <p>Met het ouder worden wordt het glasvocht plaatselijk vloeibaarder en krimpt het tegelijkertijd. In de meeste gevallen trekt het zich geleidelijk los van het netvlies, met hooguit wat lichtflitsen of nieuwe zwevende vlekjes als gevolg. Aan de randen van het oog &mdash; de zogeheten glasvochtbasis &mdash; blijft het glasvocht altijd vastzitten. Juist daar concentreert de trekkracht zich, en kan bij ongeveer &eacute;&eacute;n op de zes pati&euml;nten een <a href="#aandoeningen/netvliesscheurtje" data-link>netvliesscheurtje</a> ontstaan op het moment dat het glasvocht zich terugtrekt.</p>
 
       <p>Een AGVL is een leeftijdsgebonden proces dat in beide ogen optreedt. Wanneer het &eacute;&eacute;n oog overkomt, volgt het andere oog meestal binnen enkele jaren. Dat is op zichzelf geen reden voor zorg, maar wel om bij nieuwe klachten aan het tweede oog opnieuw alert te zijn op de signalen.</p>
 
@@ -2094,9 +2129,9 @@ form input:focus, form textarea:focus {
 
       <h2>Welke klachten geeft het?</h2>
       <ul>
-        <li>Plotseling nieuwe <em>zwevende vlekjes</em> (floaters, mouches volantes): vlekken, draden, stipjes of "spinrag" die met de oogbewegingen meedrijven</li>
+        <li>Plotseling nieuwe zwevende vlekjes (floaters, mouches volantes): vlekken, draden, stipjes of "spinrag" die met de oogbewegingen meedrijven</li>
         <li>Lichtflitsen aan de zijkant van het zicht, vooral in een donkere omgeving</li>
-        <li>Soms een grotere, ringvormige schaduw &mdash; de <em>Weiss-ring</em>, een klontje glasvochtcollageen dat losgekomen is van de oogzenuw</li>
+        <li>Soms een grotere, ringvormige schaduw &mdash; de Weiss-ring, een klontje glasvochtcollageen dat losgekomen is van de oogzenuw</li>
       </ul>
       <p>Deze klachten zijn op zichzelf onschuldig en nemen meestal in de weken erna geleidelijk af. Het glasvocht hecht zich niet opnieuw vast, maar het zenuwstelsel went aan de aanwezigheid van de schaduwen, waardoor ze minder opvallen.</p>
 
@@ -2112,10 +2147,10 @@ form input:focus, form textarea:focus {
       </ul>
 
       <h2>Onderzoek en behandeling</h2>
-      <p>Bij de oogarts wordt na pupilverwijdende druppels het netvlies in zijn geheel onderzocht, om eventuele scheurtjes uit te sluiten. Daarbij maken we vaak ook een <em>OCT-scan</em> — een gedetailleerde dwarsdoorsnede van het netvlies en het glasvocht — om de mate van loslating en eventuele tractie op de gele vlek te beoordelen. Wanneer er een scheurtje wordt gevonden zonder loslating, kan dit vaak poliklinisch met een laser worden gehecht — een korte ingreep van enkele minuten, die de kans op een latere loslating sterk verkleint. Bij een scheurtje met al zichtbare loslating volgt een operatie.</p>
+      <p>Bij de oogarts wordt na pupilverwijdende druppels het netvlies in zijn geheel onderzocht, om eventuele scheurtjes uit te sluiten. Daarbij maken we vaak ook een OCT-scan — een gedetailleerde dwarsdoorsnede van het netvlies en het glasvocht — om de mate van loslating en eventuele tractie op de gele vlek te beoordelen. Wanneer er een scheurtje wordt gevonden zonder loslating, kan dit vaak poliklinisch met een laser worden gehecht — een korte ingreep van enkele minuten, die de kans op een latere loslating sterk verkleint. Bij een scheurtje met al zichtbare loslating volgt een operatie.</p>
 
       <h2>Wel of niet behandelen?</h2>
-      <p>Een achterste glasvochtloslating zelf wordt niet behandeld &mdash; het is een natuurlijk verouderingsproces dat vanzelf verloopt. Maar omdat ongeveer &eacute;&eacute;n op de zes patiënten in dit proces een netvliesscheurtje ontwikkelt, is een goede oogcontrole bij het ontstaan van klachten essentieel. Wordt een scheurtje gevonden, dan behandelen we dat preventief met laser. Lukt dat niet, of is er al een netvliesloslating ontstaan, dan volgt een operatie. Blijft u na de glasvochtloslating last houden van vlekken, dan kan in een aparte afweging een <a href="#operaties" data-link>glasvochtoperatie</a> worden overwogen &mdash; daarover leest u meer onder <a href="#aandoeningen/glasvochttroebelingen" data-link>glasvochttroebelingen</a>.</p>
+      <p>Een achterste glasvochtloslating zelf wordt niet behandeld &mdash; het is een natuurlijk verouderingsproces dat vanzelf verloopt. Maar omdat ongeveer &eacute;&eacute;n op de zes patiënten in dit proces een <a href="#aandoeningen/netvliesscheurtje" data-link>netvliesscheurtje</a> ontwikkelt, is een goede oogcontrole bij het ontstaan van klachten essentieel. Wordt een scheurtje gevonden, dan behandelen we dat preventief met laser. Lukt dat niet, of is er al een <a href="#aandoeningen/netvliesloslating" data-link>netvliesloslating</a> ontstaan, dan volgt een operatie. Blijft u na de glasvochtloslating last houden van vlekken, dan kan in een aparte afweging een <a href="#operaties" data-link>glasvochtoperatie</a> worden overwogen &mdash; daarover leest u meer onder <a href="#aandoeningen/glasvochttroebelingen" data-link>glasvochttroebelingen</a>.</p>
 
       <div class="treatment-summary">
         <p class="treatment-summary__label">Behandeling in het kort</p>
@@ -2189,11 +2224,11 @@ form input:focus, form textarea:focus {
         </figcaption>
       </figure>
 
-      <div class="kicker"><strong>Spoed.</strong> Bij plotse lichtflitsen, een opvallende toename van vlekjes (floaters) of een schaduw in het zicht: dezelfde dag naar de oogarts.</div>
+      <div class="kicker"><strong>Spoed.</strong> Bij plotse lichtflitsen, een opvallende toename van vlekjes (<a href="#aandoeningen/glasvochttroebelingen" data-link>floaters</a>) of een schaduw in het zicht: dezelfde dag naar de oogarts.</div>
 
-      <p class="article-lead">Het netvlies vormt de lichtgevoelige laag aan de binnenzijde van de oogbol; in het centrum ligt de gele vlek (macula) waarmee we scherp zien. De ruimte ervoor is gevuld met glasvocht &mdash; een heldere, gelachtige substantie. Bij een netvliesscheurtje ontstaat een opening in de lichtgevoelige laag van het netvlies. Door dat scheurtje kan vocht onder het netvlies komen, wat tot een netvliesloslating kan leiden &mdash; een serieuze oogaandoening waarbij snel ingrijpen nodig is.</p>
+      <p class="article-lead">Het netvlies vormt de lichtgevoelige laag aan de binnenzijde van de oogbol; in het centrum ligt de gele vlek (macula) waarmee we scherp zien. De ruimte ervoor is gevuld met glasvocht &mdash; een heldere, gelachtige substantie. Bij een netvliesscheurtje ontstaat een opening in de lichtgevoelige laag van het netvlies. Door dat scheurtje kan vocht onder het netvlies komen, wat tot een <a href="#aandoeningen/netvliesloslating" data-link>netvliesloslating</a> kan leiden &mdash; een serieuze oogaandoening waarbij snel ingrijpen nodig is.</p>
 
-      <p>De meest voorkomende oorzaak is een <a href="#aandoeningen/agl" data-link>achterste glasvochtloslating</a> (AGVL). Wanneer het glasvocht zich terugtrekt, trekt het soms te krachtig aan een plek waar het sterk aan het netvlies vastzit, waardoor het netvlies inscheurt. Andere oorzaken zijn een trauma aan het oog of een hoge bijziendheid, waarbij de oogbol langer is en het netvlies dunner en kwetsbaarder.</p>
+      <p>De meest voorkomende oorzaak is een <a href="#aandoeningen/agl" data-link>achterste glasvochtloslating</a> (<a href="#aandoeningen/agl" data-link>AGVL</a>). Wanneer het glasvocht zich terugtrekt, trekt het soms te krachtig aan een plek waar het sterk aan het netvlies vastzit, waardoor het netvlies inscheurt. Andere oorzaken zijn een trauma aan het oog of een hoge bijziendheid, waarbij de oogbol langer is en het netvlies dunner en kwetsbaarder.</p>
 
       <h2>Welke klachten geeft het?</h2>
       <p>De klachten lijken op die van een achterste glasvochtloslating en zijn niet altijd te onderscheiden:</p>
@@ -2215,7 +2250,7 @@ form input:focus, form textarea:focus {
       <p>De behandeling kan gevoelig zijn. Wanneer meer pijn wordt verwacht &mdash; bijvoorbeeld kort na een eerdere netvliesoperatie &mdash; krijgt u in plaats van enkele druppels een klein verdovingsprikje naast het oog. Bij scheurtjes die te uitgebreid of moeilijk bereikbaar zijn voor laser, kiezen we soms voor bevriezen of voor een <a href="#operaties" data-link>operatie</a>.</p>
 
       <h2>Na de behandeling</h2>
-      <p>Door het felle laserlicht en de wijde pupil ziet u direct na de behandeling enige tijd minder scherp. Diepte en afstanden zijn moeilijk in te schatten &mdash; <em>kom dus niet zelf met de auto</em>. Een begeleider of taxi voor de terugreis is verstandig.</p>
+      <p>Door het felle laserlicht en de wijde pupil ziet u direct na de behandeling enige tijd minder scherp. Diepte en afstanden zijn moeilijk in te schatten &mdash; kom dus niet zelf met de auto. Een begeleider of taxi voor de terugreis is verstandig.</p>
 
       <p>In de uren na de behandeling kunt u kortdurend hoofdpijn of irritatie hebben. De eerste week vermijdt u zwaar tillen of zware inspanning, en u beschermt het oog tegen stoten en wrijven. Doorgaans volgt na enkele weken een controleafspraak om te beoordelen of het litteken zich goed heeft gevormd.</p>
 
@@ -2298,12 +2333,12 @@ form input:focus, form textarea:focus {
 
       <p class="article-lead">Het netvlies vormt de lichtgevoelige laag aan de binnenzijde van de oogbol; in het centrum ligt de gele vlek (macula) waarmee we scherp zien. De ruimte ervoor is gevuld met glasvocht &mdash; een heldere, gelachtige substantie. Bij een netvliesloslating raakt het netvlies plaatselijk los van de oogwand erachter. Vervloeid glasvocht komt via een scheurtje onder het netvlies terecht, waardoor de loslating zich uitbreidt en het zicht in dat deel van het oog uitvalt. Dit is een spoedaandoening.</p>
 
-      <p>Vrijwel altijd begint een loslating met een klein scheurtje in het netvlies &mdash; vaak veroorzaakt door een <a href="#aandoeningen/agl" data-link>achterste glasvochtloslating</a> (AGVL). Hoe sneller een loslating wordt herkend en geopereerd, des te groter de kans op volledig zichtherstel. Vooral wanneer het centrum van het netvlies (de macula) nog niet is losgekomen, geldt: dezelfde dag of binnen 24 uur naar de oogarts.</p>
+      <p>Vrijwel altijd begint een loslating met een klein scheurtje in het netvlies &mdash; vaak veroorzaakt door een <a href="#aandoeningen/agl" data-link>achterste glasvochtloslating</a> (<a href="#aandoeningen/agl" data-link>AGVL</a>). Hoe sneller een loslating wordt herkend en geopereerd, des te groter de kans op volledig zichtherstel. Vooral wanneer het centrum van het netvlies (de macula) nog niet is losgekomen, geldt: dezelfde dag of binnen 24 uur naar de oogarts.</p>
 
       <h2>Welke klachten geeft het?</h2>
       <p>Typische signalen zijn:</p>
       <ul>
-        <li>Plotseling véél nieuwe "vlekjes" of "vliegjes" (floaters)</li>
+        <li>Plotseling véél nieuwe "vlekjes" of "vliegjes" (<a href="#aandoeningen/glasvochttroebelingen" data-link>floaters</a>)</li>
         <li>Lichtflitsen, vaak aan één kant van het gezichtsveld</li>
         <li>Een schaduw of "gordijn" dat van buiten naar binnen het zicht binnentrekt</li>
         <li>Plotse afname van scherp zien</li>
@@ -2418,7 +2453,7 @@ form input:focus, form textarea:focus {
       <h2>Hoe wordt het behandeld?</h2>
       <p>De standaardbehandeling is een <a href="#operaties" data-link>vitrectomie</a> waarbij het glasvocht wordt verwijderd, het oppervlakkigste laagje van het netvlies (de ILM) wordt rondom het maculagat afgepeld om de aanhoudende trekkracht weg te nemen, en het oog wordt gevuld met een gasbel. De gasbel oefent in de eerste dagen een lichte druk uit op de macula, waardoor het gat zich kan sluiten.</p>
 
-      <p>Het houdingsadvies na deze operatie is meestal 24 tot 72 uur in <em>treurhouding</em> — met de neus naar beneden gericht, zodat de gasbel tegen de achterkant van het oog drukt, daar waar het maculagat zit. Dat is intensief, maar relatief kort. <a href="#achtergrond/houdingsadvies" class="arrow-link" data-link>Meer over houdingsadvies</a></p>
+      <p>Het houdingsadvies na deze operatie is meestal 24 tot 72 uur in treurhouding — met de neus naar beneden gericht, zodat de gasbel tegen de achterkant van het oog drukt, daar waar het maculagat zit. Dat is intensief, maar relatief kort. <a href="#achtergrond/houdingsadvies" class="arrow-link" data-link>Meer over houdingsadvies</a></p>
 
       <p>Omdat staar (vertroebeling van de eigen ooglens) na een vitrectomie meestal al binnen enkele maanden tot één à twee jaar ontstaat, kiezen we vaak voor een gecombineerde operatie — vitrectomie én staaroperatie in dezelfde sessie. Zo voorkomt u een tweede operatie kort daarna. Staar zelf is geen complicatie maar een verwacht gevolg, en is goed te behandelen met een gewone staaroperatie.</p>
 
@@ -2500,7 +2535,7 @@ form input:focus, form textarea:focus {
 
       <p class="article-lead">Het netvlies vormt de lichtgevoelige laag aan de binnenzijde van de oogbol; in het centrum ligt de gele vlek (macula) waarmee we scherp zien. De ruimte ervoor is gevuld met glasvocht &mdash; een heldere, gelachtige substantie. Bij een macula pucker &mdash; ook wel epiretinaal membraan genoemd &mdash; vormt zich een dun, transparant laagje littekenweefsel over de macula. Dit laagje trekt aan het netvlies en kreukelt het, met vervormd of wazig zien als gevolg.</p>
 
-      <p>Het laagje ontstaat doordat een klein aantal cellen op het oppervlak van het netvlies actief wordt en uitgroeit tot een dunne laag. Dit gebeurt vaak na een <a href="#aandoeningen/agl" data-link>achterste glasvochtloslating</a> (AGVL), maar kan ook spontaan ontstaan, na een netvliesoperatie of bij chronische oogontstekingen. Eenmaal aanwezig, krimpt het laagje langzaam en oefent zo trekkracht uit op de onderliggende macula.</p>
+      <p>Het laagje ontstaat doordat een klein aantal cellen op het oppervlak van het netvlies actief wordt en uitgroeit tot een dunne laag. Dit gebeurt vaak na een <a href="#aandoeningen/agl" data-link>achterste glasvochtloslating</a> (<a href="#aandoeningen/agl" data-link>AGVL</a>), maar kan ook spontaan ontstaan, na een netvliesoperatie of bij chronische oogontstekingen. Eenmaal aanwezig, krimpt het laagje langzaam en oefent zo trekkracht uit op de onderliggende macula.</p>
 
       <h2>Welke klachten geeft het?</h2>
       <ul>
@@ -2616,7 +2651,7 @@ form input:focus, form textarea:focus {
       <h2>Wel of niet opereren?</h2>
       <p>Bij een klein deel van de patiënten verdwijnen de troebelingen niet op de achtergrond, en blijven ze het lezen, het werken op een scherm of het autorijden hinderen. Dat is niet hetzelfde als "ik zie ze nog wel eens". Het gaat om mensen die er functioneel last van hebben — die hun beroep niet goed meer kunnen uitoefenen, of die er meerdere keren per dag actief door worden afgeleid.</p>
 
-      <p>In die gevallen kan een <a href="#operaties" data-link>vitrectomie</a> worden overwogen: een chirurgische ingreep waarbij het glasvocht — en daarmee de troebelingen — uit het oog wordt verwijderd. In de internationale literatuur wordt dit een <em>floater-only vitrectomy</em> (FOV) genoemd. Voor de juiste patiënt zijn de resultaten overtuigend: vrijwel alle troebelingen verdwijnen.</p>
+      <p>In die gevallen kan een <a href="#operaties" data-link>vitrectomie</a> worden overwogen: een chirurgische ingreep waarbij het glasvocht — en daarmee de troebelingen — uit het oog wordt verwijderd. In de internationale literatuur wordt dit een floater-only vitrectomy (FOV) genoemd. Voor de juiste patiënt zijn de resultaten overtuigend: vrijwel alle troebelingen verdwijnen.</p>
 
       <h2>Risico's van de operatie</h2>
       <p>Een vitrectomie is een veilige operatie, maar elke ingreep aan het glasvocht draagt risico's. Bij vrijwel alle patiënten boven de 50 ontstaat na een vitrectomie binnen één tot drie jaar staar (vertroebeling van de eigen ooglens); een staaroperatie verhelpt dat later goed. Een <a href="#aandoeningen/netvliesscheurtje" data-link>netvliesscheur</a> of <a href="#aandoeningen/netvliesloslating" data-link>-loslating</a> ontstaat in 1 tot 2 procent — klein, maar reëel, en uitgerekend dít is de aandoening waarvoor we elders juist behandelen. Zeer zeldzaam (in de orde van 1 op 500 tot 1 op 1000) maar ernstig is een infectie van het oog (endoftalmitis).</p>
@@ -2631,7 +2666,7 @@ form input:focus, form textarea:focus {
         <div class="treatment-summary__grid">
           <div class="treatment-summary__col">
             <h4>De ingreep</h4>
-            <p>Een <a href="#operaties" data-link>vitrectomie</a> waarbij het hele glasvocht — en daarmee de troebelingen — wordt verwijderd. In de internationale literatuur <em>floater-only vitrectomy</em> (FOV) genoemd.</p>
+            <p>Een <a href="#operaties" data-link>vitrectomie</a> waarbij het hele glasvocht — en daarmee de troebelingen — wordt verwijderd. In de internationale literatuur floater-only vitrectomy (FOV) genoemd.</p>
           </div>
           <div class="treatment-summary__col">
             <h4>Succeskans</h4>
@@ -2683,11 +2718,11 @@ form input:focus, form textarea:focus {
           <span class="figure__placeholder-label">
             <span class="figure__icon">⌒</span>
             <span class="figure__type">Klinisch beeld · glasvochtbloeding</span>
-            <span class="figure__desc">Fundusbeeld of B-scan-echografie van een glasvochtbloeding. Kan een diabetisch beeld zijn, of een AGVL-gerelateerd beeld.</span>
+            <span class="figure__desc">Fundusbeeld of B-scan-echografie van een glasvochtbloeding. Kan een diabetisch beeld zijn, of een <a href="#aandoeningen/agl" data-link>AGVL</a>-gerelateerd beeld.</span>
           </span>
         </div>
         <figcaption class="figure__caption">
-          Fundusfoto bij proliferatieve diabetische retinopathie — abnormale vaatnieuwvorming die tot een glasvochtbloeding heeft geleid.
+          Fundusfoto bij proliferatieve <a href="#aandoeningen/diabetische-retinopathie" data-link>diabetische retinopathie</a> — abnormale vaatnieuwvorming die tot een glasvochtbloeding heeft geleid.
           <span class="figure__credit">Fundus · uit klinisch archief</span>
         </figcaption>
       </figure>
@@ -2696,10 +2731,10 @@ form input:focus, form textarea:focus {
 
       <p class="article-lead">Het netvlies vormt de lichtgevoelige laag aan de binnenzijde van de oogbol; in het centrum ligt de gele vlek (macula) waarmee we scherp zien. De ruimte ervoor is gevuld met glasvocht &mdash; een heldere, gelachtige substantie. Bij een glasvochtbloeding zit er bloed in het glasvocht, waardoor het zicht plotseling wazig of donker wordt &mdash; soms tot bijna geen zicht meer. De bloeding zelf is niet pijnlijk, maar de oorzaak is bijna altijd serieus.</p>
 
-      <p>De meest voorkomende oorzaken zijn een <a href="#aandoeningen/agl" data-link>achterste glasvochtloslating</a> (AGVL) waarbij een netvliesvaatje scheurt, een onderliggend <a href="#aandoeningen/netvliesscheurtje" data-link>netvliesscheurtje</a> of <a href="#aandoeningen/netvliesloslating" data-link>-loslating</a>, en proliferatieve <a href="#aandoeningen/diabetische-retinopathie" data-link>diabetische retinopathie</a> of een afgesloten ader van het netvlies, waarbij nieuw gevormde, kwetsbare bloedvaten breken. Soms is een trauma de aanleiding. Onderzoek bij plotse troebeling van het zicht is altijd nodig om de bron te bepalen &mdash; in 50&ndash;70% van de gevallen ligt er een netvliesscheurtje aan ten grondslag.</p>
+      <p>De meest voorkomende oorzaken zijn een <a href="#aandoeningen/agl" data-link>achterste glasvochtloslating</a> (AGVL) waarbij een netvliesvaatje scheurt, een onderliggend <a href="#aandoeningen/netvliesscheurtje" data-link>netvliesscheurtje</a> of <a href="#aandoeningen/netvliesloslating" data-link>-loslating</a>, en proliferatieve <a href="#aandoeningen/diabetische-retinopathie" data-link>diabetische retinopathie</a> of een afgesloten ader van het netvlies, waarbij nieuw gevormde, kwetsbare bloedvaten breken. Soms is een trauma de aanleiding. Onderzoek bij plotse troebeling van het zicht is altijd nodig om de bron te bepalen &mdash; in 50&ndash;70% van de gevallen ligt er een <a href="#aandoeningen/netvliesscheurtje" data-link>netvliesscheurtje</a> aan ten grondslag.</p>
 
       <h2>Welke klachten geeft het?</h2>
-      <p>Een glasvochtbloeding wordt vaak ervaren als een rode of donkere "wolk" door het zicht, of als een plotse, gerimpelde grijze waas. Soms ziet u alleen vlekjes en strepen die op floaters lijken maar veel meer in aantal en donkerder zijn. In ernstige gevallen valt het zicht aan één oog vrijwel volledig weg — terwijl licht en donker meestal nog wel te onderscheiden zijn.</p>
+      <p>Een glasvochtbloeding wordt vaak ervaren als een rode of donkere "wolk" door het zicht, of als een plotse, gerimpelde grijze waas. Soms ziet u alleen vlekjes en strepen die op <a href="#aandoeningen/glasvochttroebelingen" data-link>floaters</a> lijken maar veel meer in aantal en donkerder zijn. In ernstige gevallen valt het zicht aan één oog vrijwel volledig weg — terwijl licht en donker meestal nog wel te onderscheiden zijn.</p>
 
       <h2>Mogelijke oorzaken</h2>
       <ul>
@@ -2713,7 +2748,7 @@ form input:focus, form textarea:focus {
       <p>Bij een plotse troebeling van het zicht — een rode of donkere waas, een grijze sluier, of veel nieuwe vlekken tegelijk — is dezelfde dag onderzoek nodig. De bloeding zelf is niet pijnlijk, maar de oorzaak ervan is bijna altijd serieus en vraagt om snelle beoordeling. Bij een dichte bloeding waardoor het netvlies niet goed is te beoordelen wordt vaak een echo-onderzoek (B-scan) gedaan om een eventuele onderliggende netvliesscheur of -loslating uit te sluiten.</p>
 
       <h2>Behandeling</h2>
-      <p>Sommige bloedingen klaren binnen enkele weken vanzelf op. Vaker is een <a href="#operaties" data-link>vitrectomie</a> nodig — vooral als de oorzaak een onderliggende aandoening is die behandeld moet worden, zoals een netvliesscheur, diabetische retinopathie of een netvliesloslating. Bij de operatie wordt het bloed verwijderd, de oorzaak behandeld en het oog gevuld met heldere vloeistof, gas of olie afhankelijk van de bevinding.</p>
+      <p>Sommige bloedingen klaren binnen enkele weken vanzelf op. Vaker is een <a href="#operaties" data-link>vitrectomie</a> nodig — vooral als de oorzaak een onderliggende aandoening is die behandeld moet worden, zoals een netvliesscheur, diabetische retinopathie of een <a href="#aandoeningen/netvliesloslating" data-link>netvliesloslating</a>. Bij de operatie wordt het bloed verwijderd, de oorzaak behandeld en het oog gevuld met heldere vloeistof, gas of olie afhankelijk van de bevinding.</p>
 
       <div class="callout">
         <h4>Plotse afname van zicht door een rode of donkere waas?</h4>
@@ -2790,7 +2825,7 @@ form input:focus, form textarea:focus {
 
       <p class="article-lead">Het netvlies vormt de lichtgevoelige laag aan de binnenzijde van de oogbol; in het centrum ligt de gele vlek (macula) waarmee we scherp zien. De ruimte ervoor is gevuld met glasvocht &mdash; een heldere, gelachtige substantie. Bij diabetische retinopathie raken de kleine bloedvaten van het netvlies beschadigd door langdurig verhoogde bloedsuikers. In een vroeg stadium geeft het meestal nog geen klachten, terwijl er al beginnende schade is &mdash; daarom is regelmatige oogcontrole bij diabetes belangrijk.</p>
 
-      <p>In de loop van jaren ontstaan microbloedinkjes en lekkage van vocht uit de vaatwanden. In een gevorderd stadium gaan vaten dichtzitten, en vormt het netvlies als reactie nieuwe &mdash; zwakke &mdash; bloedvaten (proliferatieve diabetische retinopathie). Die kunnen scheuren en zorgen voor glasvochtbloedingen, of door littekenvorming uiteindelijk voor een netvliesloslating.</p>
+      <p>In de loop van jaren ontstaan microbloedinkjes en lekkage van vocht uit de vaatwanden. In een gevorderd stadium gaan vaten dichtzitten, en vormt het netvlies als reactie nieuwe &mdash; zwakke &mdash; bloedvaten (proliferatieve diabetische retinopathie). Die kunnen scheuren en zorgen voor glasvochtbloedingen, of door littekenvorming uiteindelijk voor een <a href="#aandoeningen/netvliesloslating" data-link>netvliesloslating</a>.</p>
 
       <h2>De twee stadia</h2>
       <p>Diabetische retinopathie verloopt in grote lijnen in twee stadia.</p>
@@ -2802,7 +2837,7 @@ form input:focus, form textarea:focus {
       <p>Daarnaast kan ongeacht het stadium <strong>diabetisch maculaoedeem</strong> (DMO) ontstaan: vochtopstapeling in de gele vlek, met geleidelijk wazig zicht in het centrum.</p>
 
       <h2>Welke klachten geeft het?</h2>
-      <p>Het tegendraadse aan diabetische retinopathie: in de fase waarin de behandeling het beste werkt, voelt u doorgaans helemaal niets. Het oog kan al fors aangetast zijn voordat het zicht merkbaar afneemt. Pas wanneer er een glasvochtbloeding optreedt — en u plotseling een rode mist of grote zwarte vlek ziet — of wanneer maculaoedeem het centrale zicht aantast, wordt u zich er direct van bewust.</p>
+      <p>Het tegendraadse aan diabetische retinopathie: in de fase waarin de behandeling het beste werkt, voelt u doorgaans helemaal niets. Het oog kan al fors aangetast zijn voordat het zicht merkbaar afneemt. Pas wanneer er een <a href="#aandoeningen/glasvochtbloeding" data-link>glasvochtbloeding</a> optreedt — en u plotseling een rode mist of grote zwarte vlek ziet — of wanneer maculaoedeem het centrale zicht aantast, wordt u zich er direct van bewust.</p>
 
       <p>Daarom is regelmatige oogheelkundige screening voor mensen met diabetes geen overdaad maar standaardzorg. De huisarts of internist verwijst meestal jaarlijks; bij gevorderde retinopathie volgen kortere intervallen.</p>
 
@@ -2899,32 +2934,32 @@ form input:focus, form textarea:focus {
         </figcaption>
       </figure>
 
-      <p class="article-lead">Het netvlies vormt de lichtgevoelige laag aan de binnenzijde van de oogbol; in het centrum ligt de gele vlek (macula) waarmee we scherp zien. De ruimte ervoor is gevuld met glasvocht &mdash; een heldere, gelachtige substantie. Bij PVR &mdash; proliferatieve vitreoretinopathie &mdash; vormt zich op het netvlies een littekenachtig vliesje dat krimpt en het netvlies vervormt. PVR is de belangrijkste oorzaak van een terugkerende netvliesloslating na een eerdere operatie.</p>
+      <p class="article-lead">Het netvlies vormt de lichtgevoelige laag aan de binnenzijde van de oogbol; in het centrum ligt de gele vlek (macula) waarmee we scherp zien. De ruimte ervoor is gevuld met glasvocht &mdash; een heldere, gelachtige substantie. Bij PVR &mdash; proliferatieve vitreoretinopathie &mdash; ontstaat op het netvlies een laagje littekenweefsel dat krimpt en het netvlies vervormt. PVR is de belangrijkste oorzaak van een terugkerende <a href="#aandoeningen/netvliesloslating" data-link>netvliesloslating</a> na een eerdere operatie.</p>
 
-      <p>De aandoening ontstaat doordat cellen van het netvliesoppervlak loslaten, zich vermenigvuldigen en aan beide zijden van het netvlies een dunne laag vormen. Die laag krimpt vervolgens &mdash; vergelijkbaar met litteken-contractie elders in het lichaam &mdash; en trekt het netvlies opnieuw los. Glasvochtresten en gepigmenteerde cellen op het netvlies zijn bekende risicofactoren; het zorgvuldig verwijderen daarvan is een kernpunt van de eerste operatie.</p>
+      <p>De aandoening ontstaat doordat cellen van het netvliesoppervlak loslaten, zich vermenigvuldigen en aan beide zijden van het netvlies een dunne laag vormen. Die laag krimpt vervolgens &mdash; vergelijkbaar met littekenvorming elders in het lichaam &mdash; en trekt het netvlies opnieuw los. Glasvochtresten en pigmentdeeltjes (gepigmenteerde cellen die van de pigmentlaag onder het netvlies zijn losgekomen) zijn bekende risicofactoren; het zorgvuldig verwijderen daarvan is een kernpunt van de eerste operatie.</p>
 
-      <p>PVR is geen "tweede ziekte" maar een complicatie die voortkomt uit het oorspronkelijke probleem. Een netvliesscheur stelt cellen van het pigmentblad bloot aan het glasvocht, waar ze normaal nooit komen. Eenmaal in het glasvocht beginnen deze cellen te delen en zich te transformeren tot bindweefselachtige cellen die membranen vormen.</p>
+      <p>PVR is geen "tweede ziekte" maar een complicatie die voortkomt uit het oorspronkelijke probleem. Een <a href="#aandoeningen/netvliesscheurtje" data-link>netvliesscheurtje</a> stelt cellen van het pigmentblad (de pigmentlaag onder het netvlies) bloot aan het glasvocht, waar ze normaal nooit komen. Eenmaal in het glasvocht beginnen deze cellen te delen en zich te transformeren tot bindweefselcellen die littekenlaagjes vormen.</p>
 
       <h2>Waarom is PVR zo lastig?</h2>
-      <p>Een tweede operatie aan een oog met PVR is technisch zwaarder. Membranen moeten zorgvuldig worden afgepeld zonder het netvlies te beschadigen, en vaak is een langduriger interne tampon nodig — zoals siliconenolie, die later in een aparte ingreep weer verwijderd moet worden. Het zichtherstel na een geslaagde PVR-operatie is gemiddeld minder goed dan na een primaire ingreep.</p>
+      <p>Een tweede operatie aan een oog met PVR is technisch complexer. Het littekenweefsel moet zorgvuldig worden afgepeld zonder het netvlies te beschadigen, en vaak is een langduriger ondersteuning van binnenuit nodig — zoals siliconenolie, die later in een aparte ingreep weer verwijderd moet worden. Het zichtherstel na een geslaagde PVR-operatie is gemiddeld minder goed dan na een eerste operatie.</p>
 
       <h2>Wat kan er gedaan worden om het te voorkomen?</h2>
       <p>Geen enkele techniek kan PVR volledig uitsluiten — sommige ogen hebben een biologische aanleg die het ontwikkelen waarschijnlijker maakt. Maar bij de operatietechniek zijn keuzes te maken die de kans aanzienlijk beïnvloeden.</p>
 
       <ul>
-        <li><strong>Volledige verwijdering van het glasvocht</strong> — resten van het glasvocht, en in het bijzonder de cortexlaag die soms achterblijft op het netvlies, zijn een bekende risicofactor. Met behulp van triamcinolon (een kleurmiddel dat het anders onzichtbare glasvocht zichtbaar maakt) kunnen deze restanten beter worden geïdentificeerd en verwijderd.</li>
-        <li><strong>Indenteren van de glasvochtbasis</strong> — door tijdens de operatie de oogwand voorzichtig in te drukken (met een chandelierlichtje als verlichting) wordt de buitenste rand van het glasvocht zichtbaar en bereikbaar.</li>
-        <li><strong>Herkenning en verwijdering van pigmentcellen ("vlekken")</strong> — kleine pigmentdeeltjes zijn een teken dat cellen reeds in het glasvocht zijn losgekomen; gericht verwijderen vermindert het risico verder.</li>
+        <li><strong>Volledige verwijdering van het glasvocht</strong> — resten van het glasvocht, en in het bijzonder de cortexlaag (het buitenste, dunne laagje van het glasvocht) die soms achterblijft op het netvlies, zijn een bekende risicofactor. Met behulp van triamcinolon (een kleurmiddel dat het anders onzichtbare glasvocht zichtbaar maakt) kunnen deze restanten beter worden geïdentificeerd en verwijderd.</li>
+        <li><strong>Indenteren van de glasvochtbasis</strong> — door tijdens de operatie de oogwand voorzichtig in te drukken (met een speciaal lichtje — een ‘chandelier’ — voor goede belichting) wordt de buitenste rand van het glasvocht zichtbaar en bereikbaar.</li>
+        <li><strong>Herkenning en verwijdering van pigmentdeeltjes</strong> — kleine pigmentdeeltjes zijn een teken dat cellen reeds in het glasvocht zijn losgekomen; gericht verwijderen vermindert het risico verder.</li>
       </ul>
 
-      <blockquote>"Door deze manier van opereren kan de kans op een recidief loslating door PVR na een primaire RNL worden teruggebracht van meer dan 10% naar 5–10%."</blockquote>
+      <blockquote>"Door deze manier van opereren kan de kans op een terugkerende <a href="#aandoeningen/netvliesloslating" data-link>netvliesloslating</a> door PVR worden teruggebracht van ongeveer 10% (literatuur) naar 5–10% in onze eigen serie."</blockquote>
 
       <h2>De wetenschappelijke onderbouwing</h2>
-      <p>Onze klinische ervaring en onderzoeksbevindingen wijzen erop dat zorgvuldig uitvoeren van bovenstaande stappen het verschil maakt. Een prospectieve multi-chirurg studie liet bij ongeveer 35% van de primaire vitrectomieën pigmentvlekken zien — en dit hing significant samen met PVR-recidief. Het systematisch herkennen en behandelen ervan is sindsdien een vast onderdeel van onze techniek.</p>
+      <p>Onze klinische ervaring en onderzoeksbevindingen wijzen erop dat zorgvuldig uitvoeren van bovenstaande stappen het verschil maakt. Een prospectieve multi-chirurg studie liet bij ongeveer 35% van de eerste vitrectomies pigmentdeeltjes zien — en dit hing significant samen met PVR-terugkeer. Het systematisch herkennen en behandelen ervan is sindsdien een vast onderdeel van onze techniek.</p>
 
       <p>Voor verwijzers en geïnteresseerde collega's: er is een uitgebreid wetenschappelijk werk over dit onderwerp beschikbaar; <a href="#chirurg" class="arrow-link" data-link>zie de pagina over dr. Van Overdam</a>.</p>
 
-            <div class="treatment-summary">
+      <div class="treatment-summary">
         <p class="treatment-summary__label">Behandeling in het kort</p>
         <div class="treatment-summary__grid">
           <div class="treatment-summary__col">
@@ -2944,15 +2979,13 @@ form input:focus, form textarea:focus {
       </div>
 
       <h2>Resultaten uit de literatuur</h2>
-      <p>PVR ontstaat na 5 tot 10% van primaire vitrectomie&euml;n voor een netvliesloslating en is daarmee de belangrijkste oorzaak van postoperatieve recidieven. Bij chirurgische behandeling van een PVR-recidief wordt anatomisch herstel &mdash; een aanliggend netvlies &mdash; bereikt bij ongeveer 60 tot 80% van pati&euml;nten in literatuurseries. Het functionele zichtherstel is variabel en gemiddeld minder goed dan na een eerste operatie. Dit onderstreept het belang van de eerste operatie en van een operatietechniek die het PVR-risico zo klein mogelijk houdt.</p>
-      <p class="source-note" style="margin-top: 1.2rem; font-size: 0.9rem;">Cijfers gebaseerd op meerdere klinische series in de internationale vitreoretinale literatuur.</p>
-
+      <p>PVR ontstaat na 5 tot 10% van de eerste <a href="#operaties" data-link>vitrectomies</a> voor een <a href="#aandoeningen/netvliesloslating" data-link>netvliesloslating</a> en is daarmee de belangrijkste oorzaak van een terugkeer na de operatie. Bij chirurgische behandeling van een PVR-recidief wordt anatomisch herstel &mdash; een aanliggend netvlies &mdash; bereikt bij ongeveer 70 tot 90% van de pati&euml;nten in moderne series. Het functionele zichtherstel is variabel en gemiddeld minder goed dan na een eerste operatie. Dit onderstreept het belang van de eerste operatie en van een operatietechniek die het PVR-risico zo klein mogelijk houdt.</p>
       <div class="callout">
-        <h4>Eerder mislukte netvliesoperatie of verhoogd PVR-risico?</h4>
+        <h4>Recidief na netvliesoperatie of complex PVR-geval?</h4>
         <p>Voor tweede meningen of bespreking van complexe gevallen is verwijzing welkom. <a href="#verwijzers" data-link class="arrow-link">Voor verwijzers</a></p>
       </div>
 
-          <div class="references-block">
+      <div class="references-block">
         <p class="references__label">Referenties</p>
         <ol class="references">
           <li>van Overdam KA, Veckeneer M, Kiliç E, van Etten PG, Sebag J, van Meurs JC. Vitreoschisis-induced vitreous cortex remnants in proliferative vitreoretinopathy: A comprehensive review from basic research to clinical practice. <em>Acta Ophthalmol</em>. 2024;102(8):859–880. <a href="https://doi.org/10.1111/aos.16755" target="_blank" rel="noopener">doi:10.1111/aos.16755</a></li>
@@ -5150,6 +5183,7 @@ form input:focus, form textarea:focus {
         </ul>
       </div>
     </div>
+    <p class="footer__disclaimer">Deze website biedt algemene informatie en is geen vervanging voor persoonlijk medisch advies. Voor uw eigen situatie raadpleegt u altijd uw oogarts of huisarts.</p>
     <div class="footer__bottom">
       <span>© 2026 dr. K.A. van Overdam · Erasmus MC &amp; Retina OC</span>
       <span><a href="#klachtenregeling" data-link>Klachtenregeling</a> &middot; <a href="#privacyverklaring" data-link>Privacyverklaring</a> &middot; <a href="#disclaimer" data-link>Disclaimer</a></span>
