@@ -1649,6 +1649,65 @@ form input:focus, form textarea:focus {
   .treatment-summary__grid { grid-template-columns: 1fr; gap: 1.3rem; }
 }
 
+/* ========== LITERATUURREFERENTIES ========== */
+.ref-num {
+  font-family: var(--sans);
+  font-size: 0.65em;
+  vertical-align: super;
+  line-height: 0;
+  color: var(--gold);
+  font-weight: 600;
+  letter-spacing: 0;
+  margin: 0 0.05em;
+}
+.references-block {
+  margin: 2.5rem 0 1rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--hairline);
+}
+.references {
+  list-style: none;
+  counter-reset: ref;
+  padding-left: 0;
+  margin: 0;
+}
+.references > li {
+  counter-increment: ref;
+  position: relative;
+  padding-left: 2.2rem;
+  margin-bottom: 0.7rem;
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--gray-700);
+}
+.references > li::before {
+  content: counter(ref) ".";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1.8rem;
+  text-align: right;
+  color: var(--gold);
+  font-weight: 600;
+}
+.references__label {
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 600;
+  margin: 0 0 0.9rem;
+}
+.references a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--hairline);
+  text-underline-offset: 2px;
+}
+.references a:hover { text-decoration-color: var(--gold); }
+
 
 /* ========== RELATED READS ========== */
 .related-reads { margin-top: 4rem; padding-top: 2rem; border-top: var(--rule-strong); }
@@ -2074,6 +2133,7 @@ form input:focus, form textarea:focus {
             <p>Zeldzaam, mits tijdig onderzocht. De uitschieter is dat een scheurtje doorgroeit tot een netvliesloslating vóórdat het gevonden wordt — daarom is snel onderzoek bij nieuwe klachten essentieel.</p>
           </div>
         </div>
+        <p class="source-note" style="margin-top: 1rem; font-size: 0.82rem;">Cijfers uit recente internationale literatuur (zie referenties onderaan).</p>
       </div>
 
       <h2>Resultaten uit de literatuur</h2>
@@ -2083,6 +2143,18 @@ form input:focus, form textarea:focus {
       <div class="callout">
         <h4>Plotseling nieuwe floaters of lichtflitsen?</h4>
         <p>Een eenmalige oogheelkundige controle binnen enkele dagen is verstandig — niet om bezorgd te zijn, maar om er zeker van te zijn dat het netvlies intact is.</p>
+      </div>
+
+          <div class="references-block">
+        <p class="references__label">Referenties</p>
+        <ol class="references">
+          <li>Govers BM, Keijser S, El Kandoussi M, van Overdam KA, Klevering BJ, Crama N. The effect of patient symptom awareness on the visual outcome in retinal detachment. <em>Acta Ophthalmol</em>. 2024;102(5):506–512. <a href="https://pubmed.ncbi.nlm.nih.gov/38009800/" target="_blank" rel="noopener">PMID:38009800</a></li>
+          <li>Govers BM, van Huet RAC, Roosing S, Keijser S, Los LI, den Hollander AI, Klevering BJ. The genetics and disease mechanisms of rhegmatogenous retinal detachment. <em>Prog Retin Eye Res</em>. 2023;97:101158. <a href="https://doi.org/10.1016/j.preteyeres.2022.101158" target="_blank" rel="noopener">doi:10.1016/j.preteyeres.2022.101158</a></li>
+          <li>Verhoekx JSN, van Overdam KA, Gishti O, van Leeuwen R, Crama N. Acute onset of floaters, even without flashes, is an urgent ophthalmic warning sign. <em>Ned Tijdschr Geneeskd</em>. 2021;165:D5850. <a href="https://www.ntvg.nl/artikelen/acute-toename-van-mouches-volantes-ook-zonder-lichtflitsen-een-oogheelkundige" target="_blank" rel="noopener">ntvg.nl</a></li>
+          <li>Gishti O, van den Nieuwenhof R, Verhoekx J, van Overdam K. Symptoms related to posterior vitreous detachment and the risk of developing retinal tears: a systematic review. <em>Acta Ophthalmol</em>. 2019;97(4):347–352. <a href="https://doi.org/10.1111/aos.14012" target="_blank" rel="noopener">doi:10.1111/aos.14012</a></li>
+          <li>Hollands H, Johnson D, Brox AC, Almeida D, Simel DL, Sharma S. Acute-onset floaters and flashes: is this patient at risk for retinal detachment? <em>JAMA</em>. 2009;302(20):2243–2249. <a href="https://doi.org/10.1001/jama.2009.1714" target="_blank" rel="noopener">doi:10.1001/jama.2009.1714</a></li>
+          <li>van Overdam KA, Bettink-Remeijer MW, Klaver CC, Mulder PG, Moll AC, van Meurs JC. Symptoms and findings predictive for the development of new retinal breaks. <em>Arch Ophthalmol</em>. 2005;123(4):479–484. <a href="https://doi.org/10.1001/archopht.123.4.479" target="_blank" rel="noopener">doi:10.1001/archopht.123.4.479</a></li>
+        </ol>
       </div>
 
     </div>
@@ -2166,6 +2238,7 @@ form input:focus, form textarea:focus {
             <p>Zelden — kortdurende hoofdpijn, lichtgevoeligheid of een irritatie rond het oog na de behandeling. Ernstige complicaties zijn een uitzondering.</p>
           </div>
         </div>
+        <p class="source-note" style="margin-top: 1rem; font-size: 0.82rem;">Cijfers uit recente internationale literatuur (zie referenties onderaan).</p>
       </div>
 
       <h2>Resultaten uit de literatuur</h2>
@@ -2176,6 +2249,17 @@ form input:focus, form textarea:focus {
       <div class="callout">
         <h4>Vermoedt u een scheurtje?</h4>
         <p>Bij plotse lichtflitsen, een opvallende toename van vlekjes of een schaduw in het zicht: neem dezelfde dag contact op met uw oogarts of de spoedeisende hulp. Voor twijfelgevallen of een tweede mening: <a href="#contact" data-link class="arrow-link">contact opnemen</a></p>
+      </div>
+
+          <div class="references-block">
+        <p class="references__label">Referenties</p>
+        <ol class="references">
+          <li>Flaxel CJ, Adelman RA, Bailey ST, et al. Posterior Vitreous Detachment, Retinal Breaks, and Lattice Degeneration Preferred Practice Pattern®. <em>Ophthalmology</em>. 2020;127(1):P146–P181. <a href="https://doi.org/10.1016/j.ophtha.2019.09.027" target="_blank" rel="noopener">doi:10.1016/j.ophtha.2019.09.027</a></li>
+          <li>Verhoekx JSN, van Etten PG, Wubbels RJ, van Meurs JC, van Overdam KA. Prophylactic laser treatment to decrease the incidence of retinal detachment in fellow eyes of idiopathic giant retinal tears. <em>Retina</em>. 2020;40(6):1094–1097. <a href="https://pubmed.ncbi.nlm.nih.gov/30865062/" target="_blank" rel="noopener">PMID:30865062</a></li>
+          <li>Wilkinson CP. Interventions for asymptomatic retinal breaks and lattice degeneration for preventing retinal detachment. <em>Cochrane Database Syst Rev</em>. 2014;2014(9):CD003170. <a href="https://doi.org/10.1002/14651858.CD003170.pub4" target="_blank" rel="noopener">doi:10.1002/14651858.CD003170.pub4</a></li>
+          <li>Hollands H, Johnson D, Brox AC, Almeida D, Simel DL, Sharma S. Acute-onset floaters and flashes: is this patient at risk for retinal detachment? <em>JAMA</em>. 2009;302(20):2243–2249. <a href="https://doi.org/10.1001/jama.2009.1714" target="_blank" rel="noopener">doi:10.1001/jama.2009.1714</a></li>
+          <li>Veckeneer M, Van Overdam K, Bouwens D, Feron E, Mertens D, Peperkamp E, Ringens P, Mulder P, Van Meurs J. Randomized clinical trial of cryotherapy versus laser photocoagulation for retinopexy in conventional retinal detachment surgery. <em>Am J Ophthalmol</em>. 2001;132(3):343–347. <a href="https://pubmed.ncbi.nlm.nih.gov/11530046/" target="_blank" rel="noopener">PMID:11530046</a></li>
+        </ol>
       </div>
 
     </div>
@@ -2264,14 +2348,28 @@ form input:focus, form textarea:focus {
             <p>Staarvorming bij vrijwel iedereen na vitrectomie (later corrigeerbaar met een staaroperatie). Verder: nieuwe loslating, verhoogde oogdruk, beeldvertekening (vooral wanneer ook de gele vlek heeft losgelegen) en littekenvorming (<a href="#aandoeningen/pvr" data-link>PVR</a>, 5–10%).</p>
           </div>
         </div>
+        <p class="source-note" style="margin-top: 1rem; font-size: 0.82rem;">Cijfers uit recente internationale literatuur (zie referenties onderaan). Onze eigen resultaten staan hieronder.</p>
       </div>
 
       <h2>Resultaten uit onze praktijk</h2>
       <p>Bij een netvliesloslating waarbij de macula nog aanligt, ligt de gezichtsscherpte na een maand gemiddeld op 0,5; bij 60% van de patiënten staat die op dat moment al op 0,5 of hoger, en bij 20% al op 0,8 of meer. De gemiddelde recidiefkans is 3% en het risico op PVR ongeveer 1%. Vrijwel alle patiënten bereiken uiteindelijk een liggend netvlies — het zicht blijft in de loop van maanden tot jaren verder verbeteren.</p>
       <p class="source-note" style="margin-top: 1.2rem; font-size: 0.9rem;">Operatieve cijfers uit de Retina OC-database; gemeten op &eacute;&eacute;n maand na de ingreep. Resultaat hangt mede af van de uitgangssituatie — onder meer hoe uitgebreid de loslating is en of de gele vlek nog aanlag bij de operatie.</p>
 
-    </div>
-  </section>
+      <div class="references-block">
+        <p class="references__label">Referenties</p>
+        <ol class="references">
+          <li>Chen MX, Motekalem Y, Martins Melo I, et al. Long-term redetachment rates of pneumatic retinopexy versus pars plana vitrectomy in retinal detachment. <em>Ophthalmol Retina</em>. 2024;8(12):1184–1190. <a href="https://doi.org/10.1016/j.oret.2024.08.011" target="_blank" rel="noopener">doi:10.1016/j.oret.2024.08.011</a></li>
+          <li>Govers BM, Keijser S, El Kandoussi M, van Overdam KA, Klevering BJ, Crama N. The effect of patient symptom awareness on the visual outcome in retinal detachment. <em>Acta Ophthalmol</em>. 2024;102(5):506–512. <a href="https://pubmed.ncbi.nlm.nih.gov/38009800/" target="_blank" rel="noopener">PMID:38009800</a></li>
+          <li>van Overdam KA, van Etten PG, Accou GPBM, Wubbels RJ, van Meurs JC, Verhoekx JSN. Prevalence of vitreoschisis-induced vitreous cortex remnants over the peripheral retinal surface in eyes undergoing vitrectomy for primary rhegmatogenous retinal detachment. <em>Acta Ophthalmol</em>. 2024;102(1):99–106. <a href="https://pubmed.ncbi.nlm.nih.gov/37133363/" target="_blank" rel="noopener">PMID:37133363</a></li>
+          <li>Govers BM, van Huet RAC, Roosing S, Keijser S, Los LI, den Hollander AI, Klevering BJ. The genetics and disease mechanisms of rhegmatogenous retinal detachment. <em>Prog Retin Eye Res</em>. 2023;97:101158. <a href="https://doi.org/10.1016/j.preteyeres.2022.101158" target="_blank" rel="noopener">doi:10.1016/j.preteyeres.2022.101158</a></li>
+          <li>Hillier RJ, Felfeli T, Berger AR, et al. The Pneumatic Retinopexy versus Vitrectomy for the Management of Primary Rhegmatogenous Retinal Detachment Outcomes Randomized Trial (PIVOT). <em>Ophthalmology</em>. 2019;126(4):531–539. <a href="https://doi.org/10.1016/j.ophtha.2018.11.014" target="_blank" rel="noopener">doi:10.1016/j.ophtha.2018.11.014</a></li>
+          <li>Nagasaki H, Ideta H, Mochizuki K, et al. Proliferative vitreoretinopathy after retinal detachment surgery: a clinical review. <em>Surv Ophthalmol</em>. 2014;59(5):485–502. <a href="https://doi.org/10.1016/j.survophthal.2014.02.001" target="_blank" rel="noopener">doi:10.1016/j.survophthal.2014.02.001</a></li>
+          <li>Van de Put MAJ, Hooymans JMM, Los LI; Dutch Rhegmatogenous Retinal Detachment Study Group. The incidence of rhegmatogenous retinal detachment in The Netherlands. <em>Ophthalmology</em>. 2013;120(3):616–622. <a href="https://pubmed.ncbi.nlm.nih.gov/23218185/" target="_blank" rel="noopener">PMID:23218185</a></li>
+          <li>Heimann H, Bartz-Schmidt KU, Bornfeld N, et al. Scleral buckling versus primary vitrectomy in rhegmatogenous retinal detachment: a prospective randomized multicenter clinical study. <em>Ophthalmology</em>. 2007;114(12):2142–2154. <a href="https://doi.org/10.1016/j.ophtha.2007.09.013" target="_blank" rel="noopener">doi:10.1016/j.ophtha.2007.09.013</a></li>
+        </ol>
+      </div>
+
+    </div></section>
 </section>
 
 <!-- ============== AANDOENINGEN — MACULAGAT ============== -->
@@ -2351,12 +2449,22 @@ form input:focus, form textarea:focus {
             <p>Staarvorming bij vrijwel iedereen na vitrectomie. Zelden hervorming van het gat, een tijdelijk verhoogde oogdruk, of — in zeer zeldzame gevallen (&lt;1%) — een infectie.</p>
           </div>
         </div>
-        <p class="source-note" style="margin-top: 1rem; font-size: 0.82rem;">Cijfers uit de internationale literatuur. Onze eigen resultaten staan hieronder.</p>
+        <p class="source-note" style="margin-top: 1rem; font-size: 0.82rem;">Cijfers uit recente internationale literatuur (zie referenties onderaan). Onze eigen resultaten staan hieronder.</p>
       </div>
 
       <h2>Resultaten uit onze praktijk</h2>
       <p>Een niet te oud maculagat sluit na operatie vrijwel altijd, mits er geen sprake is van een zeer hoge bijziendheid. De gezichtsscherpte verdubbelt gemiddeld ten opzichte van het uitgangsniveau, al is de spreiding groot. In de loop van maanden tot jaren neemt de gezichtsscherpte meestal verder toe. Het risico op een <a href="#aandoeningen/netvliesloslating" data-link>netvliesloslating</a> na deze operatie is laag — ongeveer 0,3%.</p>
       <p class="source-note" style="margin-top: 1.2rem; font-size: 0.9rem;">Operatieve cijfers uit de Retina OC-database; gemeten op &eacute;&eacute;n maand na de ingreep. Resultaat hangt mede af van de uitgangssituatie — onder meer de grootte van het maculagat, de duur van het bestaan ervan en de uitgangs-gezichtsscherpte.</p>
+
+          <div class="references-block">
+        <p class="references__label">Referenties</p>
+        <ol class="references">
+          <li>Murphy DC, Tzoumas N, Mehta A, et al. Internal limiting membrane peel size and macular hole surgery outcome: a systematic review and individual participant data study of randomized controlled trials. <em>Eye (Lond)</em>. 2025. <a href="https://doi.org/10.1038/s41433-025-03666-9" target="_blank" rel="noopener">doi:10.1038/s41433-025-03666-9</a></li>
+          <li>Spiteri Cornish K, Lois N, Scott NW, et al. Vitrectomy with internal limiting membrane peeling versus vitrectomy with no peeling for idiopathic full-thickness macular hole. <em>Cochrane Database Syst Rev</em>. 2013;(6):CD009306. <a href="https://doi.org/10.1002/14651858.CD009306.pub2" target="_blank" rel="noopener">doi:10.1002/14651858.CD009306.pub2</a></li>
+          <li>Duker JS, Kaiser PK, Binder S, et al. The International Vitreomacular Traction Study Group classification of vitreomacular adhesion, traction, and macular hole. <em>Ophthalmology</em>. 2013;120(12):2611–2619. <a href="https://doi.org/10.1016/j.ophtha.2013.07.042" target="_blank" rel="noopener">doi:10.1016/j.ophtha.2013.07.042</a></li>
+          <li>Kelly NE, Wendel RT. Vitreous surgery for idiopathic macular holes. Results of a pilot study. <em>Arch Ophthalmol</em>. 1991;109(5):654–659. <a href="https://doi.org/10.1001/archopht.1991.01080050068031" target="_blank" rel="noopener">doi:10.1001/archopht.1991.01080050068031</a></li>
+        </ol>
+      </div>
 
     </div>
   </section>
@@ -2436,12 +2544,21 @@ form input:focus, form textarea:focus {
             <p>Staarvorming bij vrijwel iedereen na vitrectomie. Zelden ontstaat een nieuw <a href="#aandoeningen/maculagat" data-link>maculagat</a> (&lt;1%) of treedt tijdelijke verhoogde oogdruk op.</p>
           </div>
         </div>
-        <p class="source-note" style="margin-top: 1rem; font-size: 0.82rem;">Cijfers uit de internationale literatuur. Onze eigen resultaten staan hieronder.</p>
+        <p class="source-note" style="margin-top: 1rem; font-size: 0.82rem;">Cijfers uit recente internationale literatuur (zie referenties onderaan). Onze eigen resultaten staan hieronder.</p>
       </div>
 
       <h2>Resultaten uit onze praktijk</h2>
       <p>Bij patiënten met een gezichtsscherpte vóór de operatie van 0,4 of lager verdubbelt deze gemiddeld; bij een hogere uitgangswaarde is de winst in scherpte kleiner. Belangrijker is vaak het afnemen van de beeldvervorming — daarmee verbetert ook de samenwerking tussen beide ogen. Het risico op een <a href="#aandoeningen/netvliesloslating" data-link>netvliesloslating</a> na de operatie is ongeveer 0,3%.</p>
       <p class="source-note" style="margin-top: 1.2rem; font-size: 0.9rem;">Operatieve cijfers uit de Retina OC-database; gemeten op &eacute;&eacute;n maand na de ingreep. Resultaat hangt mede af van de uitgangssituatie — onder meer de gezichtsscherpte vóór de operatie en hoe lang de pucker al bestaat.</p>
+
+          <div class="references-block">
+        <p class="references__label">Referenties</p>
+        <ol class="references">
+          <li>van Etten PG, van Overdam KA, Manning S, Faridpooya K, Wubbels RJ, van Meurs JC, Verhoekx JSN. Pseudophakic vitrectomy or phacovitrectomy for idiopathic epiretinal membranes and the risk of postoperative macular oedema. <em>Acta Ophthalmol</em>. 2022;100(6):e1352–e1353. <a href="https://doi.org/10.1111/aos.15083" target="_blank" rel="noopener">doi:10.1111/aos.15083</a></li>
+          <li>Flaxel CJ, Adelman RA, Bailey ST, et al. Idiopathic Epiretinal Membrane and Vitreomacular Traction Preferred Practice Pattern®. <em>Ophthalmology</em>. 2020;127(2):P145–P183. <a href="https://doi.org/10.1016/j.ophtha.2019.09.022" target="_blank" rel="noopener">doi:10.1016/j.ophtha.2019.09.022</a></li>
+          <li>Chang WC, Lin C, Lee CH, Sung TL, Tung TH, Liu JH. Vitrectomy with or without internal limiting membrane peeling for idiopathic epiretinal membrane: A meta-analysis. <em>PLoS One</em>. 2017;12(6):e0179105. <a href="https://doi.org/10.1371/journal.pone.0179105" target="_blank" rel="noopener">doi:10.1371/journal.pone.0179105</a></li>
+        </ol>
+      </div>
 
     </div>
   </section>
@@ -2525,12 +2642,23 @@ form input:focus, form textarea:focus {
             <p>Staarvorming binnen één tot twee jaar bij vrijwel iedereen, later behandelbaar met een staaroperatie. Een <a href="#aandoeningen/netvliesloslating" data-link>netvliesloslating</a> in 1–2% (literatuur) tot 0,3% (eigen praktijk). Zeer zeldzaam: een infectie van het oog (&lt;0,1%).</p>
           </div>
         </div>
-        <p class="source-note" style="margin-top: 1rem; font-size: 0.82rem;">Cijfers uit de internationale literatuur. Onze eigen resultaten staan hieronder.</p>
+        <p class="source-note" style="margin-top: 1rem; font-size: 0.82rem;">Cijfers uit recente internationale literatuur (zie referenties onderaan). Onze eigen resultaten staan hieronder.</p>
       </div>
 
       <h2>Resultaten uit onze praktijk</h2>
       <p>Een vitrectomie geeft een heldere glasvochtruimte; de oorspronkelijke troebelingen keren niet terug. Het risico op een <a href="#aandoeningen/netvliesloslating" data-link>netvliesloslating</a> na de operatie is ongeveer 0,3%. Wel volgt een vitrectomie voor floaters in de regel pas wanneer de klachten minstens een half jaar bestaan — gewenning kan namelijk optreden, en als die kans reëel is, is afwachten meestal verstandiger dan opereren.</p>
       <p class="source-note" style="margin-top: 1.2rem; font-size: 0.9rem;">Operatieve cijfers uit de Retina OC-database; gemeten op &eacute;&eacute;n maand na de ingreep. Resultaat hangt mede af van de uitgangssituatie — onder meer de dichtheid en aard van de troebelingen en de duur van de klachten.</p>
+
+          <div class="references-block">
+        <p class="references__label">Referenties</p>
+        <ol class="references">
+          <li>Boneva SK, Nguyen JH, Mamou J, Yee KM, Hoerig C, Silverman RH, Ketterling JA, Stanga PE, Reinstein DZ, Sadun AA, Sebag J. Clinical management of vision degrading myodesopsia from vitreous floaters: observation vs. limited refractive vitrectomy. <em>Ophthalmol Retina</em>. 2025;9(12):1149–1158. <a href="https://pubmed.ncbi.nlm.nih.gov/40381842/" target="_blank" rel="noopener">PMID:40381842</a></li>
+          <li>Dysager DD, Koren SF, Grauslund J, Wied J, Subhi Y. Efficacy and safety of pars plana vitrectomy for primary symptomatic floaters: a systematic review with meta-analyses. <em>Ophthalmol Ther</em>. 2022;11(6):2225–2242. <a href="https://doi.org/10.1007/s40123-022-00578-9" target="_blank" rel="noopener">doi:10.1007/s40123-022-00578-9</a></li>
+          <li>Mason JO 3rd, Neimkin MG, Mason JV 4th, et al. Safety, efficacy, and quality of life following sutureless vitrectomy for symptomatic vitreous floaters. <em>Retina</em>. 2014;34(6):1055–1061. <a href="https://doi.org/10.1097/IAE.0000000000000063" target="_blank" rel="noopener">doi:10.1097/IAE.0000000000000063</a></li>
+          <li>Henry CR, Smiddy WE, Flynn HW Jr. Pars plana vitrectomy for vitreous floaters: is there such a thing as minimally invasive vitreoretinal surgery? <em>Retina</em>. 2014;34(6):1043–1045. <a href="https://doi.org/10.1097/IAE.0000000000000124" target="_blank" rel="noopener">doi:10.1097/IAE.0000000000000124</a></li>
+          <li>de Nie KF, Crama N, Tilanus MA, Klevering BJ, Boon CJF. Pars plana vitrectomy for disturbing primary vitreous floaters: clinical outcome and patient satisfaction. <em>Graefes Arch Clin Exp Ophthalmol</em>. 2013;251(5):1373–1382. <a href="https://doi.org/10.1007/s00417-012-2205-3" target="_blank" rel="noopener">doi:10.1007/s00417-012-2205-3</a></li>
+        </ol>
+      </div>
 
     </div>
   </section>
@@ -2611,12 +2739,22 @@ form input:focus, form textarea:focus {
             <p>Een nieuwe bloeding (vooral bij <a href="#aandoeningen/diabetische-retinopathie" data-link>diabetische retinopathie</a>), staarvorming na vitrectomie, soms verhoogde oogdruk. Bij onderliggende netvliesproblematiek gelden de risico's daarvan ook.</p>
           </div>
         </div>
-        <p class="source-note" style="margin-top: 1rem; font-size: 0.82rem;">Cijfers uit de internationale literatuur. Onze eigen resultaten staan hieronder.</p>
+        <p class="source-note" style="margin-top: 1rem; font-size: 0.82rem;">Cijfers uit recente internationale literatuur (zie referenties onderaan). Onze eigen resultaten staan hieronder.</p>
       </div>
 
       <h2>Resultaten uit onze praktijk</h2>
       <p>Een vitrectomie ruimt het bloed op en herstelt het zicht doorgaans tot het niveau van vóór de bloeding — het uiteindelijke resultaat hangt af van de onderliggende oorzaak en eventuele schade aan het netvlies. Bij een glasvochtbloeding zonder duidelijke oorzaak is het risico op een <a href="#aandoeningen/netvliesloslating" data-link>netvliesloslating</a> na de operatie minder dan 1%; bij een onderliggende afgesloten ader van het netvlies ligt dat onder de 0,5%.</p>
       <p class="source-note" style="margin-top: 1.2rem; font-size: 0.9rem;">Operatieve cijfers uit de Retina OC-database; gemeten op &eacute;&eacute;n maand na de ingreep. Resultaat hangt mede af van de uitgangssituatie — onder meer de onderliggende oorzaak van de bloeding en de toestand van het netvlies.</p>
+
+          <div class="references-block">
+        <p class="references__label">Referenties</p>
+        <ol class="references">
+          <li>Marx JL, Patel SN, Pruett RC, et al. Nondiabetic vitreous hemorrhage: a review of management strategy and outcomes. <em>Ophthalmic Surg Lasers Imaging Retina</em>. 2024;55(11):660–667. <a href="https://doi.org/10.3928/23258160-20240620-01" target="_blank" rel="noopener">doi:10.3928/23258160-20240620-01</a></li>
+          <li>van Etten PG, van Overdam KA, Reyniers R, Veckeneer M, Faridpooya K, Wubbels RJ, Manning S, La Heij EC, van Meurs JC. Strict posturing with or without bilateral patching for posterior vitreous detachment-related vitreous hemorrhage. <em>Retina</em>. 2020;40(6):1169–1175. <a href="https://pubmed.ncbi.nlm.nih.gov/31136460/" target="_blank" rel="noopener">PMID:31136460</a></li>
+          <li>Spraul CW, Grossniklaus HE. Vitreous Hemorrhage. <em>Surv Ophthalmol</em>. 1997;42(1):3–39. <a href="https://doi.org/10.1016/S0039-6257(97)84041-6" target="_blank" rel="noopener">doi:10.1016/S0039-6257(97)84041-6</a></li>
+          <li>Diabetic Retinopathy Vitrectomy Study Research Group. Early vitrectomy for severe vitreous hemorrhage in diabetic retinopathy. Two-year results of a randomized trial. DRVS report 2. <em>Arch Ophthalmol</em>. 1985;103(11):1644–1652. <a href="https://doi.org/10.1001/archopht.1985.01050110038020" target="_blank" rel="noopener">doi:10.1001/archopht.1985.01050110038020</a></li>
+        </ol>
+      </div>
 
     </div>
   </section>
@@ -2712,12 +2850,22 @@ form input:focus, form textarea:focus {
             <p>Een nieuwe bloeding, hernieuwde trekkracht of littekenvorming, staarvorming na vitrectomie. Bij gevorderde diabetes blijft langdurige nazorg essentieel — in nauwe samenwerking met uw oogarts en internist.</p>
           </div>
         </div>
-        <p class="source-note" style="margin-top: 1rem; font-size: 0.82rem;">Cijfers uit de internationale literatuur. Onze eigen resultaten staan hieronder.</p>
+        <p class="source-note" style="margin-top: 1rem; font-size: 0.82rem;">Cijfers uit recente internationale literatuur (zie referenties onderaan). Onze eigen resultaten staan hieronder.</p>
       </div>
 
       <h2>Resultaten uit onze praktijk</h2>
       <p>Bij diabetische glasvochtbloedingen of geavanceerde proliferatieve retinopathie wordt na een vitrectomie doorgaans een stabiele situatie voor lange termijn bereikt. Het zichtsherstel hangt grotendeels af van de schade die het netvlies vóór de operatie al had opgelopen. Soms treedt na de operatie een recidiefbloeding op, die zich in de regel snel vanzelf herstelt.</p>
       <p class="source-note" style="margin-top: 1.2rem; font-size: 0.9rem;">Operatieve cijfers uit de Retina OC-database; gemeten op &eacute;&eacute;n maand na de ingreep. Resultaat hangt mede af van de uitgangssituatie — onder meer de schade aan het netvlies vóór de operatie en de algemene diabetescontrole.</p>
+
+          <div class="references-block">
+        <p class="references__label">Referenties</p>
+        <ol class="references">
+          <li>Jhaveri CD, Glassman AR, Ferris FL 3rd, et al. Aflibercept monotherapy or bevacizumab first for diabetic macular edema. <em>N Engl J Med</em>. 2022;387(8):692–703. <a href="https://doi.org/10.1056/NEJMoa2204225" target="_blank" rel="noopener">doi:10.1056/NEJMoa2204225</a></li>
+          <li>Flaxel CJ, Adelman RA, Bailey ST, et al. Diabetic Retinopathy Preferred Practice Pattern®. <em>Ophthalmology</em>. 2020;127(1):P66–P145. <a href="https://doi.org/10.1016/j.ophtha.2019.09.025" target="_blank" rel="noopener">doi:10.1016/j.ophtha.2019.09.025</a></li>
+          <li>Wells JA, Glassman AR, Ayala AR, et al. Aflibercept, bevacizumab, or ranibizumab for diabetic macular edema: two-year results from a comparative effectiveness randomized clinical trial. <em>Ophthalmology</em>. 2016;123(6):1351–1359. <a href="https://doi.org/10.1016/j.ophtha.2016.02.022" target="_blank" rel="noopener">doi:10.1016/j.ophtha.2016.02.022</a></li>
+          <li>Wells JA, Glassman AR, Ayala AR, et al; Diabetic Retinopathy Clinical Research Network. Aflibercept, bevacizumab, or ranibizumab for diabetic macular edema. <em>N Engl J Med</em>. 2015;372(13):1193–1203. <a href="https://doi.org/10.1056/NEJMoa1414264" target="_blank" rel="noopener">doi:10.1056/NEJMoa1414264</a></li>
+        </ol>
+      </div>
 
     </div>
   </section>
@@ -2776,6 +2924,25 @@ form input:focus, form textarea:focus {
 
       <p>Voor verwijzers en geïnteresseerde collega's: er is een uitgebreid wetenschappelijk werk over dit onderwerp beschikbaar; <a href="#chirurg" class="arrow-link" data-link>zie de pagina over dr. Van Overdam</a>.</p>
 
+            <div class="treatment-summary">
+        <p class="treatment-summary__label">Behandeling in het kort</p>
+        <div class="treatment-summary__grid">
+          <div class="treatment-summary__col">
+            <h4>De ingreep</h4>
+            <p>Een uitgebreidere <a href="#operaties" data-link>vitrectomie</a> waarbij niet alleen het glasvocht maar ook de vitreuze cortexlaag en de littekenmembranen op het netvlies worden weggepeld. Afsluiting met silicoonolie of een lang werkende gastamponade.</p>
+          </div>
+          <div class="treatment-summary__col">
+            <h4>Succeskans</h4>
+            <p>Anatomisch herstel bij 70–90% van de patiënten, soms na meerdere operaties. Het functionele zicht is wisselend en hangt af van de eerder ontstane schade aan de gele vlek.</p>
+          </div>
+          <div class="treatment-summary__col">
+            <h4>Mogelijke complicaties</h4>
+            <p>Recidief PVR (in de literatuur 10%, in onze recente serie 5–10%), hypotonie (lage oogdruk), opnieuw losraken van het netvlies, blijvend verminderd zicht.</p>
+          </div>
+        </div>
+        <p class="source-note" style="margin-top: 1rem; font-size: 0.82rem;">Cijfers uit recente internationale literatuur (zie referenties onderaan). Onze eigen resultaten staan hieronder.</p>
+      </div>
+
       <h2>Resultaten uit de literatuur</h2>
       <p>PVR ontstaat na 5 tot 10% van primaire vitrectomie&euml;n voor een netvliesloslating en is daarmee de belangrijkste oorzaak van postoperatieve recidieven. Bij chirurgische behandeling van een PVR-recidief wordt anatomisch herstel &mdash; een aanliggend netvlies &mdash; bereikt bij ongeveer 60 tot 80% van pati&euml;nten in literatuurseries. Het functionele zichtherstel is variabel en gemiddeld minder goed dan na een eerste operatie. Dit onderstreept het belang van de eerste operatie en van een operatietechniek die het PVR-risico zo klein mogelijk houdt.</p>
       <p class="source-note" style="margin-top: 1.2rem; font-size: 0.9rem;">Cijfers gebaseerd op meerdere klinische series in de internationale vitreoretinale literatuur.</p>
@@ -2783,6 +2950,18 @@ form input:focus, form textarea:focus {
       <div class="callout">
         <h4>Eerder mislukte netvliesoperatie of verhoogd PVR-risico?</h4>
         <p>Voor tweede meningen of bespreking van complexe gevallen is verwijzing welkom. <a href="#verwijzers" data-link class="arrow-link">Voor verwijzers</a></p>
+      </div>
+
+          <div class="references-block">
+        <p class="references__label">Referenties</p>
+        <ol class="references">
+          <li>van Overdam KA, Veckeneer M, Kiliç E, van Etten PG, Sebag J, van Meurs JC. Vitreoschisis-induced vitreous cortex remnants in proliferative vitreoretinopathy: A comprehensive review from basic research to clinical practice. <em>Acta Ophthalmol</em>. 2024;102(8):859–880. <a href="https://doi.org/10.1111/aos.16755" target="_blank" rel="noopener">doi:10.1111/aos.16755</a></li>
+          <li>van Overdam KA, van Etten PG, Accou GPBM, Wubbels RJ, van Meurs JC, Verhoekx JSN. Prevalence of vitreoschisis-induced vitreous cortex remnants over the peripheral retinal surface in eyes undergoing vitrectomy for primary rhegmatogenous retinal detachment. <em>Acta Ophthalmol</em>. 2024;102(1):99–106. <a href="https://pubmed.ncbi.nlm.nih.gov/37133363/" target="_blank" rel="noopener">PMID:37133363</a></li>
+          <li>van Overdam KA, van den Bosch TPP, van Etten PG, Uppal GS, Veckeneer M, Verdijk RM. Novel insights into the pathophysiology of proliferative vitreoretinopathy: The role of vitreoschisis-induced vitreous cortex remnants. <em>Acta Ophthalmol</em>. 2022;100(8):e1749–e1759. <a href="https://doi.org/10.1111/aos.15197" target="_blank" rel="noopener">doi:10.1111/aos.15197</a></li>
+          <li>van Overdam K. Vitreoschisis-induced vitreous cortex remnants: missing link in proliferative vitreoretinopathy. <em>Acta Ophthalmol</em>. 2020;98(2):e261–e262. <a href="https://doi.org/10.1111/aos.14216" target="_blank" rel="noopener">doi:10.1111/aos.14216</a></li>
+          <li>van Overdam KA, van Etten PG, van Meurs JC, Manning SS. Vitreous Wiping, a new technique for removal of vitreous cortex remnants during vitrectomy. <em>Acta Ophthalmol</em>. 2019;97(5):e747–e752. <a href="https://pubmed.ncbi.nlm.nih.gov/30536726/" target="_blank" rel="noopener">PMID:30536726</a></li>
+          <li>Pastor JC, Rojas J, Pastor-Idoate S, Di Lauro S, Gonzalez-Buendia L, Delgado-Tirado S. Proliferative vitreoretinopathy: A new concept of disease pathogenesis and practical consequences. <em>Prog Retin Eye Res</em>. 2016;51:125–155. <a href="https://doi.org/10.1016/j.preteyeres.2015.07.005" target="_blank" rel="noopener">doi:10.1016/j.preteyeres.2015.07.005</a></li>
+        </ol>
       </div>
 
     </div>
