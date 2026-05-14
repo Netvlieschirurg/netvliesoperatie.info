@@ -5394,27 +5394,41 @@ form input:focus, form textarea:focus {
         <h2 style="margin-top: 0.6rem;">Voor algemene vragen of een second opinion</h2>
         <p class="muted" style="margin-top: 1rem;">Geen acuut probleem? Vul onderstaand formulier in en wij nemen binnen twee werkdagen contact met u op.</p>
 
-        <form class="contact-card" style="margin-top: 1.5rem;" onsubmit="event.preventDefault(); alert('Prototype — formulier nog niet actief. In de definitieve site verbonden met Wix Forms.');">
+        <form class="contact-card" id="contactForm" style="margin-top: 1.5rem;"
+              action="https://script.google.com/macros/s/AKfycbw40dliTchYKi5hLcDIQfXo_Br4xk_f-NA4ZvW0j1QarnQ4hEMX-hYrEzuQPQ4ZqZaq/exec"
+              method="POST">
             <div style="display: flex; flex-direction: column; gap: 1.2rem;">
               <label style="display: flex; flex-direction: column; gap: 0.4rem;">
                 <span style="font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gray);">Naam</span>
-                <input type="text" required style="padding: 0.7rem 0.9rem; border: 1px solid var(--hairline); background: var(--paper); font-family: inherit; font-size: 1rem; color: var(--char);">
+                <input type="text" name="naam" required autocomplete="name" style="padding: 0.7rem 0.9rem; border: 1px solid var(--hairline); background: var(--paper); font-family: inherit; font-size: 1rem; color: var(--char);">
               </label>
               <label style="display: flex; flex-direction: column; gap: 0.4rem;">
                 <span style="font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gray);">E-mailadres</span>
-                <input type="email" required style="padding: 0.7rem 0.9rem; border: 1px solid var(--hairline); background: var(--paper); font-family: inherit; font-size: 1rem; color: var(--char);">
+                <input type="email" name="email" required autocomplete="email" style="padding: 0.7rem 0.9rem; border: 1px solid var(--hairline); background: var(--paper); font-family: inherit; font-size: 1rem; color: var(--char);">
               </label>
               <label style="display: flex; flex-direction: column; gap: 0.4rem;">
-                <span style="font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gray);">Telefoonnummer</span>
-                <input type="tel" style="padding: 0.7rem 0.9rem; border: 1px solid var(--hairline); background: var(--paper); font-family: inherit; font-size: 1rem; color: var(--char);">
+                <span style="font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gray);">Telefoonnummer <span style="text-transform:none; letter-spacing:normal; opacity:0.6;">(optioneel)</span></span>
+                <input type="tel" name="telefoon" autocomplete="tel" style="padding: 0.7rem 0.9rem; border: 1px solid var(--hairline); background: var(--paper); font-family: inherit; font-size: 1rem; color: var(--char);">
               </label>
               <label style="display: flex; flex-direction: column; gap: 0.4rem;">
                 <span style="font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gray);">Uw vraag</span>
-                <textarea rows="5" style="padding: 0.7rem 0.9rem; border: 1px solid var(--hairline); background: var(--paper); font-family: inherit; font-size: 1rem; color: var(--char); resize: vertical;"></textarea>
+                <textarea name="bericht" rows="5" required maxlength="2500" style="padding: 0.7rem 0.9rem; border: 1px solid var(--hairline); background: var(--paper); font-family: inherit; font-size: 1rem; color: var(--char); resize: vertical;"></textarea>
               </label>
-              <button type="submit" class="btn" style="align-self: flex-start;">Versturen</button>
+              <input type="text" name="_gotcha" style="position:absolute; left:-9999px;" tabindex="-1" autocomplete="off" aria-hidden="true">
+              <p style="font-size: 13px; color: var(--gray); margin: 0;">Verstuur via dit formulier geen acute klachten. Bij plotse afname van het zicht: bel uw oogarts of de spoedeisende hulp.</p>
+              <button type="submit" id="contactSubmit" class="btn" style="align-self: flex-start;">Versturen</button>
             </div>
           </form>
+
+          <div id="contactSuccess" style="display:none; margin-top: 1.5rem; padding: 1.6rem 1.8rem; border-top: 2px solid var(--ink); border-bottom: 1px solid var(--hairline); background: var(--paper-tint);">
+            <p class="eyebrow" style="margin: 0;">Bedankt</p>
+            <h3 style="margin-top: 0.4rem; margin-bottom: 0.6rem; font-family: var(--font-display); font-weight: 500;">Uw bericht is verzonden.</h3>
+            <p style="margin: 0;">We nemen binnen twee werkdagen contact met u op. Bij acute klachten — een 'gordijn' in het beeld of plotse afname van het zicht — wacht u niet op een reactie, maar belt u uw eigen oogarts of de spoedeisende hulp.</p>
+          </div>
+
+          <div id="contactError" style="display:none; margin-top: 1.5rem; padding: 1.2rem 1.8rem; border-left: 3px solid var(--gold); background: var(--paper-tint);">
+            <p style="margin:0;">Verzenden lukte op dit moment niet. Probeer het later nog eens, of neem rechtstreeks contact op via de locaties in de footer.</p>
+          </div>
       </div>
     </div>
   </section>
@@ -6147,6 +6161,36 @@ form input:focus, form textarea:focus {
 
   window.addEventListener('hashchange', handleHashChange);
   handleHashChange();
+})();
+</script>
+
+<!-- ============== CONTACT FORM SUBMISSION ============== -->
+<script>
+(function() {
+  var form = document.getElementById('contactForm');
+  if (!form) return;
+  var btn = document.getElementById('contactSubmit');
+  var ok = document.getElementById('contactSuccess');
+  var err = document.getElementById('contactError');
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    btn.disabled = true;
+    btn.textContent = 'Versturen…';
+    err.style.display = 'none';
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      mode: 'no-cors'
+    }).then(function() {
+      form.style.display = 'none';
+      ok.style.display = 'block';
+      ok.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }).catch(function() {
+      err.style.display = 'block';
+      btn.disabled = false;
+      btn.textContent = 'Versturen';
+    });
+  });
 })();
 </script>
 
