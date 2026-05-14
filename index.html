@@ -6179,7 +6179,7 @@ form input:focus, form textarea:focus {
     err.style.display = 'none';
     fetch(form.action, {
       method: 'POST',
-      body: new FormData(form),
+      body: new URLSearchParams(new FormData(form)),
       mode: 'no-cors'
     }).then(function() {
       form.style.display = 'none';
