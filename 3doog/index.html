@@ -238,6 +238,7 @@
       ctl.update(Math.min(dt, 50) / 1000);
       if (shEvery > 1) R.shadowMap.needsUpdate = (n++ % shEvery === 0);
       R.render(scene, cam);
+      if (!window.__oogReady) warm = now + 1500;               // judge only once the model is fully built
       if (now > warm) {
         dts.push(dt); acc += dt;
         if (dts.length >= 40 || (acc > 2000 && dts.length >= 3)) {   // judge every 40 frames, or every ~2 s on a very slow computer
