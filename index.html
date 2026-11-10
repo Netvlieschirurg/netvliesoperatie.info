@@ -2503,6 +2503,20 @@ body.search-open { overflow: hidden; }
   justify-content: center;
   padding: .3rem .4rem;
 }
+
+/* ========== 3D-OOG ========== */
+/* Interactief model: volle breedte, hoogte = scherm onder nav + crumb-bar. Op telefoons zet het script de hoogte op de inhoud. */
+.oog3d { border-top: var(--rule-strong); border-bottom: var(--rule); background: #ffffff; }
+.oog3d iframe {
+  display: block; width: 100%; border: 0; background: #ffffff;
+  height: calc(100vh - var(--nav-h) - 2.75rem);
+  height: calc(100svh - var(--nav-h) - 2.75rem);
+  min-height: 540px; max-height: 900px;
+}
+@media (max-width: 760px) {
+  .oog3d iframe { min-height: 0; max-height: none; height: 1150px; }
+}
+.oog3d-note { padding: 1.4rem 0 clamp(3rem, 6vw, 4.5rem); }
 </style>
 </head>
 <body>
@@ -2532,6 +2546,7 @@ body.search-open { overflow: hidden; }
     <ul class="nav__links" id="navLinks">
       <li><a href="#home" data-link>Home</a></li>
       <li><a href="#aandoeningen" data-link>Aandoeningen</a></li>
+      <li><a href="#3d-oog" data-link>3D-oog</a></li>
       <li><a href="#operaties" data-link>Operaties</a></li>
       <li><a href="#chirurg" data-link>Chirurg</a></li>
       <li><a href="#onderzoek" data-link>Onderzoek</a></li>
@@ -2810,6 +2825,19 @@ body.search-open { overflow: hidden; }
             <p>Proliferatieve vitreoretinopathie: de belangrijkste oorzaak van een tweede operatie na een netvliesloslating.</p>
           </div>
         </a>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="shell">
+      <div class="grid-2">
+        <div>
+          <h2>Het oog in 3D.</h2>
+        </div>
+        <div class="body-lg">
+          <p>Draai een opengewerkt oog op ware grootte en zie stap voor stap hoe een glasvochtloslating of een netvliesscheur ontstaat.</p>
+          <p><a href="#3d-oog" class="arrow-link" data-link>Bekijk het 3D-oog</a></p>
+        </div>
       </div>
     </div>
   </section>
@@ -5975,6 +6003,29 @@ body.search-open { overflow: hidden; }
   </section>
 </section>
 
+<!-- ============== 3D-OOG ============== -->
+<section class="page" id="page-3d-oog" data-page="3d-oog">
+
+  <div class="crumb-bar"><div class="shell"><p class="crumb"><a href="#home" data-link>Home</a> &nbsp;/&nbsp; <span>3D-oog</span></p><div class="page-tools"><div class="pt-wrap"><button class="pt-icon-btn pt-listen-trigger" type="button" onclick="(function(b){var p=b.closest('.pt-wrap').querySelector('.pt-panel');var o=p&&p.classList.contains('is-open');document.querySelectorAll('.pt-panel').forEach(function(x){x.classList.remove('is-open');});document.querySelectorAll('.pt-icon-btn').forEach(function(x){x.setAttribute('aria-expanded','false');});if(!o&&p){var t=b.closest('.page-tools');var r=t?t.getBoundingClientRect():b.getBoundingClientRect();var ri=(r.left+r.width/2)>window.innerWidth/2;p.style.right=ri?'0':'auto';p.style.left=ri?'auto':'0';p.classList.add('is-open');b.setAttribute('aria-expanded','true');}})(this)" aria-label="Voorlezen" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="19" height="19"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg></button><div class="pt-panel" role="dialog" aria-label="Voorlezen"><p class="pt-panel__title">Voorlezen</p><div class="pt-panel__btns"><button class="listen-btn pt-ctrl-btn" type="button" aria-label="Lees deze pagina voor"><span class="listen-btn__icon" aria-hidden="true">&#9655;</span><span class="listen-btn__label">Afspelen</span></button><button class="stop-btn pt-ctrl-btn" type="button" aria-label="Stop voorlezen"><span class="stop-btn__icon" aria-hidden="true">&#9632;</span><span class="stop-btn__label">Stop</span></button></div><div class="pt-panel__slider-row"><span class="pt-slider-min">0.8×</span><input type="range" class="pt-slider pt-speed-slider" min="0.8" max="2.0" step="0.1" value="1.0" aria-label="Leessnelheid" oninput="(function(s){var v=parseFloat(s.value).toFixed(1);if(window._ttsSetSpeed)window._ttsSetSpeed(parseFloat(v));var l=s.closest('.pt-panel').querySelector('.speed-btn');if(l)l.textContent=v+'×';})(this)"><span class="pt-slider-max">2×</span></div><div class="pt-panel__sub"><span class="pt-sub-lbl">SNELHEID</span><span class="speed-btn pt-sub-val">1.0×</span><button class="pt-reset-plain" type="button" onclick="(function(b){if(window._ttsSetSpeed)window._ttsSetSpeed(1.0);var p=b.closest('.pt-panel');p.querySelectorAll('.pt-speed-slider').forEach(function(s){s.value=1.0;});p.querySelectorAll('.speed-btn').forEach(function(el){el.textContent='1.0×';});})(this)">RESET</button></div></div></div><div class="pt-wrap"><button class="pt-icon-btn pt-theme-trigger" type="button" onclick="(function(b){var p=b.closest('.pt-wrap').querySelector('.pt-panel');var o=p&&p.classList.contains('is-open');document.querySelectorAll('.pt-panel').forEach(function(x){x.classList.remove('is-open');});document.querySelectorAll('.pt-icon-btn').forEach(function(x){x.setAttribute('aria-expanded','false');});if(!o&&p){var t=b.closest('.page-tools');var r=t?t.getBoundingClientRect():b.getBoundingClientRect();var ri=(r.left+r.width/2)>window.innerWidth/2;p.style.right=ri?'0':'auto';p.style.left=ri?'auto':'0';p.classList.add('is-open');b.setAttribute('aria-expanded','true');}})(this)" aria-label="Weergave" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="19" height="19"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button><div class="pt-panel" role="dialog" aria-label="Weergave"><p class="pt-panel__title">Weergave</p><div class="pt-panel__theme-row"><button class="pt-theme-choice is-active" data-choose="light" type="button" onclick="(function(b){document.documentElement.removeAttribute('data-theme');b.closest('.pt-panel').querySelectorAll('.pt-theme-choice').forEach(function(x){x.classList.toggle('is-active',x.getAttribute('data-choose')==='light');});})(this)">&#9788; Licht</button><button class="pt-theme-choice" data-choose="dark" type="button" onclick="(function(b){document.documentElement.setAttribute('data-theme','dark');b.closest('.pt-panel').querySelectorAll('.pt-theme-choice').forEach(function(x){x.classList.toggle('is-active',x.getAttribute('data-choose')==='dark');});})(this)">&#9789; Donker</button></div><div class="pt-panel__slider-row"><span class="pt-slider-min">60%</span><input type="range" class="pt-slider pt-brightness-slider" min="60" max="130" step="5" value="100" aria-label="Helderheid" oninput="(function(s){var v=parseInt(s.value);document.documentElement.style.filter=v===100?'':'brightness('+v+'%)';var l=s.closest('.pt-panel').querySelector('.pt-brightness-lbl');if(l)l.textContent=v+'%';})(this)"><span class="pt-slider-max">130%</span></div><div class="pt-panel__sub"><span class="pt-sub-lbl">HELDERHEID</span><span class="pt-brightness-lbl pt-sub-val">100%</span><button class="pt-reset-plain" type="button" onclick="(function(b){document.documentElement.removeAttribute('data-theme');document.documentElement.style.filter='';var p=b.closest('.pt-panel');p.querySelectorAll('.pt-brightness-slider').forEach(function(s){s.value=100;});p.querySelectorAll('.pt-brightness-lbl').forEach(function(el){el.textContent='100%';});p.querySelectorAll('.pt-theme-choice').forEach(function(x){x.classList.toggle('is-active',x.getAttribute('data-choose')==='light');});})(this)">RESET</button></div></div></div><div class="pt-wrap"><button class="pt-icon-btn pt-font-trigger" type="button" onclick="(function(b){var p=b.closest('.pt-wrap').querySelector('.pt-panel');var o=p&&p.classList.contains('is-open');document.querySelectorAll('.pt-panel').forEach(function(x){x.classList.remove('is-open');});document.querySelectorAll('.pt-icon-btn').forEach(function(x){x.setAttribute('aria-expanded','false');});if(!o&&p){var t=b.closest('.page-tools');var r=t?t.getBoundingClientRect():b.getBoundingClientRect();var ri=(r.left+r.width/2)>window.innerWidth/2;p.style.right=ri?'0':'auto';p.style.left=ri?'auto':'0';p.classList.add('is-open');b.setAttribute('aria-expanded','true');}})(this)" aria-label="Lettergrootte" aria-expanded="false"><span class="pt-aa" aria-hidden="true"><span>A</span><span>A</span></span></button><div class="pt-panel" role="dialog" aria-label="Lettergrootte"><p class="pt-panel__title">Lettergrootte</p><div class="pt-panel__slider-row"><span style="font-size:11px;font-family:var(--serif);" aria-hidden="true">A</span><input type="range" class="pt-slider pt-font-slider" min="90" max="135" step="5" value="100" aria-label="Lettergrootte" oninput="(function(s){var v=parseInt(s.value);document.documentElement.style.fontSize=v+'%';var l=s.closest('.pt-panel').querySelector('.pt-font-lbl');if(l)l.textContent=v+'%';})(this)"><span style="font-size:17px;font-family:var(--serif);" aria-hidden="true">A</span></div><div class="pt-panel__sub"><span class="pt-sub-lbl">LETTERGROOTTE</span><span class="pt-font-lbl pt-sub-val">100%</span><button class="pt-reset-plain" type="button" onclick="document.documentElement.style.fontSize='';document.querySelectorAll('.pt-font-slider').forEach(function(s){s.value=100;});document.querySelectorAll('.pt-font-lbl').forEach(function(el){el.textContent='100%';});">RESET</button></div></div></div></div></div></div>
+
+  <div class="page-head">
+    <div class="shell">
+      <h1 class="display" style="max-width: 18ch;">Het oog in&nbsp;<em>3D</em>.</h1>
+      <p class="lede" style="margin-top: 1.5rem;">Een opengewerkt oog op ware grootte, om zelf te draaien en van alle kanten te bekijken. Kies een aandoening en zie hoe staar, glasvochttroebelingen, een achterste glasvochtloslating en een netvliesscheur ontstaan.</p>
+    </div>
+  </div>
+
+  <div class="oog3d">
+    <iframe id="oog3dFrame" data-src="3doog/?embed" title="Interactief 3D-model van het oog, opengewerkt" allow="fullscreen"></iframe>
+  </div>
+
+  <div class="oog3d-note">
+    <div class="shell">
+      <p class="figure__caption" style="max-width: 46em;">Beweeg over het oog, of tik erop, om de namen van de structuren te zien. Het model is een vereenvoudigde weergave ter oriëntatie en geen vervanging van een onderzoek door uw oogarts.</p>
+    </div>
+  </div>
+</section>
+
 </main>
 
 <!-- ============== FOOTER ============== -->
@@ -6024,6 +6075,7 @@ body.search-open { overflow: hidden; }
           <li><a href="#aandoeningen/glasvochtbloeding" data-link>Glasvochtbloeding</a></li>
           <li><a href="#aandoeningen/diabetische-retinopathie" data-link>Diabetische retinopathie</a></li>
           <li><a href="#aandoeningen/pvr" data-link>PVR-littekenweefsel</a></li>
+          <li><a href="#3d-oog" data-link>Het oog in 3D</a></li>
         </ul>
       </div>
       <div>
@@ -7067,6 +7119,27 @@ document.addEventListener('keydown', function(e) {
     });
   }
 });
+</script>
+
+<!-- ============== 3D-OOG: model alleen laden zolang de pagina open is ============== -->
+<script>
+(function() {
+  var frame = document.getElementById('oog3dFrame');
+  if (!frame) return;
+  function sync() {
+    var on = (window.location.hash || '') === '#3d-oog';
+    if (on && !frame.dataset.on) { frame.dataset.on = '1'; frame.src = frame.getAttribute('data-src'); }
+    else if (!on && frame.dataset.on) { delete frame.dataset.on; frame.src = 'about:blank'; frame.style.height = ''; }
+  }
+  // Telefoons: het model stapelt titel, oog, menu en uitleg; neem de hoogte van de inhoud over
+  window.addEventListener('message', function(e) {
+    if (e.source !== frame.contentWindow || !e.data || e.data.type !== 'oog3d:height') return;
+    frame.style.height = frame.clientWidth <= 760 ? Math.ceil(e.data.h) + 'px' : '';
+  });
+  window.addEventListener('resize', function() { if (frame.clientWidth > 760) frame.style.height = ''; });
+  window.addEventListener('hashchange', sync);
+  sync();
+})();
 </script>
 
 </body>
