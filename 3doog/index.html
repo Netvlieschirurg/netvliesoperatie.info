@@ -843,18 +843,26 @@ function sectionFace(pts, ang, lift = 0) {
   // meshwork, scleral spur; iris processes as fine strands around the circumference
   {
     const prof = [], n = 60; for (let i = 0; i <= n; i++) { const th = thSch - .3 * deg + (thS + .3 * deg - thSch + .3 * deg) * i / n; prof.push(mp(RSi - .012, th)); }
-    const g = new THREE.LatheGeometry(prof, 360, PI, PL).rotateX(PI / 2), p = g.attributes.position, col = [], c = new THREE.Color();
-    for (let i = 0; i < p.count; i++) {
-      const x = p.getX(i), y = p.getY(i), z = p.getZ(i), th = Math.atan2(Math.hypot(x, y), z), az = Math.atan2(y, x);
-      const t = (th - thSch) / (thS - thSch);
-      if (t < .06) c.set(0xf2ead8);
-      else if (t < .55) c.set(0xc9b394).lerp(new THREE.Color(0x9a7452), Math.max(0, (t - .35) / .2));
-      else if (t < .9) c.set(0x6e4428).multiplyScalar(.85 + .3 * Math.pow(.5 + .5 * Math.sin(az * 90), 3));
-      else c.set(0xeee6d6);
-      col.push(c.r, c.g, c.b);
-    }
-    g.setAttribute('color', new THREE.Float32BufferAttribute(col, 3)); g.computeVertexNormals();
-    add('angle_wall', g, std('angle_wall', { vertexColors: true, roughness: .5 }));
+    const g = new THREE.LatheGeometry(prof, 360, PI, PL).rotateX(PI / 2), c = new THREE.Color(), dark = new THREE.Color(0x9a7452);
+    // bands painted into a mipmapped texture (u = around the lathe, v = along the profile) rather than vertex colours:
+    // the thin light lines (Schwalbe's line, scleral spur) then stay continuous on ordinary screens instead of breaking into specks
+    const bands = canvasTex(2048, 128, (g2, W, H) => {
+      const img = g2.createImageData(W, H), d = img.data, pig = new Float32Array(W);
+      for (let x = 0; x < W; x++) { const az = PI + (x + .5) / W * PL - PI / 2; pig[x] = .85 + .3 * Math.pow(.5 + .5 * Math.sin(az * 90), 3); }
+      for (let y = 0; y < H; y++) {
+        const j = 1 - (y + .5) / H, th = thSch - .3 * deg + (thS + .3 * deg - thSch + .3 * deg) * j, t = (th - thSch) / (thS - thSch);
+        for (let x = 0; x < W; x++) {
+          if (t < .06) c.set(0xf2ead8);
+          else if (t < .55) c.set(0xc9b394).lerp(dark, Math.max(0, (t - .35) / .2));
+          else if (t < .9) c.set(0x6e4428).multiplyScalar(pig[x]);
+          else c.set(0xeee6d6);
+          const h = c.getHex(), o = (y * W + x) * 4; d[o] = h >> 16 & 255; d[o + 1] = h >> 8 & 255; d[o + 2] = h & 255; d[o + 3] = 255;
+        }
+      }
+      g2.putImageData(img, 0, 0);
+    });
+    g.computeVertexNormals();
+    add('angle_wall', g, std('angle_wall', { map: bands, roughness: .5 }));
     const geos = [], up = new THREE.Vector3(0, 1, 0);
     for (let k = 0; k < 60; k++) {
       const az = A0 + PL * (k + R(.2, .8)) / 60; if (rnd() < .5 || az < A0 + .06 || az > A0 + PL - .06) continue;
