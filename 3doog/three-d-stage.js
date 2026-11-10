@@ -211,13 +211,14 @@
         import('three/addons/controls/OrbitControls.js'),
       ]);
       this._THREE = THREE;
-      // preserveDrawingBuffer keeps the last frame readable after
-      // compositing (toDataURL / drawImage) — it's what lets the
-      // screenshot tools capture the scene instead of a blank canvas.
+      // No preserveDrawingBuffer: faster on Windows PCs, and the canvas
+      // cannot be read back as an image. high-performance asks laptops
+      // with two graphics chips for the faster one.
       const renderer = new THREE.WebGLRenderer({
         antialias: true,
         alpha: true,
-        preserveDrawingBuffer: true,
+        preserveDrawingBuffer: false,
+        powerPreference: 'high-performance',
       });
       renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
       renderer.shadowMap.enabled = true;

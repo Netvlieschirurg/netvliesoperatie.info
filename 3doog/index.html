@@ -71,7 +71,13 @@
   .label p{margin:0;font-size:15px;line-height:1.5;color:var(--muted)}
   #conditions{position:absolute;right:var(--edge);top:84px;width:250px;max-height:calc(100% - 140px);overflow:auto;z-index:7;border-top:1px solid var(--ink);padding-top:10px;background:rgba(255,255,255,.92)}
   .cond-head{font:600 12px/1 "IBM Plex Sans",system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin:0 0 8px 10px}
-  .lang{position:absolute;right:var(--edge);top:28px;display:flex;z-index:7;background:var(--paper)}
+  .switches{position:absolute;right:var(--edge);top:28px;display:flex;align-items:center;gap:18px;z-index:7}
+  .lang,.quality{display:flex;align-items:center;background:var(--paper)}
+  .q-label{font:600 12px/1 "IBM Plex Sans",system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-right:10px}
+  .quality button{font:600 12px/1 "IBM Plex Sans",system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;padding:9px 12px;border:1px solid #1a1a1a;border-radius:0;cursor:pointer;background:transparent;color:#1a1a1a}
+  .quality button+button{border-left:0}
+  .quality button[aria-pressed="true"]{background:#1a1a1a;color:#fff}
+  .quality button:focus-visible,.lang button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
   .loading{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:0;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
   .oog-fail{position:absolute;inset:0;z-index:8;display:flex;align-items:center;justify-content:center;padding:24px;background:var(--paper);text-align:center}
   .oog-fail[hidden]{display:none}
@@ -103,7 +109,7 @@
     three-d-stage{order:3;position:relative;inset:auto;width:100%;height:min(56vh,500px);height:min(56svh,500px);min-height:320px}
     #conditions{order:4;position:static;width:auto;max-height:none;margin:0 var(--gutter);background:transparent}
     .label p{order:5;margin:18px var(--gutter) 0}
-    .lang{order:6;position:static;align-self:flex-start;margin:22px var(--gutter) 0}
+    .switches{order:6;position:static;align-self:flex-start;flex-wrap:wrap;gap:12px 18px;margin:22px var(--gutter) 0}
     .loading{top:42%}
     .embed .viewer{height:auto;padding-top:0}
     .embed three-d-stage{height:clamp(300px,92vw,480px)}
@@ -137,9 +143,16 @@
     <button type="button" data-cond="pvd" data-nl="Achterste glasvochtloslating" data-en="Posterior vitreous detachment" aria-pressed="false" style="display:block;width:100%;text-align:left;font:400 13px/1.25 'IBM Plex Sans',system-ui,sans-serif;padding:6px 10px;border:0;border-top:1px solid #d4d1c6;border-radius:0;cursor:pointer;background:transparent;color:#1a1a1a;transition:color .15s">Achterste glasvochtloslating</button>
     <button type="button" data-cond="tear" data-nl="Netvliesscheur" data-en="Retinal tear" aria-pressed="false" style="display:block;width:100%;text-align:left;font:400 13px/1.25 'IBM Plex Sans',system-ui,sans-serif;padding:6px 10px;border:0;border-top:1px solid #d4d1c6;border-radius:0;cursor:pointer;background:transparent;color:#1a1a1a;transition:color .15s">Netvliesscheur</button>
   </nav>
+  <div class="switches">
+  <div class="quality" role="group" aria-label="Beeldkwaliteit / Image quality">
+    <span class="q-label" data-nl="Kwaliteit" data-en="Quality">Kwaliteit</span>
+    <button type="button" data-q="high" aria-pressed="true" data-nl="Hoog" data-en="High">Hoog</button>
+    <button type="button" data-q="low" aria-pressed="false" data-nl="Laag" data-en="Low">Laag</button>
+  </div>
   <div class="lang" role="group" aria-label="Taal / Language">
     <button type="button" data-lang="nl" aria-pressed="true" style="font:600 12px/1 'IBM Plex Sans',system-ui,sans-serif;letter-spacing:.12em;padding:9px 12px;border:1px solid #1a1a1a;border-radius:0;cursor:pointer;background:#1a1a1a;color:#fff">NL</button>
     <button type="button" data-lang="en" aria-pressed="false" style="font:600 12px/1 'IBM Plex Sans',system-ui,sans-serif;letter-spacing:.12em;padding:9px 12px;border:1px solid #1a1a1a;border-left:0;border-radius:0;cursor:pointer;background:transparent;color:#1a1a1a">EN</button>
+  </div>
   </div>
   <div class="oog-fail" id="oog-fail" hidden><p data-nl="Het 3D-model kan in deze browser niet worden getoond. Probeer een recente versie van Chrome, Edge, Firefox of Safari, of controleer uw internetverbinding." data-en="The 3D model cannot be shown in this browser. Try a recent version of Chrome, Edge, Firefox or Safari, or check your internet connection.">Het 3D-model kan in deze browser niet worden getoond. Probeer een recente versie van Chrome, Edge, Firefox of Safari, of controleer uw internetverbinding.</p></div>
 </main>
@@ -161,7 +174,8 @@
   st.textContent = '.toolbar{display:none}.note{left:var(--edge,16px);bottom:18px;max-width:70%;font:400 12px/1.5 "IBM Plex Sans",system-ui,sans-serif;color:rgba(26,26,26,.55)}'
     + '.wm{position:absolute;right:var(--edge,16px);bottom:18px;pointer-events:none;font:600 11px/1.5 "IBM Plex Sans",system-ui,sans-serif;letter-spacing:.06em;color:rgba(26,26,26,.42);white-space:nowrap}'
     + 'canvas{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}'
-    + '@media (max-width:760px){.wm{top:10px;bottom:auto}}';
+    + '.perf{position:absolute;left:var(--edge,16px);bottom:44px;max-width:min(420px,70%);padding:8px 10px;border-left:3px solid #a87800;background:rgba(255,255,255,.92);pointer-events:none;font:400 12px/1.45 "IBM Plex Sans",system-ui,sans-serif;color:#1a1a1a}'
+    + '@media (max-width:760px){.wm{top:10px;bottom:auto}.perf{bottom:auto;top:34px;max-width:none;right:var(--edge,16px)}}';
   if (stage.shadowRoot) {
     stage.shadowRoot.appendChild(st);
     // watermark: every screenshot of the model carries its source
@@ -173,6 +187,76 @@
   // no "save image" / "copy image" on the model: context menu, long press and dragging are switched off
   ['contextmenu', 'dragstart', 'selectstart'].forEach(t => stage.addEventListener(t, e => e.preventDefault(), true));
   document.addEventListener('contextmenu', e => { if (e.composedPath().includes(stage)) e.preventDefault(); }, true);
+
+  // speed and quality. "Hoog" = full quality. "Laag" = lighter: coarser refraction through cornea and lens, shadows
+  // refreshed a few times a second, normal instead of retina sharpness, and lower still if needed. A slow computer
+  // switches to Laag by itself, unless the visitor picked Hoog. At most ~60 frames per second, nothing drawn out of view.
+  stage.ready.then(() => {
+    const R = stage._renderer, ctl = stage._controls, scene = stage._scene, cam = stage._camera;
+    const dpr = window.devicePixelRatio || 1;
+    const HIGH = { pr: 2, tr: 1, sh: 1 };
+    const LOW = [ { pr: 1, tr: .35, sh: 20 }, { pr: .75, tr: .35, sh: 20 }, { pr: .6, tr: .35, sh: 20 } ];
+    let saved = null; try { saved = localStorage.getItem('oog-quality'); } catch (e) {}
+    let mode = saved === 'low' ? 'low' : 'high', step = 0, chosen = saved === 'low' || saved === 'high', shEvery = 1, n = 0;
+    const qButtons = [...document.querySelectorAll('button[data-q]')];
+    const apply = () => {
+      const T = mode === 'high' ? HIGH : LOW[step], px = Math.max(1, stage.clientWidth * stage.clientHeight);
+      R.setPixelRatio(Math.max(.5, Math.min(dpr, T.pr, Math.sqrt(4.6e6 / px))));   // never more than ~4.6 million pixels per frame
+      R.transmissionResolutionScale = T.tr;
+      shEvery = T.sh; R.shadowMap.autoUpdate = shEvery === 1; R.shadowMap.needsUpdate = true;
+      qButtons.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.q === mode)));
+    };
+    // software rendering (no graphics acceleration): start low and tell the visitor how to fix it
+    let soft = false;
+    try { const gl = R.getContext(), ext = gl.getExtension('WEBGL_debug_renderer_info'); soft = /swiftshader|llvmpipe|softpipe|basic render|software/i.test(String(gl.getParameter(ext ? ext.UNMASKED_RENDERER_WEBGL : gl.RENDERER))); } catch (e) {}
+    if (soft) {
+      if (!chosen) { mode = 'low'; step = 1; }
+      const perf = document.createElement('div'); perf.className = 'perf';
+      const txt = { nl: 'Uw browser tekent het model zonder grafische versnelling, daardoor loopt het stroef. Zet in de browserinstellingen hardwareversnelling (grafische versnelling) aan.', en: 'Your browser draws the model without graphics acceleration, so it runs slowly. Turn on hardware (graphics) acceleration in your browser settings.' };
+      perf.textContent = txt[document.documentElement.lang === 'en' ? 'en' : 'nl'];
+      document.addEventListener('oog-lang', e => { perf.textContent = txt[e.detail]; });
+      stage.shadowRoot.appendChild(perf);
+    }
+    apply(); new ResizeObserver(apply).observe(stage);
+
+    let inView = true; new IntersectionObserver(es => { inView = es[es.length - 1].isIntersecting; }).observe(stage);
+    // judged on the MEDIAN frame time, so a one-off hiccup (e.g. preparing a new condition) never lowers the quality
+    let last = 0, acc = 0, prevMed = 0, undo = null, locked = mode === 'high' && chosen, warm = performance.now() + 2500; const dts = [];
+    const restart = () => { prevMed = 0; undo = null; dts.length = 0; acc = 0; warm = performance.now() + 1500; };
+
+    // the visitor's own choice wins and is remembered on this device
+    qButtons.forEach(b => b.addEventListener('click', () => {
+      mode = b.dataset.q; step = 0; chosen = true; locked = mode === 'high';
+      try { localStorage.setItem('oog-quality', mode); } catch (e) {}
+      restart(); apply();
+    }));
+
+    stage._loop = now => {
+      if (!inView || document.hidden) { last = 0; return; }
+      if (last && now - last < 12) return;                    // 120/144 Hz screens: no more frames than needed
+      const dt = last ? now - last : 16.7; last = now;
+      ctl.update(Math.min(dt, 50) / 1000);
+      if (shEvery > 1) R.shadowMap.needsUpdate = (n++ % shEvery === 0);
+      R.render(scene, cam);
+      if (now > warm) {
+        dts.push(dt); acc += dt;
+        if (dts.length >= 40 || (acc > 2000 && dts.length >= 3)) {   // judge every 40 frames, or every ~2 s on a very slow computer
+          const med = dts.sort((a, b) => a - b)[dts.length >> 1]; dts.length = 0; acc = 0;
+          if (prevMed) {   // first judgement after a step down: no real gain (e.g. a 30 fps power-saving mode) → undo it and stop adapting
+            const gain = med < prevMed * .9; prevMed = 0;
+            if (!gain && undo) { undo(); apply(); locked = true; }
+            undo = null;
+          } else if (!locked && med > 25) {
+            if (mode === 'high' && !chosen) { prevMed = med; undo = () => { mode = 'high'; }; mode = 'low'; step = 0; apply(); warm = now + 1000; }
+            else if (mode === 'low' && step < LOW.length - 1) { prevMed = med; undo = () => { step--; }; step++; apply(); warm = now + 1000; }
+          }
+        }
+      }
+    };
+    R.setAnimationLoop(stage._loop);
+    window.__oogTier = () => ({ mode, step, chosen, locked, soft, pr: R.getPixelRatio(), tr: R.transmissionResolutionScale, shEvery });
+    window.__oogTier.reset = () => { mode = soft ? 'low' : 'high'; step = soft ? 1 : 0; chosen = false; locked = false; try { localStorage.removeItem('oog-quality'); } catch (e) {} restart(); warm = performance.now() + 500; apply(); };
+  });
 
   // edition line, as on the rest of the site
   try {
