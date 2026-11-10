@@ -188,14 +188,15 @@
   ['contextmenu', 'dragstart', 'selectstart'].forEach(t => stage.addEventListener(t, e => e.preventDefault(), true));
   document.addEventListener('contextmenu', e => { if (e.composedPath().includes(stage)) e.preventDefault(); }, true);
 
-  // speed and quality. "Hoog" = full quality. "Laag" = lighter: coarser refraction through cornea and lens, shadows
-  // refreshed a few times a second, normal instead of retina sharpness, and lower still if needed. A slow computer
+  // speed and quality. "Hoog" = full quality. "Laag" = lighter: shadows refreshed a few times a second,
+  // normal instead of retina sharpness, and lower sharpness still if needed. A slow computer
   // switches to Laag by itself, unless the visitor picked Hoog. At most ~60 frames per second, nothing drawn out of view.
   stage.ready.then(() => {
     const R = stage._renderer, ctl = stage._controls, scene = stage._scene, cam = stage._camera;
     const dpr = window.devicePixelRatio || 1;
     const HIGH = { pr: 2, tr: 1, sh: 1 };
-    const LOW = [ { pr: 1, tr: .35, sh: 20 }, { pr: .75, tr: .35, sh: 20 }, { pr: .6, tr: .35, sh: 20 } ];
+    // refraction is never sampled below ~60 % of screen resolution: coarser than that shows bright blobs at the limbus
+    const LOW = [ { pr: 1, tr: 1, sh: 20 }, { pr: .8, tr: .85, sh: 20 }, { pr: .67, tr: .9, sh: 20 } ];
     let saved = null; try { saved = localStorage.getItem('oog-quality'); } catch (e) {}
     let mode = saved === 'low' ? 'low' : 'high', step = 0, chosen = saved === 'low' || saved === 'high', shEvery = 1, n = 0;
     const qButtons = [...document.querySelectorAll('button[data-q]')];
