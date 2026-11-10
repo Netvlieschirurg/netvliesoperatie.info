@@ -7,8 +7,16 @@
 <meta name="description" content="Interactief 3D-model van het oog: een opengewerkte oogbol met netvlies, glasvocht, lens en oogspieren, en hoe staar, glasvochttroebelingen, een achterste glasvochtloslating en een netvliesscheur ontstaan.">
 <script>
 (function () {
+  // the model is shown only inside netvliesoperatie.info: a frame on another site gets a short notice instead
+  var foreign = false;
+  if (window.top !== window.self) { try { foreign = window.parent.location.host !== location.host; } catch (e) { foreign = true; } }
+  if (foreign) {
+    try { window.stop(); } catch (e) {}
+    document.documentElement.innerHTML = '<head><meta charset="utf-8"></head><body style="margin:0;height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;box-sizing:border-box;font:18px/1.4 Georgia,serif;text-align:center;background:#fff;color:#1a1a1a"><p>Dit 3D-model is alleen te bekijken op <a href="https://netvliesoperatie.info/#3d-oog" target="_top" style="color:#a87800">netvliesoperatie.info</a>.</p></body>';
+    return;
+  }
+  if (window.top === window.self && /\/3doog\/(index\.html)?$/.test(location.pathname)) location.replace('../#3d-oog');   // the page lives in the site
   if (/[?&]embed\b/.test(location.search)) document.documentElement.classList.add('embed');
-  else if (window.top === window.self && /\/3doog\/(index\.html)?$/.test(location.pathname)) location.replace('../#3d-oog');   // the page lives in the site
 })();
 </script>
 <script type="importmap">
@@ -56,7 +64,7 @@
   .viewer{position:relative;isolation:isolate;overflow:hidden;background:var(--paper);
     height:calc(100vh - var(--mast-h) - var(--foot-h));height:calc(100svh - var(--mast-h) - var(--foot-h));min-height:520px}
   three-d-stage:not(:defined){visibility:hidden}
-  three-d-stage{position:absolute;inset:0;width:auto;height:auto;z-index:6}
+  three-d-stage{position:absolute;inset:0;width:auto;height:auto;z-index:6;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
   .label{position:absolute;left:var(--edge);top:28px;width:270px;padding:12px 12px 10px 0;border-top:1px solid var(--ink);pointer-events:none;z-index:1}
   .eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600}
   .label h1{font-family:Newsreader,Georgia,serif;font-weight:400;font-size:40px;line-height:1.05;letter-spacing:-.01em;margin:8px 0}
@@ -150,8 +158,21 @@
 
   // public page: no OBJ/GLB export buttons; control hint aligned with the page grid
   const st = document.createElement('style');
-  st.textContent = '.toolbar{display:none}.note{left:var(--edge,16px);bottom:18px;max-width:70%;font:400 12px/1.5 "IBM Plex Sans",system-ui,sans-serif;color:rgba(26,26,26,.55)}';
-  stage.shadowRoot && stage.shadowRoot.appendChild(st);
+  st.textContent = '.toolbar{display:none}.note{left:var(--edge,16px);bottom:18px;max-width:70%;font:400 12px/1.5 "IBM Plex Sans",system-ui,sans-serif;color:rgba(26,26,26,.55)}'
+    + '.wm{position:absolute;right:var(--edge,16px);bottom:18px;pointer-events:none;font:600 11px/1.5 "IBM Plex Sans",system-ui,sans-serif;letter-spacing:.06em;color:rgba(26,26,26,.42);white-space:nowrap}'
+    + 'canvas{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}'
+    + '@media (max-width:760px){.wm{top:10px;bottom:auto}}';
+  if (stage.shadowRoot) {
+    stage.shadowRoot.appendChild(st);
+    // watermark: every screenshot of the model carries its source
+    const wm = document.createElement('div'); wm.className = 'wm'; wm.setAttribute('aria-hidden', 'true');
+    wm.textContent = '© Netvliesoperatie.info';
+    stage.shadowRoot.appendChild(wm);
+  }
+
+  // no "save image" / "copy image" on the model: context menu, long press and dragging are switched off
+  ['contextmenu', 'dragstart', 'selectstart'].forEach(t => stage.addEventListener(t, e => e.preventDefault(), true));
+  document.addEventListener('contextmenu', e => { if (e.composedPath().includes(stage)) e.preventDefault(); }, true);
 
   // edition line, as on the rest of the site
   try {
