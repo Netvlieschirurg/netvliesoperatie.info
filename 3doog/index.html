@@ -71,6 +71,7 @@
   .label p{margin:0;font-size:15px;line-height:1.5;color:var(--muted)}
   #conditions{position:absolute;right:var(--edge);top:84px;width:250px;max-height:calc(100% - 140px);overflow:auto;z-index:7;border-top:1px solid var(--ink);padding-top:10px;background:rgba(255,255,255,.92)}
   .cond-head{font:600 12px/1 "IBM Plex Sans",system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin:0 0 8px 10px}
+  .disp-head{margin-top:18px;padding-top:10px;border-top:1px solid var(--ink);margin-left:0;padding-left:10px}
   .switches{position:absolute;right:var(--edge);top:28px;display:flex;align-items:center;gap:18px;z-index:7}
   .lang,.quality{display:flex;align-items:center;background:var(--paper)}
   .q-label{font:600 12px/1 "IBM Plex Sans",system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-right:10px}
@@ -133,7 +134,7 @@
   <div class="label">
     <div class="eyebrow" data-nl="№ 01 · Anatomie" data-en="№ 01 · Anatomy">№ 01 · Anatomie</div>
     <h1 data-nl="Het oog, opengewerkt." data-en="The eye, opened up.">Het oog, opengewerkt.</h1>
-    <p data-en="Cutaway eyeball at actual size (24 mm). Through the window you see the retina with the macula, the optic disc and the vascular arcades; in front of it the clear vitreous filling the space between lens and retina; at the front the cornea, iris, lens and ciliary body. Move the mouse over the eye to see the names of the structures.">Opengewerkte oogbol op ware grootte (24 mm). Door het venster ziet u het netvlies met de gele vlek, de oogzenuwpapil en de vaatbogen; daarvoor het heldere glasvocht dat de ruimte tussen lens en netvlies opvult; vooraan hoornvlies, iris, lens en straalvormig lichaam. Beweeg de muis over het oog om de namen van de structuren te zien.</p>
+    <p data-en="Cutaway eyeball at actual size. Through the window you see the retina with the macula, the optic disc and the vascular arcades; in front of it the clear vitreous filling the space between lens and retina; at the front the cornea, iris, lens and ciliary body. Move the mouse over the eye to see the names of the structures.">Opengewerkte oogbol op ware grootte. Door het venster ziet u het netvlies met de gele vlek, de oogzenuwpapil en de vaatbogen; daarvoor het heldere glasvocht dat de ruimte tussen lens en netvlies opvult; vooraan hoornvlies, iris, lens en straalvormig lichaam. Beweeg de muis over het oog om de namen van de structuren te zien.</p>
   </div>
   <nav id="conditions" aria-label="Aandoeningen">
     <div class="cond-head" data-nl="Aandoeningen" data-en="Conditions">Aandoeningen</div>
@@ -142,6 +143,11 @@
     <button type="button" data-cond="floaters" data-nl="Glasvochttroebelingen" data-en="Vitreous floaters" aria-pressed="false" style="display:block;width:100%;text-align:left;font:400 13px/1.25 'IBM Plex Sans',system-ui,sans-serif;padding:6px 10px;border:0;border-top:1px solid #d4d1c6;border-radius:0;cursor:pointer;background:transparent;color:#1a1a1a;transition:color .15s">Glasvochttroebelingen</button>
     <button type="button" data-cond="pvd" data-nl="Achterste glasvochtloslating" data-en="Posterior vitreous detachment" aria-pressed="false" style="display:block;width:100%;text-align:left;font:400 13px/1.25 'IBM Plex Sans',system-ui,sans-serif;padding:6px 10px;border:0;border-top:1px solid #d4d1c6;border-radius:0;cursor:pointer;background:transparent;color:#1a1a1a;transition:color .15s">Achterste glasvochtloslating</button>
     <button type="button" data-cond="tear" data-nl="Netvliesscheur" data-en="Retinal tear" aria-pressed="false" style="display:block;width:100%;text-align:left;font:400 13px/1.25 'IBM Plex Sans',system-ui,sans-serif;padding:6px 10px;border:0;border-top:1px solid #d4d1c6;border-radius:0;cursor:pointer;background:transparent;color:#1a1a1a;transition:color .15s">Netvliesscheur</button>
+    <button type="button" data-cond="vitrectomy" data-nl="Vitrectomie: trocars" data-en="Vitrectomy: trocars" aria-pressed="false" style="display:block;width:100%;text-align:left;font:400 13px/1.25 'IBM Plex Sans',system-ui,sans-serif;padding:6px 10px;border:0;border-top:1px solid #d4d1c6;border-radius:0;cursor:pointer;background:transparent;color:#1a1a1a;transition:color .15s">Vitrectomie: trocars</button>
+    <button type="button" data-cond="vitrector" data-nl="Vitrectomie: glasvocht knippen" data-en="Vitrectomy: cutting the vitreous" aria-pressed="false" style="display:block;width:100%;text-align:left;font:400 13px/1.25 'IBM Plex Sans',system-ui,sans-serif;padding:6px 10px;border:0;border-top:1px solid #d4d1c6;border-radius:0;cursor:pointer;background:transparent;color:#1a1a1a;transition:color .15s">Vitrectomie: glasvocht knippen</button>
+    <div class="cond-head disp-head" data-nl="Weergave" data-en="Display">Weergave</div>
+    <button type="button" id="toggle-muscles" data-nl="Oogspieren" data-en="Eye muscles" aria-pressed="false" style="display:block;width:100%;text-align:left;font:400 13px/1.25 'IBM Plex Sans',system-ui,sans-serif;padding:6px 10px;border:0;border-top:1px solid #d4d1c6;border-radius:0;cursor:pointer;background:transparent;color:#1a1a1a;transition:color .15s">Oogspieren</button>
+    <button type="button" id="toggle-vessels" data-nl="Bloedvaten" data-en="Blood vessels" aria-pressed="false" style="display:block;width:100%;text-align:left;font:400 13px/1.25 'IBM Plex Sans',system-ui,sans-serif;padding:6px 10px;border:0;border-top:1px solid #d4d1c6;border-radius:0;cursor:pointer;background:transparent;color:#1a1a1a;transition:color .15s">Bloedvaten</button>
   </nav>
   <div class="switches">
   <div class="quality" role="group" aria-label="Beeldkwaliteit / Image quality">
@@ -504,10 +510,12 @@ const M = {
   retinaCut:std('retina_cut', { color: 0xd4a690, roughness: .8 }),
   iris:     std('iris', { map: irisPhoto, bumpMap: irisBump, bumpScale: 1.5, roughness: .55 }),
   pigment:  std('iris_pigment', { color: 0x1e1007, roughness: .8 }),
+  irisMargin: std('iris_margin', { map: irisPhoto, roughness: .7 }),   // like the iris but without its bump detail: soft, not crisp
+  ruff:     std('pupillary_ruff', { color: 0x3a2412, roughness: .85 }),
   cornea:   phys('cornea', { color: 0xffffff, transmission: 1, ior: 1.376, thickness: .55, roughness: 0, clearcoat: 1, clearcoatRoughness: 0, specularIntensity: 1 }),
   lens:     phys('lens', { color: 0xfaf0d0, transmission: .92, ior: 1.42, thickness: 4, roughness: .2, specularIntensity: .45, envMapIntensity: .55, attenuationColor: 0xf3dfa0, attenuationDistance: 6 }),
   nucleus:  std('lens_nucleus', { color: 0xe8c878, roughness: .2, transparent: true, opacity: .28, depthWrite: false }),
-  vitreous: phys('vitreous_gel', { color: 0xd4e4ec, sheen: .35, sheenColor: 0xffffff, sheenRoughness: .6, roughness: .35, metalness: 0, specularIntensity: .25, specularColor: 0xffffff, clearcoat: .15, clearcoatRoughness: .5, transparent: true, opacity: .15, depthWrite: false, envMapIntensity: .6 }),
+  vitreous: phys('vitreous_gel', { color: 0xd4e4ec, sheen: 0, sheenColor: 0xffffff, sheenRoughness: .6, roughness: .35, metalness: 0, specularIntensity: .06, specularColor: 0xffffff, clearcoat: 0, clearcoatRoughness: .5, transparent: true, opacity: .1, depthWrite: false, envMapIntensity: .6 }),
   hyaloid:  phys('anterior_hyaloid', { color: 0xe6eff2, roughness: .03, clearcoat: 1, clearcoatRoughness: .02, transparent: true, opacity: .19, depthWrite: false, envMapIntensity: 1.9 }),
   cloquet:  std('cloquet_canal', { color: 0xdfe8ea, roughness: .4, transparent: true, opacity: .025, depthWrite: false, envMapIntensity: .3 }),
   ciliary:  std('ciliary', { map: choroidTex, color: 0x9a6a5a, roughness: .5, clearcoat: .4 }),
@@ -532,8 +540,8 @@ const add = (name, geo, m, f) => { const me = new THREE.Mesh(geo, m); me.name = 
 const RS = 12, RSi = 11.35, RC = 11.1, RR = 10.85, RV = 10.78;
 const limbus = PI / 6, ora = .33 * PI, chorStart = ora;
 const smoothR = (a, b, x) => { const t = Math.max(0, Math.min(1, (x - a) / (b - a))); return t * t * (3 - 2 * t); };
-const lensSag = (r, front) => { const b = front ? 1.6 : 2.4, m0 = 20.25 / (2 * b * (front ? 10 : 6)), u = Math.min(1, r / 4.5), m = m0 + (.4 - m0) * smoothR(.45, 1, u); /* exponent < 0.5 at the rim: fuller, rounded equator */ return b * Math.pow(Math.max(0, 1 - u * u), m); };
-const rRet = th => RR + .14 * smoothR(ora + 4 * PI / 180, ora, th);   // retina thins from .25 to ~.11 mm toward the ora
+const lensSag = (r, front) => { const b = front ? 1.6 : 2.4, m0 = 20.25 / (2 * b * (front ? 10 : 6)), u = Math.min(1, r / 4.5), m = m0 + (.5 - m0) * smoothR(.45, 1, u); /* exponent 0.5 at the rim = elliptical, evenly rounded equator (r ≈ 0.6 mm front / 1.3 mm back); < 0.5 gave a squared-off rim */ return b * Math.pow(Math.max(0, 1 - u * u), m); };
+const rRet = th => RC - (th >= PI / 2 ? .18 + .07 * smoothR(PI / 2, .8 * PI, th) : .10 + .08 * smoothR(ora, PI / 2, th));   // retina: ≈0.25 mm at the posterior pole, ≈0.18 at the equator, ≈0.10 at the ora
 const Rpp = RC - .03;                                                  // pars plana surface at the ora
 function layer(name, r, t0, m) {
   add(name + '_front', shellGeo(r, t0, TC, false), m);
@@ -545,17 +553,114 @@ function cuts(name, r1, r2, t0, m) {
   add(name + '_cut_c', latFace(r1, r2, TC, 0, A0), m);
 }
 layer('sclera', RS, limbus, M.sclera);          cuts('sclera', RSi, RS, limbus, M.scleraCut);
+add('sclera_limbus_face', latFace(RSi, RS, limbus, A0, A0 + PL, 360), std('sclera_limbus', { color: 0xe8e0cf, roughness: .7 }));   /* not a cut: plain scleral tissue like the outer surface */   /* close the two scleral surfaces at the limbus: no looking into the wall through the clear cornea */
 layer('choroid', RC + .002, chorStart, M.choroid); cuts('choroid', RC, RSi, chorStart, M.choroidCut);
 layer('retina', RR, ora, M.retina);              cuts('retina', RR, RC, ora, M.retinaCut);
+const HIST = { HE: { value: 1 }, OCT: { value: 1 }, OCTH: { value: 0 }, BS: { value: 0 } };   /* cut faces: histology in grey (fixed); other parts keep their grey mapping */
+// histological cut faces, computed per pixel from the position in the wall (arc length s, depth u):
+//  retina (vitreous → choroid): nerve fibre layer, ganglion cells, inner plexiform, inner nuclear, outer plexiform,
+//  outer nuclear layer, photoreceptor segments, RPE;  choroid (retina → sclera): Bruch, choriocapillaris, Sattler's
+//  medium vessels, Haller's large vessels in pigmented stroma, suprachoroid lamellae
+{ const GL = `varying vec3 vSecP;
+float h21(vec2 p){ p = fract(p * vec2(123.34, 456.21)); p += dot(p, p + 45.32); return fract(p.x * p.y); }
+float cells(vec2 q, float sc, float dens, float r0, float r1){ vec2 c = floor(q / sc); float m = 0.0;
+  for (int i = -1; i <= 1; i++) for (int j = -1; j <= 1; j++) { vec2 n = c + vec2(float(i), float(j)); vec2 pc = (n + vec2(h21(n), h21(n + 17.1))) * sc;
+    float d = length(q - pc) / sc; float on = step(h21(n + 3.7), dens); m = max(m, on * (1.0 - smoothstep(r0, r1, d))); } return m; }
+vec3 lin(vec3 c){ return pow(c, vec3(2.2)); }
+float greyOf(vec3 c){ vec3 s = pow(max(c, vec3(0.0)), vec3(1.0 / 2.2)); return clamp(0.18 + 0.85 * dot(s, vec3(0.3, 0.59, 0.11)), 0.0, 1.0); }   /* drawing in grey: keeps every structure */
+float octOf(vec3 c){ vec3 s = pow(max(c, vec3(0.0)), vec3(1.0 / 2.2)); float L = dot(s, vec3(0.3, 0.59, 0.11));
+  float v = 0.1 + 0.85 * smoothstep(0.08, 0.92, L);   /* drawing in grey (like Netter in monochrome): pale stroma, mid-grey muscle with its fibre streaks, dark pigment epithelium, pale non-pigmented epithelium */
+  return v; }
+uniform float uHE; uniform float uOCT; uniform float uBS;
+float fb(vec2 p);
+float spk(vec2 p){ return 0.45 + 1.1 * fb(p); }   /* soft speckle: no moiré at normal zoom */   /* OCT speckle, fixed to the tissue */
+vec3 heMap(vec3 c){ vec3 s = pow(max(c, vec3(0.0)), vec3(1.0 / 2.2)); float L = dot(s, vec3(0.3, 0.59, 0.11)), sat = max(s.r, max(s.g, s.b)) - min(s.r, min(s.g, s.b));
+  float blood = smoothstep(0.25, 0.45, s.r - s.g) * smoothstep(0.75, 0.45, L);   /* red, fairly dark: erythrocytes */
+  float purple = smoothstep(0.02, 0.1, s.b - s.g) * smoothstep(0.75, 0.35, L);   /* our nuclei are drawn violet-grey */
+  float mel = smoothstep(0.18, 0.08, L);   /* pigment: melanin keeps its own brown-black */
+  vec3 eo = mix(vec3(0.70, 0.28, 0.48), vec3(0.97, 0.80, 0.88), smoothstep(0.15, 0.85, L));   /* eosin: pale to deep pink */
+  vec3 hx = mix(vec3(0.22, 0.12, 0.42), vec3(0.42, 0.30, 0.62), smoothstep(0.2, 0.6, L));   /* haematoxylin */
+  vec3 o = mix(eo, hx, purple); o = mix(o, vec3(0.86, 0.22, 0.30), blood); o = mix(o, s * vec3(1.05, 0.95, 0.9), mel);
+  return lin(o); }
+float vn(vec2 p){ vec2 i = floor(p), f = fract(p); f = f * f * (3.0 - 2.0 * f); return mix(mix(h21(i), h21(i + vec2(1, 0)), f.x), mix(h21(i + vec2(0, 1)), h21(i + vec2(1, 1)), f.x), f.y); }
+float nuc(vec2 q, vec2 rad, float dens, float jit, out float e){ vec2 c = floor(q); vec2 f = fract(q) - 0.5 - (vec2(h21(c), h21(c + 7.3)) - 0.5) * jit; e = length(f / rad); return step(h21(c + 1.7), dens) * (1.0 - smoothstep(0.82, 1.0, e)); }
+vec3 nucCol(vec3 base, vec3 dark, float m, float e){ return mix(base, mix(dark * 1.25, dark * 0.8, smoothstep(0.3, 0.95, e)), m); }
+float fb(vec2 p);
+void vessel(vec2 q, float dens, float elong, out float wall, out float lum, out float sh){ q += (vec2(vn(q * 0.6 + 1.3), vn(q * 0.6 + 7.9)) - 0.5) * 0.22;   /* mild warp: oval vessel profiles, not blobs */ vec2 c = floor(q); wall = 0.0; lum = 0.0; sh = 0.0;
+  for (int i = -1; i <= 1; i++) for (int j = -1; j <= 1; j++) { vec2 n = c + vec2(float(i), float(j)); if (h21(n + 9.1) > dens) continue; vec2 pc = n + 0.5 + (vec2(h21(n), h21(n + 4.4)) - 0.5) * 0.6; float rs = 0.12 + 0.2 * h21(n + 2.7), el = mix(1.0, elong, h21(n + 5.5));
+    float e = length((q - pc) * vec2(1.0, el)) / rs; float w = 1.0 - smoothstep(1.0, 1.12, e), l = 1.0 - smoothstep(0.86, 0.96, e);   /* thin vessel wall around a large lumen */ if (w > wall) { wall = w; lum = l; sh = e; } } }
+float fb(vec2 p){ return 0.55 * vn(p) + 0.3 * vn(p * 2.1 + 3.1) + 0.15 * vn(p * 4.3 + 7.7); }
+float secS(vec3 p, out float r, out float th){ r = length(p); th = acos(clamp(p.z / r, -1.0, 1.0)); float az = atan(p.y, p.x); return th * r + az * r * sin(th) * 0.3; }`;
+  const RET = `{ float r, th; float s = secS(vSecP, r, th); float T = th >= 1.5708 ? 0.18 + 0.07 * smoothstep(1.5708, ${(.8 * PI).toFixed(5)}, th) : 0.10 + 0.08 * smoothstep(${ora.toFixed(5)}, 1.5708, th);
+    float u = clamp((r - (${RC.toFixed(4)} - T)) / T, 0.0, 1.0), y = u * T, e;   /* u: 0 = vitreous side, 1 = RPE */
+    vec3 pil = lin(vec3(0.90, 0.78, 0.74)), pil2 = lin(vec3(0.84, 0.70, 0.67)), nD = lin(vec3(0.42, 0.30, 0.40)), col;
+    float nfl = 0.1 + 0.05 * vn(vec2(s * 3.0, 1.0));
+    if (u < 0.012) col = lin(vec3(0.96, 0.92, 0.88));   /* inner limiting membrane */
+    else if (u < nfl) { col = mix(pil, lin(vec3(0.94, 0.86, 0.80)), 0.5 + 0.5 * sin(y * 2600.0 + vn(vec2(s * 40.0, y * 300.0)) * 3.0));   /* nerve fibres along the surface */
+      vec2 q = vec2(s / 0.06, (u - 0.04) / 0.12); vec2 c = floor(q); float on = step(h21(c), 0.18); float ev = length((fract(q) - 0.5) * vec2(1.0, 1.6));
+      col = mix(col, lin(vec3(0.78, 0.58, 0.54)), on * (1.0 - smoothstep(0.3, 0.36, ev))); col = mix(col, lin(vec3(0.55, 0.10, 0.09)), on * (1.0 - smoothstep(0.2, 0.26, ev))); }   /* retinal capillaries */
+    else if (u < 0.2) { float m = nuc(vec2(s / 0.016, (u - nfl) / (0.2 - nfl)), vec2(0.36, 0.42), 0.6, 0.3, e); col = nucCol(pil, nD, m, e);
+      col = mix(col, lin(vec3(0.74, 0.60, 0.62)), m * (1.0 - smoothstep(0.0, 0.35, e)) * 0.6); }   /* ganglion cells */
+    else if (u < 0.34) col = mix(pil, pil2, 0.5 * fb(vec2(s * 900.0, y * 900.0)));   /* inner plexiform */
+    else if (u < 0.48) { float row = (u - 0.34) / 0.14 * 3.0; float m = nuc(vec2(s / 0.0085 + floor(row) * 0.5, row), vec2(0.4, 0.42), 0.92, 0.25, e); col = nucCol(pil2, nD, m, e); }   /* inner nuclear: 3 rows */
+    else if (u < 0.55) col = mix(pil, pil2, 0.4 + 0.3 * sin(y * 4000.0));   /* outer plexiform */
+    else if (u < 0.745) { float row = (u - 0.55) / 0.195 * 7.0; float m = nuc(vec2(s / 0.006 + floor(row) * 0.5, row), vec2(0.42, 0.44), 0.97, 0.2, e); col = nucCol(pil2, nD * 0.85, m, e); }   /* outer nuclear: 7 rows */
+    else if (u < 0.755) col = lin(vec3(0.95, 0.88, 0.84));   /* external limiting membrane */
+    else if (u < 0.94) { float cx = s / 0.0028, f = fract(cx), cone = step(0.78, h21(vec2(floor(cx), 3.0)));
+      float isz = smoothstep(0.84, 0.86, u), w = cone > 0.5 ? mix(0.42, 0.2, (u - 0.755) / 0.185) : mix(0.22, 0.14, isz);
+      float bar = 1.0 - smoothstep(w, w + 0.08, abs(f - 0.5));
+      col = mix(lin(vec3(0.78, 0.62, 0.58)), isz > 0.5 ? lin(vec3(0.86, 0.66, 0.62)) : lin(vec3(0.92, 0.80, 0.74)), bar);   /* inner / outer segments: rods thin, cones tapered */
+      col = mix(col, lin(vec3(0.30, 0.16, 0.10)), smoothstep(0.91, 0.94, u) * 0.6 * (1.0 - bar)); }
+    else { float cx = s / 0.012, f = fract(cx); float wall = 1.0 - smoothstep(0.02, 0.06, min(f, 1.0 - f)); float gran = fb(vec2(s * 1800.0, y * 1800.0));
+      col = mix(lin(vec3(0.30, 0.15, 0.08)), lin(vec3(0.12, 0.06, 0.03)), smoothstep(0.98, 0.95, u) * 0.6 + 0.4 * gran); col = mix(col, lin(vec3(0.42, 0.24, 0.16)), wall * 0.6);
+      float m = nuc(vec2(cx, (u - 0.94) / 0.06 - 0.15), vec2(0.28, 0.25), 1.0, 0.1, e); col = mix(col, lin(vec3(0.36, 0.24, 0.24)), m * smoothstep(0.96, 0.985, u)); }   /* RPE */
+    { float px2 = length(fwidth(vSecP)); vec3 avg = u < nfl ? pil : u < 0.2 ? mix(pil, nD, 0.25) : u < 0.34 ? mix(pil, pil2, 0.25) : u < 0.48 ? mix(pil2, nD, 0.55) : u < 0.55 ? mix(pil, pil2, 0.4) : u < 0.745 ? mix(pil2, nD * 0.85, 0.6) : u < 0.755 ? col : u < 0.94 ? lin(vec3(0.84, 0.70, 0.66)) : lin(vec3(0.2, 0.1, 0.05));
+      col = mix(col, avg, smoothstep(0.0008, 0.002, px2)); }   /* cells smaller than a few pixels fade to their layer tone: no shimmering dots */
+    diffuseColor.rgb = col;
+    { float Rf = u < 0.015 ? 0.9 : u < nfl ? 0.82 : u < 0.2 ? 0.32 : u < 0.34 ? 0.58 : u < 0.48 ? 0.26 : u < 0.55 ? 0.62 : u < 0.745 ? 0.12 : u < 0.755 ? 0.45 : u < 0.8 ? 0.18 : u < 0.84 ? 0.86 : u < 0.9 ? 0.3 : u < 0.93 ? 0.7 : 0.97;   /* ILM · RNFL · GCL · IPL · INL · OPL · ONL · ELM · myoid · ellipsoid zone · OS · interdigitation · RPE/Bruch */
+      float px = length(fwidth(vSecP)), band = 0.34 + 0.5 * Rf, flatG = 0.56 + 0.1 * smoothstep(0.85, 1.0, u);
+      band *= 0.96 + 0.08 * fb(vec2(s * 30.0, u * 3.0));   /* smooth layer bands, gently irregular: no tiled cells or dashes */
+      octV = mix(band, flatG, smoothstep(0.004, 0.012, px));   /* zoomed out: one calm grey, no glitter */ octDone = 1.0; } }`;   /* retina: drawn layers in grey; sub-pixel cell detail fades to smooth bands (no glitter) */
+  const CHO = `{ float r, th; float s = secS(vSecP, r, th); float u = clamp((r - ${RC.toFixed(4)}) / ${(RSi - RC).toFixed(4)}, 0.0, 1.0); vec2 q = vec2(s * 0.55, u * ${(RSi - RC).toFixed(4)});   /* u: 0 = Bruch, 1 = sclera */
+    vec3 stroma = lin(vec3(0.36, 0.15, 0.10)), mel = lin(vec3(0.16, 0.07, 0.05)), wall = lin(vec3(0.72, 0.42, 0.36)), blood = lin(vec3(0.45, 0.06, 0.06));
+    vec3 col = mix(stroma, mel, 0.45 * fb(vec2(s * 60.0, u * 8.0)));
+    if (u < 0.04) col = lin(vec3(0.82, 0.62, 0.52));   /* Bruch's membrane */
+    else if (u < 0.13) col = mix(lin(vec3(0.60, 0.20, 0.16)), blood, 0.4 + 0.3 * fb(vec2(s * 120.0, u * 20.0)));   /* choriocapillaris */
+    else if (u < 0.92) { float sc = u < 0.45 ? 0.04 : 0.075, w, l, sh; vessel(q / sc, u < 0.45 ? 0.3 : 0.36, 1.6, w, l, sh);   /* few, larger, soft vessels: reads as tissue at normal zoom, not as dots */
+      /* no wall rings */ col = mix(col, mix(blood * 0.6, blood * 0.4, smoothstep(0.2, 0.9, sh)), 0.85 * l); }   /* Sattler (medium) and Haller (large) vessels */
+    else col = mix(lin(vec3(0.42, 0.24, 0.18)), mel, 0.5 + 0.5 * sin(u * 600.0 + s * 20.0));   /* suprachoroid lamellae */
+    diffuseColor.rgb = col;
+    { float Rf = u < 0.04 ? 0.95 : u < 0.13 ? 0.6 : u < 0.92 ? 0.48 : 0.3; if (u >= 0.13 && u < 0.92) { float sc = u < 0.45 ? 0.05 : 0.1, w, l, sh; vessel(q / sc, u < 0.45 ? 0.35 : 0.45, 2.2, w, l, sh); Rf = mix(Rf, 0.62, 0.4 * w); Rf = mix(Rf, 0.06, l); }   /* vessel lumina hyporeflective */
+      octV = clamp(0.2 + 1.1 * (greyOf(col) - 0.18), 0.0, 1.0); { float px = length(fwidth(vSecP)); octV = mix(octV, 0.38, smoothstep(0.0015, 0.005, px)); } octDone = 1.0; } }`;   /* choroid: its drawn layers and vessels in grey */
+  const hist = (m, body, key, octG) => { m.color.set(0xffffff); m.onBeforeCompile = sh => {
+      sh.vertexShader = 'varying vec3 vSecP;\n' + sh.vertexShader.replace('#include <begin_vertex>', '#include <begin_vertex>\n  vSecP = position;');
+      const mus = key.startsWith('histMus_'); sh.uniforms.uHE = mus ? { value: 0 } : HIST.HE; sh.uniforms.uOCT = mus ? HIST.OCT : HIST.OCTH;   /* muscles/tendons keep their colour; only their cut faces are grey */ sh.uniforms.uBS = HIST.BS; sh.fragmentShader = GL + '\n' + sh.fragmentShader.replace('#include <map_fragment>', '#include <map_fragment>\n  float octV = 0.0, octDone = 0.0;\n' + body + '\n  { vec3 hm = heMap(diffuseColor.rgb); diffuseColor.rgb = mix(diffuseColor.rgb, vec3(dot(hm, vec3(0.3, 0.59, 0.11))), uHE); }   /* histology section rendered in grey */\n  if (uOCT > 0.0) { if (octDone < 0.5) { ' + (octG || 'vec3 s0 = pow(max(diffuseColor.rgb, vec3(0.0)), vec3(1.0/2.2)); float L = dot(s0, vec3(0.3,0.59,0.11)); float oo = octOf(diffuseColor.rgb); octV = clamp(oo * mix(1.0, 0.85 + 0.3 * fb(vec2(length(vSecP.xy), vSecP.z) * 160.0), smoothstep(0.15, 0.35, oo)), 0.0, 1.0);') + ' } { float bx = dFdx(octV), by = dFdy(octV), sx = mod(floor(gl_FragCoord.x), 2.0) < 0.5 ? 1.0 : -1.0, sy = mod(floor(gl_FragCoord.y), 2.0) < 0.5 ? 1.0 : -1.0; if (octV >= 0.0) octV = clamp(octV + 0.35 * (sx * clamp(bx, -0.08, 0.08) * step(abs(bx), 0.12) + sy * clamp(by, -0.08, 0.08) * step(abs(by), 0.12)), 0.0, 1.0); }   /* only fine texture is softened; edges against neighbouring parts stay untouched (no dark rims) */   /* slight softening of every cut face */ if (octV >= 0.0 && uBS > 0.0) octV = mix(octV, clamp(pow(octV, 2.2) * spk(vec2(length(vSecP.xy), vSecP.z) * 260.0), 0.0, 1.0), uBS);   /* OCT B-scan: reflectivity with speckle on a dark ground */ if (octV >= 0.0) diffuseColor.rgb = mix(diffuseColor.rgb, lin(mix(mix(vec3(0.08, 0.075, 0.07), vec3(0.40, 0.39, 0.38), smoothstep(0.06, 0.2, octV)), vec3(0.97, 0.96, 0.93), smoothstep(0.2, 0.95, octV)))   /* pigment (octV < 0.2) stays truly dark */, uOCT); }   /* light, sclera-matched grey scale */'); };
+    m.customProgramCacheKey = () => key; m.needsUpdate = true; };
+  HIST.musOCT = '{ float az = atan(vSecP.y, vSecP.x), rr = length(vSecP.xy), dpl = min(abs(az), abs(az - 1.5707963)) * rr; if (dpl < 0.14 && az > -0.08 && az < 1.65) { vec3 s0 = pow(max(diffuseColor.rgb, vec3(0.0)), vec3(1.0/2.2)); float red = smoothstep(0.0, 0.45, s0.r - s0.g);'
+    + '  float r3 = length(vSecP); if (r3 < 11.996) discard; float L = acos(clamp(vSecP.z / r3, -1.0, 1.0)) * r3, d = r3 - 12.0;'
+    + '  float f = fb(vec2(L * 0.22, d * 5.5 + 4.0));'   /* fascicles: irregular, elongated along the muscle */
+    + '  float sep = smoothstep(0.025, 0.0, abs(f - 0.5)) * 0.35;'   /* thin, irregular perimysium */
+    + '  float mus = 0.4 + 0.08 * (f - 0.5) + sep * 0.22;'
+    + '  float pxm = length(fwidth(vSecP)), tdn = 0.78 + 0.025 * sin(d * 45.0 + 2.5 * vn(vec2(L * 0.5, 1.0))) * (1.0 - smoothstep(0.004, 0.012, pxm));   /* faint lamellae parallel to the sclera, only when zoomed in */'   /* tendon: pale, almost uniform */
+    + '  octV = clamp(mix(tdn, mus, red), 0.0, 1.0); } else octV = -1.0; }';   /* grey version of the muscle texture: fibres stay visible */   /* face of a halved muscle lying in the cut plane */
+  hist(M.retinaCut, RET, 'histRet'); hist(M.choroidCut, CHO, 'histCho'); hist(M.scleraCut, `{ float r = length(vSecP), d = (r - ${RSi.toFixed(3)}) / ${(RS - RSi).toFixed(3)}, th = acos(clamp(vSecP.z / r, -1.0, 1.0)), sA = th * r + atan(vSecP.y, vSecP.x) * r * sin(th);   /* arc length in every cut plane (meridional and the lateral cone face alike) */
+    float lam = fb(vec2(sA * 5.0, d * 7.0 + 0.8 * fb(vec2(sA * 1.2, d * 3.0))));   /* stroma: interlacing collagen lamellae, less regular than the cornea */
+    float v = 0.76 + 0.07 * (lam - 0.5) + 0.015 * sin(d * 60.0 + 3.0 * lam);   /* visible lamellae */
+    v = mix(v, 0.68 + 0.04 * fb(vec2(sA * 30.0, d * 40.0)), 0.6 * smoothstep(0.14, 0.0, d));   /* lamina fusca: thin fibrovascular layer with melanocytes, inner side */
+    v = mix(v, 0.72 + 0.04 * fb(vec2(sA * 25.0, d * 25.0)), 0.6 * smoothstep(0.84, 1.0, d));   /* episclera: loose fibrovascular outer layer */
+    diffuseColor.rgb = mix(lin(vec3(0.90, 0.86, 0.78)), lin(vec3(0.62, 0.52, 0.42)), smoothstep(0.12, 0.06, d)); octV = v; octDone = 1.0; }`, 'histScl');   /* sclera: its own texture in grey */   /* sclera: hyperreflective */ HIST.hist = hist; HIST.CHO = CHO; }
 { const p = eye.getObjectByName('retina_front').geometry.attributes.position;
   for (let i = 0; i < p.count; i++) { const v = new THREE.Vector3(p.getX(i), p.getY(i), p.getZ(i)), l = v.length(), th = Math.acos(v.z / l); v.multiplyScalar(rRet(th) / l); p.setXYZ(i, v.x, v.y, v.z); }
   p.needsUpdate = true; eye.getObjectByName('retina_front').geometry.computeVertexNormals(); }
 for (const t of ['a', 'b']) eye.remove(eye.getObjectByName('retina_cut_' + t));
 { const sec = [];
   for (let i = 0; i <= 80; i++) { const th = TC - (TC - ora) * i / 80; sec.push(new THREE.Vector2((RC - .002) * Math.sin(th), (RC - .002) * Math.cos(th))); }
-  for (let i = 0; i <= 80; i++) { const th = ora + (TC - ora) * i / 80, r = rRet(th); sec.push(new THREE.Vector2(r * Math.sin(th), r * Math.cos(th))); }
+  /* at the ora the retina tapers over ~0.4 mm into the single-cell non-pigmented epithelium of the pars plana (no step) */
+  const dg = PI / 180, tA = ora - 2 * dg, tB = ora + 1.5 * dg, rIn = th => th >= tB ? rRet(th) : Rpp + (rRet(tB) - Rpp) * smoothR(tA, tB, th);
+  for (let i = 0; i <= 100; i++) { const th = tA + (TC - tA) * i / 100, r = th < ora ? Math.min(rIn(th), Rpp - .0005) : rIn(th); sec.push(new THREE.Vector2(r * Math.sin(th), r * Math.cos(th))); }
   add('retina_cut_a', sectionFace(sec, A0), M.retinaCut); add('retina_cut_b', sectionFace(sec, 0), M.retinaCut);
-  add('retina_ora_step', latFace(rRet(ora), Rpp, ora, A0, A0 + PL, 360), M.retinaCut); }
+  /* matching inner surface: the taper zone between the pars plana and the peripheral retina */
+  { const g = shellGeo(1, tA, tB, false), p = g.attributes.position; for (let i = 0; i < p.count; i++) { const v = new THREE.Vector3(p.getX(i), p.getY(i), p.getZ(i)).normalize(), th = Math.acos(v.z); v.multiplyScalar(rIn(th) - .001); p.setXYZ(i, v.x, v.y, v.z); } g.computeVertexNormals(); add('retina_ora_taper', g, M.retina); } }
 // disc–fovea distance: the photo gives ~4.0 mm; anatomical mean ≈ 4.5 mm. The fovea is moved temporally along the
 // disc→fovea line and the photo is warped locally (Gaussian, σ 1.6 mm) so the macula travels with it; the disc stays put.
 const MMPX = (PI - ora) * RR / PH.r, mmOf = ([x, y]) => [(x - PH.cx) * MMPX, (PH.cy - y) * MMPX];
@@ -578,7 +683,11 @@ for (const nm of ['retina_front', 'retina_back']) {
 
 // cornea (r 7.8) meeting sclera at r = 6
 const cz = RS * Math.cos(limbus) - Math.sqrt(7.8 ** 2 - 36);
-add('cornea', new THREE.SphereGeometry(7.8, 96, 48, PS, PL, 0, Math.asin(6 / 7.8)).rotateX(PI / 2), M.cornea, m => m.position.z = cz);
+// the cornea flattens toward its periphery and runs smoothly (convexly) into the sclera, without a kink at the limbus
+const corZ = rho => { const zc = cz + Math.sqrt(7.8 ** 2 - rho * rho), zs = Math.sqrt(RS * RS - rho * rho) - .006, w = smoothR(4.9, 6.25, rho); return zc * (1 - w) + zs * w; };
+{ const geo = new THREE.SphereGeometry(7.8, 96, 56, PS, PL, 0, Math.asin(6.25 / 7.8)).rotateX(PI / 2), p = geo.attributes.position;
+  for (let i = 0; i < p.count; i++) { const x = p.getX(i), y = p.getY(i); p.setZ(i, corZ(Math.hypot(x, y)) - cz); }
+  geo.computeVertexNormals(); add('cornea', geo, M.cornea, m => m.position.z = cz); }
 // limbal haze: the clear cornea turns gradually grey-white over the last ~1 mm where it blends into the sclera
 {
   const aMax = Math.asin(6 / 7.8), a0 = aMax - .7 / 7.8, NT = 16, NA = 240, pos = [], col = [], idx = [];
@@ -586,7 +695,7 @@ add('cornea', new THREE.SphereGeometry(7.8, 96, 48, PS, PL, 0, Math.asin(6 / 7.8
     const a = a0 + (aMax - a0) * i / NT, t = i / NT, r = 7.8 + .004;
     for (let k = 0; k <= NA; k++) {
       const az = A0 + PL * k / NA, wob = 1 + .18 * Math.sin(az * 23) * Math.sin(az * 7 + 1);
-      pos.push(r * Math.sin(a) * Math.cos(az), r * Math.sin(a) * Math.sin(az), cz + r * Math.cos(a));
+      pos.push(r * Math.sin(a) * Math.cos(az), r * Math.sin(a) * Math.sin(az), corZ(r * Math.sin(a)) + .004);   /* follows the blended corneal surface */
       col.push(.93, .93, .92, Math.min(1, Math.pow(t, 1.6) * .95 * wob));
       if (i && k) { const p0 = (i - 1) * (NA + 1) + k - 1, p1 = p0 + 1, p2 = p0 + NA + 1, p3 = p2 + 1; idx.push(p0, p2, p1, p1, p2, p3); }
     }
@@ -599,10 +708,22 @@ add('cornea', new THREE.SphereGeometry(7.8, 96, 48, PS, PL, 0, Math.asin(6 / 7.8
 // iris, with slight conical sag toward the pupil
 const iz = 9.25;
 const irisGeo = new THREE.RingGeometry(1.9, 5.93, 160, 12, A0, PL);
-{ const p = irisGeo.attributes.position; for (let i = 0; i < p.count; i++) { const r = Math.hypot(p.getX(i), p.getY(i)); p.setZ(i, .35 * (1 - (r - 1.9) / 4.05) + .06 * Math.sin(r * 7)); } irisGeo.computeVertexNormals(); }
+{ const p = irisGeo.attributes.position; for (let i = 0; i < p.count; i++) { const r = Math.hypot(p.getX(i), p.getY(i)); p.setZ(i, .35 * (1 - (r - 1.9) / 4.05) + .015 * Math.sin(r * 7)); } irisGeo.computeVertexNormals(); }
 add('iris', irisGeo, M.iris, m => m.position.z = iz);
 add('iris_pigment_epithelium', irisGeo.clone(), M.pigment, m => m.position.z = iz - .14);
-add('pupillary_ruff', new THREE.TorusGeometry(1.9, .1, 10, 160, PL), M.pigment, m => { m.position.z = iz + .28; m.rotation.z = A0; });
+// pupil margin: the anterior stroma rolls over the edge (same iris photo/colour), only a fine dark pigment ruff peeks out behind
+{ const zf = .35 + .06 * Math.sin(1.9 * 7), zb = zf - .14, prof = [];
+  // front part lies exactly on the iris mesh's first radial facet (its chord, not the smooth formula), so the two meet seamlessly
+  const r1 = 1.9 + 4.03 / 12, z1 = .35 * (1 - (r1 - 1.9) / 4.05) + .06 * Math.sin(r1 * 7);
+  for (let j = 0; j < 6; j++) { const r = r1 - (r1 - 1.9) * j / 6; prof.push([r, zf + (z1 - zf) * (r - 1.9) / (r1 - 1.9) + .003 * (1 - j / 6) + .003]); }
+  for (let j = 0; j <= 14; j++) { const t = j / 14 * PI; prof.push([1.9 - .05 * Math.sin(t), (zf + zb) / 2 + (zf - zb) / 2 * Math.cos(t) + .003 * Math.cos(t), 1.9 + .12 * j / 14]); }   // 3rd value: photo radius (roll folds the texture back, no radial streaks)
+  const N = 240, pos = [], uv = [], idx = [];
+  for (let i = 0; i <= N; i++) { const a = A0 + PL * i / N, c = Math.cos(a), s = Math.sin(a);
+    for (const [r, z, rt] of prof) { pos.push(r * c, r * s, z); const ru = rt || r; uv.push((ru * c / 5.93 + 1) / 2, (ru * s / 5.93 + 1) / 2); } }
+  const P = prof.length; for (let i = 0; i < N; i++) for (let j = 0; j < P - 1; j++) { const a = i * P + j, b = a + P; idx.push(a, b, a + 1, a + 1, b, b + 1); }
+  const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.setAttribute('uv', new THREE.Float32BufferAttribute(uv, 2)); g.setIndex(idx); g.computeVertexNormals();
+  add('iris_margin', g, M.irisMargin, m => m.position.z = iz);
+  add('pupillary_ruff', new THREE.TorusGeometry(1.88, .022, 8, 200, PL), M.ruff, m => { m.position.z = iz + zb + .012; m.rotation.z = A0; }); }
 
 // ciliary body — meridional profile from scleral spur to ora serrata:
 // anterior face carries the iris root; pars plicata (~2 mm, 70 processes) then pars plana (~4 mm, flat) to the ora
@@ -636,6 +757,7 @@ cbProfile.push(spur.clone());
   g.setAttribute('color', new THREE.Float32BufferAttribute(col, 3)); g.computeVertexNormals();
   add('ciliary_body', g, M.ciliaryBody);
 }
+
 // pars plana (orbiculus ciliaris) + ora serrata, after the coronal anatomical plates:
 // warm brown band with fine dark radial plicae; retina meets it in a finely scalloped, slightly paler wavy border
 {
@@ -708,9 +830,10 @@ function sectionFace(pts, ang, lift = 0) {
 // with the pigment epithelium running unbroken from the pupil margin over the ciliary body into the RPE
 {
   const smooth = (a, b, x) => { const t = Math.max(0, Math.min(1, (x - a) / (b - a))); return t * t * (3 - 2 * t); };
-  const sag = r => .35 * (1 - (r - 1.9) / 4.05) + .06 * Math.sin(r * 7);
-  const irAz = r => iz + sag(r) + .02 + (.022 * Math.sin(r * 17) + .012 * Math.sin(r * 41 + 1)) * Math.min(1, (r - 1.9) * 2);
-  const irPz = r => iz + sag(r) - (.16 + .22 * Math.sin(Math.min(1, (r - 1.9) / 1.6) * PI / 2) - .12 * Math.max(0, (r - 5.2) / .8));
+  const sag = r => .35 * (1 - (r - 1.9) / 4.05) + .015 * Math.sin(r * 7);
+  const crypt = r => [[2.75, .09, .05], [3.45, .11, .06], [3.9, .08, .04], [4.45, .1, .05], [5.0, .07, .035]].reduce((s, [c, w, d]) => s - d * Math.exp(-Math.pow((r - c) / (w * .5), 2)), 0);   /* crypts of Fuchs: pits in the anterior border layer */
+  const irAz = r => iz + sag(r) + .02 + .07 * Math.exp(-Math.pow((r - 3.05) / .35, 2)) + crypt(r) + (.006 * Math.sin(r * 17)) * Math.min(1, (r - 1.9) * 2) + .025 * Math.max(0, Math.sin((r - 4.6) * 14)) * (r > 4.6 ? 1 : 0);   /* collarette ridge at ~3 mm, contraction furrows peripherally */
+  const irPz = r => iz + sag(r) - (.2 + .26 * Math.sin(Math.min(1, (r - 1.9) / 1.6) * PI / 2) - .14 * Math.max(0, (r - 5.2) / .8));
   const V = (x, y) => new THREE.Vector2(x, y), cr = (pts, n) => new THREE.SplineCurve(pts).getPoints(n);
   // outline
   const outer = []; for (let i = 0; i <= 120; i++) outer.push(mp(RSi - .004, thSpur + (TC - thSpur) * i / 120));
@@ -720,7 +843,9 @@ function sectionFace(pts, ang, lift = 0) {
   for (let i = 1; i <= 150; i++) {
     const th = ora - (ora - thApex) * i / 150, k = (th - thApex) / (thPlic - thApex);
     const u = (th - thApex) / (thPlic + 2.5 * deg - thApex);
-    const fold = u < 1 ? .55 * Math.pow(Math.sin(Math.min(1, Math.max(0, u) / .13) * PI / 2), .5) * Math.pow(1 - u, .85) * (1 + .18 * Math.sin(u * 40) + .08 * Math.sin(u * 97)) : 0;
+    const uu = Math.max(0, u), base = u < 1 ? .2 * Math.sin(Math.min(1, uu / .08) * PI / 2) * Math.pow(1 - uu, 1.3) : 0;
+    const lobe = (c, hh, w) => hh * Math.sqrt(Math.max(0, 1 - Math.pow((uu - c) / w, 2)));   /* Netter: short, bulbous, semicircular knob; neighbours touch, deep narrow cleft between */   /* Netter: a frilly crest of a few rounded, unequal lobes on the anterior pars plicata, facing the lens equator */
+    const fold = u < 1 ? base + Math.max(lobe(.08, .26, .075), lobe(.22, .34, .08), lobe(.37, .32, .08), lobe(.52, .26, .075), lobe(.66, .18, .07)) : 0;
     cil.push(mp(RSi - tCB(th) - fold, th));
   }
   const apex = cil[cil.length - 1];
@@ -729,7 +854,7 @@ function sectionFace(pts, ang, lift = 0) {
   const pup = []; { const a = irP[irP.length - 1], b = V(1.9, irAz(1.9)); for (let i = 1; i < 8; i++) { const t = i / 8; pup.push(V(1.9 - .06 * Math.sin(t * PI), a.y + (b.y - a.y) * t)); } }
   const irA = []; for (let i = 0; i <= 80; i++) { const r = 1.9 + (5.7 - 1.9) * i / 80; irA.push(V(r, irAz(r))); }
   const spurP = outer[0];
-  const angle = cr([irA[irA.length - 1], V(5.98, irAz(5.7) - .1), V(6.12, 9.18), V(6.18, 9.42), spurP], 30).slice(1, -1);
+  const angle = cr([irA[irA.length - 1], V(6.0, irAz(5.7) + .05), V(6.1, irAz(5.7) + .2), spurP], 30).slice(1, -1);   /* iris root runs straight onto the spur/ciliary body: no open recess in the section */
   const outline = [...outer, ...chorIn, ...trans, ...cil, ...root, ...irP, ...pup, ...irA, ...angle];
   // painted texture in (rho, z)
   const rho0 = 1.6, rho1 = 11.5, z0 = -7.2, z1 = 10.4, S = 140, Wc = Math.round((rho1 - rho0) * S), Hc = Math.round((z1 - z0) * S);
@@ -738,12 +863,12 @@ function sectionFace(pts, ang, lift = 0) {
   const tex = canvasTex(Wc, Hc, g => {
     // base colour: continuous blend choroid → ciliary stroma → iris stroma
     const img = g.createImageData(Wc, Hc), D = img.data;
-    const cCh = [92, 28, 20], cCi = [158, 82, 64], cIr = [206, 118, 100];
+    const cCh = [92, 28, 20], cCi = [168, 98, 76], cIr = [168, 98, 76];   /* one uveal tissue: choroid → ciliary → iris, lightening forward */   // pink-white ciliary stroma, golden-brown iris stroma (after the reference drawing)
     for (let py = 0; py < Hc; py++) {
       const z = z1 - py / S;
       for (let px = 0; px < Wc; px++) {
         const rho = rho0 + px / S, th = Math.atan2(rho, z);
-        const wCh = smooth(ora - 3 * deg, ora + 4 * deg, th), wIr = smooth(6.15, 5.35, rho) * smooth(8.2, 8.9, z) * (1 - wCh);
+        const wCh = smooth(ora - 9 * deg, ora + 6 * deg, th), wIr = smooth(6.3, 4.8, rho) * smooth(8.0, 9.0, z) * (1 - wCh);   /* long, gradual transitions */
         const o = (py * Wc + px) * 4;
         for (let c = 0; c < 3; c++) D[o + c] = cCi[c] * (1 - wCh - wIr) + cCh[c] * wCh + cIr[c] * wIr;
         D[o + 3] = 255;
@@ -751,53 +876,125 @@ function sectionFace(pts, ang, lift = 0) {
     }
     g.putImageData(img, 0, 0);
     g.save(); path(g, outline, true); g.clip();
-    speckle(g, Wc, Hc, 2200, 3, 10, () => rnd() < .5 ? 'rgba(90,20,14,.25)' : 'rgba(210,130,110,.15)');
-    // choroidal vessels in section, fading into the ciliary stroma
-    for (let k = 0; k < 900; k++) {
-      const th = R(ora - 2 * deg, TC), r = R(RC + .03, RSi - .03), q = mp(r, th), big = (r - RC) / (RSi - RC);
-      const sz = (2 + 9 * big) * R(.6, 1.3) * (1 - smooth(ora + 3 * deg, ora - 2 * deg, th) * .7);
-      g.fillStyle = rnd() < .5 ? 'rgba(150,30,26,.85)' : 'rgba(70,12,14,.85)'; g.beginPath(); g.ellipse(X(q), Y(q), sz * 1.6, sz, -th + PI / 2, 0, 2 * PI); g.fill();
-    }
-    for (let k = 0; k < 160; k++) { const th = R(ora, TC), q = mp(RSi - R(.02, .2), th); g.fillStyle = 'rgba(40,18,10,.5)'; g.beginPath(); g.arc(X(q), Y(q), R(1, 3), 0, 2 * PI); g.fill(); }  // melanocytes
-    // ciliary muscle: one wedge, meridional fibres continuing backward into the suprachoroid, radial + circular in front
-    const mus = [mp(RSi - .03, thSpur + .3 * deg)];
-    for (let i = 1; i <= 24; i++) mus.push(mp(RSi - .03, thSpur + (50 * deg - thSpur) * i / 24));
-    mus.push(mp(RSi - .1, 50 * deg), mp(RSi - .45, 44 * deg), mp(RSi - tCB(40 * deg) + .32, 40 * deg), mp(RSi - tCB(thApex) + .35, thApex + .5 * deg), mp(RSi - .55, thSpur + .6 * deg));
-    g.save(); path(g, cr(mus, 120), true); g.fillStyle = 'rgba(184,48,42,.92)'; g.fill(); g.clip();
-    for (let r = RSi - .03; r > RSi - 1.2; r -= .03) {
-      g.strokeStyle = rnd() < .5 ? 'rgba(225,95,75,.7)' : 'rgba(120,20,16,.7)'; g.lineWidth = R(1, 2); g.beginPath();
-      for (let j = 0; j <= 50; j++) { const q = mp(r + .012 * Math.sin(j * .8 + r * 40), thSpur + (52 * deg - thSpur) * j / 50); j ? g.lineTo(X(q), Y(q)) : g.moveTo(X(q), Y(q)); }
-      g.stroke();
-    }
-    for (let k = 0; k < 24; k++) { const b = mp(RSi - tCB(thApex + k / 24 * 6 * deg) + .38, thApex + k / 24 * 6 * deg); g.strokeStyle = 'rgba(238,125,100,.55)'; g.lineWidth = 1.3; g.beginPath(); g.moveTo(X(spurP), Y(spurP)); g.quadraticCurveTo(X(spurP) - 18, (Y(spurP) + Y(b)) / 2, X(b), Y(b)); g.stroke(); }
-    const cc = mp(RSi - tCB(thApex) + .55, thApex + 1.6 * deg);
-    for (let k = 0; k < 55; k++) { const x = X(cc) + R(-28, 28), y = Y(cc) + R(-36, 36); g.fillStyle = 'rgba(232,110,90,.9)'; g.beginPath(); g.ellipse(x, y, R(2.5, 4.5), R(2, 3.2), 0, 0, 2 * PI); g.fill(); g.strokeStyle = 'rgba(110,18,14,.8)'; g.lineWidth = .8; g.stroke(); }
+    // ===== histologically ordered section (natural colours), after standard ocular histology =====
+    const poly = (pts, fill) => { path(g, pts, true); g.fillStyle = fill; g.fill(); };
+    const strokeAlong = (fn, n, col, w) => { g.strokeStyle = col; g.lineWidth = w; g.beginPath(); for (let j = 0; j <= n; j++) { const q = fn(j / n); j ? g.lineTo(X(q), Y(q)) : g.moveTo(X(q), Y(q)); } g.stroke(); };
+    const ell = (q, rx, ry, rot, fill, stroke, lw) => { g.beginPath(); g.ellipse(X(q), Y(q), rx, ry, rot, 0, 2 * PI); if (fill) { g.fillStyle = fill; g.fill(); } if (stroke) { g.strokeStyle = stroke; g.lineWidth = lw || 1; g.stroke(); } };
+    const pxmm = S;   // px per mm
+    // --- CILIARY BODY stroma: loose connective tissue with melanocytes, ground colour brown-red
+    speckle(g, Wc, Hc, 2200, 1, 4, () => rnd() < .55 ? 'rgba(70,24,16,.3)' : 'rgba(210,130,110,.18)');   /* pigmented uveal stroma, as in the choroid */
+    for (let k = 0; k < 700; k++) { const th = R(ora - 10 * deg, ora + 6 * deg), r = R(RC + .03, RSi - .03), q = mp(r, th), big = (r - RC) / (RSi - RC), fw = smooth(ora - 10 * deg, ora + 2 * deg, th);   /* choroidal vessels continue forward into the ciliary stroma, ever smaller and fewer */
+      if (rnd() > .2 + .8 * fw) continue; const sz = (1.5 + 8 * big) * R(.6, 1.3) * (.35 + .65 * fw); ell(q, sz * 1.6, sz, -th + PI / 2, rnd() < .5 ? 'rgba(150,30,26,.85)' : 'rgba(70,12,14,.85)'); }
+    // ciliary muscle geometry: from the scleral spur back along the sclera to the ora (thick in front, tapering)
+    const th0 = thSpur + .4 * deg, mDep = th => { const f = Math.max(0, Math.min(1, (th - th0) / (ora - th0))); const lim = tCB(th) - (.05 + .1 * (1 - smoothR(thPlic - 2 * deg, thPlic + 2 * deg, th))); return Math.max(.03, Math.min(lim, 1.05 * Math.pow(1 - f, 1.1) * Math.min(1, (th - th0) / (2.2 * deg) + .3))); };   /* muscle = bulk of the triangle */
+    const NM = 90, thAt = i => th0 + (ora - th0) * i / NM;
+    const mOut = [], mIn = [], mMid = [], mLo = [];
+    for (let i = 0; i <= NM; i++) { const th = thAt(i), d = mDep(th); mOut.push(mp(RSi - .025, th)); mIn.push(mp(RSi - .025 - d, th)); mLo.push(mp(RSi - .025 - d * .42, th)); }
+    // longitudinal (Brücke) fibres: outer part, parallel to the sclera, running back into the suprachoroid
+    poly([...mOut, ...mIn.slice().reverse()], '#cf7a62');   /* whole muscle */
+    poly([...mOut, ...mLo.slice().reverse()], '#cf7a62');
+    g.save(); path(g, [...mOut, ...mLo.slice().reverse()], true); g.clip();
+    for (let k = 0; k < 160; k++) { const f = k / 160; strokeAlong(t => { const th = th0 + (ora - th0) * t, d = mDep(th) * .42 * f; return mp(RSi - .025 - d + .006 * Math.sin(t * 40 + k), th); }, 120, rnd() < .5 ? 'rgba(226,150,130,.32)' : 'rgba(140,52,40,.28)', R(.8, 1.5)); }
+    for (let k = 0; k < 260; k++) { const th = R(th0, ora - 4 * deg), d = R(0, mDep(th) * .42); ell(mp(RSi - .025 - d, th), R(2, 3.5), .7, -th + PI / 2, 'rgba(120,50,50,.35)'); }   /* elongated smooth-muscle nuclei */
     g.restore();
-    // meridional fibres fade out as the suprachoroid lamina
-    for (let r = RSi - .04; r > RSi - .14; r -= .035) { g.strokeStyle = 'rgba(190,70,50,.35)'; g.lineWidth = 1; g.beginPath(); for (let j = 0; j <= 40; j++) { const q = mp(r, 50 * deg + (ora + 8 * deg - 50 * deg) * j / 40); j ? g.lineTo(X(q), Y(q)) : g.moveTo(X(q), Y(q)); } g.stroke(); }
-    // iris: vessels, sphincter, dilator
-    for (let k = 0; k < 150; k++) { const r = R(2, 5.6), q = V(r, irPz(r) + (irAz(r) - irPz(r)) * R(.25, .8)); g.fillStyle = 'rgba(150,40,32,.5)'; g.beginPath(); g.ellipse(X(q), Y(q), R(2, 6), R(1.5, 3.5), 0, 0, 2 * PI); g.fill(); }
-    for (let k = 0; k < 36; k++) { const r = R(2.2, 5.6), q = V(r, irPz(r) + (irAz(r) - irPz(r)) * R(.3, .7)); g.fillStyle = '#f0b0a4'; g.strokeStyle = '#9a2420'; g.lineWidth = 1.2; g.beginPath(); g.arc(X(q), Y(q), R(2, 4), 0, 2 * PI); g.fill(); g.stroke(); }
-    path(g, irA); g.strokeStyle = 'rgba(138,52,32,.9)'; g.lineWidth = 7; g.stroke();
-    const sph = []; for (let i = 0; i <= 16; i++) { const r = 1.97 + .85 * i / 16; sph.push(V(r, irPz(r) + .07)); }
-    path(g, sph); g.strokeStyle = '#b8282a'; g.lineWidth = 16; g.stroke();
-    // continuous posterior epithelium: dilator → iris pigment epithelium → ciliary epithelium → RPE
+    // radial (oblique) fibres: middle part of the anterior wedge, fanning inward-backward from the spur
+    const radIn = [], radOut = []; for (let i = 0; i <= 40; i++) { const th = th0 + (thPlic + 3 * deg - th0) * i / 40, d = mDep(th); radOut.push(mp(RSi - .025 - d * .42, th)); radIn.push(mp(RSi - .025 - d * (.78 + .22 * smoothR(thApex + 2 * deg, thApex + 6 * deg, th)), th)); }
+    poly([...radOut, ...radIn.slice().reverse()], '#cf7a62');
+    g.save(); path(g, [...radOut, ...radIn.slice().reverse()], true); g.clip();
+    for (let k = 0; k < 90; k++) { const th = th0 + (thPlic + 4 * deg - th0) * k / 90, e = mp(RSi - .025 - mDep(th), th); g.strokeStyle = rnd() < .5 ? 'rgba(226,150,130,.32)' : 'rgba(140,52,40,.28)'; g.lineWidth = R(.8, 1.5); g.beginPath(); g.moveTo(X(spurP), Y(spurP)); g.quadraticCurveTo((X(spurP) + X(e)) / 2 + 20, (Y(spurP) + Y(e)) / 2 - 10, X(e), Y(e)); g.stroke(); }
+    for (let k = 0; k < 120; k++) { const th = R(th0 + 1 * deg, thPlic), d = mDep(th) * R(.45, .75); ell(mp(RSi - .025 - d, th), R(2, 3.2), .7, R(.4, 1.2), 'rgba(120,50,50,.3)'); }
+    g.restore();
+    // circular (Müller) fibres: triangular zone at the inner-anterior corner, behind the angle near the iris root, cut across
+    const cA = mp(RSi - .025 - mDep(th0 + 1.2 * deg) * .62, th0 + 1.2 * deg), cB = mp(RSi - .025 - mDep(thApex + 3.5 * deg), thApex + 3.5 * deg), cC = mp(RSi - tCB(thApex + .4 * deg) + .3, thApex + .4 * deg);
+    poly([cA, cB, cC], '#9a5644');
+    g.save(); path(g, [cA, cB, cC], true); g.clip();
+    for (let k = 0; k < 70; k++) { const u = rnd(), v = rnd() * (1 - u), q = V(cA.x + (cB.x - cA.x) * u + (cC.x - cA.x) * v, cA.y + (cB.y - cA.y) * u + (cC.y - cA.y) * v); const rr = R(8, 14); ell(q, rr * R(.9, 1.3), rr, R(0, PI), '#cf7a62', 'rgba(150,80,64,.9)', 1.2); }   /* rounded bundles, connective septa */   /* bundles in cross-section, septa between */
+    g.restore();
+    // stroma between muscle and epithelium + ciliary processes: large thin-walled vessels / wide fenestrated capillaries
+    for (let k = 0; k < 240; k++) { const ph = R(0, 6), f = R(.05, .95); strokeAlong(t => { const th = thApex + 1 * deg + (ora - thApex - 2 * deg) * t, dM = mDep(th) + .03, dIn = tCB(th) - .05; return mp(RSi - (dM + Math.max(0, dIn - dM) * f + .02 * Math.sin(t * 30 + ph)), th); }, 90, rnd() < .55 ? 'rgba(215,190,180,.5)' : 'rgba(40,16,10,.45)', R(1, 2.2)); }   /* loose collagen of the ciliary stroma: light strands, dark gaps */
+    for (let k = 0; k < 220; k++) { const th = R(thApex + .5 * deg, ora - 1 * deg), dM = mDep(th) + .03, d = R(dM, tCB(th) + (th < thPlic ? .3 : 0) - .04); if (d <= dM) continue; ell(mp(RSi - d, th), R(1.6, 3.4), R(.7, 1.2), R(0, PI), 'rgba(40,16,10,.75)'); }   /* melanocytes */
+    for (let k = 0; k < 380; k++) { const th = thApex + .5 * deg + (ora - thApex) * Math.pow(rnd(), .6), inPl = th < thPlic,   /* denser toward the choroid */ dIn = tCB(th), dM = mDep(th) + .03, d = R(dM, dIn + (inPl ? .5 : 0) - .06); if (d <= dM) continue;
+      const tq = (th - thApex) / (ora - thApex), big = R(.006, .012) + .03 * tq * tq * rnd(), q = mp(RSi - d, th), el = R(1.4, 3.5), rot = -th + PI / 2 + R(-.6, .6); ell(q, big * pxmm * el, big * pxmm * .75, rot, rnd() < .5 ? 'rgba(150,30,26,.85)' : 'rgba(90,14,14,.85)'); }   /* vessels, ever smaller forward */
+    // --- IRIS: stroma of loose collagen (radial, wavy), melanocytes, radial vessels with thick hyaline cuffs
+    const irisPoly = [...irA, ...irP.slice().reverse()];
+    g.save(); path(g, [...irP, ...pup, ...irA, ...angle.slice(0, 4)], true); g.clip();
+    const irZ = (r, f) => irPz(r) + (irAz(r) - irPz(r)) * f;
+    { const gr = g.createLinearGradient(X(V(5.1, 0)), 0, X(V(5.95, 0)), 0); gr.addColorStop(0, 'rgba(168,100,76,1)'); gr.addColorStop(1, 'rgba(168,100,76,0)'); g.fillStyle = gr; g.fillRect(0, 0, Wc, Hc); }   /* iris stroma merges into the ciliary stroma at the root */
+    for (let k = 0; k < 260; k++) { const f = R(.12, .9), ph = R(0, 6); strokeAlong(t => { const r = 1.95 + 3.8 * t; return V(r, irZ(r, f + .035 * Math.sin(t * 38 + ph))); }, 160, rnd() < .55 ? 'rgba(214,150,124,.45)' : 'rgba(96,40,26,.4)', R(.5, 1.1)); }   /* wavy radial collagen */
+    for (let k = 0; k < 260; k++) { const r = R(1.95, 5.75), q = V(r, irZ(r, R(.1, .85))); ell(q, R(1.2, 2.6), R(.5, .9), R(-.3, .3), 'rgba(60,24,14,.5)'); }   /* melanocytes, as in the choroid */   /* melanocytes: dark spindle cells */
+    for (let k = 0; k < 30; k++) { const r = R(2.2, 5.5), q = V(r, irZ(r, R(.3, .7))), L = R(.05, .16) * pxmm, Wv = R(.012, .022) * pxmm, rot = R(-.15, .15);
+      g.strokeStyle = 'rgba(196,30,34,.9)'; g.lineWidth = Wv * .7; g.beginPath(); g.moveTo(X(q) - L, Y(q) + R(-2, 2)); g.quadraticCurveTo(X(q), Y(q) + R(-6, 6), X(q) + L, Y(q) + R(-2, 2)); g.stroke(); }   /* thin radial vessels */   /* radial vessels cut lengthwise, thick collagen cuffs */
+    for (let k = 0; k < 10; k++) { const r = R(2.2, 5.5), q = V(r, irZ(r, R(.3, .7))), rr = R(.012, .022) * pxmm; ell(q, rr * 1.2, rr, 0, '#c8282c'); }   /* cut across */
+    // anterior border layer: condensed fibroblasts + melanocytes, interrupted by crypts
+    g.save(); g.lineJoin = 'round'; g.lineCap = 'round'; path(g, irA); g.strokeStyle = '#a2643a'; g.lineWidth = .09 * pxmm; g.stroke(); g.restore();   /* one continuous border layer (~0.045 mm inside the clip); the crypts in irAz are its only interruptions */
+    // sphincter pupillae: band of smooth muscle in the posterior stroma of the pupillary zone (≈0.8 mm wide, ≈0.1 mm thick)
+    const sphT = [], sphB = []; for (let i = 0; i <= 30; i++) { const r = 1.98 + .82 * i / 30, tp = Math.sin(Math.min(1, i / 4) * PI / 2) * Math.sin(Math.min(1, (30 - i) / 6) * PI / 2); sphB.push(V(r, irPz(r) + .075)); sphT.push(V(r, irPz(r) + .075 + .11 * tp)); }
+    poly([...sphB, ...sphT.slice().reverse()], '#c46a58');
+    g.save(); path(g, [...sphB, ...sphT.slice().reverse()], true); g.clip();
+    for (let k = 0; k < 160; k++) { const r = R(1.98, 2.8), q = V(r, irPz(r) + .075 + R(0, .11)), rr = R(3, 6); ell(q, rr * 1.2, rr, R(0, PI), '#d07a66', 'rgba(140,60,46,.8)', .8); }   /* bundles cut across */
+    g.restore();
+    // dilator: thin myoepithelial layer (anterior pigment epithelium), from the sphincter to the root
+    strokeAlong(t => { const r = 2.6 + (5.75 - 2.6) * t; return V(r, irPz(r) + .05); }, 120, '#c98070', .025 * pxmm);
+    g.restore();
+    // --- EPITHELIA: posterior iris pigment epithelium (two dark layers) → ciliary epithelium (outer pigmented, inner non-pigmented) → RPE
     const postIris = [...irP].reverse(), cbInner = [...trans, ...cil, ...root].reverse();
     g.lineJoin = 'round'; g.lineCap = 'round';
-    path(g, [...postIris, ...cbInner]); g.strokeStyle = '#c84838'; g.lineWidth = 16; g.stroke();
-    const pe = [...pup.slice().reverse(), ...postIris, ...cbInner, ...chorIn.slice().reverse()];
-    path(g, pe); g.strokeStyle = '#24130a'; g.lineWidth = 10; g.stroke();
+    { const ins = postIris.map(q => new THREE.Vector2(q.x, q.y + .04 * Math.min(1, Math.max(0, (5.4 - q.x) / .6)))); path(g, [...pup.slice().reverse(), ...postIris, ...ins.reverse()], true); g.fillStyle = '#6a4a38'; g.fill(); }   /* posterior iris pigment epithelium: solid dark band ~0.1 mm along the whole back */
+       /* posterior pigment epithelium: dark brown band along the whole back of the iris (Netter) */
+    path(g, [...pup.slice().reverse(), ...postIris]); g.strokeStyle = 'rgba(70,40,22,.8)'; g.lineWidth = .012 * pxmm; g.stroke();   /* boundary between the two layers */
+       /* one continuous pigment epithelium: RPE → pigmented ciliary epithelium → posterior iris epithelium */   /* pigmented ciliary epithelium: dark band (~0.03 mm visible inside the NPE), continuous with the RPE */   /* pigmented ciliary epithelium → RPE */
     const npe = [...root.slice().reverse(), ...cil.slice().reverse()];
-    path(g, npe); g.strokeStyle = '#e8b848'; g.lineWidth = 4; g.stroke();
+       /* non-pigmented epithelium: one thin cell layer, not a white rim */   /* non-pigmented ciliary epithelium */
     g.restore();
-    // soft-focus pass: keeps the layering but avoids false precision
+    // gentle softening only (keeps cell-scale structure)
     const tmp = document.createElement('canvas'); tmp.width = Wc; tmp.height = Hc;
-    const tg = tmp.getContext('2d'); tg.filter = 'blur(14px) saturate(.85)'; tg.drawImage(g.canvas, 0, 0);
-    g.globalAlpha = 1; g.drawImage(tmp, 0, 0);
+    const tg = tmp.getContext('2d'); tg.filter = 'blur(1.2px)'; tg.drawImage(g.canvas, 0, 0);
+    g.clearRect(0, 0, Wc, Hc); g.drawImage(tmp, 0, 0);
+    // --- histological rendering pass (shapes unchanged): fine fibrillar texture, scattered nuclei, empty vessel lumina
+    const gMain = g; { const lay = document.createElement('canvas'); lay.width = Wc; lay.height = Hc; lay.getContext('2d').drawImage(gMain.canvas, 0, 0); g = lay.getContext('2d'); }
+    { const ciliaryPoly = [...outer.filter(q => Math.atan2(q.x, q.y) < ora + 1 * deg), ...trans, ...cil, ...root, ...angle];
+      g.save(); path(g, [...outline], true); g.clip();
+      g.save(); path(g, [...mOut, ...mIn.slice().reverse()], true); g.clip(); g.fillStyle = 'rgba(120,58,70,.45)'; g.fillRect(0, 0, Wc, Hc);   /* muscle: denser, darker mass of gently wavy fine fibres */
+      for (let k = 0; k < 900; k++) { const f = rnd(), ph = R(0, 6), a0 = R(0, .7), a1 = a0 + R(.15, .45), am = R(.004, .012);
+        strokeAlong(t => { const tt = a0 + (a1 - a0) * t, th = th0 + (ora - th0) * tt, d = mDep(th) * f; return mp(RSi - .025 - d + am * Math.sin(tt * 90 + ph), th); }, 40, rnd() < .5 ? 'rgba(230,190,200,.14)' : 'rgba(70,24,44,.16)', R(.6, 1.1)); }
+      for (let k = 0; k < 1400; k++) { const th = R(th0, ora - 3 * deg), d = mDep(th) * rnd(); ell(mp(RSi - .025 - d, th), R(1.4, 2.6), R(.35, .6), -th + PI / 2 + R(-.3, .3), 'rgba(70,30,60,.45)'); }   /* elongated smooth-muscle nuclei */
+      g.restore();
+      g.save(); path(g, ciliaryPoly, true); g.clip();   /* ciliary stroma + processes: loose, paler, many small round nuclei */
+      { const ip = []; for (let i = 0; i <= 60; i++) { const th = thApex + (ora - thApex) * i / 60; ip.push(mp(RSi - .025 - mDep(th) * .8, th)); } const sp = [...ip, ...[...trans, ...cil, ...root].reverse()]; g.save(); path(g, sp, true); g.clip(); g.filter = 'blur(10px)'; g.fillStyle = 'rgba(244,226,224,.28)'; g.fill(); g.filter = 'none'; g.restore(); }   /* stroma: pale, loose; soft gradation into the muscle (~0.07 mm) */
+      g.restore();
+      /* every non-muscle area of the section in front of the ora (ciliary stroma, processes, iris root, angle region, iris): loose tissue with scattered round nuclei */
+      g.save(); path(g, [...outline], true); path(g, [...mOut, ...mIn.slice().reverse()], true); g.clip('evenodd');
+      { const ip2 = []; for (let i = 0; i <= 60; i++) { const th = thSpur + (thApex + 3 * deg - thSpur) * i / 60; ip2.push(mp(RSi - .02, th)); } const rootP = [...ip2, ...root.slice().reverse(), ...angle]; g.save(); path(g, rootP, true); g.clip(); g.filter = 'blur(10px)'; g.fillStyle = 'rgba(240,220,218,.22)'; g.fill(); g.filter = 'none'; g.restore(); }   /* iris root / angle region: same loose stroma */
+      for (let k = 0; k < 9000; k++) { const q = V(R(1.8, 10), R(6.2, 10.4)), th = Math.atan2(q.x, q.y), r = Math.hypot(q.x, q.y); if (th > ora - .5 * deg || (r > RSi - .01 && th > thSpur)) continue;
+        ell(q, R(.8, 1.6), R(.7, 1.3), R(0, PI), rnd() < .85 ? 'rgba(70,30,62,.55)' : 'rgba(30,14,10,.6)'); }
+      for (let k = 0; k < 2600; k++) { const th = R(thApex, ora - .5 * deg), inPl = th < thPlic, d = tCB(th) + (inPl ? R(-.08, .45) : R(-.12, .03)), q = mp(RSi - d, th); ell(q, R(.7, 1.4), R(.6, 1.1), R(0, PI), rnd() < .7 ? 'rgba(70,30,62,.45)' : 'rgba(225,205,200,.35)'); }   /* subepithelial stroma + processes: denser cells and fibrils, not flat */
+      for (let k = 0; k < 420; k++) { const q = V(R(1.8, 10), R(6.2, 10.4)), th = Math.atan2(q.x, q.y); if (th > ora - .5 * deg) continue; const a = R(0, PI), L = R(.04, .14);
+        g.strokeStyle = rnd() < .5 ? 'rgba(250,236,236,.35)' : 'rgba(110,60,80,.22)'; g.lineWidth = R(.5, 1); g.beginPath(); g.moveTo(X(q), Y(q)); g.quadraticCurveTo(X(q) + Math.cos(a) * L * pxmm * .5 + R(-3, 3), Y(q) + Math.sin(a) * L * pxmm * .5 + R(-3, 3), X(q) + Math.cos(a) * L * pxmm, Y(q) + Math.sin(a) * L * pxmm); g.stroke(); }   /* loose wavy collagen fibrils */
+      for (let k = 0; k < 5; k++) { const th = R(thApex + 1 * deg, thPlic + 1 * deg), d = mDep(th) * R(.75, .95) + R(.02, .1), q = mp(RSi - d, th), w = R(.015, .035) * pxmm; ell(q, w * R(1.4, 2.4), w, -th + PI / 2 + R(-.5, .5), 'rgba(205,190,188,.8)', 'rgba(90,40,60,.45)', 1); }   /* empty vessel lumina: pale, not white */
+      g.restore();
+      g.restore(); }
+    { const lay = g.canvas; g = gMain; g.save(); g.filter = 'blur(1.4px)'; g.drawImage(lay, 0, 0); g.restore(); }   /* slightly soft, like a micrograph */
+    { const cp = [...outer.filter(q => Math.atan2(q.x, q.y) < ora + 1 * deg), ...trans, ...cil, ...root, ...angle]; g.save(); path(g, cp, true); g.clip(); g.filter = 'blur(8px)'; g.fillStyle = 'rgba(70,34,40,.22)'; g.fill(); g.restore(); }   /* ciliary body section a little darker */
+    g.lineJoin = 'round'; g.lineCap = 'round'; path(g, [...chorIn, ...trans, ...cil, ...root, ...irP, ...pup]); g.save(); g.filter = 'blur(5px)'; g.strokeStyle = 'rgba(60,40,30,.42)'; g.lineWidth = .06 * pxmm; g.stroke(); g.restore();   /* pigment epithelium: dark, slightly soft edge (micrograph-like) */   /* one crisp pigment epithelium (RPE → ciliary → iris), unblurred; half lies outside the section, ~25 µm visible */
+    { const gT = g, im = new Image(); im.onload = () => {   /* user-drawn section of ciliary body + iris, affine-fitted on pupil margin, iris root and ora; greyscale */
+        const src = [[85, 560], [25, 300], [300, 6], [205, 300], [62, 335]], dst = [V(1.9, irAz(1.9)), mp(RSi, thSpur), mp(RSi, ora), mp(RSi - tCB(thApex + 2 * deg), thApex + 2 * deg), V(5.9, irAz(5.7))].map(q => [X(q), Y(q)]);   /* pupil margin, scleral spur, ora (outer), process crest, iris root */
+        const det = (m) => m[0][0] * (m[1][1] * m[2][2] - m[1][2] * m[2][1]) - m[0][1] * (m[1][0] * m[2][2] - m[1][2] * m[2][0]) + m[0][2] * (m[1][0] * m[2][1] - m[1][1] * m[2][0]);
+        const N = [[0, 0, 0], [0, 0, 0], [0, 0, 0]], bx = [0, 0, 0], by = [0, 0, 0]; src.forEach(([u, v], i) => { const r = [u, v, 1]; for (let p = 0; p < 3; p++) { for (let q = 0; q < 3; q++) N[p][q] += r[p] * r[q]; bx[p] += r[p] * dst[i][0]; by[p] += r[p] * dst[i][1]; } });
+        const D0 = det(N), solve = bb => [0, 1, 2].map(col => det(N.map((r, i) => r.map((x, j) => j === col ? bb[i] : x))) / D0);
+        const [a, c, e] = solve(bx), [b, d, f] = solve(by);
+        const cv = document.createElement('canvas'); cv.width = im.width; cv.height = im.height; const cg = cv.getContext('2d'); cg.drawImage(im, 0, 0); const id = cg.getImageData(0, 0, cv.width, cv.height), P = id.data;
+        for (let i = 0; i < P.length; i += 4) { const mn = Math.min(P[i], P[i + 1], P[i + 2]); P[i + 3] = Math.min(P[i + 3], Math.max(0, Math.min(255, (250 - mn) * 12))); } cg.putImageData(id, 0, 0);   /* white margin → transparent */
+        gT.save(); path(gT, outline, true); gT.clip(); gT.setTransform(a, b, c, d, e, f); gT.filter = 'grayscale(1) contrast(1.05)'; gT.drawImage(cv, 0, 0); gT.restore(); tex.needsUpdate = true; };
+      if (false) im.src = 'assets/uvea-section.png'; }   /* drawn section: disabled (did not fit the model's section) */
   });
   tex.wrapS = tex.wrapT = THREE.ClampToEdgeWrapping;
   tex.repeat.set(1 / (rho1 - rho0), 1 / (z1 - z0)); tex.offset.set(-rho0 / (rho1 - rho0), -z0 / (z1 - z0));
   const secM = std('uvea_section', { map: tex, roughness: .55 });
+  HIST.hist(secM, `{ float r0 = length(vSecP), t0 = acos(clamp(vSecP.z / r0, -1.0, 1.0)); float wC = smoothstep(${(ora - 5 * deg).toFixed(5)}, ${(ora + 5 * deg).toFixed(5)}, t0) * step(${(RC - .003).toFixed(4)}, r0) * step(r0, ${(RSi + .003).toFixed(4)});   /* choroid blends gradually into the ciliary body over ~10° around the ora */
+    if (wC > 0.001) { vec3 base = diffuseColor.rgb; vec3 bs = pow(max(base, vec3(0.0)), vec3(1.0/2.2)); float oB = clamp(octOf(base) * (0.85 + 0.3 * fb(vec2(length(vSecP.xy), vSecP.z) * 160.0)), 0.0, 1.0);
+      ${HIST.CHO}
+      diffuseColor.rgb = mix(base, diffuseColor.rgb, wC); octV = mix(oB, octV, wC); octDone = 1.0; }
+ }`, 'histUvea');   /* histological uvea section: choroid, ciliary body and iris */
   for (const nm of ['choroid_cut_a', 'choroid_cut_b']) { const o = eye.getObjectByName(nm); o && eye.remove(o); }
   // anterior chamber angle — corneal section with Descemet ending at Schwalbe's line, trabecular meshwork wedge
   // (uveal/corneoscleral, pigmented posteriorly), Schlemm's canal with a collector channel, scleral spur with the
@@ -808,7 +1005,7 @@ function sectionFace(pts, ang, lift = 0) {
   const arc = (cx0, cz0, r, a0, a1, n) => { const o = []; for (let i = 0; i <= n; i++) { const a = a0 + (a1 - a0) * i / n; o.push(V(cx0 + r * Math.sin(a), cz0 + r * Math.cos(a))); } return o; };
   const schw = mp(RSi, thSch);
   const aOut = Math.asin(6 / 7.8), aIn = Math.atan2(schw.x, schw.y - corInC);
-  const corSec = [...arc(0, cz, 7.8, 0, aOut, 60), mp(RSi, limbus), schw, ...arc(0, corInC, corInR, aIn, 0, 60)];
+  const corSec = [...Array.from({ length: 61 }, (_, i) => new THREE.Vector2(6 * i / 60, corZ(6 * i / 60))), mp(RSi, limbus), schw, ...arc(0, corInC, corInR, aIn, 0, 60)];   /* outer profile = the blended corneal surface */
   const desc = arc(0, corInC, corInR - .008, aIn - .002, 0, 60), descB = arc(0, corInC, corInR + .012, 0, aIn - .002, 60);
   // trabecular meshwork: triangle, apex at Schwalbe's line, base on the spur, bulging slightly into the angle
   const tmOuter = [], tmInner = [];
@@ -817,17 +1014,31 @@ function sectionFace(pts, ang, lift = 0) {
   const tmPig = []; for (let i = 0; i <= 16; i++) { const t = i / 16, th = thS - .25 * deg - .9 * deg * (1 - t); tmPig.push(mp(RSi - .035 * Math.sin(t * PI) - .012, th)); }
   for (let i = 16; i >= 0; i--) { const t = i / 16, th = thS - .25 * deg - .9 * deg * (1 - t); tmPig.push(mp(RSi + .03 + .04 * t, th)); }
   // Schlemm's canal: flattened oval lumen just outside the meshwork, with a collector channel leaving outward-backward
-  const schC = mp(RSi + .27, 30.9 * deg), schLumen = ell(schC, 30.9 * deg, .2, .045), schWall = ell(schC, 30.9 * deg, .225, .065);
-  const coll = []; { const p0 = mp(RSi + .3, 31.4 * deg), p1 = mp(RSi + .45, 32.2 * deg), p2 = mp(RSi + .62, 32.6 * deg);
-    const c1 = cr([p0, p1, p2], 12), off = .012; c1.forEach(q => coll.push(V(q.x - off, q.y))); c1.reverse().forEach(q => coll.push(V(q.x + off, q.y))); }
+  const schC = mp(RSi + .18, 31.1 * deg), schLumen = ell(schC, 31.1 * deg, .15, .026), schWall = ell(schC, 31.1 * deg, .162, .036);   /* slit-like, against the outer meshwork just in front of the spur */   /* ~0.3 mm long, slit-like, directly outside the meshwork in the scleral sulcus */
+  const coll = []; { const p0 = mp(RSi + .2, 31.2 * deg), p1 = mp(RSi + .36, 31.6 * deg), p2 = mp(RSi + .55, 31.7 * deg);
+    const c1 = cr([p0, p1, p2], 12), off = .007; c1.forEach(q => coll.push(V(q.x - off, q.y))); c1.reverse().forEach(q => coll.push(V(q.x + off, q.y))); }
   // scleral spur: white collagen ridge projecting inward, pointing forward; the meridional muscle attaches behind it
   const spurT = cr([mp(RSi + .1, thS - .35 * deg), mp(RSi - .06, thS - .1 * deg), mp(RSi - .09, thS + .2 * deg), mp(RSi - .01, thS + .8 * deg), mp(RSi + .07, thS + .55 * deg), mp(RSi + .1, thS - .35 * deg)], 30);
   // iris processes: fine strands from the iris root across the recess onto the meshwork
   const proc = []; { const a = V(5.95, irAz(5.7) - .02), b = mp(RSi - .03, thS - .35 * deg), c1 = cr([a, V((a.x + b.x) / 2 + .03, (a.y + b.y) / 2 + .02), b], 10), off = .009;
     c1.forEach(q => proc.push(V(q.x, q.y + off))); c1.reverse().forEach(q => proc.push(V(q.x, q.y - off))); }
   const angM = (c, o = 1) => std('angle', { color: c, roughness: .5, transparent: o < 1, opacity: o, polygonOffset: true, polygonOffsetFactor: -2 });
-  const corM = std('cornea_cut', { color: 0xd8e2e4, roughness: .15, transparent: true, opacity: .55 });
-  const descM = angM(0xf4f1ea), tmM = angM(0xd8c1a2), tmPM = angM(0x7a5236), wallM = angM(0xb8a490), schM = angM(0x2e2a3e), spurM = angM(0xf6f1e6), procM = angM(0x8a4a2c, .85);
+  const corM = std('cornea_cut', { color: 0xe4e8e6, roughness: .3, transparent: true, opacity: .72, polygonOffset: true, polygonOffsetFactor: -1 });   /* closed cut face: no looking through into the layers behind */
+  HIST.hist(corM, `{ float rho = length(vSecP.xy), z = vSecP.z;
+    float dI = length(vec2(rho, z - ${corInC.toFixed(4)})) - ${corInR.toFixed(4)}, dO = 7.8 - length(vec2(rho, z - ${cz.toFixed(4)}));   /* mm from the endothelium / from the epithelial surface */
+    float y = max(0.0, dO), px = max(length(fwidth(vSecP)), 1e-5), mw = 1.5 * px;   /* mw: thin layers never narrower than ~1.5 px */
+    float v = 0.66 + 0.04 * (fb(vec2(rho * 3.0, y * 25.0)) - 0.5);   /* stroma: almost even pale grey */
+    v -= 0.08 * smoothstep(0.7, 0.84, fb(vec2(rho * 40.0, y * 200.0))) * (1.0 - smoothstep(0.002, 0.006, px));   /* keratocytes, only when zoomed in */
+    float eT = max(0.05, mw); v = mix(v, 0.38, 1.0 - smoothstep(eT - 0.4 * px, eT + 0.4 * px, y));   /* epithelium */   /* epithelium: 5–8 cell layers, ~50 µm */
+    float bT = max(0.012, mw); v = mix(v, 0.95, smoothstep(eT - 0.4 * px, eT + 0.4 * px, y) * (1.0 - smoothstep(eT + bT - 0.4 * px, eT + bT + 0.4 * px, y)));   /* Bowman layer */   /* Bowman layer: acellular, ~12 µm */
+    float nT = max(0.006, mw), dT = max(0.014, mw); v = mix(v, 0.93, (1.0 - smoothstep(nT + dT - 0.4 * px, nT + dT + 0.4 * px, dI)) * smoothstep(nT - 0.4 * px, nT + 0.4 * px, dI));   /* pre-Descemet + Descemet */   /* pre-Descemet (Dua) layer + Descemet membrane */
+    v = mix(v, 0.3, 1.0 - smoothstep(nT - 0.4 * px, nT + 0.4 * px, dI));   /* endothelium */   /* endothelium: single layer of low cuboidal cells */
+    diffuseColor.rgb = vec3(0.86, 0.9, 0.9); octV = clamp(v, 0.0, 1.0); octDone = 1.0; }`, 'histCornea');
+  const descM = angM(0xf4f1ea), tmM = angM(0xa99d8a), tmPM = angM(0x7a5236), wallM = angM(0x8f887c), schM = angM(0x8e96a8), spurM = angM(0xcfc8ba), procM = angM(0x8a4a2c, .85);
+  /* angle structures follow the grey section view too (same luminance mapping as the uvea) */
+  for (const m of [descM, tmM, tmPM, wallM, schM, spurM, procM]) { const prev = m.onBeforeCompile; m.onBeforeCompile = sh => { prev && prev(sh); sh.uniforms.uOCT = HIST.OCT;
+      sh.fragmentShader = 'uniform float uOCT;\n' + sh.fragmentShader.replace('#include <map_fragment>', '#include <map_fragment>\n  { vec3 s0 = pow(max(diffuseColor.rgb, vec3(0.0)), vec3(1.0/2.2)); float L = dot(s0, vec3(0.3, 0.59, 0.11)), v = 0.1 + 0.85 * smoothstep(0.08, 0.92, L); diffuseColor.rgb = mix(diffuseColor.rgb, vec3(pow(v, 1.7)), uOCT); }'); };
+    m.customProgramCacheKey = (k => () => 'angGrey' + m.color.getHexString() + (k ? k.call(m) : ''))(m.customProgramCacheKey); m.needsUpdate = true; }
   for (const [ang, sgn, tag] of [[A0, -1, 'a'], [0, 1, 'b']]) {
     add('uvea_cut_' + tag, sectionFace(outline, ang), secM);
     add('cornea_cut_' + tag, sectionFace(corSec, ang), corM);
@@ -836,19 +1047,18 @@ function sectionFace(pts, ang, lift = 0) {
     add('trabecular_pigment_' + tag, sectionFace(tmPig, ang, sgn * .004), tmPM);
     add('schlemm_wall_' + tag, sectionFace(schWall, ang, sgn * .003), wallM);
     add('schlemm_canal_' + tag, sectionFace(schLumen, ang, sgn * .005), schM);
-    add('collector_channel_' + tag, sectionFace(coll, ang, sgn * .004), schM);
-    add('scleral_spur_' + tag, sectionFace(spurT, ang, sgn * .004), spurM);
+    /* scleral spur plate removed: it showed as a loose white fleck beside the section */
   }
   // 3D angle wall as seen through the cornea (gonioscopic bands): Schwalbe's line, non-pigmented and pigmented
   // meshwork, scleral spur; iris processes as fine strands around the circumference
   {
     const prof = [], n = 60; for (let i = 0; i <= n; i++) { const th = thSch - .3 * deg + (thS + .3 * deg - thSch + .3 * deg) * i / n; prof.push(mp(RSi - .012, th)); }
-    const g = new THREE.LatheGeometry(prof, 360, PI, PL).rotateX(PI / 2), c = new THREE.Color(), dark = new THREE.Color(0x9a7452);
+    const g = new THREE.LatheGeometry(prof, 360, PI + .8 * deg, PL - 1.6 * deg).rotateX(PI / 2), c = new THREE.Color(), dark = new THREE.Color(0x9a7452);   /* stops just short of the cut planes: its pale bands never show as a white fleck on the section */
     // bands painted into a mipmapped texture (u = around the lathe, v = along the profile) rather than vertex colours:
     // the thin light lines (Schwalbe's line, scleral spur) then stay continuous on ordinary screens instead of breaking into specks
     const bands = canvasTex(2048, 128, (g2, W, H) => {
       const img = g2.createImageData(W, H), d = img.data, pig = new Float32Array(W);
-      for (let x = 0; x < W; x++) { const az = PI + (x + .5) / W * PL - PI / 2; pig[x] = .85 + .3 * Math.pow(.5 + .5 * Math.sin(az * 90), 3); }
+      for (let x = 0; x < W; x++) { const az = (PI + .8 * deg) + (x + .5) / W * (PL - 1.6 * deg) - PI / 2; pig[x] = .85 + .3 * Math.pow(.5 + .5 * Math.sin(az * 90), 3); }
       for (let y = 0; y < H; y++) {
         const j = 1 - (y + .5) / H, th = thSch - .3 * deg + (thS + .3 * deg - thSch + .3 * deg) * j, t = (th - thSch) / (thS - thSch);
         for (let x = 0; x < W; x++) {
@@ -937,8 +1147,12 @@ function sectionFace(pts, ang, lift = 0) {
 // (exponent profile), blending into a rounded equator; a light Chaikin pass removes the crease where both faces meet
 const lensProfile = s => { let p = []; for (let i = 0; i <= 240; i++) { const a = -PI / 2 + PI * i / 240, r = 4.5 * Math.cos(a); p.push(new THREE.Vector2(Math.max(r * s, .001), (a < 0 ? -1 : 1) * lensSag(r, a >= 0) * s)); }
   for (let k = 0; k < 4; k++) { const q = [p[0]]; for (let i = 0; i < p.length - 1; i++) { q.push(p[i].clone().lerp(p[i + 1], .25), p[i].clone().lerp(p[i + 1], .75)); } q.push(p[p.length - 1]); p = q; }
-  return p; };
-add('lens', new THREE.LatheGeometry(lensProfile(1), 288).rotateX(PI / 2), M.lens, m => m.position.z = 7.95);   // anterior pole 9.55: pupil margin rests on the lens, ACD ≈ 3.1 mm
+  // resample by arc length: the Chaikin passes leave ~3900 points, i.e. millions of triangles in every lathe
+  const cum = [0]; for (let i = 1; i < p.length; i++) cum.push(cum[i - 1] + p[i].distanceTo(p[i - 1]));
+  const N = 160, out = []; let j = 0;
+  for (let k = 0; k <= N; k++) { const d = cum[cum.length - 1] * k / N; while (j < p.length - 2 && cum[j + 1] < d) j++; const t = (d - cum[j]) / Math.max(1e-9, cum[j + 1] - cum[j]); out.push(p[j].clone().lerp(p[j + 1], Math.min(1, t))); }
+  return out; };
+add('lens', new THREE.LatheGeometry(lensProfile(1), 192).rotateX(PI / 2), M.lens, m => m.position.z = 7.95);   // anterior pole 9.55: pupil margin rests on the lens, ACD ≈ 3.1 mm
 add('lens_nucleus', new THREE.LatheGeometry(lensProfile(.62), 64).rotateX(PI / 2), M.nucleus, m => m.position.z = 7.95);
 
 // fundus map: mm on the retinal surface, origin = posterior pole, +u temporal, +v superior
@@ -962,9 +1176,9 @@ const nd = proj(DISC.x, DISC.y, 1), md = proj(FOV.x, FOV.y, 1);
   add('vitreous_body', lathe(outline, 0, 2 * PI), M.vitreous);
   const rimM = new THREE.ShaderMaterial({
     name: 'vitreous_rim', transparent: true, depthWrite: false, side: THREE.FrontSide, blending: THREE.NormalBlending,
-    uniforms: { col: { value: new THREE.Color(0xeef6fa) } },
+    uniforms: { col: { value: new THREE.Color(0xeef6fa) }, k: { value: .06 } },
     vertexShader: 'varying vec3 vN; varying vec3 vV; void main(){ vec4 mv = modelViewMatrix * vec4(position,1.); vN = normalize(normalMatrix * normal); vV = normalize(-mv.xyz); gl_Position = projectionMatrix * mv; }',
-    fragmentShader: 'uniform vec3 col; varying vec3 vN; varying vec3 vV; void main(){ float f = pow(1. - abs(dot(normalize(vN), normalize(vV))), 2.6); gl_FragColor = vec4(col, f * .3); }'
+    fragmentShader: 'uniform vec3 col; uniform float k; varying vec3 vN; varying vec3 vV; void main(){ float f = pow(1. - abs(dot(normalize(vN), normalize(vV))), 2.6); gl_FragColor = vec4(col, f * k); }'
   });
   add('vitreous_rim', lathe(outline, 0, 2 * PI), rimM, m => m.renderOrder = 2);
   // cut faces: wet, slightly uneven gel surface (no fibres) — refracts the fundus behind it
@@ -1103,6 +1317,10 @@ function rectus(name, phi0, fromLimbus, tendonLen, width, half = 0, gc = null) {
     const a0 = (i - 1) * W1 + j - 1, b0 = a0 + 1, c0 = a0 + W1, d0 = c0 + 1;
     if (keepV[a0] && keepV[b0] && keepV[c0] && keepV[d0] && !(cutV[a0] && cutV[b0] && cutV[c0] && cutV[d0])) idx.push(a0, c0, b0, b0, c0, d0);
   }
+  if (gc) {   /* close the tendon where the window cuts it: strip between the two snapped edges of each cross-section */
+    const ends = []; for (let i = 0; i <= NS; i++) { let lo = -1, hi = -1; for (let j = 0; j <= NA; j++) { const v = i * W1 + j; if (cutV[v] && keepV[v]) { if (lo < 0) lo = v; hi = v; } } ends.push(lo >= 0 && hi !== lo ? [lo, hi] : null); }
+    for (let i = 0; i < NS; i++) { const e0 = ends[i], e1 = ends[i + 1]; if (e0 && e1) idx.push(e0[0], e0[1], e1[0], e0[1], e1[1], e1[0]); }
+  }
   const g = new THREE.BufferGeometry();
   g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.setAttribute('uv', new THREE.Float32BufferAttribute(uv, 2));
   g.setIndex(idx); g.computeVertexNormals();
@@ -1173,15 +1391,24 @@ function rectus(name, phi0, fromLimbus, tendonLen, width, half = 0, gc = null) {
     for (let k = 0; k < 5000; k++) { bg.fillStyle = rnd() < .5 ? 'rgba(255,255,255,.12)' : 'rgba(0,0,0,.14)'; bg.fillRect(rnd() * bc.width, rnd() * bc.height, R(1, 3), R(2, 9)); }
     bump.needsUpdate = true; }
   const mat = phys(name, { map: tex, bumpMap: bump, bumpScale: 3, roughnessMap: bump, roughness: .6, clearcoat: .55, clearcoatRoughness: .3, sheen: .35, sheenColor: 0xffd8d0, sheenRoughness: .7 });
-  add(name, g, mat);
+  if (gc) mat.side = D; if (half || gc) { const v0 = (1 - ft).toFixed(4);   /* tendon/muscle from the position along the muscle (not from the surface texture: no blotches) */
+    let code = HIST.musOCT.replace('float red = smoothstep(0.0, 0.45, s0.r - s0.g);', tOnly ? 'float red = 0.0;' : 'float red = smoothstep(' + v0 + ' + 0.03, ' + v0 + ' - 0.08, vMapUv.y);');
+    if (tOnly) code = code.replace('if (dpl < 0.14 && az > -0.08 && az < 1.65)', 'if ((dpl < 0.14 && az > -0.08 && az < 1.65) || abs(acos(clamp(vSecP.z / length(vSecP), -1.0, 1.0)) - ' + TC.toFixed(5) + ') * length(vSecP) < 0.06)');
+    HIST.hist(mat, '', 'histMus_' + name, code);
+    { const ob = mat.onBeforeCompile; mat.onBeforeCompile = sh => { ob(sh);   /* all halved muscles: flat normal on the cut face, so bump/clearcoat glints (white specks) vanish there */   /* tendon cut strip: flat face normal, so the snapped strip is evenly lit (no comb) */
+      const tcC = tOnly ? ' || abs(acos(clamp(vSecP.z / length(vSecP), -1.0, 1.0)) - ' + TC.toFixed(5) + ') * length(vSecP) < 0.14' : '';
+      sh.fragmentShader = sh.fragmentShader.replace('#include <normal_fragment_maps>', '#include <normal_fragment_maps>\n  { float az = atan(vSecP.y, vSecP.x), rr = length(vSecP.xy), dpl = min(abs(az), abs(az - 1.5707963)) * rr; if ((dpl < 0.14 && az > -0.08 && az < 1.65)' + tcC + ') { vec3 fn = normalize(cross(dFdx(vViewPosition), dFdy(vViewPosition))); normal = fn; } }').replace('#include <lights_fragment_begin>', '{ float az2 = atan(vSecP.y, vSecP.x), dp2 = min(abs(az2), abs(az2 - 1.5707963)) * length(vSecP.xy); if ((dp2 < 0.14 && az2 > -0.08 && az2 < 1.65)' + tcC + ') { material.roughness = 0.9; material.specularF90 = 0.0; material.specularColor = vec3(0.0); material.clearcoat = 0.0; material.sheenColor = vec3(0.0); } }\n#include <lights_fragment_begin>'); }; } }   /* SO tendon: one continuous pale lamellar band, no comb where it crosses the cut plane */ add(name, g, mat);
+  if (tOnly) { const ob2 = mat.onBeforeCompile, thSR = limbus + 7.7 / RS; mat.onBeforeCompile = sh => { ob2(sh);   /* SO tendon under the SR: flattened to a thin sheet on the sclera, never rising into the SR section */
+    sh.fragmentShader = sh.fragmentShader.replace('#include <map_fragment>', '{ float rq = length(vSecP); float sS = (acos(clamp(vSecP.z / rq, -1.0, 1.0)) - ' + thSR.toFixed(5) + ') * ' + RS.toFixed(4) + '; if (vSecP.y > 0.0 && vSecP.x < 0.15 && vSecP.x > -5.5 && sS > 0.0 && (rq > ' + RS.toFixed(4) + ' + 0.02 + 0.8 * (0.015 + 0.93 * pow(min(1.0, sS / 5.8), 1.15)) || (abs(vSecP.x) < 0.06 && rq > ' + (RS + .009).toFixed(4) + '))) discard; }   /* in the cut plane the SO stays below the SR underside: no shared faces with the SR section (no shimmering specks) */\n#include <map_fragment>'); }; }
   // cut face at the posterior end
   const ring = [], base = NS * (NA + 1), cp = [], cIdx = [];
   for (let j = 0; j <= NA; j++) { const o = (base + j) * 3; ring.push(new THREE.Vector3(pos[o], pos[o + 1], pos[o + 2])); }
   const keep = ring.filter(q => !removed(q)), cen = (keep.length ? keep : ring).reduce((a, b) => a.add(b), new THREE.Vector3()).multiplyScalar(1 / Math.max(1, (keep.length ? keep : ring).length));
-  cp.push(cen.x, cen.y, cen.z); ring.forEach(q => cp.push(q.x, q.y, q.z));
+  const outS = q => q.length() < RS + .004 ? q.clone().setLength(RS + .004) : q;   /* cut face never dips into the sclera (no dark slivers in the scleral section) */
+  { const c2 = outS(cen); cp.push(c2.x, c2.y, c2.z); } ring.forEach(q => { const q2 = outS(q); cp.push(q2.x, q2.y, q2.z); });
   const remR = ring.map(q => removed(q)); for (let j = 1; j <= NA; j++) if (!remR[j - 1] && !remR[j % ring.length]) cIdx.push(0, j, j + 1);
   const cg = new THREE.BufferGeometry(); cg.setAttribute('position', new THREE.Float32BufferAttribute(cp, 3)); cg.setIndex(cIdx); cg.computeVertexNormals();
-  const cutTex = canvasTex(256, 256, (c, w) => { c.fillStyle = '#8a2a22'; c.fillRect(0, 0, w, w); for (let k = 0; k < 220; k++) { c.fillStyle = rnd() < .5 ? 'rgba(60,8,6,.5)' : 'rgba(190,80,70,.4)'; c.beginPath(); c.arc(rnd() * w, rnd() * w, R(3, 9), 0, 2 * PI); c.fill(); } c.strokeStyle = 'rgba(240,220,210,.5)'; c.lineWidth = 1; for (let k = 0; k < 30; k++) { c.beginPath(); c.moveTo(rnd() * w, rnd() * w); c.lineTo(rnd() * w, rnd() * w); c.stroke(); } });
+  const cutTex = canvasTex(256, 256, (c, w) => { c.fillStyle = '#8a2a22'; c.fillRect(0, 0, w, w); for (let k = 0; k < 220; k++) { c.fillStyle = rnd() < .5 ? 'rgba(60,8,6,.5)' : 'rgba(190,80,70,.4)'; c.beginPath(); c.arc(rnd() * w, rnd() * w, R(3, 9), 0, 2 * PI); c.fill(); } });
   const uvs = []; for (let j = 0; j <= NA + 1; j++) uvs.push(j ? .5 + .5 * Math.cos((j - 1) / NA * 2 * PI) : .5, j ? .5 + .5 * Math.sin((j - 1) / NA * 2 * PI) : .5);
   cg.setAttribute('uv', new THREE.Float32BufferAttribute(uvs, 2));
   if (!tOnly) add(name + '_cut', cg, std(name + '_cut', { map: cutTex, roughness: .7 }));
@@ -1207,7 +1434,7 @@ rectus('obliquus_inferior', 0, 0, 2, 9.4, 0, obliqueFrame(7.4, -3.4, -.32, -.95)
     let g = c.createRadialGradient(w / 2, w / 2, 0, w / 2, w / 2, w * .4); g.addColorStop(0, '#2a0f1c'); g.addColorStop(.7, '#3c1628'); g.addColorStop(1, '#6a3a4a');
     c.fillStyle = g; c.beginPath(); c.arc(w / 2, w / 2, w * .4, 0, 2 * PI); c.fill();          // lumen with dark venous blood
     c.fillStyle = 'rgba(120,30,40,.5)'; c.beginPath(); c.ellipse(w * .44, w * .55, w * .14, w * .09, .5, 0, 2 * PI); c.fill(); }) });
-  const canalM = std('vortex_canal', { color: 0x5a5a78, roughness: .7, transparent: true, opacity: .38, depthWrite: false, polygonOffset: true, polygonOffsetFactor: -3 });
+  const canalM = std('vortex_canal', { color: 0x6e6e86, roughness: .7, transparent: true, opacity: .16, depthWrite: false, polygonOffset: true, polygonOffsetFactor: -3 });
   const canalTex = canvasTex(128, 128, (c, w) => { const g = c.createRadialGradient(w / 2, w / 2, 0, w / 2, w / 2, w / 2); g.addColorStop(0, 'rgba(255,255,255,1)'); g.addColorStop(.55, 'rgba(255,255,255,.7)'); g.addColorStop(1, 'rgba(255,255,255,0)'); c.fillStyle = g; c.fillRect(0, 0, w, w); });
   canalM.map = canalTex;
   for (const [nm, azDeg, d] of [['superotemporalis', 45, 12.6], ['superonasalis', 135, 13.8], ['inferonasalis', 225, 14.6], ['inferotemporalis', 315, 13.6]]) {
@@ -1233,6 +1460,59 @@ rectus('obliquus_inferior', 0, 0, 2, 9.4, 0, obliqueFrame(7.4, -3.4, -.32, -.95)
     add('vortex_canal_' + nm, new THREE.PlaneGeometry(1, 3.4), canalM, m => { m.position.copy(P(RS + .012, -1.4)); m.up.copy(tp); m.lookAt(P(RS + 5, -1.4)); });
   }
 }
+// other emissary vessels, with their real outer course and cut a few mm from where they pierce the sclera:
+// · ~16 short posterior ciliary arteries: pierce in a ring 2–3.5 mm around the optic nerve, then run tortuously
+//   backward along the nerve sheath (they come from the ophthalmic artery deep in the orbit)
+// · 2 long posterior ciliary arteries: pierce ~4 mm nasal and temporal of the nerve, run with the nerve
+// · anterior ciliary arteries (2 per rectus, 1 for the lateral rectus) and veins: pierce ~1 mm in front of the insertion,
+//   run backward over the tendon surface to the (cut) muscle belly, from whose muscular arteries they arise
+{
+  const parts = {};
+  const vessel = (key, pts, r) => {
+    if (pts.some(p => removed(p))) return;
+    const curve = new THREE.CatmullRomCurve3(pts, false, 'centripetal'), tube = new THREE.TubeGeometry(curve, Math.max(24, pts.length * 10), r, 12, false);
+    const end = curve.getPoint(1), t = curve.getTangent(1), u = new THREE.Vector3().crossVectors(t, Math.abs(t.z) < .9 ? new THREE.Vector3(0, 0, 1) : new THREE.Vector3(1, 0, 0)).normalize(), w = new THREE.Vector3().crossVectors(t, u);
+    const cp = [end.x, end.y, end.z], cuv = [.5, .5], cix = [];
+    for (let k = 0; k <= 24; k++) { const a = k / 24 * 2 * PI, q = end.clone().addScaledVector(u, Math.cos(a) * r).addScaledVector(w, Math.sin(a) * r); cp.push(q.x, q.y, q.z); cuv.push(.5 + .5 * Math.cos(a), .5 + .5 * Math.sin(a)); if (k) cix.push(0, k + 1, k); }
+    const cap = new THREE.BufferGeometry(); cap.setAttribute('position', new THREE.Float32BufferAttribute(cp, 3)); cap.setAttribute('uv', new THREE.Float32BufferAttribute(cuv, 2)); cap.setIndex(cix); cap.computeVertexNormals();
+    (parts[key] = parts[key] || { tube: [], cap: [] }); parts[key].tube.push(tube); parts[key].cap.push(cap);
+  };
+  const merge = list => { const pos = [], nor = [], uv = [], idx = []; let o = 0;
+    for (const g of list) { const p = g.attributes.position, n = g.attributes.normal, t = g.attributes.uv; for (let i = 0; i < p.count; i++) { pos.push(p.getX(i), p.getY(i), p.getZ(i)); nor.push(n.getX(i), n.getY(i), n.getZ(i)); uv.push(t.getX(i), t.getY(i)); }
+      const ix = g.index.array; for (let i = 0; i < ix.length; i++) idx.push(ix[i] + o); o += p.count; }
+    const m = new THREE.BufferGeometry(); m.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); m.setAttribute('normal', new THREE.Float32BufferAttribute(nor, 3)); m.setAttribute('uv', new THREE.Float32BufferAttribute(uv, 2)); m.setIndex(idx); return m; };
+  // posterior: nerve frame (axial along nd, radial around it)
+  const eN = nd.clone(), e1 = new THREE.Vector3().crossVectors(eN, new THREE.Vector3(0, 1, 0)).normalize(), e2 = new THREE.Vector3().crossVectors(e1, eN);
+  const NP = (ax, rad, ang) => eN.clone().multiplyScalar(ax).addScaledVector(e1, Math.cos(ang) * rad).addScaledVector(e2, Math.sin(ang) * rad);
+  const posterior = (key, dmm, ang, r, len) => {
+    const t = dmm / RS, pierceAx = RS * Math.cos(t), pierceRad = RS * Math.sin(t), ph = R(0, 6), rs = R(2.3, 2.7);
+    const pts = [NP((RS - .08) * Math.cos(t), (RS - .08) * Math.sin(t), ang), NP((RS + .25) * Math.cos(t), (RS + .25) * Math.sin(t), ang)];
+    pts.push(NP((RS + .32) * Math.cos(t), (RS + .32) * Math.sin(t) - .05, ang));
+    if (false) for (const sAx of [.9, 1.7, 2.6, 3.5, len]) { const k = Math.min(1, sAx / 1.7), rad = pierceRad + (rs - pierceRad) * (k * k * (3 - 2 * k)) + .12 * Math.sin(sAx * 2.4 + ph);
+      pts.push(NP(Math.max(RS + sAx * .9, pierceAx + .4 + sAx), rad, ang + .1 * Math.sin(sAx * 1.9 + ph))); }
+    vessel(key, pts, r); };
+  for (let k = 0; k < 16; k++) posterior('spca', R(2.0, 3.4), k / 16 * 2 * PI + R(-.15, .15), R(.08, .11), R(3.6, 4.6));
+  posterior('lpca', 4.2, 0, .12, 4.8); posterior('lpca', 4.2, PI, .12, 4.8);
+  // anterior: same parametrisation as rectus() (theta from the anterior pole), over the tendon surface
+  const sm = (a, b, x) => { const t = Math.max(0, Math.min(1, (x - a) / (b - a))); return t * t * (3 - 2 * t); };
+  for (const [phi, fromL, tL, nA] of [[PI, 5.5, 3.7, 2], [-PI / 2, 6.5, 5.5, 2], [PI / 2, 7.7, 5.8, 2], [0, 6.9, 8.8, 1]]) {
+    const thIns = limbus + fromL / RS, Tf = s => s <= 0 ? 0 : .015 + .93 * Math.pow(Math.min(1, s / tL), 1.15) * (1 - .25 * Math.pow(Math.max(0, 1 - s / (tL * .25)), 2));
+    const at = (sMM, off, hgt) => { const th = thIns + sMM / RS, ph = phi + off / (RS * Math.sin(th)), rr = RS + hgt; return new THREE.Vector3(Math.sin(th) * Math.cos(ph) * rr, Math.sin(th) * Math.sin(ph) * rr, Math.cos(th) * rr); };
+    const course = (key, off, r) => { const ph = R(0, 6), pts = [at(-1.1, off, -.08), at(-1.05, off, .12), at(-.95, off, .3)];
+      if (false) for (const sM of [-.4, .4, 1.4, 2.6, tL * .7, tL + .3, tL + 1.2]) pts.push(at(sM, off + .18 * Math.sin(sM * 1.6 + ph), Tf(sM) + r + .05 + .05 * sm(-.4, 1, sM)));
+      vessel(key, pts, r); };
+    for (const off of nA === 2 ? [-2.6, 2.6] : [1.8]) course('aca', off, .09);
+    course('acv', nA === 2 ? .5 : -1.3, .12);
+  }
+  const lumen = (wall, lum, ratio) => canvasTex(128, 128, (c, w) => { c.fillStyle = wall; c.fillRect(0, 0, w, w); c.fillStyle = lum; c.beginPath(); c.arc(w / 2, w / 2, w * ratio, 0, 2 * PI); c.fill(); });
+  const MAT = {
+    art: [std('ciliary_artery', { color: 0xa8584c, roughness: .42 }), std('ciliary_artery_cut', { map: lumen('#dcbcae', '#7a1418', .26), roughness: .55, side: D })],   // thick muscular wall, small lumen
+    vein: [std('ciliary_vein', { color: 0x5a3550, roughness: .4 }), std('ciliary_vein_cut', { map: lumen('#b79a98', '#3a1426', .4), roughness: .55, side: D })]
+  };
+  const NAME = { spca: 'ciliary_a_post_brev', lpca: 'ciliary_a_post_long', aca: 'ciliary_a_ant', acv: 'ciliary_v_ant' };
+  for (const [key, g] of Object.entries(parts)) { const m = MAT[key === 'acv' ? 'vein' : 'art'];
+    add(NAME[key], merge(g.tube), m[0]); add(NAME[key] + '_cut', merge(g.cap), m[1]); }
+}
 eye.traverse(o => { if (o.isMesh) { o.castShadow = !o.material.transparent && o.material.transmission === 0; } });
 const model = new THREE.Group(); model.name = 'oog_model';
 eye.scale.setScalar(.001);
@@ -1247,7 +1527,82 @@ if (document.documentElement.classList.contains('embed')) {   // inside a site p
   stage.addEventListener('pointerdown', () => { ctl.enableZoom = true; });
   document.documentElement.addEventListener('mouseleave', () => { ctl.enableZoom = false; });
 }
-{ const so = eye.getObjectByName('obliquus_superior'); if (so) { so.receiveShadow = false; so.castShadow = false; } }   // thin solid tendon: avoid self-shadow streaks on its cut wall
+{ const so = eye.getObjectByName('obliquus_superior'); if (so) { so.receiveShadow = false; so.castShadow = false; } }
+// adaptive quality: on slower computers lower the render resolution step by step (never below 1×) until it runs smoothly
+{ const r = stage._renderer; let n = 0, acc = 0, tp = performance.now(), maxPR = Math.min(window.devicePixelRatio || 1, 2), pr = maxPR, cool = 0;
+  const watch = now => { requestAnimationFrame(watch); const dt = now - tp; tp = now; if (document.hidden || dt > 250) return; acc += dt; if (++n < 45) return;
+    const avg = acc / n; n = 0; acc = 0; if (cool > 0) { cool--; return; }
+    if (avg > 24 && pr > 1) { pr = Math.max(1, pr - .25); r.setPixelRatio(pr); r.setSize(r.domElement.clientWidth, r.domElement.clientHeight, false); cool = 2; }
+    else if (avg < 14 && pr < maxPR) { pr = Math.min(maxPR, pr + .25); r.setPixelRatio(pr); r.setSize(r.domElement.clientWidth, r.domElement.clientHeight, false); cool = 4; } };
+  requestAnimationFrame(watch); }
+// display toggles: blood vessels (vortex veins, ciliary arteries/veins) and the extraocular muscles are hidden unless switched on.
+// Hidden parts move to layer 1 so they are neither drawn nor picked by the hover labels.
+for (const [id, re, on0] of [['toggle-vessels', /^(vortex_|ciliary_[av]_)/, false], ['toggle-muscles', /^(rectus_|obliquus_)/, true]]) { const ves = []; eye.traverse(o => { if (o.isMesh && re.test(o.name)) ves.push(o); });
+  const set = (on, user) => { ves.forEach(o => o.layers.set(on ? 0 : 1)); const b = document.getElementById(id); if (b) { b.setAttribute('aria-pressed', on); b.style.background = 'transparent'; b.style.color = on ? '#1a1a1a' : '#a09c92'; } };   /* on: normal ink, off: lighter grey */
+  set(on0);
+  document.getElementById(id)?.addEventListener('click', e => set(e.currentTarget.getAttribute('aria-pressed') !== 'true', true)); }
+
+// open lumen of the infusion line: discard eye-wall fragments inside the infusion cannula's bore
+{ const U = { lumInv: { value: new THREE.Matrix4() }, lumA: { value: new THREE.Vector3() }, lumD: { value: new THREE.Vector3() }, lumR: { value: .25 }, lumOn: { value: 0 } };
+  const az = -30 * deg, th = limbus + 4 / RS, n = new THREE.Vector3(Math.sin(th) * Math.cos(az), Math.sin(th) * Math.sin(az), Math.cos(th));
+  const tC = new THREE.Vector3(-Math.sin(az), Math.cos(az), 0), tP = new THREE.Vector3(Math.cos(th) * Math.cos(az), Math.cos(th) * Math.sin(az), -Math.sin(th));
+  U.lumD.value.copy(n).negate().addScaledVector(tC, .32).addScaledVector(tP, .12).normalize(); U.lumA.value.copy(n).multiplyScalar(RS);
+  const skip = /^(cornea|lens|iris|pupil|optic|vortex|ciliary_[av]_|rectus|obliquus|limbus|descemet|trabec|schlemm|angle|scleral_spur|collector|zonule|cond_)/;
+  const done = new Set();
+  eye.children.forEach(o => { if (!o.isMesh || skip.test(o.name)) return; const m = o.material; if (!m || m.isShaderMaterial || done.has(m)) return; done.add(m);
+    const prev = m.onBeforeCompile;
+    m.onBeforeCompile = (sh, r) => { prev && prev(sh, r); Object.assign(sh.uniforms, U);
+      sh.vertexShader = 'varying vec3 vLumW;\n' + sh.vertexShader.replace('#include <project_vertex>', '#include <project_vertex>\n  vLumW = (modelMatrix * vec4(transformed, 1.0)).xyz;');
+      sh.fragmentShader = 'uniform mat4 lumInv; uniform vec3 lumA; uniform vec3 lumD; uniform float lumR; uniform float lumOn; varying vec3 vLumW;\n' + sh.fragmentShader.replace('void main() {', 'void main() {\n  if (lumOn > .5) { vec3 q = (lumInv * vec4(vLumW, 1.0)).xyz - lumA; float t = dot(q, lumD); if (t > -.3 && t < 4.0) { vec3 p = q - t * lumD; if (dot(p, p) < lumR * lumR) discard; } }'); };
+    m.customProgramCacheKey = (pk => () => 'lumen|' + (pk ? pk.call(m) : ''))(m.customProgramCacheKey); m.needsUpdate = true; });
+  const tick = () => { requestAnimationFrame(tick); const vg = eye.getObjectByName('cond_vitrectomy'); U.lumOn.value = vg && vg.visible ? 1 : 0; if (U.lumOn.value) { eye.updateWorldMatrix(true, false); U.lumInv.value.copy(eye.matrixWorld).invert(); } };
+  requestAnimationFrame(tick); }
+// pupillary light reflex: the viewer acts as the light source. The more the cornea faces the camera, the more light enters
+// and the narrower the pupil (≈2.6 mm facing the light, ≈6.4 mm turned away). Constriction is fast, dilation slower,
+// with slight hippus. The iris tissue moves with it: radial stretch/bunching, thinner when constricted, thicker with
+// contraction furrows near the periphery when dilated, and the pupil margin keeps resting on the anterior lens surface.
+{
+  const P0 = 1.9, RA = 5.6, lensF = r => 7.95 + lensSag(Math.min(4.49, r), true);
+  const sagI = r => .35 * (1 - (r - 1.9) / 4.05) + .015 * Math.sin(r * 7);
+  const tgt = [];
+  for (const n of ['iris', 'iris_pigment_epithelium', 'iris_margin', 'pupillary_ruff', 'uvea_cut_a', 'uvea_cut_b']) {
+    const m = eye.getObjectByName(n); if (!m) continue;
+    m.updateMatrix(); const pa = m.geometry.attributes.position, mz = m.position.z, sec = /^uvea/.test(n), ruff = n === 'pupillary_ruff';   // the margin lip follows the same radial mapping as the iris surface it continues
+    const idx = [], o = [];
+    for (let i = 0; i < pa.count; i++) { const v = new THREE.Vector3().fromBufferAttribute(pa, i).applyMatrix4(m.matrix), rho = Math.hypot(v.x, v.y);
+      if (rho < RA && (!sec || v.z > 8.75)) { idx.push(i); o.push(v.x, v.y, v.z, rho); } }
+    tgt.push({ m, pa, idx, o, front: n === 'iris', ruff, sec, inv: m.matrix.clone().invert() });
+  }
+  window.__pupil = { r: P0 };
+  let cur = P0, last = -1, tPrev = performance.now();
+  const ax = new THREE.Vector3(), wp = new THREE.Vector3(), tc = new THREE.Vector3(), tmp = new THREE.Vector3();
+  let full = true;
+  const apply = (p, all) => { full = full || !!all;
+    const k = (RA - p) / (RA - P0), thick = Math.pow(1 / k, .55), dil = Math.max(0, (p - P0) / 1.3);
+    const f = rho => rho >= RA ? rho : RA - (RA - rho) * k;
+    for (const T of tgt) { const a = T.pa.array, o = T.o;
+      for (let j = 0; j < T.idx.length; j++) { const x = o[4 * j], y = o[4 * j + 1], z = o[4 * j + 2], rho = o[4 * j + 3];
+        if (T.sec && eye.userData.irisCutHidden) { const s0 = (RA - .01) / Math.max(1e-6, rho); tmp.set(x * s0, y * s0, z).applyMatrix4(T.inv); const i3 = 3 * T.idx[j]; a[i3] = tmp.x; a[i3 + 1] = tmp.y; a[i3 + 2] = tmp.z; continue; }   // iris hidden: its section collapses onto the iris root
+        const rc = T.ruff ? P0 : rho, rn = T.ruff ? rho + (f(P0) - P0) : f(rho), w = Math.max(0, (RA - rc) / (RA - P0));
+        const zmid = iz + sagI(rc) - .18;
+        let zn = z + (lensF(f(rc)) - lensF(rc)) * w * w + (z - zmid) * (thick - 1) * w;
+        if (T.front) zn += .045 * dil * Math.sin((rn - 3.6) * PI * 3.2) * smoothR(3.4, 4.2, rn) * smoothR(5.5, 5.0, rn);   // contraction furrows
+        const s = rn / Math.max(1e-6, rho); tmp.set(x * s, y * s, zn).applyMatrix4(T.inv);
+        const i3 = 3 * T.idx[j]; a[i3] = tmp.x; a[i3 + 1] = tmp.y; a[i3 + 2] = tmp.z; }
+      T.pa.needsUpdate = true; if (!T.sec && (T.front || full)) T.m.geometry.computeVertexNormals(); } full = false;   // planar cut faces keep their normals; pigment/ruff normals only on settled updates
+  };
+  let settle = 0;
+  const loop = now => { requestAnimationFrame(loop);
+    if (now - tPrev < 40) return;                                   // ~25 Hz is plenty for a pupil
+    const dt = Math.min(.15, (now - tPrev) / 1000); tPrev = now; const cam = stage._camera; if (!cam) return;
+    eye.updateWorldMatrix(true, false); ax.set(0, 0, 1).transformDirection(eye.matrixWorld); eye.getWorldPosition(wp); tc.copy(cam.position).sub(wp).normalize();
+    const vitG = eye.getObjectByName('cond_vitrectomy'), dilated = !!(vitG && vitG.visible);   /* vitrectomy: pharmacologically dilated pupil (≈7.5 mm), no light reflex */
+    const b = Math.max(0, ax.dot(tc)), ts = now / 1000, want = dilated ? 3.75 + .02 * Math.sin(ts * .4) : 3.2 - 1.9 * Math.pow(b, 1.4) + .09 * Math.sin(ts * .55) + .05 * Math.sin(ts * 1.27 + 1.3) + .03 * Math.sin(ts * .21 + 4);   // hippus: irregular resting oscillation, ≈ ±0.3 mm in diameter
+    const tau = dilated ? 2.2 : want < cur ? .35 : 1.6;   /* drops open slowly, like after dilating drops */ cur += (want - cur) * (1 - Math.exp(-dt / tau)); window.__pupil.r = cur;
+    if (Math.abs(cur - last) > .005) { apply(cur); last = cur; settle = 1; } else if (settle && Math.abs(want - cur) < .01) { apply(cur, true); settle = 0; } };
+  window.__pupil.refresh = () => { apply(cur, true); last = cur; };
+  requestAnimationFrame(loop);
+}   // thin solid tendon: avoid self-shadow streaks on its cut wall
 
 // ---------- conditions ----------
 {
@@ -1261,7 +1616,7 @@ if (document.documentElement.classList.contains('embed')) {   // inside a site p
     const N = o.N || 72, hs = size / 2, ca = Math.cos(o.rot || 0), sa = Math.sin(o.rot || 0), pos = [], uv = [], idx = [];
     for (let j = 0; j <= N; j++) for (let i = 0; i <= N; i++) {
       const a = (i / N * 2 - 1) * hs, b = (j / N * 2 - 1) * hs, u = cu + a * ca - b * sa, v = cv + a * sa + b * ca;
-      const p = proj(u, v, RR - (o.lift ?? .02) - (o.height ? o.height(a, b, u, v) : 0));
+      const p = proj(u, v, 1); p.multiplyScalar(rRet(Math.acos(p.z)) - (o.lift ?? .02) - (o.height ? o.height(a, b, u, v) : 0));   /* follows the local retinal surface */
       pos.push(p.x, p.y, p.z); uv.push(i / N, j / N);
       if (i && j) { const q = (j - 1) * (N + 1) + i - 1; idx.push(q, q + 1, q + N + 1, q + 1, q + N + 2, q + N + 1); }
     }
@@ -1311,7 +1666,7 @@ if (document.documentElement.classList.contains('embed')) {   // inside a site p
       M.lens.color.copy(L0c).lerp(LT.c, e); M.lens.attenuationColor.copy(L0a).lerp(LT.a, e);
       nuc.opacity = lerp(N0.o, NT.o); nuc.color.copy(N0c).lerp(NT.c, e); nucM.scale.copy(ns0).multiplyScalar(lerp(1, 1.12));
       gm.transmission = lerp(1, GM.t); gm.attenuationDistance = lerp(60, GM.d); gm.color.copy(W).lerp(GM.c, e); gm.attenuationColor.copy(W).lerp(GM.a, e);
-      hz.forEach((o, n) => o.material.opacity = hz0[n] * e);
+      hz.forEach((o, n) => o.material.opacity = hz0[n] * e); glow.visible = e > .001; gm.transparent = true; gm.depthWrite = false; gm.opacity = Math.min(1, e * 1.4);   /* healthy lens at the start, then the core fades in gradually */
     };
     g.userData.on = () => {
       nucM.userData.label = lbl('Troebele lenskern', 'nucleaire cataract', 'Opaque lens nucleus', 'nuclear cataract');
@@ -1335,9 +1690,9 @@ if (document.documentElement.classList.contains('embed')) {   // inside a site p
       c.fillStyle = gy; c.fillRect(0, 0, w, hh); c.globalCompositeOperation = 'destination-out';
       for (let k = 0; k < 14; k++) { c.fillStyle = 'rgba(0,0,0,' + R(.15, .45).toFixed(2) + ')'; c.fillRect(0, rnd() * hh, w, R(3, 14)); }
     });
-    const fm = new THREE.MeshBasicMaterial({ map: fibreTex, color: 0xcfcbbf, transparent: true, opacity: .5, depthWrite: false, side: D });
+    const fm = new THREE.MeshBasicMaterial({ map: fibreTex, color: 0x8a8378, transparent: true, opacity: .42,   /* greyish like the Weiss ring */ depthWrite: false, side: D });
     const dotTex = canvasTex(128, 128, (c, w) => radial(c, w / 2, w / 2, w / 2, [[0, 'rgba(255,255,255,.9)'], [.45, 'rgba(255,255,255,.5)'], [1, 'rgba(255,255,255,0)']]));
-    const dm = new THREE.SpriteMaterial({ map: dotTex, color: 0xd3cfc3, transparent: true, opacity: .55, depthWrite: false });
+    const dm = new THREE.SpriteMaterial({ map: dotTex, color: 0x8a8378, transparent: true, opacity: .45, depthWrite: false });
     // make floaters visible through the pupil: transmissive lens/cornea normally hide transparent objects behind them,
     // so while this condition is shown they stop writing depth and the floaters draw after them (iris still occludes)
     { const on0 = g.userData.on, off0 = g.userData.off;
@@ -1364,7 +1719,7 @@ if (document.documentElement.classList.contains('embed')) {   // inside a site p
       for (let i = 0; i < steps; i++) { d.add(new THREE.Vector3(R(-.7, .7), R(-.7, .7), R(-.7, .7))).normalize(); pts.push(pts[i].clone().addScaledVector(d, len / steps)); } return pts; };
     // lacunae: irregular liquid pockets — clear inside, faint scattering wall
     const lacM = new THREE.ShaderMaterial({ transparent: true, depthWrite: false, side: THREE.FrontSide,
-      uniforms: { col: { value: new THREE.Color(0xe8ece8) }, fade: { value: 1 } },
+      uniforms: { col: { value: new THREE.Color(0xa49d91) }, fade: { value: 1 } },   /* lacuna walls: same greyish tone as the floaters */
       vertexShader: 'varying vec3 vN; varying vec3 vV; void main(){ vec4 mv = modelViewMatrix * vec4(position,1.); vN = normalize(normalMatrix * normal); vV = normalize(-mv.xyz); gl_Position = projectionMatrix * mv; }',
       fragmentShader: 'uniform vec3 col; uniform float fade; varying vec3 vN; varying vec3 vV; void main(){ float f = pow(1. - abs(dot(normalize(vN), normalize(vV))), 3.); gl_FragColor = vec4(col, fade * f * .08); }' });
     const lacunae = [[0, 0, -2.5, 4.4], [-3.2, 1.6, 1.5, 3], [3, -2.4, -5.5, 3.3], [2.2, 2.8, 2.6, 2.4], [-2.4, -3, -4.5, 2.6]];
@@ -1376,16 +1731,16 @@ if (document.documentElement.classList.contains('embed')) {   // inside a site p
     }
     // suspended aggregates: short strings, small cobwebs, dots — each a mobile cluster
     const clusters = [];
-    const ringM = new THREE.MeshBasicMaterial({ color: 0xf0eee6, transparent: true, opacity: .4, depthWrite: false });
+    const ringM = new THREE.MeshBasicMaterial({ color: 0x8a8378, transparent: true, opacity: .32, depthWrite: false });
     const cloudTex = canvasTex(256, 256, (c, w) => { for (let k = 0; k < 10; k++) radial(c, w / 2 + R(-45, 45), w / 2 + R(-45, 45), R(30, 85), [[0, 'rgba(255,255,255,.45)'], [1, 'rgba(255,255,255,0)']]); });
-    const cloudM = new THREE.SpriteMaterial({ map: cloudTex, color: 0xd2cec2, transparent: true, opacity: .3, depthWrite: false });
-    const sheetM = new THREE.MeshBasicMaterial({ map: cloudTex, color: 0xd4d0c4, transparent: true, opacity: .28, depthWrite: false, side: D });
+    const cloudM = new THREE.SpriteMaterial({ map: cloudTex, color: 0x8a8378, transparent: true, opacity: .26, depthWrite: false });
+    const sheetM = new THREE.MeshBasicMaterial({ map: cloudTex, color: 0x8a8378, transparent: true, opacity: .24, depthWrite: false, side: D });
     // retinal shadows: light enters through the pupil, each floater casts a soft dark shadow on the fundus
     const shTex = canvasTex(128, 128, (c, w) => radial(c, w / 2, w / 2, w / 2, [[0, 'rgba(0,0,0,.85)'], [.45, 'rgba(0,0,0,.5)'], [1, 'rgba(0,0,0,0)']]));
     const shM = new THREE.MeshBasicMaterial({ map: shTex, transparent: true, depthWrite: false, polygonOffset: true, polygonOffsetFactor: -6 });
     const addCluster = (base, build, size = 1.5, aspect = 1) => { const grp = new THREE.Group(); grp.position.copy(base); build(grp); g.add(grp);
       const sh = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), shM.clone()); sh.renderOrder = 4; sh.userData.label = lbl('Schaduw van een troebeling', 'op het netvlies', 'Floater shadow', 'cast on the retina'); g.add(sh);
-      clusters.push({ grp, sh, size, aspect, rot: R(0, PI), base: base.clone(), off: new THREE.Vector3(), vel: new THREE.Vector3(), w: R(.7, 1.3), ph: R(0, 6) }); };
+      g.userData.clusters = clusters; clusters.push({ grp, sh, size, aspect, rot: R(0, PI), base: base.clone(), off: new THREE.Vector3(), vel: new THREE.Vector3(), w: R(.7, 1.3), ph: R(0, 6) }); };
     for (const [x, y, z, r] of lacunae) {
       const n = Math.round(r * .75);
       for (let k = 0; k < n; k++) {
@@ -1411,7 +1766,7 @@ if (document.documentElement.classList.contains('embed')) {   // inside a site p
         if (rm) { set(1, 1); return; } set(0, 0); const st = performance.now() + 1000;
         const step = now => { const t = (now - st) / 1000; set(sm3(Math.max(0, Math.min(1, t / 4))), sm3(Math.max(0, Math.min(1, t / 4)))); if (t < 4) an = requestAnimationFrame(step); };
         an = requestAnimationFrame(step); };
-      g.userData.off = () => { cancelAnimationFrame(an); set(1, 1); off1 && off1(); }; }
+      g.userData.off = () => { cancelAnimationFrame(an); set(1, 1); off1 && off1(); }; g.userData.setFade = set; }
     // inertia: when the eye is turned (camera orbits) the floaters lag, swirl and slowly settle back
     let fadeF = 1, prev = null, stillT = 0, t0 = performance.now(), lastT = t0; const axS = new THREE.Vector3();
     const loop = now => {
@@ -1431,18 +1786,24 @@ if (document.documentElement.classList.contains('embed')) {   // inside a site p
         if (c.off.length() > 5.5) c.off.setLength(5.5);
         const p = c.base.clone().add(c.off).add(new THREE.Vector3(Math.sin(t * .21 + c.ph) + .5 * Math.sin(t * .37 + c.ph * 2.1), Math.cos(t * .17 + c.ph * 1.3) + .5 * Math.sin(t * .31 + c.ph * .4), Math.sin(t * .15 + c.ph * .7)).multiplyScalar(.22));   // gentle hovering in place
         if (p.length() > 9.2) p.setLength(9.2);
+        { const S = g.userData.suck;   /* vitrectomy: the floaters drift toward the vitrector port and are aspirated */
+          if (S) { c.sOff = c.sOff || new THREE.Vector3(); const M = S.pt(), d = M.distanceTo(p.add(c.sOff));
+            if (!c.gone && S.k > 0) { const v = S.k * (.12 + .9 / (d * d + .35)) * smt((S.front || 0) + 4.5, (S.front || 0) + .2, d) * dtF / 60; c.sOff.addScaledVector(M.clone().sub(p).normalize(), Math.min(d, v)); p.copy(c.base).add(c.off).add(c.sOff); }   /* only gel at the removal front (and what it carries) moves in */
+            const dd = M.distanceTo(p); if (dd < .3) c.gone = true; c.grp.scale.setScalar(c.gone ? .001 : Math.min(1, .25 + dd / 1.2)); c.grp.visible = !c.gone; if (c.gone) { c.sh.material.opacity = 0; continue; } }
+          else if (c.sOff) { c.sOff.set(0, 0, 0); c.gone = false; c.grp.visible = true; c.grp.scale.setScalar(1); } }
         if (!c.init) { c.grp.position.copy(p); c.init = true; } else c.grp.position.lerp(p, ease); c.rotT = c.rotT || new THREE.Euler(); c.rotT.set(c.off.y * .15 + c.vel.y * 6 + .14 * Math.sin(t * .13 + c.ph), c.off.x * .15 - c.vel.x * 6 + .1 * Math.sin(t * .11 + c.ph * 1.7), c.off.z * .1 + .08 * Math.sin(t * .09 + c.ph * .5));   // strands trail and sway with the flow
         c.grp.rotation.x += (c.rotT.x - c.grp.rotation.x) * ease; c.grp.rotation.y += (c.rotT.y - c.grp.rotation.y) * ease; c.grp.rotation.z += (c.rotT.z - c.grp.rotation.z) * ease;
         // shadow: ray from the pupil through the floater onto the retina sphere
-        const P0 = new THREE.Vector3(0, 0, iz), d = p.clone().sub(P0), tf = d.length(); d.normalize();
+        const SL = g.userData.suck && g.userData.suck.light && g.userData.suck.light(), P0 = SL ? SL.pos : new THREE.Vector3(0, 0, iz), d = p.clone().sub(P0), tf = d.length(); d.normalize();   /* during vitrectomy the light pipe is the light source */
+        if (SL && (SL.on < .02 || d.dot(SL.dir) < Math.cos(40 * deg))) { c.sh.visible = false; continue; }   /* only floaters inside the beam cast a shadow */
         const b = P0.dot(d), q = P0.lengthSq() - RR * RR, tr = -b + Math.sqrt(Math.max(0, b * b - q)), hit = P0.clone().addScaledVector(d, tr);
         if (removed(hit) || tr <= tf) { c.sh.visible = false; continue; }
         c.sh.visible = true; c.sh.position.copy(hit).multiplyScalar((RR - .03) / RR);
         c.sh.quaternion.setFromUnitVectors(new THREE.Vector3(0, 0, 1), hit.clone().normalize().negate()); c.sh.rotateZ(c.rot + c.grp.rotation.x);
         const mag = tr / tf, near = (tr - tf) / tr;                                      // closer to the retina → smaller, sharper, darker
-        const s = c.size * Math.min(2.2, mag * .7) * (1 + 1.2 * near); c.sh.scale.set(s, s * c.aspect, 1);
-        const shO = .55 * Math.max(.25, 1 - near * 1.1); if (c.shRest == null) c.shRest = shO;   // rest darkness (first frame, floater at home)
-        c.sh.material.opacity = Math.min(shO, c.shRest) * fadeF;   // shadow grows with the floater, never darker than at rest   // shadow grows in step with the floater
+        const pS = SL ? .3 * (tr - tf) / tf : 0, s = SL ? Math.min(3, c.size * Math.min(2.2, mag * .5) + 2 * pS) : c.size * Math.min(2.2, mag * .7) * (1 + 1.2 * near); c.sh.scale.set(s, s * c.aspect, 1);   /* light pipe: shadow widened by its penumbra */
+        const shO = .55 * Math.max(.25, 1 - near * 1.1); if (c.shRest == null) c.shRest = shO; if (g.userData.suck) c.grp.position.copy(p);   // rest darkness (first frame, floater at home)
+        c.sh.material.opacity = Math.min(shO, c.shRest) * fadeF * (SL ? .5 * Math.min(1, c.size / (c.size + 2 * pS)) * SL.on * (1 - smt(.6, .9, Math.acos(Math.min(1, d.dot(SL.dir))) / (40 * deg))) : 1);   // shadow grows with the floater, never darker than at rest   // shadow grows in step with the floater
       }
     };
     requestAnimationFrame(loop);
@@ -1463,16 +1824,20 @@ if (document.documentElement.classList.contains('embed')) {   // inside a site p
       const pz = -u.z, env = 1 - smt(.72, 1, q);
       const gapF = env * Math.max(.9, 1.4 + 2.4 * pz + 1.1 * u.y + 4.4 * u.y * Math.max(0, pz));   // inferiorly too a clear (~1 mm) fluid layer: gel is free there
       const dF = Math.acos(Math.max(-1, Math.min(1, u.dot(md)))) * RR, dD = Math.acos(Math.max(-1, Math.min(1, u.dot(nd)))) * RR;
-      const trBase = .05 + .035 * Math.min(dF, 3.5) + .45 * smt(3.5, 5, dF) + .42 * Math.max(0, dF - 5) / ((PI - ora) * RR - 5);
-      const tr = Math.max(trBase, .3 * (1 - smt(.3, 1.0, dF)), .5 * (1 - smt(.9, 1.9, dD)));
-      return { gapF, tr, q };
+      const trBase = .05 + .035 * Math.min(dF, 3.5) + .2 * smt(3.5, 5, dF) + .12 * Math.max(0, dF - 5) / ((PI - ora) * RR - 5);   /* stage 1–2: macula; stage 3: out to the periphery, still attached at the disc */
+      const dv = u.clone().sub(md), sup = dv.y / (dv.length() || 1), nas = dv.dot(nd.clone().sub(md).normalize()) / (dv.length() || 1), onset = (1 - smt(3.5, 5.5, dF)) * smt(.2, .8, dF) * (.05 * (1 - sup) + .04 * Math.max(0, nas));   /* stage 1 starts superiorly, then temporal/inferior, nasal last */
+      const pp = 1 - smt(1.6, 3.2, dD), tr = Math.max((trBase + onset) * (1 - pp) + .27 * pp,   /* peripapillary gel comes free a little before the ring itself */ .3 * (1 - smt(.3, 1.0, dF)), .5 * (1 - smt(.75, 1.1, dD)), .62 * smt(.05, .45, -u.y) * smt(2.5, 4.5, dF), (.54 + .1 * smt(13, 17, dF)) * smt(10, 12.5, dF) * (1 - pp));   /* before the ring: only out to the mid-periphery; after it: on to the periphery / vitreous base */   /* brief stage 3: only the posterior pole just around the macula is free before the ring lets go */   /* order: perifoveal → fovea → disc (Weiss ring) → superior → inferior last */   /* stage 4: the disc lets go last (Weiss ring), together with the superior retina (no free-standing tube onto the disc) */
+      const ew = smt(.1, .5, u.y) * smt(5, 7.5, dF) * (1 - smt(11, 14, dF)) * (1 - smt(.72, .9, q));   /* earliest stage (wide-angle OCT): a shallow superior mid-peripheral separation, before the perifovea */
+      return { gapF, tr, q, dD, ew };
     };
-    const gapAt = (inf, t) => { const cap = .45 + 6.4 * smt(.45, 1.05, t); return Math.min(inf.gapF * smt(inf.tr, inf.tr + .14, t), cap); };
+    const gapAt = (inf, t) => { const cap = .17 + .3 * smt(.08, .3, t) + 6.4 * smt(.36, .95, t),   /* perifoveal hyaloid: ≈0.15–0.2 mm in stage 1, rising to ≈0.45 mm just before the fovea lets go */ held = 1 - smt(.5, .54, t), capD = held > 0 ? .7 + 1.4 * Math.max(0, inf.dD - 1) * (1 + .5 * Math.max(0, inf.dD - 3)) : 1e9;   /* while the disc holds, the gel near it stays low: a short funnel, not a long tube */
+      const early = inf.ew ? inf.ew * .35 * smt(.0, .1, t) : 0;
+      return Math.max(early, Math.min(inf.gapF * smt(inf.tr, inf.tr + (inf.dD < 1.4 ? .03 : inf.tr > .4 && inf.tr < .55 ? .08 : .14), t)   /* the disc lets go abruptly */, cap, capD + (1 - held) * 8)); };   /* superior periphery follows the ring quickly */
     const REG = [new THREE.Vector3(0, -.8, -.6).normalize(), new THREE.Vector3(0, .7, -.7).normalize(), new THREE.Vector3(.8, 0, -.6).normalize(), new THREE.Vector3(-.8, 0, -.6).normalize()];
     const idleT = new THREE.Vector3(), modes = REG.map((d, n) => ({ idle: new THREE.Vector3(), th: new THREE.Vector3(), om: new THREE.Vector3(), g: [.34, .26, .3, .28][n], k: [.0014, .0019, .0016, .0022][n], dm: [.986, .984, .987, .985][n] }));
     const sets = vit.map(m => { const p = m.geometry.attributes.position, orig = Float32Array.from(p.array), idx = [], inf = [];
       for (let i = 0; i < p.count; i++) { const v = new THREE.Vector3(orig[3 * i], orig[3 * i + 1], orig[3 * i + 2]), r = v.length();
-        if (r > RV - .04 && Math.acos(v.z / r) > ora) { idx.push(i); inf.push(info(v.clone().divideScalar(r))); } }
+        if (r > .3 && Math.acos(v.z / r) > ora) { idx.push(i); inf.push(info(v.clone().divideScalar(r))); } }   /* the whole cut face moves with the surface (scaled along each ray): no stretched slivers or folds */
       const RW = idx.map(i => { const u = new THREE.Vector3(orig[3 * i], orig[3 * i + 1], orig[3 * i + 2]).normalize(); return REG.map(d => Math.pow(Math.max(0, u.dot(d)), 1.5)); });
       return { m, p, orig, idx, inf, RW, gap: new Float32Array(idx.length) }; });
     // Weiss ring: condensed peripapillary glial ring, floater-style soft translucent strands, carried on the membrane
@@ -1481,21 +1846,56 @@ if (document.documentElement.classList.contains('embed')) {   // inside a site p
       c.fillStyle = gx; c.fillRect(0, 0, w, hh); c.globalCompositeOperation = 'destination-out';
       for (let k = 0; k < 16; k++) { c.fillStyle = 'rgba(0,0,0,' + R(.15, .45).toFixed(2) + ')'; c.fillRect(0, rnd() * hh, w, R(3, 14)); } });
     ringTex.wrapT = THREE.RepeatWrapping;
-    const ringM = new THREE.MeshBasicMaterial({ map: ringTex, color: 0x9e9a8f, transparent: true, opacity: 0, depthWrite: false, side: D });
+    const ringM = new THREE.MeshBasicMaterial({ map: ringTex, color: 0x8a8378,   /* condensed hyaloid: greyish, translucent like the membrane it belongs to */ transparent: true, opacity: 0, depthWrite: false, side: D });
     Object.assign(ringM, { transparent: false, blending: THREE.CustomBlending, blendSrc: THREE.SrcAlphaFactor, blendDst: THREE.OneMinusSrcAlphaFactor });   // opaque pass → also seen (refracted) through cornea + lens
     const ring = new THREE.Group(); ring.userData.label = lbl('Ring van Weiss', 'losgelaten aanhechting rond de papil', 'Weiss ring', 'detached peripapillary attachment');
     for (let k = 0; k < 4; k++) {
-      const pts = [], ph = R(0, 6), r0 = R(.72, .95), wd = k ? R(.05, .1) : R(.12, .18);
-      for (let i = 0; i < 14; i++) { const a = i / 14 * 2 * PI; const r = r0 * (1 + .12 * Math.sin(2 * a + ph) + .06 * Math.sin(5 * a + k)); pts.push(new THREE.Vector3(r * Math.cos(a) * 1.1, r * Math.sin(a) * .9, R(-.06, .06))); }
-      const curve = new THREE.CatmullRomCurve3(pts, true), n = 120;
-      for (const rot of [0, PI / 2]) { const pos = [], uv = [], ix = [];
-        for (let i = 0; i <= n; i++) { const t = i / n, p = curve.getPoint(t), tg = curve.getTangent(t), sd = new THREE.Vector3(0, 0, 1).cross(tg).normalize().applyAxisAngle(tg, rot), w2 = wd * (1 + .4 * Math.sin(t * 23 + k));
+      const pts = [], ph = 1.3 + R(-.25, .25), r0 = .85 + R(-.035, .035), wd = k ? R(.05, .1) : R(.12, .18);   /* strands of ONE ring: same course, slightly offset */
+      const a0 = 4.4 + R(-.12, .12), span = (290 + R(-12, 12)) * deg; for (let i = 0; i < 14; i++) { const a = a0 + i / 13 * span;   /* C-shaped: often incomplete */ const r = r0 * (1 + .12 * Math.sin(2 * a + ph) + .06 * Math.sin(5 * a + k)); pts.push(new THREE.Vector3(r * Math.cos(a) * 1.1, r * Math.sin(a) * .9, R(-.06, .06))); }
+      const curve = new THREE.CatmullRomCurve3(pts, false), n = 120;
+      for (const rot of [0]) { const pos = [], uv = [], ix = [];   /* flat band lying in the posterior hyaloid membrane: a local condensation, not a free tube */
+        for (let i = 0; i <= n; i++) { const t = i / n, p = curve.getPoint(t), tg = curve.getTangent(t), sd = new THREE.Vector3(0, 0, 1).cross(tg).normalize().applyAxisAngle(tg, rot), w2 = wd * Math.min(1, t / .08, (1 - t) / .08) * (1 + .4 * Math.sin(t * 23 + k));
           for (const sg of [-1, 1]) { const q = p.clone().addScaledVector(sd, sg * w2); pos.push(q.x, q.y, q.z); uv.push(sg < 0 ? 0 : 1, t * 3); }
           if (i) { const a = (i - 1) * 2; ix.push(a, a + 1, a + 2, a + 1, a + 3, a + 2); } }
         const geo = new THREE.BufferGeometry(); geo.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); geo.setAttribute('uv', new THREE.Float32BufferAttribute(uv, 2)); geo.setIndex(ix);
         const me = new THREE.Mesh(geo, ringM); me.renderOrder = 6; me.userData.label = ring.userData.label; ring.add(me); }
     }
     g.add(ring); const ndInf = info(nd.clone());
+    // posterior hyaloid membrane: the firmer cortex of the gel. It shares the gel's (deforming) surface, is seen as a thin glossy
+    // film at grazing angles once it has come free, and has a hole at the disc — the Weiss ring is the rim of that hole
+    const memM = new THREE.ShaderMaterial({ uniforms: { op: { value: 0 }, nd: { value: nd.clone() }, rH: { value: .95 / RV } }, transparent: true, depthWrite: false, side: D,
+      vertexShader: 'attribute float aM; attribute vec3 aDir; varying float vM; varying vec3 vD; varying vec3 vN; varying vec3 vV; void main(){ vM = aM; vD = aDir; vec4 mv = modelViewMatrix * vec4(position, 1.0); vN = normalize(normalMatrix * normal); vV = normalize(-mv.xyz); gl_Position = projectionMatrix * mv; }',
+      fragmentShader: 'uniform float op; uniform vec3 nd; uniform float rH; varying float vM; varying vec3 vD; varying vec3 vN; varying vec3 vV; void main(){ float a = acos(clamp(dot(normalize(vD), nd), -1.0, 1.0)); float hole = smoothstep(rH * 0.85, rH * 1.25, a); if (vM * hole < 0.02) discard; float c = abs(dot(normalize(vN), vV)); float f = pow(1.0 - c, 2.2); vec3 col = vec3(0.86, 0.9, 0.92); float al = op * vM * hole * (0.025 + 0.02 * f); gl_FragColor = vec4(col, al); }' });
+    const memL = lbl('Achterste glasvochtmembraan', 'stevigere buitenlaag van de gel; de ring van Weiss is de rand van het gat bij de papil', 'Posterior hyaloid membrane', 'firmer outer layer of the gel; the Weiss ring is the rim of the hole at the disc');
+    for (const S of sets) { const n = S.p.count, aM = new Float32Array(n), aDir = new Float32Array(n * 3);
+      for (let i = 0; i < n; i++) { const x = S.orig[3 * i], y = S.orig[3 * i + 1], z = S.orig[3 * i + 2], r = Math.hypot(x, y, z) || 1; aDir.set([x / r, y / r, z / r], 3 * i); aM[i] = r > RV - .04 && Math.acos(z / r) > ora + 4 * deg ? 1 : 0; }
+      S.m.geometry.setAttribute('aM', new THREE.BufferAttribute(aM, 1)); S.m.geometry.setAttribute('aDir', new THREE.BufferAttribute(aDir, 3));
+      S.rimI = []; for (let k = 0; k < S.idx.length; k++) { const i = S.idx[k]; if (aM[i] > .5 && Math.acos(Math.min(1, aDir[3 * i] * nd.x + aDir[3 * i + 1] * nd.y + aDir[3 * i + 2] * nd.z)) < 1.3 / RV) S.rimI.push(i); }   /* gel surface at the edge of the hole: the Weiss ring sits on it */
+      const mm = new THREE.Mesh(S.m.geometry, memM); mm.renderOrder = 6; mm.userData.label = memL; mm.frustumCulled = false; S.mem = mm; }
+    // shadow of the Weiss ring on the fundus: every strand vertex is projected along the ray from the pupil centre onto the
+    // retina, so the shadow has the ring's true (oblique, foreshortened, rotating) shape. The pupil is an extended source
+    // (r ≈ 1.5 mm), so each strand's shadow is widened by its penumbra and lightened in proportion — like the floaters.
+    const PUP = 1.5, rShTex = canvasTex(64, 16, (c, w, hh) => { const gx = c.createLinearGradient(0, 0, w, 0); gx.addColorStop(0, 'rgba(0,0,0,0)'); gx.addColorStop(.5, 'rgba(0,0,0,1)'); gx.addColorStop(1, 'rgba(0,0,0,0)'); c.fillStyle = gx; c.fillRect(0, 0, w, hh); });
+    const rShM = new THREE.MeshBasicMaterial({ map: rShTex, transparent: true, opacity: 0, depthWrite: false, polygonOffset: true, polygonOffsetFactor: -6, side: D });
+    const ringSh = new THREE.Group(); ringSh.name = 'weiss_ring_shadow'; g.add(ringSh);
+    const shL = lbl('Schaduw van de ring van Weiss', 'op het netvlies', 'Weiss ring shadow', 'cast on the retina');
+    const shPairs = ring.children.slice(0, 1).map(src => { const geo = src.geometry.clone(); const m = new THREE.Mesh(geo, rShM); m.renderOrder = 4; m.userData.label = shL; ringSh.add(m); return { src, geo }; });
+    const P0s = new THREE.Vector3(0, 0, iz), va = new THREE.Vector3(), vb = new THREE.Vector3(), cm = new THREE.Vector3(), dd = new THREE.Vector3();
+    const projR = (p, out) => { dd.copy(p).sub(P0s); const tf = dd.length(); dd.divideScalar(tf); const b = P0s.dot(dd), q = P0s.lengthSq() - RR * RR, tr = -b + Math.sqrt(Math.max(0, b * b - q)); out.copy(P0s).addScaledVector(dd, tr).multiplyScalar((RR - .15) / RR); return [tf, tr]; };   /* lies just in front of the (slightly undulating) retina: not partly buried in it */
+    const shC = [], shW = [], sd = new THREE.Vector3(), tg = new THREE.Vector3();
+    const placeRingSh = () => { ring.updateMatrix(); let wSum = 0, nV = 0, hidden = false;
+      for (const { src, geo } of shPairs) { const sp = src.geometry.attributes.position, dp = geo.attributes.position, n = sp.count / 2;
+        for (let k = 0; k < n; k++) {   /* project the strand's centre line onto the retina */
+          va.fromBufferAttribute(sp, 2 * k).applyMatrix4(ring.matrix); vb.fromBufferAttribute(sp, 2 * k + 1).applyMatrix4(ring.matrix); cm.copy(va).add(vb).multiplyScalar(.5);
+          const [tf, tr] = projR(cm, cm), mag = tr / tf, pen = PUP * (tr - tf) / tf; (shC[k] = shC[k] || new THREE.Vector3()).copy(cm); shW[k] = .16 * mag + pen; wSum += .16 * mag / shW[k]; nV++; if (removed(cm)) hidden = true; }
+        const ctr = new THREE.Vector3(); for (let k = 0; k < n; k++) ctr.add(shC[k]); ctr.divideScalar(n);
+        for (let k = 0; k < n; k++) {   /* band widened radially about the ring's centre: a soft, wide penumbra never folds or fans */
+          sd.copy(shC[k]).sub(ctr); const dk = sd.length() || 1e-3; sd.divideScalar(dk); const w = shW[k];
+          va.copy(ctr).addScaledVector(sd, dk * Math.max(.15, 1 - w / dk)); vb.copy(ctr).addScaledVector(sd, dk + w);
+          dp.setXYZ(2 * k, va.x, va.y, va.z); dp.setXYZ(2 * k + 1, vb.x, vb.y, vb.z); }
+        dp.needsUpdate = true; geo.computeBoundingSphere(); }
+      ringSh.visible = !hidden;
+      rShM.opacity = (ringM.opacity / .3) * .16 * Math.min(1, 2.2 * wSum / Math.max(1, nV)); };   /* per strand; overlapping strands add up to roughly the floater-shadow darkness */
     // gel kinetics (as seen on kinetic echography): the detached gel is a viscoelastic body hinged at the vitreous base and
     // floating in liquefied retrohyaloid fluid. When the eye turns the fluid and gel lag behind, so the gel ROTATES relative to
     // the globe about the eye centre (opposite to the eye movement); the further from the base, the larger the swing (lever).
@@ -1519,15 +1919,21 @@ if (document.documentElement.classList.contains('embed')) {   // inside a site p
       { const A = g.userData.adh; if (A) { const q = A.infC.q, pA = A.dir.clone().multiplyScalar(RV - (A.cap || 0)); Tm.copy(T).lerp(T2, .6 * (1 - q));
           for (let n = 0; n < 4; n++) { const w = Math.pow(Math.max(0, A.dir.dot(REG[n])), 1.5); if (w) Tm.addScaledVector(modes[n].th, w).addScaledVector(modes[n].idle, w); }
           const freeA = (1 - smt(.72, .97, q)) * Math.min(1, ((A.cap || 0) + .03) / .5), lev = freeA * (.35 + .65 * (1 - q)) * (1 - .45 * A.dir.y); g.userData.adhDisp = dv.crossVectors(Tm, pA).multiplyScalar(lev * .12).addScaledVector(O, freeA * .12).clone(); if (g.userData.adhDisp.length() > .35) g.userData.adhDisp.setLength(.35); /* exactly the displacement the gel itself gets at the flap tip */ } else g.userData.adhDisp = null; }
-      ring.position.copy(rp.add(dv.crossVectors(TmR, rp).multiplyScalar(lv)).addScaledVector(O, lv)); ring.lookAt(0, 0, 0); ring.rotateZ(T.length() * 2 * Math.sign(T.z || 1)); frame++;
+      ring.position.copy(rp.add(dv.crossVectors(TmR, rp).multiplyScalar(lv)).addScaledVector(O, lv));
+      { let n = 0; cm.set(0, 0, 0); for (const S of sets) if (S.rimI) for (const i of S.rimI) { cm.x += S.p.array[3 * i]; cm.y += S.p.array[3 * i + 1]; cm.z += S.p.array[3 * i + 2]; n++; } if (n) ring.position.copy(cm.divideScalar(n)); }   /* ring = rim of the hole in the membrane: on the deformed gel surface */
+      { const nrm = new THREE.Vector3(), e = new THREE.Vector3(); let c = 0;
+        for (const S of sets) if (S.rimI) { const NA = S.m.geometry.attributes.normal; if (!NA) continue; for (const i of S.rimI) { e.fromBufferAttribute(NA, i); if (e.dot(ring.position) < 0) e.negate(); nrm.add(e); c++; } }
+        if (c && nrm.lengthSq() > 1e-6) { nrm.normalize(); ring.lookAt(g.localToWorld(cm.copy(ring.position).sub(nrm))); } else ring.lookAt(0, 0, 0); }   /* ring's plane = tangent plane of the membrane */ ring.rotateZ(T.length() * 2 * Math.sign(T.z || 1)); placeRingSh(); frame++;
     };
+    let kicked = false;
     const apply = t => {
       g.userData.t = t; const A = g.userData.adh;
+      if (!kicked && t > .51) { kicked = true; om.add(new THREE.Vector3(.006, -.0035, .0025)); om2.add(new THREE.Vector3(-.0035, .005, 0)); modes.forEach((M, n) => M.om.add(new THREE.Vector3(.002 * Math.sin(n * 2.1 + 1), .002 * Math.cos(n * 1.7), 0))); vt.add(new THREE.Vector3(0, .012, -.008)); }   /* recoil as the disc lets go: the membrane and ring swing a little and settle */
       if (A) A.gC = gapAt(A.infC, t - A.delay);   // where the gel would be at the adhesion if it were free
       for (const S of sets) for (let k = 0; k < S.idx.length; k++) { let gp = gapAt(S.inf[k], A && S.adhW2 ? t - A.delay * S.adhW2[k] : t);
         if (A && S.adhW) { const w = S.adhW[k]; if (w > .01) gp = gp * (1 - w) + w * Math.min(gp, A.cap + .03); }   // held by the adhesion: retina (tent → flap) follows   // vitreous held at the adhesion, then attached to the lifted flap
         S.gap[k] = gp; }
-      gd = gapAt(ndInf, t); ringM.opacity = .42 * smt(.48, .62, t);
+      gd = gapAt(ndInf, t); ringM.opacity = .3 * smt(.5, .53, t); memM.uniforms.op.value = smt(.08, .45, t); placeRingSh();
     };
     { let prev = null, stillT = 0; const t0 = performance.now();
       const loop = now => { requestAnimationFrame(loop);
@@ -1566,12 +1972,15 @@ if (document.documentElement.classList.contains('embed')) {   // inside a site p
     g.userData.on = (opts) => { g.userData.adh = opts || null; if (!opts) for (const S of sets) S.adhW = null;
       if (opts) { const ax = opts.dir.clone().cross(new THREE.Vector3(0, 0, -1)).normalize(); opts.infC = info(opts.dir.clone().applyAxisAngle(ax, 6.5 / RR)); /* pull = how far the gel just posterior to the adhesion has come away */ opts.cap = 0; for (const S of sets) S.adhW2 = Float32Array.from(S.idx, i => { const u = new THREE.Vector3(S.orig[3 * i], S.orig[3 * i + 1], S.orig[3 * i + 2]).normalize(); const d = u.angleTo(opts.dir) * RR; return Math.exp(-d * d / (2 * 4.5 * 4.5)); }); }
       if (opts) for (const S of sets) S.adhW = Float32Array.from(S.idx, i => { const u = new THREE.Vector3(S.orig[3 * i], S.orig[3 * i + 1], S.orig[3 * i + 2]).normalize(); const d = u.angleTo(opts.dir) * RR; return Math.exp(-d * d / (2 * opts.sig * opts.sig)); });
-      cancelAnimationFrame(an); if (cloq) cloq.visible = false; apply(0);
+      cancelAnimationFrame(an); if (cloq) cloq.visible = false; kicked = false; apply(0);
       const rm = matchMedia('(prefers-reduced-motion: reduce)').matches; if (rm) { apply(1.3); return; }
       const st = performance.now() + 1000, dur = 11000;
-      const step = now => { const x = Math.max(0, (now - st) / dur) * 1.3, t0 = x < .62 ? x : .62 + (x - .62) * 1.9, A = g.userData.adh, t = t0; const tMax = A ? 1.6 : 1.3; apply(Math.min(tMax, t)); if (t < tMax) an = requestAnimationFrame(step); };      // faster once the Weiss ring has come free
+      const step = now => { const x = Math.max(0, (now - st) / dur) * 1.3, t0 = x < .6 ? x * .6 : x < .88 ? .36 + (x - .6) * .5 : x < 1 ? .5 + (x - .88) * 1.6 : .692 + (x - 1) * 2.6,   /* macular stages slower */   /* last part (inferior) quicker: the gel sags under gravity */   /* lingers while the Weiss ring comes free, then quicker */ A = g.userData.adh, t = t0; const tMax = A ? 1.6 : 1.3; apply(Math.min(tMax, t)); if (t < tMax) an = requestAnimationFrame(step); };      // faster once the Weiss ring has come free
       an = requestAnimationFrame(step); };
-    g.userData.off = () => { cancelAnimationFrame(an); reset(); if (cloq) cloq.visible = true; };
+    g.userData.off = () => { cancelAnimationFrame(an); reset(); if (cloq) cloq.visible = true; for (const S of sets) S.mem.removeFromParent(); };
+    { const on0 = g.userData.on, off0 = g.userData.off, keep = new Map();   /* detached gel: no sheen/clearcoat glints on its folded surface */
+      g.userData.on = o => { for (const S of sets) { const m = S.m.material; if (m.uniforms && m.uniforms.k) { if (!keep.has(m)) keep.set(m, m.uniforms.k.value); m.uniforms.k.value = .06; } else { if (!keep.has(m)) keep.set(m, [m.sheen, m.clearcoat, m.specularIntensity, m.opacity]); m.sheen = 0; m.clearcoat = 0; m.specularIntensity = .06; m.opacity = .1; } S.mem.matrixAutoUpdate = false; S.m.add(S.mem); } on0(o); };   /* clearer gel: fainter body and rim, no folded-surface glints */
+      g.userData.off = () => { off0(); keep.forEach((v, m) => { if (m.uniforms && m.uniforms.k) m.uniforms.k.value = v; else [m.sheen, m.clearcoat, m.specularIntensity, m.opacity] = v; }); }; }   /* membrane rides on the gel mesh itself */
   }
   // --- horseshoe tear (shared drawing) ---
   // horseshoe outline: free (torn) edge slightly irregular; the hinge toward the vitreous base (x ≈ .45) is intact retina
@@ -1589,18 +1998,233 @@ if (document.documentElement.classList.contains('embed')) {   // inside a site p
     for (let k = 0; k < 30; k++) { g.fillStyle = 'rgba(40,16,8,.6)'; g.beginPath(); g.arc(R(-1.1, .4), R(-.5, .5), R(.01, .035), 0, 2 * PI); g.fill(); }
     g.restore(); tongueFree(g); g.strokeStyle = 'rgba(176,118,92,.45)'; g.lineWidth = .1; g.stroke(); tongueFree(g); g.strokeStyle = 'rgba(70,22,10,.35)'; g.lineWidth = .025; g.stroke();   // torn retinal edge: soft, slightly thickened, no white line
   });
-  const flapTex = cTex(3, 512, g => { { const gr = g.createLinearGradient(-1.1, 0, .45, 0); gr.addColorStop(0, '#d6b3a0'); gr.addColorStop(.55, '#cfa58e'); gr.addColorStop(.85, 'rgba(196,128,96,.9)'); gr.addColorStop(1, 'rgba(184,113,76,0)'); /* detached retina: paler, greyish, more opaque; retinal colour at the hinge */ tongue(g); g.fillStyle = gr; g.fill(); } g.save(); tongue(g); g.clip(); radial(g, -.6, 0, 1.1, [[0, 'rgba(206,170,150,.3)'], [1, 'rgba(206,170,150,0)']]); g.restore(); tongueFree(g); g.strokeStyle = 'rgba(214,170,140,.5)'; g.lineWidth = .045; g.stroke(); });
+  const flapTex = cTex(3, 512, g => { { const gr = g.createLinearGradient(-1.1, 0, .45, 0); gr.addColorStop(0, '#d4a690'); gr.addColorStop(.55, '#d4a690'); gr.addColorStop(.8, 'rgba(208,160,132,1)'); gr.addColorStop(.92, 'rgba(196,132,98,1)');   /* same tissue colour as the retinal cross-section */ gr.addColorStop(1, 'rgba(184,113,76,0)'); /* detached retina: paler, greyish, more opaque; retinal colour at the hinge */ tongue(g); g.fillStyle = gr; g.fill(); } g.save(); tongue(g); g.clip(); radial(g, -.6, 0, 1.1, [[0, 'rgba(226,190,170,.25)'], [1, 'rgba(226,190,170,0)']]); g.restore(); tongueFree(g); g.strokeStyle = 'rgba(214,170,140,.5)'; g.lineWidth = .045; g.stroke(); });
   const flapH = (a) => .02 + .85 * Math.pow(Math.max(0, (.45 - a) / 1.55), 1.25);
   function tear(group, cu, cv, base = () => 0, label) {
     const rot = Math.atan2(cv, cu), ca = Math.cos(rot), sa = Math.sin(rot);
     patch(group, 'tear_hole', cu, cv, 4.6, holeTex, { rot, lift: .015, height: (a, b, u, v) => base(u, v), label });
     const fl = patch(group, 'tear_flap', cu, cv, 4.6, null, { rot, height: (a, b, u, v) => base(u, v) + flapH(a), label: lbl('Lap van de scheur', 'door glasvochttractie opgetild', 'Tear flap', 'lifted by vitreous traction'),
       mat: std('tear_flap', { map: flapTex, transparent: true, alphaTest: .02, roughness: .4, side: D }) });
-    const apexU = cu - 1.1 * ca, apexV = cv - 1.1 * sa, A = proj(apexU, apexV, RR - base(apexU, apexV) - flapH(-1.1)), B = A.clone().multiplyScalar(.72).add(new THREE.Vector3(0, 0, 1.5));
+    const apexU = cu - 1.1 * ca, apexV = cv - 1.1 * sa, A = proj(apexU, apexV, 1), A0r = A.multiplyScalar(rRet(Math.acos(A.z)) - base(apexU, apexV) - flapH(-1.1)), B = A.clone().multiplyScalar(.72).add(new THREE.Vector3(0, 0, 1.5));
     const st = new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3([A, A.clone().lerp(B, .5).add(new THREE.Vector3(.3, -.2, 0)), B]), 40, .07, 6), std('vitreous_traction', { color: 0xeeeeea, transparent: true, opacity: .4, depthWrite: false }));
     st.userData.label = lbl('Glasvochttractie', 'trekkende glasvochtstreng', 'Vitreous traction', 'vitreous strand'); group.add(st);
   }
   const T = new THREE.Vector2(9.5, -8.5);
+  // --- vitrectomy: three 25-gauge valved trocars through the pars plana, 4 mm behind the limbus (phakic eye):
+  //     infusion inferotemporal, working ports superotemporal and superonasal (light pipe + vitrector). The cannulas
+  //     are inserted obliquely (tunnelled), aiming at the mid-vitreous, clear of lens and retina ---
+  {
+    const g = mk('vitrectomy');
+    const Lw = lbl('Trocar (25 gauge)', 'werkpoort door de pars plana, 4 mm achter de limbus', 'Trocar (25 gauge)', 'working port through the pars plana, 4 mm behind the limbus');
+    const Li = lbl('Infuuspoort', 'trocar met infuuslijn, houdt de oogdruk op peil', 'Infusion port', 'trocar with infusion line, maintains eye pressure');
+    const valveTex = canvasTex(128, 128, (c, w) => { c.fillStyle = '#141517'; c.fillRect(0, 0, w, w); c.strokeStyle = '#000'; c.lineWidth = 4; c.beginPath(); c.moveTo(w * .28, w * .5); c.lineTo(w * .72, w * .5); c.stroke(); c.beginPath(); c.moveTo(w * .5, w * .28); c.lineTo(w * .5, w * .72); c.stroke(); });
+    const mats = ghost => { const t = ghost ? { transparent: true, opacity: .35, depthWrite: false } : {};
+      return { can: std('trocar_cannula', { color: 0xc4c8ce, metalness: .75, roughness: .28, ...t }), hub: phys('trocar_hub', { color: 0x18b4c6, roughness: .22, transmission: ghost ? 0 : .35, thickness: .6, ior: 1.45, clearcoat: .6, clearcoatRoughness: .2, transparent: true, opacity: ghost ? .3 : .9, depthWrite: !ghost }),   // 25 G: translucent teal (23 G orange, 27 G magenta)
+        ring: std('trocar_valve_ring', { color: 0xc4c9ce, metalness: .4, roughness: .35, ...t }),
+        valve: std('trocar_valve', { map: valveTex, roughness: .6, ...t }), line: std('infusion_line', { color: 0xf4f8fa, roughness: .05, metalness: 0, transparent: true, opacity: ghost ? .1 : .26, depthWrite: false, side: THREE.FrontSide })   /* clear silicone: outer + inner wall together still see-through */ }; };
+    const orient = (m, axis) => m.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), axis);
+    const trocar = (azDeg, infusion, ghost) => {
+      const az = azDeg * deg, th = limbus + 4 / RS;
+      const n = new THREE.Vector3(Math.sin(th) * Math.cos(az), Math.sin(th) * Math.sin(az), Math.cos(th));
+      const tC = new THREE.Vector3(-Math.sin(az), Math.cos(az), 0), tP = new THREE.Vector3(Math.cos(th) * Math.cos(az), Math.cos(th) * Math.sin(az), -Math.sin(th));
+      const d = n.clone().negate().addScaledVector(tC, .32).addScaledVector(tP, .12).normalize(), out = d.clone().negate(), P = n.clone().multiplyScalar(RS);
+      const M = mats(ghost), L = infusion ? Li : Lw, parts = [];
+      const can = new THREE.Mesh(new THREE.CylinderGeometry(.31, .31, 4.0, 28, 1, true), M.can); can.position.copy(P).addScaledVector(d, 1.9); orient(can, out); parts.push(can);   // 25 G cannula: Ø 0.51 mm, 4.00 mm
+      { // cannula wall: OD 0.62 mm, ID 0.56 mm (a 0.51 mm 25 G instrument passes with ≈0.05 mm play); open inner end in the vitreous
+        const inner = new THREE.Mesh(new THREE.CylinderGeometry(.28, .28, 4.0, 28, 1, true), M.can.clone()); inner.material.side = THREE.BackSide; inner.position.copy(can.position); orient(inner, out); parts.push(inner);
+        const tipR = new THREE.Mesh(new THREE.RingGeometry(.28, .31, 28), M.can.clone()); tipR.material.side = D; tipR.position.copy(P).addScaledVector(d, 3.9); tipR.quaternion.setFromUnitVectors(new THREE.Vector3(0, 0, 1), d); parts.push(tipR); }
+      // hub: low, rounded disc Ø ≈2.6 mm with a scalloped (gripping) rim and a slightly domed top, after the reference images
+      const hubG = (() => { // 25 G valved cannula hub after the EDGEPLUS drawing: 1.59 mm tall, Ø ≈2.6 mm, spool-shaped — narrow nose collar on the
+        // sclera, lower flange, waist (groove), ribbed top flange with domed top and the valve in the centre
+        const prof = [[.31, 0], [.7, 0], [.72, .26], [1.18, .3], [1.25, .37], [1.25, .66], [1.04, .73], [1.02, 1.0], [1.26, 1.06], [1.3, 1.25], [1.26, 1.45], [1.1, 1.56], [.55, 1.59], [.31, 1.59]].map(([r, y]) => new THREE.Vector2(r, y));
+        const gg = new THREE.LatheGeometry(prof, 192), pp = gg.attributes.position;
+        for (let i = 0; i < pp.count; i++) { const x = pp.getX(i), z = pp.getZ(i), y = pp.getY(i), r = Math.hypot(x, z); if (r > 1.15 && y > 1.04 && y < 1.5) { const a = Math.atan2(z, x), f = 1 + .016 * Math.sign(Math.cos(a * 24)) * Math.pow(Math.abs(Math.cos(a * 24)), .4) * Math.min(1, (r - 1) / .25); pp.setX(i, x * f); pp.setZ(i, z * f); } }   /* fine grip ribs */
+        gg.computeVertexNormals(); return gg; })();
+      const hub = new THREE.Mesh(hubG, M.hub); hub.position.copy(P).addScaledVector(out, .02); orient(hub, out); parts.push(hub);
+      const vr = new THREE.Mesh(new THREE.TorusGeometry(.57, .08, 12, 48), M.ring);   /* inner edge 0.49 mm = valve edge */ vr.visible = !infusion; vr.position.copy(P).addScaledVector(out, 1.64); vr.quaternion.setFromUnitVectors(new THREE.Vector3(0, 0, 1), out); parts.push(vr);
+      // entry funnel in the hub: Ø ≈1.0 mm at the valve, tapering to the 0.56 mm cannula bore, so an instrument finds the opening easily
+      { const fun = new THREE.Mesh(new THREE.CylinderGeometry(.5, .28, 1.2, 32, 1, true), M.can.clone()); fun.material.side = THREE.BackSide; fun.position.copy(P).addScaledVector(out, 1.0); orient(fun, out); parts.push(fun); }
+      const valve = new THREE.Mesh(new THREE.CircleGeometry(.52, 48), M.valve);   /* slightly under the ring: no hub showing in between */   /* black silicone valve filling the whole metal ring */ valve.visible = !infusion; valve.position.copy(P).addScaledVector(out, 1.632);   /* just above the hub top (hub sits 0.02 proud, top at 1.61) */ valve.quaternion.setFromUnitVectors(new THREE.Vector3(0, 0, 1), out); parts.push(valve);
+      if (infusion) {
+        // infusion (after the OR photos): one steel infusion cannula in line with the trocar axis — its thin tip sits entirely
+        // inside the trocar (through the valve), the wide barrel (≈ hub Ø) continues straight outward along the same axis;
+        // the clear tubing is pushed over the barrel, runs on in line for a short stretch and then bends away from the globe
+        const top = P.clone().addScaledVector(out, 1.61), away = tP.clone().addScaledVector(tC, -.2).normalize(); away.addScaledVector(n, -away.dot(n)).normalize();
+        const steel = std('infusion_steel', { color: 0xe4e7ea, metalness: .55, roughness: .22 }), steelDark = std('infusion_steel_dark', { color: 0xc8ccd2, metalness: .55, roughness: .28 });
+        const Rc = .85, Lc = 3.2;   /* steel barrel Ø 1.7 mm; tubing over it Ø ≈2.5 mm */
+        const tip = new THREE.Mesh(new THREE.CylinderGeometry(.27, .27, 3.4, 32, 1, true), (() => { const m = steel.clone(); m.side = D; return m; })());   /* thin-wall tip: OD 0.54 mm, ID 0.50 mm — fits the 0.56 mm trocar bore */ tip.position.copy(top).addScaledVector(out, -1.6); orient(tip, out); parts.push(tip);   // hidden inside the trocar
+        // hollow barrel: steel tube with ≈0.2 mm wall, open at the back so the fluid runs from the tubing through the cannula into the trocar
+        const ri = Rc - .15, mid = top.clone().addScaledVector(out, Lc / 2);
+        const outer = new THREE.Mesh(new THREE.CylinderGeometry(Rc, Rc, Lc, 48, 1, true), steel); outer.position.copy(mid); orient(outer, out); parts.push(outer);
+        const inner = new THREE.Mesh(new THREE.CylinderGeometry(ri, ri, Lc, 48, 1, true), std('infusion_lumen', { color: 0xb4b8be, metalness: .6, roughness: .3, side: THREE.BackSide })   /* polished steel bore */); inner.position.copy(mid); orient(inner, out); parts.push(inner);
+        // bottom of the bore: steel funnel narrowing into the thin tip, whose small lumen leads through the trocar into the eye
+        { const fM = std('infusion_funnel', { color: 0xa8acb2, metalness: .6, roughness: .32, side: D });
+          const fun = new THREE.Mesh(new THREE.CylinderGeometry(ri, .25, .55, 48, 1, true), fM); fun.position.copy(top).addScaledVector(out, .275); orient(fun, out); parts.push(fun);
+}
+        for (const z of [Lc]) { const rim = new THREE.Mesh(new THREE.RingGeometry(ri, Rc, 48), steel); rim.material = steel.clone(); rim.material.side = D; rim.position.copy(top).addScaledVector(out, z); rim.quaternion.setFromUnitVectors(new THREE.Vector3(0, 0, 1), out); parts.push(rim); }
+        const Ls = Lc + 1.2, Rb = 4.5, Ab = 70 * deg, Le = 1.5,   /* ends just past the globe: stays clear of the side panel */ Ltot = Ls + Rb * Ab + Le, o0 = top.clone().addScaledVector(out, -.02);
+        class InfusionPath extends THREE.Curve { getPoint(t, v = new THREE.Vector3()) { const s = t * Ltot;
+          if (s <= Ls) return v.copy(o0).addScaledVector(out, s);
+          if (s <= Ls + Rb * Ab) { const a = (s - Ls) / Rb; return v.copy(o0).addScaledVector(out, Ls + Math.sin(a) * Rb).addScaledVector(away, (1 - Math.cos(a)) * Rb); }
+          const e = s - Ls - Rb * Ab; return v.copy(o0).addScaledVector(out, Ls + Math.sin(Ab) * Rb + Math.cos(Ab) * e).addScaledVector(away, (1 - Math.cos(Ab)) * Rb + Math.sin(Ab) * e); } }
+        const path = new InfusionPath(), RtO = Rc + .4, RtI = Rc + .02;   /* silicone tubing: OD ≈2.5 mm, ID ≈1.75 mm (tight on the barrel), wall ≈0.38 mm */
+        parts.push(new THREE.Mesh(new THREE.TubeGeometry(path, 160, RtO, 40, false), M.line));
+        const innerT = new THREE.Mesh(new THREE.TubeGeometry(path, 160, RtI, 40, false), M.line.clone()); innerT.material.side = THREE.BackSide; innerT.material.opacity = M.line.opacity * .7; parts.push(innerT);
+        for (const t of [0, 1]) { const p0 = path.getPoint(t), tg = path.getTangent(t); const end = new THREE.Mesh(new THREE.RingGeometry(RtI, RtO, 40), M.line); end.position.copy(p0); end.quaternion.setFromUnitVectors(new THREE.Vector3(0, 0, 1), tg); parts.push(end); } }
+      parts.forEach(p => { p.userData.label = L; p.renderOrder = ghost ? 8 : 0; g.add(p); });
+      (g.userData.ports = g.userData.ports || {})[azDeg] = { parts, P, d, o: parts.map(p => [p.position.clone(), p.quaternion.clone()]) };
+    };
+    trocar(-30, true, false);    // inferotemporal (≈ 8 o'clock in a right eye): infusion
+    trocar(150, false, false);   // superonasal (≈ 2 o'clock)
+    trocar(30, false, true);     // superotemporal (≈ 10 o'clock): falls in the cut-away quadrant, drawn translucent
+  }
+  // --- vitrectomy instruments (animated): 25 G light pipe through the superonasal port and 25 G dual-blade vitrector through the
+  //     superotemporal port. Both are pivoted on the eye wall (cannula moves along) so they rise superiorly toward the surgeon at the
+  //     head end. Gel is drawn into the side port; the inner tube, itself windowed, cuts on both the forward and the return stroke.
+  //     The gel shows only where the light pipe's beam scatters in it (Tyndall). Shown ≈100× slowed (real: up to 10 000 cuts/min) ---
+  {
+    const g = mk('vitrector'), VG = G.vitrectomy, ports = VG.userData.ports, pV = ports[150], pL = ports[30];   /* right-handed surgeon: vitrector superonasal (right hand in this right eye), light pipe superotemporal */
+    const Yax = new THREE.Vector3(0, 1, 0), rr = (a, b) => a + Math.random() * (b - a), ease = x => x < .5 ? 2 * x * x : 1 - Math.pow(-2 * x + 2, 2) / 2, cl = x => Math.max(0, Math.min(1, x));
+    // studio reflection map for the instruments only: soft-box bands over a warm-grey room, so polished steel gets natural highlights
+    const envTex = canvasTex(1024, 512, (c, w, hh) => { const gr = c.createLinearGradient(0, 0, 0, hh); gr.addColorStop(0, '#ffffff'); gr.addColorStop(.38, '#e6e5e2'); gr.addColorStop(.47, '#8d8b87'); gr.addColorStop(.5, '#3a3936'); gr.addColorStop(.56, '#9a9894'); gr.addColorStop(1, '#c9c7c2'); c.fillStyle = gr; c.fillRect(0, 0, w, hh);
+      c.fillStyle = 'rgba(20,20,22,.85)'; for (const [x, bw] of [[.07, .025], [.31, .05], [.55, .018], [.72, .04], [.9, .03]]) c.fillRect(w * x, 0, w * bw, hh * .46);   /* dark studio panels: the crisp black bands in polished steel */
+      c.fillStyle = '#fff'; c.fillRect(w * .16, hh * .1, w * .1, hh * .25); c.fillRect(w * .62, hh * .06, w * .07, hh * .3); });
+    envTex.mapping = THREE.EquirectangularReflectionMapping; envTex.colorSpace = THREE.SRGBColorSpace;
+    const metal = (name, o) => std(name, { envMap: envTex, envMapIntensity: .87, ...o, roughness: (o.roughness ?? .2) + .05 });
+    { const look = { trocar_cannula: [0xc8cdd2, .2], trocar_valve_ring: [0xc4c9ce, .22], infusion_steel: [0xd2d6da, .12], infusion_steel_dark: [0xbcc1c6, .18], infusion_lumen: [0xa4aab0, .3], infusion_funnel: [0x9ea4aa, .3] };   /* trocar + infusion metal like the instruments */
+      const done = new Set(); eye.traverse(o => { const m = o.material; if (!m || done.has(m) || !look[m.name]) return; done.add(m); const [c, r] = look[m.name];
+        Object.assign(m, { envMap: envTex, envMapIntensity: .87, metalness: 1, roughness: r + .05 }); m.color.setHex(c); m.needsUpdate = true; }); }
+    const steel = metal('vitrector_needle', { color: 0xd2d6da, metalness: 1, roughness: .1 }), steelIn = metal('vitrector_lumen', { color: 0x9aa0a6, metalness: .9, roughness: .35, side: THREE.BackSide });
+    const cutM = metal('vitrector_cutter', { color: 0xc2c7cc, metalness: 1, roughness: .16 }), cutIn = metal('vitrector_cutter_in', { color: 0x7d838a, metalness: .9, roughness: .4, side: THREE.BackSide });
+    const cyl = (r, h, y0, m, ts = 0, tl = 2 * PI) => { const ge = new THREE.CylinderGeometry(r, r, h, 40, 1, true, ts, tl); ge.translate(0, y0 + h / 2, 0); return new THREE.Mesh(ge, m); };
+    const ring = (r0, r1, y, m, ts = 0, tl = 2 * PI) => { const ge = new THREE.RingGeometry(r0, r1, 40, 1, ts, tl); ge.rotateX(-PI / 2); ge.translate(0, y, 0); return new THREE.Mesh(ge, m); };
+    const GAP = 65 * deg;
+    const windowed = (grp, rO, rI, w0, w1, len, mO, mI) => {   // tube along +Y from 0 to len with a side window [w0, w1] facing +Z
+      for (const [r, m] of [[rO, mO], [rI, mI]]) grp.add(cyl(r, w0, 0, m), cyl(r, w1 - w0, w0, m, GAP, 2 * PI - 2 * GAP), cyl(r, len - w1, w1, m));
+      grp.add(ring(rI, rO, w0, mO, -GAP - PI / 2, 2 * GAP), ring(rI, rO, w1, mO, -GAP - PI / 2, 2 * GAP));
+      for (const a of [GAP, -GAP]) { const pg = new THREE.PlaneGeometry(rO - rI, w1 - w0); pg.rotateY(a - PI / 2); const m = new THREE.Mesh(pg, mO); m.position.set(Math.sin(a) * (rO + rI) / 2, (w0 + w1) / 2, Math.cos(a) * (rO + rI) / 2); grp.add(m); } };
+    const tag = (o, L) => o.traverse(c => { if (c.isMesh) c.userData.label = L; });
+    // working point (where the port sits): central vitreous, just inside the cut-away
+    const W = new THREE.Vector3(1.2, .6, -.8), OUT = 11.6;   /* shaft length outside the eye ≈ the infusion line */
+    const RO = .255, RI = .21, W0 = .34, W1 = .64, mouthY = (W0 + W1) / 2, B = .31, WL = W1 - W0, eTop = W1 + .02, eBot = W0 - B;
+    const aimV = W.clone().sub(pV.P).normalize(), sV = W.distanceTo(pV.P) - mouthY, LSV = sV + OUT, sL = W.distanceTo(pL.P) - 4.2, LSL = sL + OUT;
+    // vitrector (local frame: tip at origin, shaft along +Y, side port facing +Z)
+    const vit = new THREE.Group(); g.add(vit);
+    { const s = new THREE.Group(); vit.add(s); windowed(s, RO, RI, W0, W1, LSV, steel, steelIn);
+      s.add(ring(0, RO, 0, steel), ring(0, RI, .03, steelIn), ring(0, RO, LSV, steel));
+      tag(s, lbl('Vitrectoom (25 gauge)', 'holle naald, Ø 0,5 mm, met een zijopening vlak bij de dichte punt', 'Vitrector (25 gauge)', 'hollow needle, Ø 0.5 mm, with a side port just behind the closed tip')); }
+    const cutter = new THREE.Group(); vit.add(cutter); windowed(cutter, .2, .155, B, B + WL, LSV - .7, cutM, cutIn); cutter.add(ring(.155, .2, 0, cutM));
+    tag(cutter, lbl('Binnenmesje (dual blade)', 'heeft zelf ook een opening en knipt op de heen- én de terugweg', 'Inner cutter (dual blade)', 'windowed itself, cuts on both the forward and the return stroke'));
+    // light pipe (tip at origin, shaft along +Y, light toward −Y)
+    const lp = new THREE.Group(); g.add(lp);
+    lp.add(cyl(RO, LSL, 0, steel), ring(0, RO, LSL, steel));
+    { const dg = new THREE.SphereGeometry(RO * .97, 32, 10, 0, 2 * PI, PI / 2, PI / 2); dg.scale(1, .4, 1); lp.add(new THREE.Mesh(dg, new THREE.MeshBasicMaterial({ color: 0xe4f4ff }))); }   /* slightly domed wide-angle tip */
+    tag(lp, lbl('Lichtfiber (25 gauge)', 'endo-illuminatie: verlicht het binnenste van het oog', 'Light pipe (25 gauge)', 'endo-illumination: lights the inside of the eye'));
+    const beamTex = canvasTex(8, 128, (c, w, hh) => { const gr = c.createLinearGradient(0, 0, 0, hh); gr.addColorStop(0, '#fff'); gr.addColorStop(.3, '#444'); gr.addColorStop(1, '#000'); c.fillStyle = gr; c.fillRect(0, 0, w, hh); });
+    const beamM = new THREE.MeshBasicMaterial({ color: 0xa8d8f0, alphaMap: beamTex, transparent: true, opacity: 0, blending: THREE.AdditiveBlending, depthWrite: false, side: D });
+    { const H = 7, bg = new THREE.CylinderGeometry(RO, RO + H * Math.tan(36 * deg), H, 48, 1, true); bg.translate(0, -H / 2, 0); const beam = new THREE.Mesh(bg, beamM); beam.renderOrder = 9; beam.raycast = () => {}; lp.add(beam); }
+    const spot = new THREE.SpotLight(0xeef5ff, 0, 0, 38 * deg, .55, 0); spot.position.set(0, -.05, 0); spot.target.position.set(0, -6, 0); lp.add(spot, spot.target);
+    // final orientations; while still on the cannula axis the instrument is turned back by the pivot
+    const outV = aimV.clone().negate(), camOff = new THREE.Vector3(21.32, 34.2, 32.83).sub(W).normalize();   /* toward the final view: the port (and its funnel) is seen almost in profile */ camOff.addScaledVector(outV, -camOff.dot(outV)).normalize();
+    const pn = camOff.clone().addScaledVector(outV, -camOff.dot(outV)).normalize();   /* port faces the opened part of the eye (toward the viewer) */
+    const qfV = new THREE.Quaternion().setFromRotationMatrix(new THREE.Matrix4().makeBasis(new THREE.Vector3().crossVectors(outV, pn), outV, pn));
+    const LT = W.clone().addScaledVector(outV, -.8).addScaledVector(pn, 1.3);   /* beam aimed past the tip into the gel, not straight at the port */
+    const aimL = LT.clone().sub(pL.P).normalize();
+    const qfL = new THREE.Quaternion().setFromUnitVectors(Yax, aimL.clone().negate());
+    const pivV = new THREE.Quaternion().setFromUnitVectors(pV.d, aimV), pivL = new THREE.Quaternion().setFromUnitVectors(pL.d, aimL);
+    const qI = new THREE.Quaternion(), qk = new THREE.Quaternion(), tmp = new THREE.Vector3(), qj = new THREE.Quaternion(), eu = new THREE.Euler();
+    const place = (inst, port, piv, qf, s, k, jx = 0, jy = 0, jz = 0) => { qk.slerpQuaternions(qI, piv, k); qk.premultiply(qj.setFromEuler(eu.set(jx, jy, jz))); const dir = port.d.clone().applyQuaternion(qk);
+      inst.position.copy(port.P).addScaledVector(dir, s); inst.quaternion.copy(piv).invert().premultiply(qk).multiply(qf);
+      port.parts.forEach((p, i) => { const [p0, q0] = port.o[i]; p.position.copy(tmp.copy(p0).sub(port.P).applyQuaternion(qk).add(port.P)); p.quaternion.copy(q0).premultiply(qk); }); };
+    let lightX = 0; const lightOn = x => { lightX = x; beamM.opacity = .04 * x; spot.intensity = 1.1 * x; };
+    // vitreous gel in the vitrector's frame (Tyndall: only visible where light scatters in it). Around the tip the gel has
+    // already been removed (clear fluid); from the gel front a steady funnel of gel flows continuously into the port
+    const NH = 5200, hzG = new THREE.BufferGeometry(), hzP = new Float32Array(NH * 3), hzC = new Float32Array(NH * 4);
+    hzG.setAttribute('position', new THREE.BufferAttribute(hzP, 3)); hzG.setAttribute('color', new THREE.BufferAttribute(hzC, 4));   /* rgb = hue, a = scatter strength: a milky veil, tinted, not an additive glare */
+    const softTex = canvasTex(64, 64, (c, w) => radial(c, w / 2, w / 2, w / 2, [[0, 'rgba(255,255,255,1)'], [.25, 'rgba(255,255,255,.7)'], [.6, 'rgba(255,255,255,.2)'], [1, 'rgba(255,255,255,0)']]));
+    const haze = new THREE.Points(hzG, new THREE.PointsMaterial({ map: softTex, size: .0048, sizeAttenuation: true, vertexColors: true, transparent: true, opacity: .032, blending: THREE.NormalBlending, depthWrite: false }));
+    haze.raycast = () => {}; haze.renderOrder = 9; haze.frustumCulled = false; g.add(haze);   /* faint grey Tyndall veil of the gel, together with the floaters */
+    // fibrils: short aligned strands per gel element — the gel reads as a fibrous, coherent structure in the light
+    const fbG = new THREE.BufferGeometry(), fbP = new Float32Array(NH * 6), fbC = new Float32Array(NH * 6);
+    fbG.setAttribute('position', new THREE.BufferAttribute(fbP, 3)); fbG.setAttribute('color', new THREE.BufferAttribute(fbC, 3));
+    const fibs = new THREE.LineSegments(fbG, new THREE.LineBasicMaterial({ vertexColors: true, transparent: true, opacity: .5, blending: THREE.AdditiveBlending, depthWrite: false, opacity: .34 }));
+    fibs.raycast = () => {}; fibs.renderOrder = 9; fibs.frustumCulled = false; fibs.visible = false; g.add(fibs);   /* (strands off: the gel reads as an even, cohesive veil) */ const fdir = new THREE.Vector3();
+    const mouthW = W.clone(), mouthL = new THREE.Vector3(0, mouthY, RO), RG = 4.8; let F = .35;   /* F: radius of the space already cleared of gel around the port (grows with the aspirated volume) */
+    const hp = Array.from({ length: NH }, () => new THREE.Vector3()), seed = Float32Array.from({ length: NH }, () => rr(.75, 1.1)), sw = Float32Array.from({ length: NH }, () => rr(-.25, .25));
+    const spawnH = (v, shell) => { do { v.set(rr(-RG, RG), mouthY + rr(-RG, RG), mouthY * 0 + rr(-RG * .6, RG)); } while (v.distanceTo(mouthL) > RG || (shell && v.distanceTo(mouthL) < RG * .85));
+      // material coordinate (carried with the gel): fixes this element's place in the fibrillar lamellae and its fibre direction
+      const m = v.m || (v.m = new THREE.Vector3()), f = v.f || (v.f = new THREE.Vector3()); m.copy(v);
+      f.set(.55 + .35 * Math.sin(m.z * .9 + 1.3), .25 * Math.sin(m.x * 1.1), .8 + .3 * Math.cos(m.y * .8)).normalize();
+      v.la = .82 + .18 * Math.pow(.5 + .5 * Math.sin(2.6 * (m.x * .55 - m.z * .8) + 1.4 * Math.sin(m.y * 1.3) + .8 * Math.sin(m.x * 2.1 + m.z)), 3); };   /* veil-like sheets of collagen, not a uniform smoke */
+    const spawnF = v => { spawnH(v); const ax = rr(.15, F + .4), rF = .13 + .75 * Math.min(1, ax / Math.max(.3, F)), a = rr(0, 2 * PI), r = Math.sqrt(Math.random()) * rF * .8; v.set(r * Math.cos(a), mouthY + r * Math.sin(a), RO + ax); v.m.copy(v); };   /* fresh gel enters the funnel from the gel front */
+    hp.forEach(v => spawnH(v));
+    let flowA = 0, cavA = 1; const qInvF = qfV.clone().invert(), drV = { p: new THREE.Vector3(), ok: false }, drL = { p: new THREE.Vector3(), ok: false }, drT = new THREE.Vector3(), drA = new THREE.Vector3(), drD = new THREE.Vector3(); const V0p = pV.P.clone().addScaledVector(aimV, sV);   /* the cleared space appears only once cutting starts */
+    const lpTip = new THREE.Vector3(), lpDir = new THREE.Vector3(), qInv = new THREE.Quaternion();
+    const shade = () => { haze.position.copy(V0p); haze.quaternion.copy(qfV); fibs.position.copy(V0p); fibs.quaternion.copy(qfV); qInv.copy(qfV).invert(); lpTip.copy(lp.position).sub(V0p).applyQuaternion(qInv);   /* gel anchored in the eye at the working area, independent of the instrument */ lpDir.set(0, -1, 0).applyQuaternion(lp.quaternion).applyQuaternion(qInv); const tn = Math.tan(36 * deg);
+      for (let i = 0; i < NH; i++) { const q = hp[i], ax = q.z - RO, lat = Math.hypot(q.x, q.y - mouthY), d = q.distanceTo(mouthL);
+        const gelF = smt(F - .2, F + .25, d),   /* gel (and its grey Tyndall veil) only outside the cleared space */ rF = .13 + .75 * Math.min(1, Math.max(0, ax) / Math.max(.3, F)), fun = (d < F + .2 ? 1 : 0) * flowA * smt(-.05, .08, ax) * smt(rF, rF * .55, lat) * .6 * Math.min(1, d * d / 2) * smt(.35, 1, d);
+        const dens = Math.max(gelF, fun) * smt(RG, RG - .8, d) * Math.min(1, .25 + d / 1.4) * smt(.12, .45, d);   /* converging flow is denser near the port: compensated */
+        tmp.copy(q).sub(lpTip); const L = tmp.dot(lpDir); let I = .03;
+        if (L > 0) { const perp = tmp.addScaledVector(lpDir, -L).length(), R = RO + L * tn; I += (1 - smt(.45 * R, R, perp)) / (1 + .05 * L * L) * smt(.15, 1.3, L); }   /* no glare right at the fibre tip */
+           /* the funnel lies in the lit working area: always catches some light */ I = Math.max(I, .45 * Math.min(1, fun)); const k0 = I * dens * lightX * seed[i] * q.la, k = k0 / (1 + 1.8 * k0);   /* soft cap: no hot spots near the light pipe or in the converging inflow */ const cb = L > 0 ? 1 - smt(1.2, 5, L) : 0;   /* cool blue-white Tyndall glow at the fibre, warm (fundus-lit) further out */ hzC[4 * i] = .74 - .06 * cb; hzC[4 * i + 1] = .74 - .01 * cb; hzC[4 * i + 2] = .72 + .06 * cb; hzC[4 * i + 3] = Math.min(1, k * (1 + .3 * cb));   /* greyish veil, faintly cool at the fibre */ hzP.set([q.x, q.y, q.z], 3 * i);
+        { const w = .55 * Math.min(1, fun * 1.4); fdir.copy(mouthL).sub(q).divideScalar(Math.max(.05, d)).multiplyScalar(w).addScaledVector(q.f, 1 - w).normalize();   /* strands line up with the inflow */
+          const hl = .13 * seed[i] * (1 + .6 * w), kf = k * 1.2; fbP[6 * i] = q.x - fdir.x * hl; fbP[6 * i + 1] = q.y - fdir.y * hl; fbP[6 * i + 2] = q.z - fdir.z * hl; fbP[6 * i + 3] = q.x + fdir.x * hl; fbP[6 * i + 4] = q.y + fdir.y * hl; fbP[6 * i + 5] = q.z + fdir.z * hl;
+          fbC[6 * i] = fbC[6 * i + 3] = kf; fbC[6 * i + 1] = fbC[6 * i + 4] = kf * .96; fbC[6 * i + 2] = fbC[6 * i + 5] = kf * .86; } }
+      hzG.attributes.position.needsUpdate = hzG.attributes.color.needsUpdate = true; fbG.attributes.position.needsUpdate = fbG.attributes.color.needsUpdate = true; };
+    const portW = () => tmp.set(0, mouthY, RO).applyQuaternion(vit.quaternion).add(vit.position).clone();
+    const ov = (a0, a1) => Math.max(0, Math.min(W1, a1) - Math.max(W0, a0));
+    const openF = e => (ov(-1, e) + ov(e + B, e + B + WL)) / WL, eAt = ph => eBot + (eTop - eBot) * (.5 + .5 * Math.cos(2 * PI * ph)), T = .18;
+    const state = t => {   // t: seconds since start of the sequence
+      const jA = cl((t - 8.8) / 1.5);   /* small hand movements once both instruments are in */
+      const tL = t - 1.2; let s = -LSL - 2;
+      if (tL > 0) s = tL < .8 ? -LSL - 2 + (LSL + .4) * ease(tL / .8) : tL < 1.1 ? -1.6 : -1.6 + (sL + 1.6) * ease(cl((tL - 1.1) / 1.3));
+      place(lp, pL, pivL, qfL, s + jA * .25 * Math.sin(t * .41), ease(cl((t - 3.7) / 1.2)), jA * .05 * Math.sin(t * .47), jA * .04 * Math.sin(t * .33 + 1), jA * .05 * Math.sin(t * .29 + 2)); lp.visible = t > 1.2; lightOn(ease(cl((t - 4.9) / .6)));   /* switched on once the light pipe has reached its working position */
+      const tV = t - 4.9; let v = -LSV - 2;
+      if (tV > 0) v = tV < .8 ? -LSV - 2 + (LSV + .4) * ease(tV / .8) : tV < 1.1 ? -1.6 : -1.6 + (sV + 1.6) * ease(cl((tV - 1.1) / 1.4));
+      // now and then the surgeon moves the port toward a floater to take it out: pivot about the trocar, ≤ ~7°, then back
+      let sx = 0, sy = 0, sz = 0, sS = 0, sAmt = 0, sTgt = null; { const P = 6.5, tc = t - 11.5;
+        if (tc > 0) { const cyc = Math.floor(tc / P), ph = tc - cyc * P, amt = ease(cl(ph / 1.6)) * (1 - ease(cl((ph - 4.2) / 1.8)));
+          const CL = (G.floaters.userData.clusters || []).filter(c => !c.gone && c.grp.visible && c.grp.position.distanceTo(W) < 6.5 && c.grp.position.distanceTo(W) > 1.2);
+          if (amt > 0 && CL.length) { const c = CL[(cyc * 5 + 2) % CL.length]; if (!seekT[cyc]) seekT[cyc] = c.grp.position.clone(); const tgt = seekT[cyc];
+            tmp.copy(tgt).sub(pV.P); const dT = tmp.length(); tmp.divideScalar(dT); let ang = aimV.angleTo(tmp); const lim = 7 * deg;
+            qS.setFromUnitVectors(aimV, tmp); if (ang > lim) qS.slerpQuaternions(qI, qS, lim / ang); qS.slerpQuaternions(qI, qS.clone(), amt); eu.setFromQuaternion(qS); sx = eu.x; sy = eu.y; sz = eu.z;
+            sS = amt * Math.max(-1.2, Math.min(1.2, dT - W.distanceTo(pV.P) - .5)); sAmt = amt; sTgt = tgt; } } }
+      place(vit, pV, pivV, qfV, v + sS + jA * .18 * Math.sin(t * .57 + .5), ease(cl((tV - 2.6) / 1)), sx + jA * .025 * Math.sin(t * .39 + 3), sy + jA * .02 * Math.sin(t * .51), sz + jA * .025 * Math.sin(t * .43 + 1.3));
+      if (sTgt && sAmt > 0) { vit.updateMatrix(); const lt = sTgt.clone().applyMatrix4(vit.matrix.clone().invert()); const ang = Math.max(-75 * deg, Math.min(75 * deg, Math.atan2(lt.x, lt.z))); vit.rotateY(ang * sAmt); }   /* roll the shaft so the side port faces the floater */
+      vit.visible = t > 4.9; };
+    const seekT = [], qS = new THREE.Quaternion();
+    let an = 0, st = 0, lt = 0, ePrev = eTop, flown = false;
+    const step = now => { an = requestAnimationFrame(step); const t0 = (now - st) / 1000, t = t0 - 1.8, dt = Math.min(.05, (now - (lt || now)) / 1000); lt = now; state(Math.max(0, t));
+      if (t0 > 1.2 && !flown) { flown = true; if (window.__oogFlyTo) window.__oogFlyTo(eye.localToWorld(new THREE.Vector3(21.32, 34.2, 32.83)), eye.localToWorld(new THREE.Vector3(.6, 1.2, 1.5)), 1800);   /* final view: from superotemporal-front, looking into the cut-away at the working area */   /* same distance as the trocar view, turned toward the cut-away */   /* turn into the cut-away: working area in view */ }
+      const run = t > 9.6, e = run ? eAt(((t - 9.6) / T) % 1) : eTop; cutter.position.y = e;
+      const snip = run && ((ePrev > mouthY && e <= mouthY) || (ePrev + B < mouthY && e + B >= mouthY)); ePrev = e;
+      const O = run ? openF(e) : 0; flowA = run ? Math.min(1, flowA + dt * .5) : 0; cavA = 1; if (run) F = Math.min(4, Math.cbrt(F * F * F + 3 * 15 * flowA * (.6 + .6 * O) * dt / (4 * PI)));   /* aspirated volume ≈ 10 mm³/s (illustrative): the cleared sphere grows ever slower */
+      if (G.floaters.userData.suck) { G.floaters.userData.suck.k = 4.2 * flowA * (.6 + .6 * O); G.floaters.userData.suck.front = F; }   /* core already cleared: same glow from the moment the light goes on */
+      // the gel is dragged a little by the moving instruments (shafts), then stays where it was left
+      for (const [inst, pr] of [[vit, drV], [lp, drL]]) { if (!inst.visible) { pr.ok = false; continue; }
+        const pl = drT.copy(inst.position).sub(V0p).applyQuaternion(qInvF), ay = drA.set(0, 1, 0).applyQuaternion(inst.quaternion).applyQuaternion(qInvF);
+        if (pr.ok) { const dv = drD.copy(pl).sub(pr.p); if (dv.lengthSq() < .25 && dv.lengthSq() > 1e-10) for (let i = 0; i < NH; i++) { const q = hp[i]; tmp.copy(q).sub(pl); const s = tmp.dot(ay); if (s < -.3) continue; const d2 = tmp.addScaledVector(ay, -Math.max(0, s)).lengthSq(); if (d2 < 2.2) q.addScaledVector(dv, .7 * Math.exp(-d2 / .35)); } }
+        pr.p.copy(pl); pr.ok = true; }
+      if (lightX > 0) for (let i = 0; i < NH; i++) { const q = hp[i]; q.x += Math.sin(t0 * .3 + i) * .0004; q.y += Math.cos(t0 * .23 + i * 1.7) * .0004; q.z += Math.sin(t0 * .19 + i * 2.3) * .0003; }   /* the gel drifts gently in the light */
+      if (flowA > 0) for (let i = 0; i < NH; i++) { const q = hp[i]; tmp.copy(mouthL).sub(q); const dd = tmp.length();
+        if (dd < .16) { if (Math.random() < .55) spawnF(q); else spawnH(q, true); continue; }   /* reached the port: cut and aspirated; fresh gel enters at the outer edge */
+        const sp = 3.8 * flowA * (.1 + .5 / (dd + .3)) * (.8 + .4 * O); q.addScaledVector(tmp, sp * dt / dd);
+        const s = sw[i] * sp * dt / Math.max(.4, dd); const x = q.x, y = q.y - mouthY; q.x = x - s * y; q.y = mouthY + y + s * x; }   /* steady, slightly swirling inflow */
+      shade(); };
+    const sealM = std('trocar_valve_open', { color: 0x141517, roughness: .6 }), seals = [];
+    for (const port of [pV, pL]) { const vp = port.parts.find(p => p.material && p.material.name === 'trocar_valve'); if (!vp) continue;
+      const sm = new THREE.Mesh(new THREE.RingGeometry(.255, .53, 48), vp.material.transparent ? Object.assign(sealM.clone(), { transparent: true, opacity: vp.material.opacity, depthWrite: false }) : sealM); sm.renderOrder = vp.renderOrder; sm.quaternion.copy(vp.quaternion); sm.position.copy(vp.position).add(new THREE.Vector3(0, 0, .03).applyQuaternion(vp.quaternion)); sm.visible = false;
+      sm.userData.label = lbl('Ventiel van de trocar', 'sluit om het instrument heen, zodat er geen vocht uitloopt', 'Trocar valve', 'seals around the instrument so no fluid escapes'); VG.add(sm); seals.push(sm);
+      port.parts.push(sm); port.o.push([sm.position.clone(), sm.quaternion.clone()]); }
+    const brightIn = std('trocar_bore_lit', { color: 0xc9cdd2, metalness: .15, roughness: .5, side: THREE.BackSide }), keepM = new Map();
+    const setValves = on => [pV, pL].forEach(port => port.parts.forEach(p => { if (!p.material) return; if (p.material.name === 'trocar_valve') p.visible = on; if (p.material.name === 'trocar_valve_open') p.visible = !on;
+      if (p.material.name === 'trocar_cannula' && p.material.side === THREE.BackSide) { if (!on) { keepM.set(p, p.material); const m = brightIn.clone(); m.transparent = p.material.transparent; m.opacity = p.material.opacity; m.depthWrite = p.material.depthWrite; p.material = m; } else if (keepM.has(p)) p.material = keepM.get(p); } }));   /* the valve opens around the instrument; the bore behind it would otherwise read as a black hole (metal without reflections) */   /* the valve opens around the instrument */
+    const restore = () => [pV, pL].forEach(port => port.parts.forEach((p, i) => { p.position.copy(port.o[i][0]); p.quaternion.copy(port.o[i][1]); }));
+    g.userData.on = () => { cancelAnimationFrame(an); VG.visible = true; G.floaters.visible = true; G.floaters.userData.suck = { pt: () => portW(), k: 0, light: () => ({ pos: lp.position, dir: new THREE.Vector3(0, -1, 0).applyQuaternion(lp.quaternion), on: lightX }) }; flown = false; lt = 0; ePrev = eTop; flowA = 0; F = .35; hp.forEach(v => spawnH(v)); cavA = 1; drV.ok = drL.ok = false; setValves(false);
+      if (matchMedia('(prefers-reduced-motion: reduce)').matches) { state(20); cutter.position.y = eTop; flowA = 1; cavA = 1; F = 2; shade(); return; }
+      state(0); shade(); seekT.length = 0; st = performance.now(); an = requestAnimationFrame(step); };
+    g.userData.off = () => { cancelAnimationFrame(an); lightOn(0); restore(); setValves(true); VG.visible = false; G.floaters.userData.suck = null; G.floaters.visible = false; };
+  }
   // --- retinal tear (animated): PVD as above, but the vitreous stays stuck at one superonasal spot on the posterior border of
   //     the vitreous base; as the gel pulls away it tents the retina, a horseshoe tear opens there, the flap stays on the
   //     vitreous, and pigment cells (tobacco dust, Shafer's sign) appear in the anterior vitreous ---
@@ -1628,8 +2252,11 @@ if (document.documentElement.classList.contains('embed')) {   // inside a site p
     const revealTex = cTex(3, 256, gx => { const gr = gx.createLinearGradient(-1.15, 0, .5, 0); gr.addColorStop(0, '#fff'); gr.addColorStop(1, '#000'); gx.fillStyle = gr; gx.fillRect(-1.5, -1.5, 3, 3); });
     const holeM = parts.find(o => o.name === 'tear_hole'), flapM = parts.find(o => o.name === 'tear_flap');
     for (const m of [holeM, flapM]) if (m) { m.material.alphaMap = revealTex; m.material.alphaTest = .995; m.material.needsUpdate = true; }
+    Object.assign(flapM.material, { transparent: true, opacity: .94, depthWrite: true, roughness: .8 }); flapM.material.color.set(0xffffff);
+    flapM.material.onBeforeCompile = s => { s.fragmentShader = s.fragmentShader.replace('#include <alphatest_fragment>', '#include <alphatest_fragment>\n  diffuseColor.a = opacity;'); };   /* reveal mask only cuts; the flap itself is evenly, just slightly translucent */
+    flapM.material.customProgramCacheKey = () => 'flapOpaque'; flapM.material.needsUpdate = true;   /* detached retina: opaque (oedematous), no see-through */
     const fp = flapM.geometry.attributes.position, fuv = flapM.geometry.attributes.uv, lifted = Float32Array.from(fp.array), flat = new Float32Array(lifted.length), fa = new Float32Array(fp.count);
-    for (let i = 0; i < fp.count; i++) { const v = new THREE.Vector3(lifted[3 * i], lifted[3 * i + 1], lifted[3 * i + 2]); const f = v.setLength(RR - .016); flat.set([f.x, f.y, f.z], 3 * i); fa[i] = (fuv.getX(i) - .5) * 3; }
+    for (let i = 0; i < fp.count; i++) { const v = new THREE.Vector3(lifted[3 * i], lifted[3 * i + 1], lifted[3 * i + 2]); const f = v.setLength(rRet(Math.acos(v.z / v.length())) - .016); flat.set([f.x, f.y, f.z], 3 * i); fa[i] = (fuv.getX(i) - .5) * 3; }
     // the vitreous adhesion sits exactly on the flap tip (not at the patch centre), at the tip's full lifted height
     { let best = 1e9, bi = 0; for (let i = 0; i < fp.count; i++) { const fb = (fuv.getY(i) - .5) * 3, d = (fa[i] + 1.02) ** 2 + fb * fb; if (d < best) { best = d; bi = i; } }
       const tipL = new THREE.Vector3(lifted[3 * bi], lifted[3 * bi + 1], lifted[3 * bi + 2]); A.dir = tipL.clone().normalize(); A.lift = Math.max(.6, RV - tipL.length()); }
@@ -1642,7 +2269,7 @@ if (document.documentElement.classList.contains('embed')) {   // inside a site p
       const len = .9; glue.position.copy(tip).addScaledVector(n, len / 2); glue.quaternion.setFromUnitVectors(new THREE.Vector3(0, -1, 0), n); glue.scale.set(1, len, 1); glueM.opacity = .38 * smt(.05, .4, p); glue.visible = p > .02; };
     // retinal thickness (~0.12 mm peripherally): back layer of the flap, cut edge along the torn border of the flap,
     // and the matching edge wall around the hole in the retina
-    const RT = .12, edgeM = std('torn_retina_edge', { color: 0x7a3e28, roughness: .7, side: D });   /* cut retina: same pale-orange tissue, a bit darker in shadow — not white */
+    const RT = RC - rRet(Math.acos(dirT.z)), edgeM = std('torn_retina_edge', { color: 0xd4a690, roughness: .7, side: D });   /* cut retina: same pale-orange tissue, a bit darker in shadow — not white */
     const flapBack = new THREE.Mesh(flapM.geometry.clone(), flapM.material); flapBack.renderOrder = flapM.renderOrder; flapBack.userData.label = flapM.userData.label; g.add(flapBack); parts.push(flapBack);
     const fbuv = fuv;
     const near = (geo, x, y) => { const uv = geo.attributes.uv; let best = 1e9, bi = 0; for (let i = 0; i < uv.count; i++) { const dx = (uv.getX(i) - .5) * 3 - x, dy = (uv.getY(i) - .5) * 3 - y, d = dx * dx + dy * dy; if (d < best) { best = d; bi = i; } } return bi; };
@@ -1673,7 +2300,7 @@ if (document.documentElement.classList.contains('embed')) {   // inside a site p
       const a = fp.array; for (let i = 0; i < fp.count; i++) { const w = smt(front + .05, front - .45, fa[i]) * Math.min(1, A.liftNow / A.lift) * smt(.45, -.15, fa[i]); /* hinge (toward the base) stays on the retina: no lift, no motion */   // flap tip glued to the posterior hyaloid: lifted exactly as far as the gel has pulled
         const D = G.pvd.userData.adhDisp, dx = D ? D.x * w : 0, dy = D ? D.y * w : 0, dz = D ? D.z * w : 0;
         let x = flat[3 * i] + (lifted[3 * i] - flat[3 * i]) * w + dx, y = flat[3 * i + 1] + (lifted[3 * i + 1] - flat[3 * i + 1]) * w + dy, z = flat[3 * i + 2] + (lifted[3 * i + 2] - flat[3 * i + 2]) * w + dz;
-        const L = Math.hypot(x, y, z); if (L > RR - .016) { const c = (RR - .016) / L; x *= c; y *= c; z *= c; }
+        const L = Math.hypot(x, y, z), Ls = rRet(Math.acos(z / L)) - .016; if (L > Ls) { const c = Ls / L; x *= c; y *= c; z *= c; }
         a[3 * i] = x; a[3 * i + 1] = y; a[3 * i + 2] = z; }
       fp.needsUpdate = true; flapM.geometry.computeVertexNormals(); placeGlue(p); updateEdges(p); };
     let an = 0;
@@ -1682,7 +2309,7 @@ if (document.documentElement.classList.contains('embed')) {   // inside a site p
       // first the retina tents (up to ~0.45 mm), then it tears from the central edge and the flap is pulled up with the gel
       const want = Math.min(A.gC, A.lift);
       if (A.tA == null && t >= .74) A.tA = t; /* as the detachment front passes the equator toward the base */ A.cap = A.tA == null ? 0 : .45 * smt(A.tA, A.tA + .07, t) + (A.lift - .45) * smt(A.tA + .06, A.tA + .26, t); /* time-based (PVD clock): tent ~2 s while the gel pulls, then tear + flap lift ~5 s, finished before the PVD ends */
-      const tp = smt(.45, A.lift, A.cap); if (tp > 0 && !tStart) tStart = now; tearProg(tp); G.pvd.userData.apply(G.pvd.userData.t);
+      const tp = smt(.45, A.lift, A.cap); if (pre0 === undefined) pre0 = 0; if (A.cap > .05 && !turned) { turned = true; window.__oogFlyTo && window.__oogFlyTo(eye.localToWorld(new THREE.Vector3(41.88, 12.97, 21.24)), eye.localToWorld(new THREE.Vector3(-1, -.02, -1.27)), 2600); }   /* as traction builds, turn to see the tear */ if (tp > 0 && !tStart) tStart = now; tearProg(tp); G.pvd.userData.apply(G.pvd.userData.t);
       const pre = smt(.05, .45, A.cap), torn = tp > .002;
       trac.visible = !torn; trac.material.opacity = pre; A.liftNow = A.cap;   // gel pulls the retina up, then lifts the flap as the tear runs   // retina tented ever more until it gives way
       parts.forEach(o => { if (o !== trac && o !== dust) o.visible = torn; });
@@ -1690,7 +2317,8 @@ if (document.documentElement.classList.contains('embed')) {   // inside a site p
       const p = pg.attributes.position;
       for (let k = 0; k < N; k++) { const b = base[k], q = ph[k]; p.setXYZ(k, b.x + .12 * Math.sin(s * .2 + q), b.y + .12 * Math.cos(s * .17 + q * 1.3) - .02 * (s % 60), b.z + .1 * Math.sin(s * .15 + q * .7)); }
       p.needsUpdate = true; };
-    g.userData.on = () => { tStart = 0; A.tA = null; A.cap = 0; A.gC = 0; A.liftNow = 0; tearProg(0); G.pvd.visible = true; G.pvd.userData.on(A); parts.forEach(o => o.visible = false); pm.opacity = 0; cancelAnimationFrame(an); an = requestAnimationFrame(loop); };
+    let turned = false, pre0;
+    g.userData.on = () => { tStart = 0; turned = false; A.tA = null; A.cap = 0; A.gC = 0; A.liftNow = 0; tearProg(0); G.pvd.visible = true; G.pvd.userData.on(A); parts.forEach(o => o.visible = false); pm.opacity = 0; cancelAnimationFrame(an); an = requestAnimationFrame(loop); };
     g.userData.off = () => { cancelAnimationFrame(an); G.pvd.userData.off(); G.pvd.visible = false; };
   }
   // --- rhegmatogenous retinal detachment (inferotemporal, macula-on) ---
@@ -1789,7 +2417,9 @@ if (document.documentElement.classList.contains('embed')) {   // inside a site p
   const TXT = {
     cataract: ['Bij nucleaire staar verhardt en verkleurt de kern van de lens geelgroen tot bruin, terwijl de schors nog redelijk helder is. Het zicht wordt wazig en kleuren lijken flets. Bij een operatie wordt de troebele lens vervangen door een kunstlens.', 'In nuclear cataract the lens nucleus hardens and turns yellow-green to brown while the cortex stays fairly clear. Vision blurs and colours look dull. Surgery replaces the cloudy lens with an artificial one.'],
     floaters: ['Met de jaren vervloeit het glasvocht: er ontstaan vochtholtes en de collageenvezels klonteren samen tot puntjes, draadjes, spinnenwebjes en wolkjes. Licht dat door de pupil valt, werpt hun schaduw op het netvlies – dat is wat u ziet. Ze bewegen na als het oog draait. Draai het oog om dat te zien.', 'With age the vitreous liquefies: fluid pockets form and the collagen fibres clump into dots, strings, cobwebs and clouds. Light entering through the pupil casts their shadows on the retina – that is what you see. They lag behind when the eye moves. Rotate the eye to see it.'],
-    pvd: ['Met de jaren krimpt het vervloeide glasvocht en laat het los van het netvlies: eerst rond de gele vlek, dan bij de papil, waarbij de ring van Weiss vrijkomt, en ten slotte tot aan de glasvochtbasis. Achter de gel zit vocht; draait het oog, dan zwaait de gel na. Draai het oog om dat te zien.', 'With age the liquefied vitreous shrinks and separates from the retina: first around the macula, then at the disc, releasing the Weiss ring, and finally out to the vitreous base. Fluid lies behind the gel; when the eye turns, the gel swings after it. Rotate the eye to see it.'],
+    pvd: ['Met de jaren krimpt het vervloeide glasvocht en laat het los van het netvlies: eerst rond de gele vlek, dan bij de papil, waarbij de ring van Weiss vrijkomt, en ten slotte tot aan de glasvochtbasis. Achter de gel zit vocht; draait het oog, dan zwaait de gel na. Draai het oog om dat te zien. De animatie vat samen wat in werkelijkheid maanden tot jaren duurt; alleen de laatste stap, de volledige loslating, gaat vaak in uren tot dagen.', 'With age the liquefied vitreous shrinks and separates from the retina: first around the macula, then at the disc, releasing the Weiss ring, and finally out to the vitreous base. Fluid lies behind the gel; when the eye turns, the gel swings after it. Rotate the eye to see it. The animation condenses what in reality takes months to years; only the last step, complete detachment, often happens within hours to days.'],
+    vitrectomy: ['Bij een vitrectomie worden drie dunne trocars (25 gauge, ongeveer 0,5 mm) schuin door de pars plana geplaatst, 3,5–4 mm achter de limbus, zodat lens en netvlies niet geraakt worden. Via de infuuspoort, meestal temporaal onder, blijft de oogdruk op peil; door de twee bovenste poorten gaan de lichtbron en de vitrectoom naar binnen. De poort temporaal boven valt in het opengewerkte deel en is doorschijnend getekend.', 'In a vitrectomy three thin trocars (25 gauge, about 0.5 mm) are inserted obliquely through the pars plana, 3.5–4 mm behind the limbus, so that lens and retina are not touched. The infusion port, usually inferotemporal, maintains the eye pressure; the light pipe and the vitrector enter through the two upper ports. The superotemporal port falls in the cut-away part and is drawn translucent.'],
+    vitrector: ['Via de trocars gaan de instrumenten van bovenaf het oog in; de chirurg zit aan het hoofdeind. Eerst de lichtfiber, die met de oogwand als steunpunt naar het werkgebied wordt gericht. Dan de vitrectoom, een holle naald van 0,5 mm met een zijopening ongeveer 0,3 mm van de dichte punt. Het glasvocht wordt in die opening gezogen; een binnenmesje met een eigen opening (dual blade) knipt het zowel op de heen- als op de terugweg in kleine stukjes, die worden afgezogen. Rond de punt ontstaat zo een steeds grotere ruimte zonder gel, met helder vocht en zonder grijze waas. Met het glasvocht stromen ook de troebelingen naar de opening en verdwijnen, en daarmee hun schaduwen op het netvlies. In werkelijkheid tot 10.000 keer per minuut, hier ongeveer 30 keer vertraagd. Klik opnieuw om de animatie te herhalen.', 'The instruments enter the eye from above; the surgeon sits at the head end. First the light pipe, pivoted on the eye wall toward the working area. Then the vitrector, a 0.5 mm hollow needle with a side port about 0.3 mm from its closed tip. The vitreous is drawn into that port; an inner cutter with its own window (dual blade) cuts it into small pieces on both the forward and the return stroke, which are aspirated. Around the tip an ever larger space free of gel forms, with clear fluid and no grey haze. With the gel, the floaters flow toward the port and disappear, and so do their shadows on the retina. In reality up to 10,000 cuts a minute, here slowed about 30 times. Click again to replay.'],
     tear: ['Bij het loslaten van het glasvocht blijft het soms op één plek aan het netvlies vastzitten, hier nasaal boven aan de rand van de glasvochtbasis. Het trekt daar tot er een hoefijzervormige scheur ontstaat; de lap blijft aan het glasvocht hangen. Vrijgekomen pigmentcellen zweven als tobacco dust in het voorste glasvocht.', 'As the vitreous detaches it sometimes stays stuck to the retina at one spot, here superonasally at the edge of the vitreous base. It pulls there until a horseshoe tear forms; the flap stays attached to the vitreous. Released pigment cells float as tobacco dust in the anterior vitreous.'],
     rd: ['Vocht stroomt via een scheur onder het netvlies, dat als een grijze, golvende blaas loskomt. Hier ligt de gele vlek nog aan (‘macula on’): snelle behandeling is dan extra belangrijk.', 'Fluid passes through a tear beneath the retina, which lifts as a grey, undulating bullae. Here the macula is still attached (‘macula on’), making prompt treatment especially important.'],
     pucker: ['Een dun, glanzend vlies op de gele vlek trekt samen en rimpelt het netvlies. Rechte lijnen lijken golvend; het vlies kan operatief worden verwijderd.', 'A thin, glistening membrane on the macula contracts and wrinkles the retina. Straight lines appear wavy; the membrane can be removed surgically.'],
@@ -1806,6 +2436,7 @@ if (document.documentElement.classList.contains('embed')) {   // inside a site p
     return C.clone().add(pos.clone().sub(C).setLength(d)); };
   { const c = stage._camera, t = stage._controls.target; c.position.copy(sameDist(c.position, t)); stage._controls.update(); }   // initial view = same size as cataract
   const VIEW = {
+    vitrectomy: [V3(-0.19, -1.47, 51.74), V3(0, 0, 5)], vitrector: [V3(-0.19, -1.47, 51.74), V3(0, 0, 5)],   /* starts as the trocar view, then turns to the overview (in the animation) */   /* from inferotemporal: the pupil looks onto the intact wall, all three ports in view */
     cataract: [V3(17, 15, 46), V3(3, 3, 4)], floaters: [V3(20, 21, 19).setLength(Math.hypot(17, 15, 46)), V3(0, 0, -2)], pvd: [V3(24, 18, 12).setLength(Math.hypot(17, 15, 46)), V3(0, 0, -3)],
     tear: [proj(TN.x, TN.y, RR).add(V3(16.1, 1.2, 1.5).setLength(30)), proj(TN.x, TN.y, RR).multiplyScalar(.85)]   /* through the window onto the nasal far wall */, rd: [V3(9, 22, 19), proj(15 * Math.cos(-40 * deg), 15 * Math.sin(-40 * deg), RR - 1.5)],
     pucker: [V3(9, 9, 7), mac], hole: [V3(5, 5, 0), mac], dry: [V3(9, 9, 7), mac], wet: [V3(9, 9, 7), mac], smh: [V3(11, 11, 11), mac], prima: [V3(6.5, 6.5, 2.5), mac],
@@ -1819,6 +2450,7 @@ if (document.documentElement.classList.contains('embed')) {   // inside a site p
       c.position.lerpVectors(p0, p1, k); ctl.target.lerpVectors(t0, t1, k); ctl.update(); window.__oogFlying = k < 1; if (k < 1) tw = requestAnimationFrame(step); };
     tw = requestAnimationFrame(step);
   }
+  window.__oogFlyTo = flyTo;
   const para = document.querySelector('.label p');
   let active = 'none';
   function render() {
@@ -1835,7 +2467,8 @@ if (document.documentElement.classList.contains('embed')) {   // inside a site p
     if (id === 'none') { if (home) flyTo(sameDist(home[0], home[1]), home[1]); ctl.autoRotate = stage.hasAttribute('autorotate'); render(); return; }
     if (!home) home = [stage._camera.position.clone(), ctl.target.clone()];
     ctl.autoRotate = false; G[id].visible = true; if (G[id].userData.on) G[id].userData.on();
-    const [cp, tg] = VIEW[id]; flyTo(eye.localToWorld(cp.clone()), eye.localToWorld(tg.clone()));
+    const [cp, tg] = VIEW[id]; if (['cataract', 'floaters', 'pvd', 'rd', 'tear'].includes(id)) flyTo(eye.localToWorld(V3(29.13, 19.86, 33.53)), eye.localToWorld(V3(-1, -.02, -1.27)));   /* common start view (chosen by the user) */
+    else flyTo(eye.localToWorld(cp.clone()), eye.localToWorld(tg.clone()));
     render();
   }
   document.querySelectorAll('#conditions button[data-cond]').forEach(b => {
@@ -1856,6 +2489,8 @@ if (document.documentElement.classList.contains('embed')) {   // inside a site p
     [/^uvea_cut/, 'Doorsnede iris, straalvormig lichaam en vaatvlies', 'uvea'],
     [/^ciliary_processes/, 'Ciliaire uitsteeksels', 'pars plicata'],
     [/^iris_processes/, 'Irisuitlopers', 'processus iridis'],
+    [/^pupillary_ruff/, 'Pigmentrandje', 'pupilrand'],
+    [/^iris_margin/, 'Pupilrand', 'margo pupillaris'],
     [/^iris|^pupillary_ruff/, 'Regenboogvlies', 'iris'],
     [/^descemet/, 'Membraan van Descemet', 'cornea'],
     [/^cornea|^limbus_haze/, 'Hoornvlies', 'cornea'],
@@ -1872,6 +2507,10 @@ if (document.documentElement.classList.contains('embed')) {   // inside a site p
     [/^optic_nerve_section/, 'Doorsnede oogzenuw', 'zenuwvezelbundels, a. en v. centralis retinae'],
     [/^optic_nerve/, 'Oogzenuw', 'nervus opticus'],
     [/^vortex/, 'Vortexvene', 'v. vorticosa, afvoer van het vaatvlies'],
+    [/^ciliary_a_post_brev/, 'Korte achterste ciliaire arterie', 'a. ciliaris posterior brevis, naar het vaatvlies'],
+    [/^ciliary_a_post_long/, 'Lange achterste ciliaire arterie', 'a. ciliaris posterior longa, naar corpus ciliare en iris'],
+    [/^ciliary_a_ant/, 'Voorste ciliaire arterie', 'a. ciliaris anterior, via de oogspier'],
+    [/^ciliary_v_ant/, 'Voorste ciliaire vene', 'v. ciliaris anterior'],
     [/^rectus_medialis/, 'Binnenste rechte oogspier', 'm. rectus medialis'],
     [/^rectus_inferior/, 'Onderste rechte oogspier', 'm. rectus inferior'],
     [/^rectus_superior/, 'Bovenste rechte oogspier', 'm. rectus superior'],
@@ -1882,13 +2521,14 @@ if (document.documentElement.classList.contains('embed')) {   // inside a site p
   const EN = {
     'Ora serrata': ['Ora serrata', 'retina – pars plana junction'], 'Netvlies': ['Retina', 'retina'], 'Harde oogrok': ['Sclera', 'tunica fibrosa'],
     'Vaatvlies': ['Choroid', 'choroidea'], 'Doorsnede iris, straalvormig lichaam en vaatvlies': ['Section of iris, ciliary body and choroid', 'uvea'],
-    'Ciliaire uitsteeksels': ['Ciliary processes', 'pars plicata'], 'Irisuitlopers': ['Iris processes', 'processus iridis'], 'Regenboogvlies': ['Iris', 'iris'],
+    'Ciliaire uitsteeksels': ['Ciliary processes', 'pars plicata'], 'Irisuitlopers': ['Iris processes', 'processus iridis'], 'Regenboogvlies': ['Iris', 'iris'], 'Pupilrand': ['Pupil margin', 'margo pupillaris'], 'Pigmentrandje': ['Pupillary ruff', 'pupil margin'],
     'Membraan van Descemet': ["Descemet's membrane", 'cornea'], 'Hoornvlies': ['Cornea', 'cornea'], 'Trabekelnetwerk': ['Trabecular meshwork', 'anterior chamber angle'],
     'Kanaal van Schlemm': ["Schlemm's canal", 'anterior chamber angle'], 'Afvoerkanaaltje': ['Collector channel', 'anterior chamber angle'],
     'Scleraspoor': ['Scleral spur', 'anterior chamber angle'], 'Kamerhoek': ['Anterior chamber angle', 'angulus iridocornealis'],
     'Lenskern': ['Lens nucleus', 'nucleus lentis'], 'Ooglens': ['Lens', 'lens cristallina'], 'Lensophangvezels': ['Zonular fibres', 'zonula ciliaris'],
     'Glasvocht': ['Vitreous body', 'corpus vitreum'], 'Kanaal van Cloquet': ["Cloquet's canal", 'vitreous'],
     'Doorsnede oogzenuw': ['Optic nerve cross-section', 'nerve fibre bundles, central retinal artery and vein'], 'Oogzenuw': ['Optic nerve', 'nervus opticus'], 'Vortexvene': ['Vortex vein', 'v. vorticosa, drains the choroid'],
+    'Korte achterste ciliaire arterie': ['Short posterior ciliary artery', 'a. ciliaris posterior brevis, to the choroid'], 'Lange achterste ciliaire arterie': ['Long posterior ciliary artery', 'a. ciliaris posterior longa, to ciliary body and iris'], 'Voorste ciliaire arterie': ['Anterior ciliary artery', 'a. ciliaris anterior, via the rectus muscle'], 'Voorste ciliaire vene': ['Anterior ciliary vein', 'v. ciliaris anterior'],
     'Binnenste rechte oogspier': ['Medial rectus muscle', 'm. rectus medialis'], 'Onderste rechte oogspier': ['Inferior rectus muscle', 'm. rectus inferior'],
     'Bovenste rechte oogspier': ['Superior rectus muscle', 'm. rectus superior'], 'Buitenste rechte oogspier': ['Lateral rectus muscle', 'm. rectus lateralis'],
     'Pees bovenste schuine oogspier': ['Superior oblique tendon', 'm. obliquus superior'], 'Onderste schuine oogspier': ['Inferior oblique muscle', 'm. obliquus inferior'],
