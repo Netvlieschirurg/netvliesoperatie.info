@@ -2766,9 +2766,41 @@ html.i18n-pending body { visibility: hidden; }
 html.kleur-c .page-head { padding-top: clamp(2rem, 5vw, 3.5rem); }
 /* Homepage-kop zat sinds kleurrichting C tegen de kruimelbalk aan. */
 html.kleur-c .hero { padding-top: clamp(2rem, 4vw, 3rem); }
-/* 'Lees verder'-blok: onderaan geen extra linkpadding; op mobiel iets minder aanloop. */
-.related-reads { margin-top: clamp(3rem, 6vw, 4rem); }
-.related-reads:last-child a { padding-bottom: 0; }
+/* 'Lees verder': eigen band onderaan de pagina, als kaarten (zoals de kerngebieden). */
+.section--related .related-reads { margin: 0; padding: 0; border-top: 0; }
+.section--related .related-reads .eyebrow { margin-bottom: 1.6rem; }
+.section--related .related-reads ul,
+.section--related .related-reads--four ul { gap: 1.25rem; }
+.section--related .related-reads li { display: flex; }
+.section--related .related-reads a {
+  display: flex; flex-direction: column; width: 100%;
+  padding: 1.7rem 1.6rem 1.6rem;
+  background: var(--mist); border-top: 2px solid var(--navy);
+  color: var(--ink); text-decoration: none;
+  transition: border-color .15s;
+}
+.section--related .related-reads a:hover { border-top-color: var(--gold); }
+.section--related .related-reads .related-title,
+.section--related .related-reads--four .related-title {
+  order: 1; font-size: clamp(1.3rem, 1.8vw, 1.55rem); line-height: 1.2;
+  margin-bottom: 0.55rem; color: var(--ink); transition: color .15s;
+}
+.section--related .related-reads a:hover .related-title { color: var(--gold); }
+.section--related .related-reads .related-desc,
+.section--related .related-reads--four .related-desc {
+  order: 2; font-size: 15px; line-height: 1.45; letter-spacing: 0; text-transform: none;
+  font-weight: 400; color: var(--gray-700); margin-bottom: 1.4rem;
+}
+.section--related .related-reads .related-arrow,
+.section--related .related-reads--four .related-arrow {
+  order: 3; margin-top: auto; align-self: flex-start;
+  font-size: 13.5px; letter-spacing: 0.02em; padding-bottom: 2px; border-bottom-color: var(--navy);
+}
+.section--related .related-reads a:hover .related-arrow { color: var(--gold); border-color: var(--gold); }
+@media (max-width: 720px) {
+  .section--related .related-reads ul,
+  .section--related .related-reads--four ul { gap: 0.9rem; }
+}
 /* Blogkop: geen tweede lijn vlak boven de onderrand van de kop. */
 .page-head .article-meta:last-child { border-bottom: 0; padding-bottom: 0; }
 </style>
@@ -4060,6 +4092,10 @@ html.kleur-c .hero { padding-top: clamp(2rem, 4vw, 3rem); }
       </div>
 
 
+    </div>
+  </section>
+  <section class="section section--related">
+    <div class="shell">
       <div class="related-reads related-reads--four">
         <p class="eyebrow" data-i18n="f9705524df">Lees verder over de operatie</p>
         <ul>
@@ -4213,6 +4249,10 @@ html.kleur-c .hero { padding-top: clamp(2rem, 4vw, 3rem); }
       <p class="source-note" data-i18n="7330192bd6">Deze pagina is gebaseerd op de werkwijze van het Retina Operatiecentrum Ede zoals vastgelegd in het interne perioperatieve protocol.</p>
 
 
+    </div>
+  </section>
+  <section class="section section--related">
+    <div class="shell">
       <div class="related-reads related-reads--four">
         <p class="eyebrow" data-i18n="f9705524df">Lees verder over de operatie</p>
         <ul>
@@ -4292,6 +4332,10 @@ html.kleur-c .hero { padding-top: clamp(2rem, 4vw, 3rem); }
       <p data-i18n="822d174ee4">Een goede nachtrust en normaal ontbijt. Schone, makkelijk zittende kleding. Geen sieraden, kettingen, ringen, armbanden, horloges of piercings in het gezicht. Het gehoorapparaat aan de kant van het te opereren oog uit (de andere kant mag u inhouden). Geld en waardevolle bezittingen laat u thuis.</p>
 
 
+    </div>
+  </section>
+  <section class="section section--related">
+    <div class="shell">
       <div class="related-reads related-reads--four">
         <p class="eyebrow" data-i18n="f9705524df">Lees verder over de operatie</p>
         <ul>
@@ -4370,6 +4414,10 @@ html.kleur-c .hero { padding-top: clamp(2rem, 4vw, 3rem); }
       <p data-i18n="fcd145e590">Direct na de operatie wordt het oog afgedekt. Soms krijgt u een tablet om de oogdruk te verlagen. U gaat terug naar de wachtkamer voor wat eten en drinken, en krijgt instructies voor de nazorg mee voordat u naar huis gaat.</p>
 
 
+    </div>
+  </section>
+  <section class="section section--related">
+    <div class="shell">
       <div class="related-reads related-reads--four">
         <p class="eyebrow" data-i18n="f9705524df">Lees verder over de operatie</p>
         <ul>
@@ -4601,6 +4649,10 @@ html.kleur-c .hero { padding-top: clamp(2rem, 4vw, 3rem); }
       <p class="source-note" data-i18n="d6050ac643">Deze pagina is gebaseerd op de pati&euml;ntinformatie van het Retina Operatiecentrum (versie juni 2024) en is in november 2026 bijgewerkt. Voor de offici&euml;le folder en aanvullende informatie van ROC: <a href="https://www.eyescan.nl/retina-oc" target="_blank" rel="noopener">eyescan.nl/retina-oc</a>.</p>
 
 
+    </div>
+  </section>
+  <section class="section section--related">
+    <div class="shell">
       <div class="related-reads related-reads--four">
         <p class="eyebrow" data-i18n="f9705524df">Lees verder over de operatie</p>
         <ul>
@@ -4748,6 +4800,11 @@ html.kleur-c .hero { padding-top: clamp(2rem, 4vw, 3rem); }
         <p class="phone-callout__note" data-i18n="395fa7990c">Dag en nacht bereikbaar: vraag naar de dienstdoende oogarts. Voor vragen en operatieplanning: polikliniek Oogheelkunde, <a href="tel:+31107040135">(010) 704 01 35</a> (keuze 3 voor operatieplanning).</p>
       </div>
 
+
+    </div>
+  </section>
+  <section class="section section--related">
+    <div class="shell">
       <div class="related-reads related-reads--four">
         <p class="eyebrow" data-i18n="f9705524df">Lees verder over de operatie</p>
         <ul>
@@ -4781,7 +4838,6 @@ html.kleur-c .hero { padding-top: clamp(2rem, 4vw, 3rem); }
       </li>
         </ul>
       </div>
-
     </div>
   </section>
 </section>
@@ -4888,6 +4944,11 @@ html.kleur-c .hero { padding-top: clamp(2rem, 4vw, 3rem); }
         </ol>
       </div>
 
+
+    </div>
+  </section>
+  <section class="section section--related">
+    <div class="shell">
       <div class="related-reads related-reads--four">
         <p class="eyebrow" data-i18n="f9705524df">Lees verder over de operatie</p>
         <ul>
@@ -4921,7 +4982,6 @@ html.kleur-c .hero { padding-top: clamp(2rem, 4vw, 3rem); }
       </li>
         </ul>
       </div>
-
     </div>
   </section>
 </section>
@@ -5038,6 +5098,11 @@ html.kleur-c .hero { padding-top: clamp(2rem, 4vw, 3rem); }
         </ol>
       </div>
 
+
+    </div>
+  </section>
+  <section class="section section--related">
+    <div class="shell">
       <div class="related-reads related-reads--four">
         <p class="eyebrow" data-i18n="f9705524df">Lees verder over de operatie</p>
         <ul>
@@ -5071,7 +5136,6 @@ html.kleur-c .hero { padding-top: clamp(2rem, 4vw, 3rem); }
       </li>
         </ul>
       </div>
-
     </div>
   </section>
 </section>
@@ -5133,32 +5197,6 @@ html.kleur-c .hero { padding-top: clamp(2rem, 4vw, 3rem); }
             <h2 style="margin-top: 2rem;" data-i18n="40fac171f4">Academische rollen</h2>
             <p data-i18n="444d6bbc8a">Sinds 2019 ben ik <em>Editorial Board Member</em> bij <em>Acta Ophthalmologica</em> en review ik voor diverse oogheelkundige tijdschriften. Daarnaast was ik tussen 2014 en 2020 bestuurslid van de Nederlandse Werkgroep Vitreoretinale Chirurgie.</p>
 
-            <div class="related-reads">
-        <p class="eyebrow" data-i18n="d8450a9da0">Lees verder</p>
-        <ul>
-      <li>
-        <a href="#onderzoek" data-link data-i18n="83e251a386">
-          <span class="related-desc">Publicaties en patenten</span>
-          <span class="related-title">Onderzoek</span>
-          <span class="related-arrow">Lees meer &rarr;</span>
-        </a>
-      </li>
-      <li>
-        <a href="#aandoeningen" data-link data-i18n="6a9f6adc65">
-          <span class="related-desc">Aandoeningen op een rij</span>
-          <span class="related-title">Aandoeningen</span>
-          <span class="related-arrow">Lees meer &rarr;</span>
-        </a>
-      </li>
-      <li>
-        <a href="#nieuws" data-link data-i18n="692c622dad">
-          <span class="related-desc">Actueel en achtergrond</span>
-          <span class="related-title">Nieuws</span>
-          <span class="related-arrow">Lees meer &rarr;</span>
-        </a>
-      </li>
-        </ul>
-      </div>
           </div>
         </div>
         <aside style="grid-column: 9 / span 4;">
@@ -5205,6 +5243,36 @@ html.kleur-c .hero { padding-top: clamp(2rem, 4vw, 3rem); }
           <div class="fact__label" data-i18n="65bd1261ce">BIG-nummer</div>
           <div class="fact__value">09049056401</div>
         </div>
+      </div>
+    </div>
+  </section>
+  <section class="section section--related">
+    <div class="shell">
+      <div class="related-reads">
+        <p class="eyebrow" data-i18n="d8450a9da0">Lees verder</p>
+        <ul>
+      <li>
+        <a href="#onderzoek" data-link data-i18n="83e251a386">
+          <span class="related-desc">Publicaties en patenten</span>
+          <span class="related-title">Onderzoek</span>
+          <span class="related-arrow">Lees meer &rarr;</span>
+        </a>
+      </li>
+      <li>
+        <a href="#aandoeningen" data-link data-i18n="6a9f6adc65">
+          <span class="related-desc">Aandoeningen op een rij</span>
+          <span class="related-title">Aandoeningen</span>
+          <span class="related-arrow">Lees meer &rarr;</span>
+        </a>
+      </li>
+      <li>
+        <a href="#nieuws" data-link data-i18n="692c622dad">
+          <span class="related-desc">Actueel en achtergrond</span>
+          <span class="related-title">Nieuws</span>
+          <span class="related-arrow">Lees meer &rarr;</span>
+        </a>
+      </li>
+        </ul>
       </div>
     </div>
   </section>
@@ -5402,6 +5470,11 @@ html.kleur-c .hero { padding-top: clamp(2rem, 4vw, 3rem); }
         </li>
       </ul>
 
+
+    </div>
+  </section>
+  <section class="section section--related">
+    <div class="shell">
       <div class="related-reads">
         <p class="eyebrow" data-i18n="d8450a9da0">Lees verder</p>
         <ul>
@@ -5428,7 +5501,6 @@ html.kleur-c .hero { padding-top: clamp(2rem, 4vw, 3rem); }
       </li>
         </ul>
       </div>
-
     </div>
   </section>
 </section>
@@ -5694,32 +5766,6 @@ html.kleur-c .hero { padding-top: clamp(2rem, 4vw, 3rem); }
         <li data-i18n="1e35576e67"><strong>Voormalig bestuurslid</strong>, Nederlandse Werkgroep Vitreoretinale Chirurgie (2014&ndash;2020)</li>
       </ul>
 
-      <div class="related-reads">
-        <p class="eyebrow" data-i18n="d8450a9da0">Lees verder</p>
-        <ul>
-      <li>
-        <a href="#chirurg" data-link data-i18n="cc516fce86">
-          <span class="related-desc">Bio, expertise en pioniersrol</span>
-          <span class="related-title">Netvlieschirurg</span>
-          <span class="related-arrow">Lees meer &rarr;</span>
-        </a>
-      </li>
-      <li>
-        <a href="#aandoeningen" data-link data-i18n="6a9f6adc65">
-          <span class="related-desc">Aandoeningen op een rij</span>
-          <span class="related-title">Aandoeningen</span>
-          <span class="related-arrow">Lees meer &rarr;</span>
-        </a>
-      </li>
-      <li>
-        <a href="#nieuws" data-link data-i18n="692c622dad">
-          <span class="related-desc">Actueel en achtergrond</span>
-          <span class="related-title">Nieuws</span>
-          <span class="related-arrow">Lees meer &rarr;</span>
-        </a>
-      </li>
-        </ul>
-      </div>
 
     </div>
   </section>
@@ -6129,6 +6175,36 @@ html.kleur-c .hero { padding-top: clamp(2rem, 4vw, 3rem); }
     </div>
   </section>
 
+  <section class="section section--related">
+    <div class="shell">
+      <div class="related-reads">
+        <p class="eyebrow" data-i18n="d8450a9da0">Lees verder</p>
+        <ul>
+      <li>
+        <a href="#chirurg" data-link data-i18n="cc516fce86">
+          <span class="related-desc">Bio, expertise en pioniersrol</span>
+          <span class="related-title">Netvlieschirurg</span>
+          <span class="related-arrow">Lees meer &rarr;</span>
+        </a>
+      </li>
+      <li>
+        <a href="#aandoeningen" data-link data-i18n="6a9f6adc65">
+          <span class="related-desc">Aandoeningen op een rij</span>
+          <span class="related-title">Aandoeningen</span>
+          <span class="related-arrow">Lees meer &rarr;</span>
+        </a>
+      </li>
+      <li>
+        <a href="#nieuws" data-link data-i18n="692c622dad">
+          <span class="related-desc">Actueel en achtergrond</span>
+          <span class="related-title">Nieuws</span>
+          <span class="related-arrow">Lees meer &rarr;</span>
+        </a>
+      </li>
+        </ul>
+      </div>
+    </div>
+  </section>
 </section>
 
 <!-- ============== NIEUWS HUB ============== -->
@@ -6495,6 +6571,11 @@ html.kleur-c .hero { padding-top: clamp(2rem, 4vw, 3rem); }
         </li>
       </ul>
 
+
+    </div>
+  </section>
+  <section class="section section--related">
+    <div class="shell">
       <div class="related-reads">
         <p class="eyebrow" data-i18n="d8450a9da0">Lees verder</p>
         <ul>
@@ -6521,7 +6602,6 @@ html.kleur-c .hero { padding-top: clamp(2rem, 4vw, 3rem); }
       </li>
         </ul>
       </div>
-
     </div>
   </section>
 </section>
