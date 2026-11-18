@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="nl" class="kleur-c">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -2561,6 +2561,95 @@ html.i18n-pending body { visibility: hidden; }
 .lang-switch__btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
 </style>
 <!-- i18n:head-end -->
+<style id="kleur-c-css">
+/* ========== KLEURRICHTING C: blauw als structuur, goud blijft accent ==========
+   Blauw (#023a86) en lichtblauw (mist) uit de IVS-huisstijl voor lijnen, banden
+   en knoppen. Kleur dient om secties van elkaar te onderscheiden, zo licht
+   mogelijk: kop van een subpagina en enkele banden lichtblauw; kaarten en
+   vakken in de sectie daarna crème, zodat twee lichtblauwe vlakken nooit op
+   elkaar volgen; kaarten op een lichtblauwe band wit. Lijn- en letterkleuren
+   (blauw, goud) mogen wel samen. Goud blijft voor
+   eyebrows, cijfers, links bij hover en de footer. */
+:root {
+  --navy:  #023a86;
+  --mist:  #f1f5fa;   /* lichtblauw, als IVS */
+  --cream: #faf8f4;   /* crème, als IVS */
+}
+html[data-theme="dark"] {
+  --navy:  #8fb3ea;
+  --mist:  #1b2230;
+  --cream: #23211c;
+}
+
+/* ---- Lijnen boven kopjes, lijsten en kaarten ---- */
+html.kleur-c { --hairline-strong: var(--navy); --rule-strong: 2px solid var(--navy); }
+html.kleur-c .nav { border-bottom: 1px solid var(--navy); }
+html.kleur-c .stats__grid { border-top: 2px solid var(--navy); }
+
+/* ---- Banden ---- */
+html.kleur-c .section--dim { background: var(--mist); }
+
+/* Kop van elke subpagina: lichtblauwe band direct onder de kruimelbalk */
+html.kleur-c .crumb-bar { margin-bottom: 0; }
+html.kleur-c .page-head {
+  background: var(--mist);
+  padding-top: clamp(2.5rem, 6vw, 4.5rem);
+  border-bottom: 1px solid var(--navy);
+}
+
+/* ---- Vakken: op een lichtblauwe band wit, op wit crème ---- */
+html.kleur-c .section--dim .card,
+html.kleur-c .section--dim .contact-card,
+html.kleur-c .section--dim .aside-block,
+html.kleur-c .section--dim .pub-card { background: var(--paper); }
+html.kleur-c .contact-card { background: var(--cream); border-top-color: var(--navy); }
+html.kleur-c .aside-block { background: var(--cream); border-top-color: var(--navy); }
+html.kleur-c .post-list a:hover,
+html.kleur-c .nav__search-result.is-active,
+html.kleur-c .nav__search-result:hover { background: var(--mist); }
+
+/* Spoedkader: crème met gouden rand */
+html.kleur-c .kicker { background: var(--cream); border-left-color: var(--gold); }
+
+/* ---- Overzicht aandoeningen: crème tegels met blauwe bovenrand ---- */
+html.kleur-c .condition-grid { border-top: none; gap: 1.25rem; }
+html.kleur-c .condition,
+html.kleur-c .condition:nth-child(odd),
+html.kleur-c .condition:nth-child(even) {
+  background: var(--cream);
+  border: none;
+  border-top: 2px solid var(--navy);
+  padding: 2.4rem 2.2rem;
+  gap: 1.6rem;
+}
+html.kleur-c .condition:hover { border-top-color: var(--gold); }
+@media (max-width: 720px) {
+  html.kleur-c .condition,
+  html.kleur-c .condition:nth-child(odd),
+  html.kleur-c .condition:nth-child(even) { padding: 1.8rem 1.4rem; gap: 1rem; }
+}
+
+/* ---- Artikelpagina's ---- */
+html.kleur-c .article-wrap h2::before,
+html.kleur-c .body-lg h2::before {
+  content: ''; display: block; width: 32px; height: 2px;
+  background: var(--navy); margin-bottom: 0.85rem;
+}
+html.kleur-c .article-wrap p.article-lead::first-letter { color: var(--navy); }
+html.kleur-c .article-wrap li::marker { color: var(--navy); }
+html.kleur-c .treatment-summary { border-top: 2px solid var(--navy); }
+
+/* ---- Knoppen en links ---- */
+html.kleur-c .btn:hover,
+html.kleur-c .btn--rust:hover,
+html.kleur-c .btn--gold:hover { background: var(--navy); border-color: var(--navy); color: var(--paper); }
+html.kleur-c .btn--ghost { color: var(--navy); border-color: var(--navy); }
+html.kleur-c .btn--ghost:hover { background: var(--navy); border-color: var(--navy); color: var(--paper); }
+html.kleur-c .arrow-link { border-bottom-color: var(--navy); }
+html.kleur-c .card__more span { border-bottom-color: var(--navy); }
+html.kleur-c .arrow-link:hover,
+html.kleur-c .card:hover .card__more span { border-color: var(--gold); }
+</style>
 </head>
 <body>
 
