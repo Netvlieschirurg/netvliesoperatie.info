@@ -2736,6 +2736,42 @@ html.i18n-pending body { visibility: hidden; }
 .lang-switch__btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
 </style>
 <!-- i18n:head-end -->
+<style id="spacing-css">
+/* ========== AFSTANDEN: één ritme, geen opgestapelde marges (nov 2026) ========== */
+/* Sectie-padding iets compacter: 72px op desktop (was 96), 48px op mobiel (was 56). */
+.section { padding: clamp(3rem, 6vw, 4.5rem) 0; }
+
+/* Eerste en laatste element in een blok krijgen geen extra marge bovenop de padding,
+   anders tellen marge en padding op (bv. 96px padding + 48px kopmarge). */
+:is(.section, .page-head, .hero) > .shell > :first-child,
+:is(.section, .page-head, .hero) > .shell > :first-child > :first-child,
+:is(.section, .page-head, .hero) > .shell > :first-child > :first-child > :first-child,
+.article-wrap > :first-child { margin-top: 0; }
+:is(.section, .page-head) > .shell > :last-child,
+:is(.section, .page-head) > .shell > :last-child > :last-child,
+:is(.section, .page-head) > .shell > :last-child > :last-child > :last-child,
+:is(.section, .page-head) > .shell > :last-child > :last-child > :last-child > :last-child,
+.article-wrap > :last-child,
+.article-wrap > :last-child > :last-child,
+.article-wrap > :last-child > :last-child > :last-child { margin-bottom: 0; }
+
+/* Openingsfoto in een eigen sectie: gelijke ruimte boven en onder. */
+.section--lead-figure { padding: clamp(2rem, 4vw, 3rem) 0; }
+.section--lead-figure .figure { margin: 0; }
+/* Homepage: foto direct onder de kop, niet een volle sectie lager. */
+.hero + .section { padding-top: clamp(1rem, 2vw, 1.5rem); padding-bottom: clamp(2rem, 4vw, 3rem); }
+.hero + .section .figure { margin: 0; }
+
+/* Paginakop: bovenruimte in balans met de onderkant (was 72px boven, 48px onder). */
+html.kleur-c .page-head { padding-top: clamp(2rem, 5vw, 3.5rem); }
+/* Homepage-kop zat sinds kleurrichting C tegen de kruimelbalk aan. */
+html.kleur-c .hero { padding-top: clamp(2rem, 4vw, 3rem); }
+/* 'Lees verder'-blok: onderaan geen extra linkpadding; op mobiel iets minder aanloop. */
+.related-reads { margin-top: clamp(3rem, 6vw, 4rem); }
+.related-reads:last-child a { padding-bottom: 0; }
+/* Blogkop: geen tweede lijn vlak boven de onderrand van de kop. */
+.page-head .article-meta:last-child { border-bottom: 0; padding-bottom: 0; }
+</style>
 </head>
 <body>
 
@@ -5052,7 +5088,7 @@ html.i18n-pending body { visibility: hidden; }
     </div>
   </div>
 
-  <section class="section" style="padding-top: clamp(2rem, 4vw, 3rem); padding-bottom: 0;">
+  <section class="section section--lead-figure">
     <div class="shell">
       <figure class="figure figure--banner">
         <div class="figure__media" role="img" aria-label="Dr. Koen van Overdam met zijn paranimfen tijdens promotieceremonie in 2024." data-i18n-attr="aria-label:a:281bd2ca9a">
@@ -7099,7 +7135,9 @@ html.i18n-pending body { visibility: hidden; }
     'na-operatie':       null,
     'houding-na-operatie':       null,
     'siliconenolie-verwijderen': null,
-    'amsler-kaart':              null
+    'amsler-kaart':              null,
+    // Verwijzers: wel de inhoudsopgave in de zijkolom, geen bronnen-blok.
+    'verwijzers':                null
   };
   var sourcesDefault = [
     { name: 'Oogartsen.nl',            url: 'https://www.oogartsen.nl' },
@@ -7122,7 +7160,7 @@ html.i18n-pending body { visibility: hidden; }
     // Pagina's die een TOC + bronnen-aside krijgen: alle aandoeningen-subpagina's,
     // plus operaties, onderzoek en de vier traject-pagina's (dezelfde redactionele opzet).
     var pagePathForGate = hash.replace(/^#/, '');
-    var trajectPages = ['operaties', 'onderzoek', 'eerste-consult', 'voor-operatie', 'tijdens-operatie', 'na-operatie', 'houding-na-operatie', 'siliconenolie-verwijderen', 'amsler-kaart'];
+    var trajectPages = ['operaties', 'onderzoek', 'verwijzers', 'eerste-consult', 'voor-operatie', 'tijdens-operatie', 'na-operatie', 'houding-na-operatie', 'siliconenolie-verwijderen', 'amsler-kaart'];
     var hasToc = (
       hash.indexOf('#aandoeningen/') === 0 ||
       trajectPages.indexOf(pagePathForGate) !== -1
@@ -7145,9 +7183,7 @@ html.i18n-pending body { visibility: hidden; }
       var leadFigure = wrap.querySelector(':scope > .figure');
       if (leadFigure) {
         var figureSection = document.createElement('section');
-        figureSection.className = 'section';
-        figureSection.style.paddingTop = 'clamp(2rem, 4vw, 3rem)';
-        figureSection.style.paddingBottom = '0';
+        figureSection.className = 'section section--lead-figure';
         var figureShell = document.createElement('div');
         figureShell.className = 'shell';
         figureShell.appendChild(leadFigure);
