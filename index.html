@@ -2649,6 +2649,13 @@ html.kleur-c .arrow-link { border-bottom-color: var(--navy); }
 html.kleur-c .card__more span { border-bottom-color: var(--navy); }
 html.kleur-c .arrow-link:hover,
 html.kleur-c .card:hover .card__more span { border-color: var(--gold); }
+
+/* ---- Donkere vlakken: zachter zwart #2b2b29 (licht thema) ---- */
+html.kleur-c:not([data-theme="dark"]) { --paper-deep: #2b2b29; }
+html.kleur-c:not([data-theme="dark"]) .proto-banner { background: #2b2b29; }
+html.kleur-c:not([data-theme="dark"]) .figure__media:not(.figure__media--photo) {
+  background: linear-gradient(135deg, #363634 0%, #222220 100%);
+}
 </style>
 </head>
 <body>
