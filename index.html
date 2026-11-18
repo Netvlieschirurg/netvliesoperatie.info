@@ -2656,6 +2656,18 @@ html.kleur-c:not([data-theme="dark"]) .proto-banner { background: #2b2b29; }
 html.kleur-c:not([data-theme="dark"]) .figure__media:not(.figure__media--photo) {
   background: linear-gradient(135deg, #363634 0%, #222220 100%);
 }
+
+/* ---- Zwarte accenten en knoppen in dezelfde tint als de donkere vlakken (licht thema) ---- */
+html.kleur-c:not([data-theme="dark"]) .lang-switch__btn { border-color: var(--paper-deep); }
+html.kleur-c:not([data-theme="dark"]) .lang-switch__btn[aria-pressed="true"] { background: var(--paper-deep); color: var(--paper); }
+html.kleur-c:not([data-theme="dark"]) .skip-link { background: var(--paper-deep); }
+html.kleur-c:not([data-theme="dark"]) .pub-carousel__btn:hover:not(:disabled) { background: var(--paper-deep); border-color: var(--paper-deep); }
+html.kleur-c:not([data-theme="dark"]) .figure__media,
+html.kleur-c:not([data-theme="dark"]) .toc__list a,
+html.kleur-c:not([data-theme="dark"]) .actueel-link,
+html.kleur-c:not([data-theme="dark"]) .related-reads .related-arrow,
+html.kleur-c:not([data-theme="dark"]) .pub-card__link:hover { border-bottom-color: var(--paper-deep); }
+html.kleur-c:not([data-theme="dark"]) #contactSuccess { border-top-color: var(--paper-deep) !important; }
 </style>
 </head>
 <body>
