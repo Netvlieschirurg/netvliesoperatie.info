@@ -7559,54 +7559,65 @@ html[data-theme="dark"] .pose img { filter: brightness(0.9); }
   // Vertrouwde Bronnen per aandoening — links zonder beschrijving.
   // Voor pagina's zonder eigen entry valt het terug op een algemene set.
   var sourcesByPage = {
+    // Alleen Oogartsen.nl (NOG), het Retina Operatiecentrum en het Erasmus MC, met de pagina of folder die bij het onderwerp hoort.
     'aandoeningen/agl': [
-      { name: 'Oogartsen.nl',            url: 'https://www.oogartsen.nl/glasvocht-netvlies/glasvocht-retina-afwijkingen-ogen/troebelingen-witte-vlekken/' },
-      { name: 'Oogziekenhuis Rotterdam', url: 'https://www.oogziekenhuis.nl/oogziekten-en-behandelingen/achterste-glasvochtloslating' },
-      { name: 'AAO EyeWiki',             url: 'https://eyewiki.org/Posterior_Vitreous_Detachment' }
+      { name: 'Oogartsen.nl',           url: 'https://www.oogartsen.nl/glasvocht-netvlies/glasvocht-retina-afwijkingen-ogen/troebelingen-witte-vlokken/' }
     ],
     'aandoeningen/netvliesscheurtje': [
-      { name: 'Oogartsen.nl',            url: 'https://www.oogartsen.nl/glasvocht-netvlies/netvlies-loslating-ablatio-retina-operatie/' },
-      { name: 'Oogziekenhuis Rotterdam', url: 'https://www.oogziekenhuis.nl/oogziekten-en-behandelingen/scheurtje-in-het-netvlies' },
-      { name: 'AAO Eye Health',          url: 'https://www.aao.org/eye-health/diseases/what-is-torn-retina' }
+      { name: 'Oogartsen.nl',           url: 'https://www.oogartsen.nl/glasvocht-netvlies/netvlies-loslating-ablatio-retina-operatie/' }
     ],
     'aandoeningen/netvliesloslating': [
-      { name: 'Oogartsen.nl',            url: 'https://www.oogartsen.nl/glasvocht-netvlies/netvlies-loslating-ablatio-retina-operatie/' },
-      { name: 'Oogziekenhuis Rotterdam', url: 'https://www.oogziekenhuis.nl/oogziekten-en-behandelingen/netvliesloslating-ablatio-retinae' },
-      { name: 'AAO Eye Health',          url: 'https://www.aao.org/eye-health/diseases/detached-torn-retina' }
+      { name: 'Oogartsen.nl',           url: 'https://www.oogartsen.nl/glasvocht-netvlies/netvlies-loslating-ablatio-retina-operatie/' },
+      { name: 'Retina Operatiecentrum', url: 'https://www.eyescan.nl/oogaandoeningen/netvliesloslating/' },
+      { name: 'Erasmus MC',             url: 'https://www.erasmusmc.nl/nl-nl/patientenfolders/vitrectomie-netvliesoperatie-fldr-lduh1523863444ifcd' }
     ],
     'aandoeningen/maculagat': [
-      { name: 'Oogartsen.nl',            url: 'https://www.oogartsen.nl/glasvocht-netvlies/macula-gat-retina-gele-vlek-maculagat/' },
-      { name: 'Oogziekenhuis Rotterdam', url: 'https://www.oogziekenhuis.nl/oogziekten-en-behandelingen/maculagat' },
-      { name: 'AAO Eye Health',          url: 'https://www.aao.org/eye-health/diseases/what-is-macular-hole' }
+      { name: 'Oogartsen.nl',           url: 'https://www.oogartsen.nl/glasvocht-netvlies/macula-gat-retina-gele-vlek-maculagat/' },
+      { name: 'Retina Operatiecentrum', url: 'https://www.eyescan.nl/oogaandoeningen/maculagat/' },
+      { name: 'Erasmus MC',             url: 'https://www.erasmusmc.nl/nl-nl/patientenfolders/vitrectomie-netvliesoperatie-fldr-lduh1523863444ifcd' }
     ],
     'aandoeningen/macula-pucker': [
-      { name: 'Oogartsen.nl',            url: 'https://www.oogartsen.nl/glasvocht-netvlies/macula-pucker-gele-vlek-retina/' },
-      { name: 'Oogziekenhuis Rotterdam', url: 'https://www.oogziekenhuis.nl/oogziekten-en-behandelingen/maculapucker' },
-      { name: 'AAO Eye Health',          url: 'https://www.aao.org/eye-health/diseases/what-is-macular-pucker' }
+      { name: 'Oogartsen.nl',           url: 'https://www.oogartsen.nl/glasvocht-netvlies/macula-pucker-gele-vlek-retina/' },
+      { name: 'Retina Operatiecentrum', url: 'https://www.eyescan.nl/oogaandoeningen/maculapucker/' },
+      { name: 'Erasmus MC',             url: 'https://www.erasmusmc.nl/nl-nl/patientenfolders/vitrectomie-netvliesoperatie-fldr-lduh1523863444ifcd' }
     ],
     'aandoeningen/glasvochttroebelingen': [
-      { name: 'Oogartsen.nl',            url: 'https://www.oogartsen.nl/glasvocht-netvlies/troebelingen-vlekken-flitsen/' },
-      { name: 'Oogziekenhuis Rotterdam', url: 'https://www.oogziekenhuis.nl/oogziekten-en-behandelingen/glasvochttroebelingen' },
-      { name: 'AAO Eye Health',          url: 'https://www.aao.org/eye-health/diseases/what-are-floaters-flashes' }
+      { name: 'Oogartsen.nl',           url: 'https://www.oogartsen.nl/glasvocht-netvlies/troebelingen-vlekken-flitsen/' },
+      { name: 'Retina Operatiecentrum', url: 'https://www.eyescan.nl/oogaandoeningen/floaters-mouches-volantes/' },
+      { name: 'Erasmus MC',             url: 'https://www.erasmusmc.nl/nl-nl/patientenfolders/vitrectomie-netvliesoperatie-fldr-lduh1523863444ifcd' }
     ],
     'aandoeningen/glasvochtbloeding': [
-      { name: 'Oogartsen.nl',            url: 'https://www.oogartsen.nl/glasvocht-netvlies/glasvochtbloedingen/' },
-      { name: 'Oogziekenhuis Rotterdam', url: 'https://www.oogziekenhuis.nl/oogziekten-en-behandelingen/glasvochtbloeding' },
-      { name: 'AAO Eye Health',          url: 'https://www.aao.org/eyenet/article/vitreous-hemorrhage-diagnosis-treatment-2' }
+      { name: 'Oogartsen.nl',           url: 'https://www.oogartsen.nl/glasvocht-netvlies/glasvochtbloedingen/' },
+      { name: 'Retina Operatiecentrum', url: 'https://www.eyescan.nl/oogaandoeningen/glasvochtbloeding/' },
+      { name: 'Erasmus MC',             url: 'https://www.erasmusmc.nl/nl-nl/patientenfolders/vitrectomie-netvliesoperatie-fldr-lduh1523863444ifcd' }
     ],
     'aandoeningen/diabetische-retinopathie': [
-      { name: 'Oogartsen.nl',            url: 'https://www.oogartsen.nl/glasvocht-netvlies/diabetes-mellitus-suikerziekte-retina-retinopathie-ogen/' },
-      { name: 'Oogziekenhuis Rotterdam', url: 'https://www.oogziekenhuis.nl/oogziekten-en-behandelingen/diabetische-retinopathie-drp' },
-      { name: 'AAO EyeWiki',             url: 'https://eyewiki.org/Diabetic_Retinopathy' }
+      { name: 'Oogartsen.nl',           url: 'https://www.oogartsen.nl/glasvocht-netvlies/diabetes-mellitus-suikerziekte-retina-retinopathie-ogen/' },
+      { name: 'Retina Operatiecentrum', url: 'https://www.eyescan.nl/oogaandoeningen/drp/' },
+      { name: 'Erasmus MC: vitrectomie', url: 'https://www.erasmusmc.nl/nl-nl/patientenfolders/vitrectomie-netvliesoperatie-fldr-lduh1523863444ifcd' },
+      { name: 'Erasmus MC: injectie',   url: 'https://www.erasmusmc.nl/nl-nl/patientenfolders/intravitreale-injectie-fldr-ox9q1523863444s2r2' }
     ],
     'aandoeningen/pvr': [
-      { name: 'Oogartsen.nl',            url: 'https://www.oogartsen.nl/glasvocht-netvlies/netvlies-loslating-ablatio-retina-operatie/' },
-      { name: 'Oogziekenhuis Rotterdam', url: 'https://www.oogziekenhuis.nl/oogziekten-en-behandelingen/netvliesloslating-ablatio-retinae' },
-      { name: 'AAO EyeWiki',             url: 'https://eyewiki.org/Proliferative_Vitreoretinopathy' }
+      { name: 'Oogartsen.nl',           url: 'https://www.oogartsen.nl/glasvocht-netvlies/netvlies-loslating-ablatio-retina-operatie/' },
+      { name: 'Erasmus MC',             url: 'https://www.erasmusmc.nl/nl-nl/patientenfolders/vitrectomie-netvliesoperatie-fldr-lduh1523863444ifcd' }
     ],
     'operaties': [
-      { name: 'Retina Operatiecentrum',  url: 'https://www.eyescan.nl/wp-content/uploads/2024/06/2024-06-Retina-OC-Advies-en-uitleg-glasvocht-en-netvliesoperatie.pdf' },
-      { name: 'Erasmus MC',              url: 'https://folders.erasmusmc.nl/folders/folders?action=downloadpdf&folderid=FLDR-LDUH1523863444IFCD' }
+      { name: 'Oogartsen.nl',           url: 'https://www.oogartsen.nl/glasvocht-netvlies/operatie-vitrectomie-retina/' },
+      { name: 'Retina Operatiecentrum', url: 'https://www.eyescan.nl/wp-content/uploads/2024/06/2024-06-Retina-OC-Advies-en-uitleg-glasvocht-en-netvliesoperatie.pdf' },
+      { name: 'Erasmus MC',             url: 'https://www.erasmusmc.nl/nl-nl/patientenfolders/vitrectomie-netvliesoperatie-fldr-lduh1523863444ifcd' }
+    ],
+    'achtergrond/floaters-en-flitsen': [
+      { name: 'Oogartsen.nl: floaters', url: 'https://www.oogartsen.nl/glasvocht-netvlies/troebelingen-vlekken-flitsen/' },
+      { name: 'Oogartsen.nl: glasvochtloslating', url: 'https://www.oogartsen.nl/glasvocht-netvlies/glasvocht-retina-afwijkingen-ogen/troebelingen-witte-vlokken/' },
+      { name: 'Retina Operatiecentrum', url: 'https://www.eyescan.nl/oogaandoeningen/floaters-mouches-volantes/' }
+    ],
+    'achtergrond/houdingsadvies': [
+      { name: 'Oogartsen.nl',           url: 'https://www.oogartsen.nl/glasvocht-netvlies/operatie-vitrectomie-retina/' },
+      { name: 'Retina Operatiecentrum', url: 'https://www.eyescan.nl/wp-content/uploads/2024/06/2024-06-Retina-OC-Advies-en-uitleg-glasvocht-en-netvliesoperatie.pdf' }
+    ],
+    'achtergrond/pvr-uitleg': [
+      { name: 'Oogartsen.nl',           url: 'https://www.oogartsen.nl/glasvocht-netvlies/netvlies-loslating-ablatio-retina-operatie/' },
+      { name: 'Erasmus MC',             url: 'https://www.erasmusmc.nl/nl-nl/patientenfolders/vitrectomie-netvliesoperatie-fldr-lduh1523863444ifcd' }
     ],
     'onderzoek': [
       { name: 'ResearchGate',            url: 'https://www.researchgate.net/profile/Koen-Van-Overdam' },
@@ -7629,11 +7640,7 @@ html[data-theme="dark"] .pose img { filter: brightness(0.9); }
     'privacyverklaring':         null,
     'disclaimer':                null
   };
-  var sourcesDefault = [
-    { name: 'Oogartsen.nl',            url: 'https://www.oogartsen.nl' },
-    { name: 'Oogziekenhuis Rotterdam', url: 'https://www.oogziekenhuis.nl' },
-    { name: 'AAO EyeWiki',             url: 'https://eyewiki.org' }
-  ];
+  var sourcesDefault = [];
 
   function getSourcesFor(pagePath) {
     // hasOwnProperty zodat een expliciete `null` (geen bronnen-balk gewenst)
