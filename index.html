@@ -587,6 +587,10 @@ html[data-theme="dark"] .brand__logo.brand__logo--dark { display: block; }
 }
 
 .nav__links a { white-space: nowrap; }
+.rond-spoed > .article-wrap { max-width: none; margin: 0; }
+.rond-spoed h2 { margin-top: 0; }
+.rond-spoed .phone-callout:first-child { margin-top: 0; }
+@media (max-width: 980px) { .rond-spoed { grid-template-columns: 1fr; } }
 .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(1.25rem, 2.5vw, 2rem); }
 @media (max-width: 1100px) { .grid-4 { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 600px) { .grid-4 { grid-template-columns: 1fr; } }
@@ -4373,37 +4377,40 @@ html[data-theme="dark"] .pose img { filter: brightness(0.9); }
   </section>
 
   <section class="section">
-    <div class="shell article-wrap body-lg">
+    <div class="shell">
+      <div class="grid-2 rond-spoed">
+        <div class="article-wrap body-lg">
+          <h2 id="rond-spoed" class="anchor-target" data-i18n="d43f38b5ce">Spoed en contact</h2>
 
-      <h2 id="rond-spoed" class="anchor-target" data-i18n="d43f38b5ce">Spoed en contact</h2>
+          <p data-i18n="8c786500cc">Bel direct bij &eacute;&eacute;n van deze klachten, ook &rsquo;s avonds, &rsquo;s nachts en in het weekend. E&eacute;n klacht is genoeg: wacht niet af. Bel het spoednummer van de kliniek waar u bent geopereerd.</p>
+          <ul>
+            <li data-i18n="6064623e1b">U ziet plotseling slechter</li>
+            <li data-i18n="eb3c86b571">U ziet een schaduw of een gordijn in uw beeld</li>
+            <li data-i18n="1337178c9d">U ziet plotseling veel meer vlekjes of lichtflitsen</li>
+            <li data-i18n="ec8881c48b">Uw oog wordt steeds pijnlijker of roder</li>
+            <li data-i18n="ad759e10fb">U heeft pijn in uw oog, met hoofdpijn en misselijkheid</li>
+            <li data-i18n="aa18ea6431">U ziet een nieuwe donkere vlek boven de gasbel</li>
+          </ul>
+        </div>
+        <div class="article-wrap body-lg">
+          <div class="phone-callout">
+            <span class="phone-callout__label" data-i18n="cbcd2c5d22">Spoednummer Retina Operatiecentrum</span>
+            <span class="phone-callout__number"><a href="tel:+31881111990">(088) 111 19 90</a></span>
+            <p class="phone-callout__note" data-i18n="3dd63c7f34">Dag en nacht bereikbaar: buiten kantoortijden wordt u doorgeschakeld naar de dienstdoende oogarts. Zorg dat uw nummerherkenning aanstaat. Neemt niemand op, probeer het dan na 10 tot 15 minuten opnieuw.</p>
+          </div>
 
-      <p data-i18n="8c786500cc">Bel direct bij &eacute;&eacute;n van deze klachten, ook &rsquo;s avonds, &rsquo;s nachts en in het weekend. E&eacute;n klacht is genoeg: wacht niet af. Bel het spoednummer van de kliniek waar u bent geopereerd.</p>
-      <ul>
-        <li data-i18n="6064623e1b">U ziet plotseling slechter</li>
-        <li data-i18n="eb3c86b571">U ziet een schaduw of een gordijn in uw beeld</li>
-        <li data-i18n="1337178c9d">U ziet plotseling veel meer vlekjes of lichtflitsen</li>
-        <li data-i18n="ec8881c48b">Uw oog wordt steeds pijnlijker of roder</li>
-        <li data-i18n="ad759e10fb">U heeft pijn in uw oog, met hoofdpijn en misselijkheid</li>
-        <li data-i18n="aa18ea6431">U ziet een nieuwe donkere vlek boven de gasbel</li>
-      </ul>
+          <div class="phone-callout">
+            <span class="phone-callout__label" data-i18n="37a2c2869a">Spoednummer Erasmus MC</span>
+            <span class="phone-callout__number"><a href="tel:+31107040704">(010) 704 0 704</a></span>
+            <p class="phone-callout__note" data-i18n="395fa7990c">Dag en nacht bereikbaar: vraag naar de dienstdoende oogarts. Voor vragen en operatieplanning: polikliniek Oogheelkunde, <a href="tel:+31107040135">(010) 704 01 35</a> (keuze 3 voor operatieplanning).</p>
+          </div>
 
-      <div class="phone-callout">
-        <span class="phone-callout__label" data-i18n="cbcd2c5d22">Spoednummer Retina Operatiecentrum</span>
-        <span class="phone-callout__number"><a href="tel:+31881111990">(088) 111 19 90</a></span>
-        <p class="phone-callout__note" data-i18n="3dd63c7f34">Dag en nacht bereikbaar: buiten kantoortijden wordt u doorgeschakeld naar de dienstdoende oogarts. Zorg dat uw nummerherkenning aanstaat. Neemt niemand op, probeer het dan na 10 tot 15 minuten opnieuw.</p>
+          <div class="callout">
+            <h4 data-i18n="0ee2d7ce4d">Vragen over uw aankomende operatie?</h4>
+            <p data-i18n="c9a7f4c190">Neem voor of na het spreekuur contact op: wij denken graag mee over uw specifieke situatie. <a href="#contact" data-link class="arrow-link">Contact</a></p>
+          </div>
+        </div>
       </div>
-
-      <div class="phone-callout">
-        <span class="phone-callout__label" data-i18n="37a2c2869a">Spoednummer Erasmus MC</span>
-        <span class="phone-callout__number"><a href="tel:+31107040704">(010) 704 0 704</a></span>
-        <p class="phone-callout__note" data-i18n="395fa7990c">Dag en nacht bereikbaar: vraag naar de dienstdoende oogarts. Voor vragen en operatieplanning: polikliniek Oogheelkunde, <a href="tel:+31107040135">(010) 704 01 35</a> (keuze 3 voor operatieplanning).</p>
-      </div>
-
-      <div class="callout">
-        <h4 data-i18n="0ee2d7ce4d">Vragen over uw aankomende operatie?</h4>
-        <p data-i18n="c9a7f4c190">Neem voor of na het spreekuur contact op: wij denken graag mee over uw specifieke situatie. <a href="#contact" data-link class="arrow-link">Contact</a></p>
-      </div>
-
     </div>
   </section>
 </section>
@@ -7616,7 +7623,11 @@ html[data-theme="dark"] .pose img { filter: brightness(0.9); }
     'siliconenolie-verwijderen': null,
     'amsler-kaart':              null,
     // Verwijzers: wel de inhoudsopgave in de zijkolom, geen bronnen-blok.
-    'verwijzers':                null
+    'verwijzers':                null,
+    'actueel':                   null,
+    'klachtenregeling':          null,
+    'privacyverklaring':         null,
+    'disclaimer':                null
   };
   var sourcesDefault = [
     { name: 'Oogartsen.nl',            url: 'https://www.oogartsen.nl' },
@@ -7639,7 +7650,7 @@ html[data-theme="dark"] .pose img { filter: brightness(0.9); }
     // Pagina's die een TOC + bronnen-aside krijgen: alle aandoeningen-subpagina's,
     // plus operaties, onderzoek en de vier traject-pagina's (dezelfde redactionele opzet).
     var pagePathForGate = hash.replace(/^#/, '');
-    var trajectPages = ['operaties', 'onderzoek', 'verwijzers', 'eerste-consult', 'voor-operatie', 'tijdens-operatie', 'na-operatie', 'houding-na-operatie', 'siliconenolie-verwijderen', 'amsler-kaart'];
+    var trajectPages = ['operaties', 'onderzoek', 'verwijzers', 'eerste-consult', 'voor-operatie', 'tijdens-operatie', 'na-operatie', 'houding-na-operatie', 'siliconenolie-verwijderen', 'amsler-kaart', 'achtergrond/floaters-en-flitsen', 'achtergrond/houdingsadvies', 'achtergrond/pvr-uitleg', 'actueel', 'klachtenregeling', 'privacyverklaring', 'disclaimer'];
     var hasToc = (
       hash.indexOf('#aandoeningen/') === 0 ||
       trajectPages.indexOf(pagePathForGate) !== -1
